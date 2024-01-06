@@ -1,16 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
-
 <?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.example.progetto.Controller">
-  <padding>
-    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-  </padding>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
 
-  <Label fx:id="welcomeText"/>
-  <Button text="Hello!" onAction="#onHelloButtonClick"/>
-</VBox>
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="730.0"
+      prefWidth="598.0" styleClass="background" stylesheets="@css/sheet.css" xmlns="http://javafx.com/javafx/21">
+   <Button layoutX="329.0" layoutY="14.0" mnemonicParsing="false" stylesheets="@css/sheet.css" text="Home"
+           textFill="#9700ae" underline="true">
+      <font>
+         <Font name="Garamond" size="12.0"/>
+      </font>
+   </Button>
+   <Button layoutX="524.0" layoutY="14.0" mnemonicParsing="false" styleClass="accedi" text="Accedi"/>
+   <Button layoutX="389.0" layoutY="14.0" mnemonicParsing="false" text="Ricerca"/>
+   <Button layoutX="449.0" layoutY="14.0" mnemonicParsing="false" styleClass="registra" text="Registrati"/>
+   <Line endX="598.0000610351562" endY="47.5" layoutY="13.0" startY="47.5"/>
+   <ImageView fitHeight="52.0" fitWidth="100.0" layoutX="14.0" layoutY="3.0">
+      <Image url="@../../../../../../../../../Downloads/infinito.png"/>
+   </ImageView>
+</Pane>
