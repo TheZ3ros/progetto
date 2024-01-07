@@ -13,6 +13,7 @@
     -fx-font-size: 16px;
     -fx-pref-height: 30px;
     -fx-pref-width: 60px;
+    -fx-cursor: hand; /* Cambia hand con il tipo di cursore desiderato */
 
 }
 .button {
@@ -25,6 +26,7 @@
     -fx-font-size: 16px;
     -fx-pref-height: 30px;
     -fx-pref-width: 60px;
+    -fx-cursor: hand;
 
 }
 .accedi {
@@ -37,6 +39,7 @@
     -fx-font-size: 16px;
     -fx-pref-height: 30px;
     -fx-pref-width: 60px;
+    -fx-cursor: hand; /* Cambia hand con il tipo di cursore desiderato */
 
 }
 .registra {
@@ -49,6 +52,7 @@
     -fx-font-size: 16px;
     -fx-pref-height: 30px;
     -fx-pref-width: 75px;
+    -fx-cursor: hand; /* Cambia hand con il tipo di cursore desiderato */
 
 }
 .mondo {
@@ -56,4 +60,3 @@
     -fx-background-repeat: no-repeat;
     -fx-background-size:contain,cover;
 }
-
