@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="abd72b32-f6c1-4b42-a1d9-4297dd975b52" name="Changes" comment="home">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/progetto/css/sheet.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="abd72b32-f6c1-4b42-a1d9-4297dd975b52" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/cssdialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/progetto/css/sheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/progetto/sheet.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/progetto/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/progetto/hello-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -51,6 +51,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Proprietario\Desktop\java\progetto1\src\main\resources\com\example\progetto" />
       <recent name="C:\Users\Proprietario\Desktop\java\progetto1\src\main\resources\com\example\progetto\css" />
     </key>
   </component>
@@ -65,7 +66,8 @@
       <workItem from="1704471342829" duration="4000" />
       <workItem from="1704475280167" duration="377000" />
       <workItem from="1704559869654" duration="5096000" />
-      <workItem from="1704566890184" duration="519000" />
+      <workItem from="1704566890184" duration="1351000" />
+      <workItem from="1704626869016" duration="9292000" />
     </task>
     <task id="LOCAL-00001" summary="Prova">
       <option name="closed" value="true" />
@@ -91,7 +93,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704477027057</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="home">
+      <option name="closed" value="true" />
+      <created>1704567599335</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1704567599335</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

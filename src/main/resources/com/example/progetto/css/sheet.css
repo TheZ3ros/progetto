@@ -51,3 +51,9 @@
     -fx-pref-width: 75px;
 
 }
+.mondo {
+   -fx-background-image: url('immagini/planisfero.png');
+    -fx-background-repeat: no-repeat;
+    -fx-background-size:contain,cover;
+}
+
