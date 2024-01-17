@@ -1,4 +1,11 @@
 /* styles.css */
+/*
+@font-face {
+    font-family: 'just';
+    src: url('fonts/JustMeAgainDownHere-Regular.ttf');
+}
+*/
+
 .background {
     -fx-background-color: linear-gradient(to bottom, #ffffff, #d1cfcf, #828282, #5c5a5a, #000000);
 }
@@ -59,4 +66,16 @@
    -fx-background-image: url('immagini/planisfero.png');
     -fx-background-repeat: no-repeat;
     -fx-background-size:contain,cover;
+}
+
+.colortext {
+    -fx-font-size: 50px;
+    -fx-font-family: 'allura';
+    -fx-fill: linear-gradient(to right, #da0000, #7b0bea, #0022a4);
+}
+
+.gemelli {
+    -fx-pref-height: 150px;
+    -fx-pref-width: 300px;
+    -fx-background-color: #000000;
 }
