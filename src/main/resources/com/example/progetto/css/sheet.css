@@ -36,7 +36,7 @@
     -fx-cursor: hand;
 
 }
-.accedi {
+.sfondo_bottoni {
     -fx-background-insets: 0, 0, 1, 2;
     -fx-background-radius: 5;
     -fx-padding: 3 6 4 6;
@@ -74,8 +74,11 @@
     -fx-fill: linear-gradient(to right, #da0000, #7b0bea, #0022a4);
 }
 
-.gemelli {
-    -fx-pref-height: 150px;
+.bottoni_accedi {
+    -fx-pref-height: 100px;
     -fx-pref-width: 300px;
-    -fx-background-color: #000000;
+    -fx-background-color: transparent;
+    -fx-font-family: Garamond;
+    -fx-font-size: 30;
+    -fx-font-weight: bold;
 }

@@ -33,7 +33,7 @@
                   <Insets bottom="10.0" left="3.0" right="3.0" top="10.0" />
                </HBox.margin>
             </Button>
-            <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#vai_a_Login" styleClass="accedi" text="Accedi" HBox.hgrow="ALWAYS">
+            <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#vai_a_Login" styleClass="sfondo_bottoni" text="Accedi" HBox.hgrow="ALWAYS">
                <HBox.margin>
                   <Insets bottom="10.0" left="3.0" right="3.0" top="10.0" />
                </HBox.margin>

@@ -32,7 +32,7 @@
                     <Insets bottom="10.0" left="3.0" right="3.0" top="10.0" />
                 </HBox.margin>
             </Button>
-            <Button alignment="TOP_LEFT" mnemonicParsing="false" style="-fx-underline: true;" styleClass="accedi" text="Accedi" HBox.hgrow="ALWAYS">
+            <Button alignment="TOP_LEFT" mnemonicParsing="false" style="-fx-underline: true;" styleClass="sfondo_bottoni" text="Accedi" HBox.hgrow="ALWAYS">
                 <HBox.margin>
                     <Insets bottom="10.0" left="3.0" right="3.0" top="10.0" />
                 </HBox.margin>
@@ -41,18 +41,28 @@
     </top>
     <center>
         <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
-            <Pane prefHeight="432.0" prefWidth="1000.0" styleClass="mondo" VBox.vgrow="ALWAYS">
+            <Pane prefHeight="385.0" prefWidth="889.0" styleClass="mondo" VBox.vgrow="ALWAYS">
             <children>
-               <Button layoutX="350.0" layoutY="67.0" mnemonicParsing="false" prefHeight="89.0" prefWidth="219.0" styleClass="gemelli" text="Accedi come utente">
-                  <font>
-                     <Font name="Algerian" size="96.0" />
-                  </font>
-               </Button>
-               <Button layoutX="350.0" layoutY="262.0" mnemonicParsing="false" prefHeight="89.0" prefWidth="219.0" styleClass="gemelli" text="Accedi come agenzia">
-                  <font>
-                     <Font name="Algerian" size="96.0" />
-                  </font>
-               </Button>
+               <VBox layoutX="336.0" prefHeight="532.0" prefWidth="300.0">
+                  <children>
+                     <Button mnemonicParsing="false" prefHeight="215.0" prefWidth="363.0" styleClass="bottoni_accedi" text="Accedi come utente" VBox.vgrow="ALWAYS">
+                        <font>
+                           <Font name="Algerian" size="96.0" />
+                        </font>
+                        <opaqueInsets>
+                           <Insets />
+                        </opaqueInsets>
+                        <VBox.margin>
+                           <Insets bottom="120.0" />
+                        </VBox.margin>
+                     </Button>
+                     <Button mnemonicParsing="false" prefHeight="141.0" prefWidth="323.0" styleClass="bottoni_accedi" text="Accedi come agenzia" VBox.vgrow="ALWAYS">
+                        <font>
+                           <Font name="Algerian" size="96.0" />
+                        </font>
+                     </Button>
+                  </children>
+               </VBox>
             </children></Pane>
         </VBox>
     </center>
