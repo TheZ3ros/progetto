@@ -75,10 +75,15 @@
 }
 
 .bottoni_accedi {
-    -fx-pref-height: 100px;
+    -fx-pref-height: 80px;
     -fx-pref-width: 300px;
     -fx-background-color: transparent;
     -fx-font-family: Garamond;
     -fx-font-size: 30;
+    -fx-font-weight: bold;
+}
+
+.bottoni_accedi_veri {
+    -fx-pref-width: 130px;
     -fx-font-weight: bold;
 }

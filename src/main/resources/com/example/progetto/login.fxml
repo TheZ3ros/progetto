@@ -2,6 +2,9 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
@@ -43,7 +46,7 @@
         <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
             <Pane prefHeight="385.0" prefWidth="889.0" styleClass="mondo" VBox.vgrow="ALWAYS">
             <children>
-               <VBox layoutX="336.0" prefHeight="532.0" prefWidth="300.0">
+               <VBox alignment="TOP_CENTER" layoutX="336.0" prefHeight="532.0" prefWidth="300.0">
                   <children>
                      <Button mnemonicParsing="false" prefHeight="215.0" prefWidth="363.0" styleClass="bottoni_accedi" text="Accedi come utente" VBox.vgrow="ALWAYS">
                         <font>
@@ -53,13 +56,42 @@
                            <Insets />
                         </opaqueInsets>
                         <VBox.margin>
-                           <Insets bottom="120.0" />
+                           <Insets />
+                        </VBox.margin>
+                     </Button>
+                     <Label text="Inserisci username" />
+                     <TextField fx:id="usernameUtente" />
+                     <Label text="Inserisci la password">
+                        <VBox.margin>
+                           <Insets top="30.0" />
+                        </VBox.margin>
+                     </Label>
+                     <PasswordField fx:id="passwordUtente" />
+                     <Button mnemonicParsing="false" onAction="#HandlerLoginUtente" prefWidth="125.0" style="-fx-background-color: white;" styleClass="bottoni_accedi_veri" text="Login utente">
+                        <VBox.margin>
+                           <Insets top="15.0" />
                         </VBox.margin>
                      </Button>
                      <Button mnemonicParsing="false" prefHeight="141.0" prefWidth="323.0" styleClass="bottoni_accedi" text="Accedi come agenzia" VBox.vgrow="ALWAYS">
                         <font>
                            <Font name="Algerian" size="96.0" />
                         </font>
+                        <VBox.margin>
+                           <Insets />
+                        </VBox.margin>
+                     </Button>
+                     <Label layoutX="111.0" layoutY="110.0" text="Inserisci username" />
+                     <TextField fx:id="usernameAgenzia" layoutX="10.0" layoutY="127.0" />
+                     <Label layoutX="106.0" layoutY="183.0" text="Inserisci la password">
+                        <VBox.margin>
+                           <Insets top="30.0" />
+                        </VBox.margin>
+                     </Label>
+                     <PasswordField fx:id="passwordAgenzia" layoutX="10.0" layoutY="200.0" />
+                     <Button mnemonicParsing="false" onAction="#HandlerLoginAgenzia" style="-fx-background-color: white;" styleClass="bottoni_accedi_veri" text="Login agenzia">
+                        <VBox.margin>
+                           <Insets top="15.0" />
+                        </VBox.margin>
                      </Button>
                   </children>
                </VBox>
