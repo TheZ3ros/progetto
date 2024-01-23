@@ -1,5 +1,9 @@
 package com.example.progetto;
 
+import com.example.progetto.controller_graf.HomeController;
+import com.example.progetto.controller_graf.HomeLoginController;
+import com.example.progetto.controller_graf.LoginController;
+import com.example.progetto.entity.User;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -11,6 +15,7 @@ public class Applicazione extends Application {
     private Stage stage;
     private Scene homeScene;
     private Scene loginScene;
+    private Scene homeloginScene;
 
     public static void main(String[] args) {
         launch(args);
@@ -30,6 +35,8 @@ public class Applicazione extends Application {
         Parent loginRoot = loginLoader.load();
         loginScene = new Scene(loginRoot);
 
+
+
         stage.setScene(homeScene);
         stage.setTitle("Home!");
 
@@ -42,6 +49,7 @@ public class Applicazione extends Application {
 
         // Impostare il riferimento a Main nel controller di login
         loginController.setMain(this);
+
 
         stage.show();
     }

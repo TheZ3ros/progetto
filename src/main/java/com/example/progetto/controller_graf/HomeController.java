@@ -1,5 +1,6 @@
-package com.example.progetto;
+package com.example.progetto.controller_graf;
 
+import com.example.progetto.Applicazione;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 

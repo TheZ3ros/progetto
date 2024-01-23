@@ -1,9 +1,16 @@
-package com.example.progetto;
+package com.example.progetto.controller_graf;
 
+import com.example.progetto.Applicazione;
+import com.example.progetto.DAO.UserDAO;
+import com.example.progetto.bean.UserBean;
+import com.example.progetto.entity.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+
+import java.sql.SQLException;
+import java.util.Objects;
 
 public class LoginController {
 
@@ -31,12 +38,25 @@ public class LoginController {
     }
 
     @FXML
-    private void HandlerLoginUtente(){
+    private void HandlerLoginUtente() throws SQLException {
 
-        String user_Utente = usernameUtente.getText();
-        String pass_Utente = passwordUtente.getText();
-        System.out.println("Username dell'utente: " + user_Utente);
-        System.out.println("Password dell'utente: " + pass_Utente);
+        UserBean utentebean=new UserBean(usernameUtente.getText(),passwordUtente.getText());
+        UserDAO dao=new UserDAO();
+        User utente;
+        try {
+           utente=dao.execute(utentebean.getUsername());
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        if (utentebean.getPassword().equals(utente.getPassword())){
+            System.out.println("accesso effettuato");
+        }
+        else {
+            System.out.println("accesso non effettuato");
+
+        }
+
+
 
     }
 
