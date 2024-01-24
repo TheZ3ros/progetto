@@ -26,3 +26,5 @@ public class Connectivity {
             return SingletonClass;
     }
 }
+
+//le palle
