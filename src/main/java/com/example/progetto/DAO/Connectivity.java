@@ -27,4 +27,4 @@ public class Connectivity {
     }
 }
 
-//le palle
+//le palles
