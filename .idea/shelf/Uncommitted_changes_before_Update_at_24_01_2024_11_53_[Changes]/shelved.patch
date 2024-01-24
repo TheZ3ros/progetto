@@ -1,0 +1,21 @@
+Index: src/main/java/com/example/progetto/LoginController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.progetto;\r\n\r\nimport javafx.event.ActionEvent;\r\nimport javafx.fxml.FXML;\r\nimport javafx.scene.control.PasswordField;\r\nimport javafx.scene.control.TextField;\r\n\r\npublic class LoginController {\r\n\r\n    @FXML\r\n    private TextField usernameUtente;\r\n\r\n    @FXML\r\n    private PasswordField passwordUtente;\r\n\r\n    @FXML\r\n    public TextField usernameAgenzia;\r\n\r\n    @FXML\r\n    public PasswordField passwordAgenzia;\r\n\r\n    private Applicazione main;\r\n\r\n    @FXML\r\n    private void vai_a_Home(ActionEvent event){\r\n        main.vai_a_Home();\r\n    }\r\n\r\n    public void setMain(Applicazione main){\r\n        this.main = main;\r\n    }\r\n\r\n    @FXML\r\n    private void HandlerLoginUtente(){\r\n\r\n        String user_Utente = usernameUtente.getText();\r\n        String pass_Utente = passwordUtente.getText();\r\n        System.out.println(\"Username dell'utente: \" + user_Utente);\r\n        System.out.println(\"Password dell'utente: \" + pass_Utente);\r\n\r\n    }\r\n\r\n    @FXML\r\n    private void HandlerLoginAgenzia(){\r\n\r\n        String user_Agenzia = usernameAgenzia.getText();\r\n        String pass_Agenzia = passwordAgenzia.getText();\r\n        System.out.println(\"Username dell'agenzia: \" + user_Agenzia);\r\n        System.out.println(\"Password dell'agenzia: \" + pass_Agenzia);\r\n    }\r\n}\r\n
+===================================================================
+diff --git a/src/main/java/com/example/progetto/LoginController.java b/src/main/java/com/example/progetto/LoginController.java
+--- a/src/main/java/com/example/progetto/LoginController.java	
++++ b/src/main/java/com/example/progetto/LoginController.java	
+@@ -14,10 +14,10 @@
+     private PasswordField passwordUtente;
+ 
+     @FXML
+-    public TextField usernameAgenzia;
++    private TextField usernameAgenzia;
+ 
+     @FXML
+-    public PasswordField passwordAgenzia;
++    private PasswordField passwordAgenzia;
+ 
+     private Applicazione main;
+ 
