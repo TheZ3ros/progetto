@@ -8,9 +8,8 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1000.0" styleClass="background" stylesheets="@css/sheet.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.progetto.controller_graf.UserHomeController">
+<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1000.0" styleClass="background" stylesheets="@css/sheet.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.progetto.controller_graf.ShowTripController">
     <top>
         <HBox alignment="TOP_RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="1000.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
             <ImageView fitHeight="40.0" fitWidth="86.0" preserveRatio="true">
@@ -42,11 +41,12 @@
     <center>
         <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
             <Pane prefHeight="432.0" prefWidth="1000.0" styleClass="mondo" VBox.vgrow="ALWAYS">
-                <children>
-                    <Text layoutX="321.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="colortext" text="Wherever you want!" wrappingWidth="357.94921875">
-
-                    </Text>
-                </children></Pane>
+            <children>
+               <Pane layoutX="51.0" layoutY="28.0" onMouseClicked="#america" prefHeight="482.0" prefWidth="305.0" />
+               <Pane layoutX="399.0" layoutY="28.0" onMouseClicked="#europa" prefHeight="136.0" prefWidth="165.0" />
+               <Pane layoutX="382.0" layoutY="183.0" onMouseClicked="#africa" prefHeight="266.0" prefWidth="250.0" />
+               <Pane layoutX="586.0" layoutY="12.0" onMouseClicked="#asia" prefHeight="437.0" prefWidth="371.0" />
+            </children></Pane>
         </VBox>
     </center>
     <bottom>

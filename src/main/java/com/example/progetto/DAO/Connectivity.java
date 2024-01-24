@@ -17,7 +17,8 @@ public class Connectivity {
     public void connected() throws SQLException {
         conn = DriverManager.getConnection(DB, USER, PASS);
     }
-//ciao
+
+
 //creo un singleton per assicurarmi di avere solo un'istanza di connessione
     public synchronized static Connectivity getSingletonInstance (){
         if(Connectivity.SingletonClass==null) {
@@ -26,5 +27,3 @@ public class Connectivity {
             return SingletonClass;
     }
 }
-
-//le palle

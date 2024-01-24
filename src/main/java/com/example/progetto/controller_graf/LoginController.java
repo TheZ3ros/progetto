@@ -30,6 +30,7 @@ public class LoginController {
 
     @FXML
     private void vai_a_Home(ActionEvent event){
+
         main.vai_a_Home();
     }
 
@@ -40,7 +41,7 @@ public class LoginController {
     @FXML
     private void HandlerLoginUtente() throws SQLException {
 
-        UserBean utentebean=new UserBean(usernameUtente.getText(),passwordUtente.getText());
+        UserBean utentebean = new UserBean(usernameUtente.getText(),passwordUtente.getText());
         UserDAO dao=new UserDAO();
         User utente;
         try {
@@ -50,6 +51,7 @@ public class LoginController {
         }
         if (utentebean.getPassword().equals(utente.getPassword())){
             System.out.println("accesso effettuato");
+            main.vai_a_UserHome(utente);
         }
         else {
             System.out.println("accesso non effettuato");

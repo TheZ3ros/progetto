@@ -1,23 +1,23 @@
 package com.example.progetto;
 
 import com.example.progetto.controller_graf.HomeController;
-import com.example.progetto.controller_graf.HomeLoginController;
 import com.example.progetto.controller_graf.LoginController;
-import com.example.progetto.entity.User;
+import com.example.progetto.controller_graf.UserHomeController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
+import com.example.progetto.entity.User;
 public class Applicazione extends Application {
 
     private Stage stage;
     private Scene homeScene;
     private Scene loginScene;
     private Scene homeloginScene;
-
+    private UserHomeController userhome;
     public static void main(String[] args) {
+
         launch(args);
     }
 
@@ -36,6 +36,10 @@ public class Applicazione extends Application {
         loginScene = new Scene(loginRoot);
 
 
+        FXMLLoader UserHomeLoader = new FXMLLoader(Applicazione.class.getResource("home_login.fxml"));
+        Parent UserHomeRoot = UserHomeLoader.load();
+        homeloginScene = new Scene(UserHomeRoot);
+
 
         stage.setScene(homeScene);
         stage.setTitle("Home!");
@@ -47,8 +51,12 @@ public class Applicazione extends Application {
         // Ottenere il controller della schermata di login
         LoginController loginController = loginLoader.getController();
 
+        userhome = UserHomeLoader.getController();
+
         // Impostare il riferimento a Main nel controller di login
         loginController.setMain(this);
+
+        userhome.setMain(this);
 
 
         stage.show();
@@ -62,7 +70,15 @@ public class Applicazione extends Application {
     public void vai_a_Login(){
         stage.setScene(loginScene);
         stage.setTitle("Accedi");
+    }
+
+    public void vai_a_UserHome(User utente){
+        userhome.setUser(utente);
+        stage.setScene(homeloginScene);
+        userhome.setButtonText();
+        stage.setTitle("Accedi");
 
     }
+
 
 }
