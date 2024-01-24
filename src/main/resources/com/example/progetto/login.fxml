@@ -60,13 +60,13 @@
                         </VBox.margin>
                      </Button>
                      <Label text="Inserisci username" />
-                     <TextField fx:id="usernameUtente" />
+                     <TextField fx:id="usernameUtente"/>
                      <Label text="Inserisci la password">
                         <VBox.margin>
                            <Insets top="30.0" />
                         </VBox.margin>
                      </Label>
-                     <PasswordField fx:id="passwordUtente" />
+                     <PasswordField fx:id="passwordUtente"/>
                      <Button mnemonicParsing="false" onAction="#HandlerLoginUtente" prefWidth="125.0" style="-fx-background-color: white;" styleClass="bottoni_accedi_veri" text="Login utente">
                         <VBox.margin>
                            <Insets top="15.0" />

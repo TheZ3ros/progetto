@@ -9,7 +9,7 @@ public class Connectivity {
 
     protected Connectivity(){
         USER = "root";
-        PASS = "luca";
+        PASS = "root";
         DB = "jdbc:mysql://localhost:3306/viaggi";
         conn = null;
     }
