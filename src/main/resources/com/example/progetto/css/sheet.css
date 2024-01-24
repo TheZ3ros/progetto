@@ -6,24 +6,12 @@
 }
 */
 
+
 .background {
     -fx-background-color: linear-gradient(to bottom, #ffffff, #d1cfcf, #828282, #5c5a5a, #000000);
 }
-.buttonmain {
-    -fx-background-insets: 0, 0, 1, 2;
-    -fx-background-radius: 50;
-    -fx-padding: 3 6 4 6;
-    -fx-background-color: transparent;
-    -fx-text-fill: #9700ae;
-    -fx-font-family: garamond;
-    -fx-underline: true;
-    -fx-font-size: 16px;
-    -fx-pref-height: 30px;
-    -fx-pref-width: 60px;
-    -fx-cursor: hand; /* Cambia hand con il tipo di cursore desiderato */
 
-}
-.button {
+.bottoni_barra {
     -fx-background-insets: 0, 0, 1, 2;
     -fx-background-radius: 50;
     -fx-padding: 3 6 4 6;
@@ -87,3 +75,14 @@
     -fx-pref-width: 130px;
     -fx-font-weight: bold;
 }
+
+.bottoni_itinerario {
+    -fx-font-family: 'allura';
+    -fx-background-color: linear-gradient(to right, #cf29ee, #a341ff, #819af5);
+    -fx-pref-width: 320px;
+    -fx-font-weight: bold;
+}
+
+
+
+
