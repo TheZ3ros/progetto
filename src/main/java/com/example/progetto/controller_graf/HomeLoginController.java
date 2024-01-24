@@ -5,7 +5,7 @@ import javafx.scene.control.Button;
 public class HomeLoginController {
     @FXML
     private Button username;
-    private User currentUser;
+    private final User currentUser;
     public HomeLoginController(User user) {
         this.currentUser = user;
     }

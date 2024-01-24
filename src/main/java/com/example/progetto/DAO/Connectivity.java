@@ -9,7 +9,7 @@ public class Connectivity {
 
     protected Connectivity(){
         USER = "root";
-        PASS = "luca";
+        PASS = "root";
         DB = "jdbc:mysql://localhost:3306/viaggi";
         conn = null;
     }
@@ -18,7 +18,7 @@ public class Connectivity {
         conn = DriverManager.getConnection(DB, USER, PASS);
     }
 
-
+//creo un singleton per assicurarmi di avere solo un'istanza di connessione
     public synchronized static Connectivity getSingletonInstance (){
         if(Connectivity.SingletonClass==null) {
             Connectivity.SingletonClass = new Connectivity();
