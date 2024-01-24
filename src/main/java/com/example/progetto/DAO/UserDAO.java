@@ -11,7 +11,7 @@ public class UserDAO implements GenericDAO <User> {
         connection =Connectivity.getSingletonInstance();
 
     }
-    //diocane
+
     @Override
     public User execute(Object... params) throws SQLException {
         String username = (String) params[0];
