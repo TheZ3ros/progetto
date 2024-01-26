@@ -7,6 +7,6 @@ import java.util.List;
 
 public interface GenericDAO<P> {
 
-    List<Trip> execute(Object... params) throws SQLException;
+    P execute(Object... params) throws SQLException;
 
 }

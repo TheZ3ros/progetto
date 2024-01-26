@@ -1,24 +1,21 @@
 package com.example.progetto.DAO;
-
 import com.example.progetto.entity.Trip;
-
 import java.sql.CallableStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TripDAO implements GenericDAO <Trip> {
+public class TripDAO {
         private final Connectivity connection;
         public TripDAO(){
             connection = Connectivity.getSingletonInstance();
         }
 
-        @Override
-        public List<Trip> execute(Object... params) throws SQLException {
+        public List<Trip> charge_trip() throws SQLException {
             connection.connected();
             List<Trip> viaggi=new ArrayList<>();
-            CallableStatement cs = connection.conn.prepareCall("{call GetTrip(?,?)}");
+            CallableStatement cs = connection.conn.prepareCall("{call GetTrip2()}");
             boolean status = cs.execute();
             if(status) {
                 ResultSet rs=cs.getResultSet();

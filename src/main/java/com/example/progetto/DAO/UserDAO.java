@@ -15,7 +15,7 @@ public class UserDAO implements GenericDAO <User> {
     }
 
     @Override
-    public List<Trip> execute(Object... params) throws SQLException {
+    public User execute(Object... params) throws SQLException {
         String username = (String) params[0];
         User utente=new User();
         connection.connected();

@@ -19,7 +19,7 @@ public Trip(int places, String city, Date data_and, Date data_rit, Float price, 
     this.price=price;
     this.image=image;
 }
-public int getId(){
+public int getPlaces(){
     return places;
 }
 public String getCity(){
