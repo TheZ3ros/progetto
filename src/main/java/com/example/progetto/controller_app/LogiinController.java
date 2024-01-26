@@ -1,9 +1,11 @@
 package com.example.progetto.controller_app;
 
+import com.example.progetto.DAO.AgencyDAO;
 import com.example.progetto.DAO.UserDAO;
 import com.example.progetto.bean.AgencyBean;
 import com.example.progetto.bean.UserBean;
 import com.example.progetto.entity.User;
+import com.example.progetto.entity.Agency;
 
 import java.sql.SQLException;
 
@@ -33,6 +35,22 @@ public class LogiinController {
 
         }
         else{System.out.println("accesso non eseguito");}
+
+    }
+
+    public void login_agenzia(){
+        AgencyDAO dao = new AgencyDAO();
+        Agency agenzia;
+        try {
+            agenzia = dao.execute(agencyBean.getUsername());
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        if (agencyBean.getPassword().equals(agenzia.getPassword())){
+            agencyBean.setToken();
+            System.out.println("accesso eseguito");
+        }
+        else {System.out.println("accesso non eseguito");}
 
     }
 

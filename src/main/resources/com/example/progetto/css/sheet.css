@@ -8,7 +8,8 @@
 
 
 .background {
-    -fx-background-color: linear-gradient(to bottom, #ffffff, #d1cfcf, #828282, #5c5a5a, #000000);
+    /*-fx-background-color: linear-gradient(to bottom, #ffffff, #d1cfcf, #828282, #5c5a5a, #000000);*/
+    -fx-background-color: linear-gradient(to bottom, #ffffff, #22c1c3, #fdbb2d);
 }
 
 .bottoni_barra {
@@ -84,7 +85,6 @@
 
 .prova{
     -fx-background-color: linear-gradient(to right, #cf29ee, #a341ff, #819af5);
-
 
 }
 /*

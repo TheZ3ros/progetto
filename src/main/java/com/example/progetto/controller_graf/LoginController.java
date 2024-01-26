@@ -1,6 +1,7 @@
 package com.example.progetto.controller_graf;
 
 import com.example.progetto.Applicazione;
+import com.example.progetto.bean.AgencyBean;
 import com.example.progetto.bean.UserBean;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -70,7 +71,12 @@ public class LoginController {
 
         String user_Agenzia = usernameAgenzia.getText();
         String pass_Agenzia = passwordAgenzia.getText();
-        System.out.println("Username dell'agenzia: " + user_Agenzia);
-        System.out.println("Password dell'agenzia: " + pass_Agenzia);
+        AgencyBean agency = new AgencyBean(user_Agenzia,pass_Agenzia);
+        LogiinController login = new LogiinController(agency);
+        login.login_agenzia();
+        if(agency.getToken()){
+            System.out.println("daje funziona porcoiddio");
+        }
+
     }
 }

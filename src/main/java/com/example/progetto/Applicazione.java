@@ -41,8 +41,8 @@ public class Applicazione extends Application {
         stage.setTitle("Home");
     }
 
-public Stage getStage(){
+    public Stage getStage(){
 
         return stage;
-}
+    }
 }
