@@ -9,13 +9,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import com.example.progetto.entity.User;
+import com.example.progetto.bean.UserBean;
 public class Applicazione extends Application {
 
     private Stage stage;
     private Scene homeScene;
-    private Scene loginScene;
-    private Scene homeloginScene;
     private Scene ViewTripScene;
     private ViewTripController viewtrip;
     private UserHomeController userhome;
@@ -33,15 +31,6 @@ public class Applicazione extends Application {
         Parent homeRoot = homeLoader.load();
         homeScene = new Scene(homeRoot);
 
-        //carico login
-        FXMLLoader loginLoader = new FXMLLoader(Applicazione.class.getResource("login.fxml"));
-        Parent loginRoot = loginLoader.load();
-        loginScene = new Scene(loginRoot);
-
-
-        FXMLLoader UserHomeLoader = new FXMLLoader(Applicazione.class.getResource("home_login.fxml"));
-        Parent UserHomeRoot = UserHomeLoader.load();
-        homeloginScene = new Scene(UserHomeRoot);
 
         FXMLLoader ViewTripLoader = new FXMLLoader(Applicazione.class.getResource("view_trip.fxml"));
         Parent ViewTripRoot = ViewTripLoader.load();
@@ -54,16 +43,9 @@ public class Applicazione extends Application {
         HomeController homeController = homeLoader.getController();
         homeController.setMain(this);
 
-        // Ottenere il controller della schermata di login
-        LoginController loginController = loginLoader.getController();
 
-        userhome = UserHomeLoader.getController();
         viewtrip = ViewTripLoader.getController();
 
-        // Impostare il riferimento a Main nel controller di login
-        loginController.setMain(this);
-
-        userhome.setMain(this);
         viewtrip.setMain(this);
 
 
@@ -75,25 +57,9 @@ public class Applicazione extends Application {
         stage.setTitle("Home");
     }
 
-    public void vai_a_Login(){
-        stage.setScene(loginScene);
-        stage.setTitle("Accedi");
-    }
-
-    public void vai_a_UserHome(User utente){
-        userhome.setUser(utente);
-        stage.setScene(homeloginScene);
-        userhome.setButtonText();
-        stage.setTitle("Accedi");
-
-    }
-    public void vai_a_ViewTrip(User utente){
-        viewtrip.setUser(utente);
-        stage.setScene(ViewTripScene);
-        viewtrip.setButtonText();
-        stage.setTitle("Ricerca");
-
-    }
 
 
+public Stage getStage(){
+        return stage;
+}
 }

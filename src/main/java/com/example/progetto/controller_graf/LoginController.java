@@ -1,17 +1,23 @@
 package com.example.progetto.controller_graf;
 
 import com.example.progetto.Applicazione;
-import com.example.progetto.DAO.UserDAO;
 import com.example.progetto.bean.UserBean;
 import com.example.progetto.entity.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import com.example.progetto.controller_app.LogiinController;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.sql.SQLException;
 
 public class LoginController {
+    private Stage stage;
 
     @FXML
     private TextField usernameUtente;
@@ -26,6 +32,9 @@ public class LoginController {
     public PasswordField passwordAgenzia;
 
     private Applicazione main;
+    private UserHomeController userhome;
+    private Scene homeloginScene;
+
 
     @FXML
     private void vai_a_Home(ActionEvent event){
@@ -34,28 +43,31 @@ public class LoginController {
     }
 
     public void setMain(Applicazione main){
+
         this.main = main;
+
     }
 
     @FXML
-    private void HandlerLoginUtente() throws SQLException {
+    private void HandlerLoginUtente() throws SQLException, IOException {
+        String user_utente=usernameUtente.getText();
+        String pass_utente=passwordUtente.getText();
+        UserBean user = new UserBean(user_utente,pass_utente);
+        LogiinController login=new LogiinController(user);
+        login.login_utente();
+        if(user.getToken()){
+            FXMLLoader UserHomeLoader = new FXMLLoader(Applicazione.class.getResource("home_login.fxml"));
+            Parent UserHomeRoot = UserHomeLoader.load();
+            homeloginScene = new Scene(UserHomeRoot);
+            userhome = UserHomeLoader.getController();
+            userhome.setMain(main);
+            userhome.setUser(user);
+            stage=main.getStage();
+            stage.setScene(homeloginScene);
+            userhome.setButtonText();
+            stage.setTitle("Accedi");
+        }
 
-        UserBean utentebean = new UserBean(usernameUtente.getText(),passwordUtente.getText());
-        UserDAO dao=new UserDAO();
-        User utente;
-        try {
-           utente=dao.execute(utentebean.getUsername());
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-        if (utentebean.getPassword().equals(utente.getPassword())){
-            System.out.println("accesso effettuato");
-            main.vai_a_UserHome(utente);
-        }
-        else {
-            System.out.println("accesso non effettuato");
-
-        }
 
     }
 

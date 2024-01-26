@@ -5,15 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="abd72b32-f6c1-4b42-a1d9-4297dd975b52" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/ViewTripController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/progetto/view_trip.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/bean/AgencyBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_app/LogiinController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/Applicazione.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/Applicazione.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/bean/UserBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/bean/UserBean.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/HomeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/ShowTripController.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/UserHomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/UserHomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/progetto/home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/progetto/home.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/ViewTripController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/ViewTripController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +126,8 @@
       <workItem from="1706005870260" duration="134000" />
       <workItem from="1706008351999" duration="24225000" />
       <workItem from="1706171252488" duration="503000" />
-      <workItem from="1706171777746" duration="8126000" />
+      <workItem from="1706171777746" duration="8142000" />
+      <workItem from="1706271656075" duration="7761000" />
     </task>
     <task id="LOCAL-00001" summary="Prova">
       <option name="closed" value="true" />
@@ -232,7 +233,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706265372057</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="aggiunta schermata userlogin">
+      <option name="closed" value="true" />
+      <created>1706271110952</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1706271110952</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -271,9 +280,9 @@
           <option name="timeStamp" value="3" />
         </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/progetto/Applicazione.java</url>
-          <line>31</line>
-          <option name="timeStamp" value="8" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/UserHomeController.java</url>
+          <line>45</line>
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

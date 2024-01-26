@@ -1,7 +1,7 @@
 package com.example.progetto.controller_graf;
 
 import com.example.progetto.Applicazione;
-import com.example.progetto.entity.User;
+import com.example.progetto.bean.UserBean;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -10,8 +10,8 @@ public class ViewTripController {
     @FXML
     private Button user;
     private Applicazione main;
-    private User currentUser;
-    public void setUser(User utente){
+    private UserBean currentUser;
+    public void setUser(UserBean utente){
 
         currentUser=utente;
     }

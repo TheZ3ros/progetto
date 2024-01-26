@@ -1,13 +1,12 @@
 package com.example.progetto.bean;
-public class UserBean {
+
+public class AgencyBean {
     private final String username;
     private final String password;
-    private boolean token;
 
-    public UserBean(String username, String password){
+    public AgencyBean(String username, String password){
         this.username=username;
         this.password=password;
-        token=false;
     }
     public String getUsername(){
 
@@ -17,13 +16,4 @@ public class UserBean {
 
         return password;
     }
-    public void setToken(){
-        token=true;
-    }
-    public boolean getToken(){
-        return token;
-    }
-
-
 }
-
