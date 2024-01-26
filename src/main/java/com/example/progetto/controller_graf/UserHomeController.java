@@ -16,9 +16,6 @@ public class UserHomeController {
     private Button user;
     private Applicazione main;
     private UserBean currentUser;
-    private ViewTripController viewtrip;
-    private Scene ViewTripScene;
-    private Stage stage;
 
     public void setUser(UserBean utente){
 
@@ -44,11 +41,11 @@ public class UserHomeController {
 
         FXMLLoader ViewTripLoader = new FXMLLoader(Applicazione.class.getResource("view_trip.fxml"));
         Parent ViewTripRoot = ViewTripLoader.load();
-        ViewTripScene = new Scene(ViewTripRoot);
-        viewtrip = ViewTripLoader.getController();
+        Scene viewTripScene = new Scene(ViewTripRoot);
+        ViewTripController viewtrip = ViewTripLoader.getController();
         viewtrip.setUser(currentUser);
-        stage=main.getStage();
-        stage.setScene(ViewTripScene);
+        Stage stage = main.getStage();
+        stage.setScene(viewTripScene);
         viewtrip.setButtonText();
         stage.setTitle("Ricerca");
 

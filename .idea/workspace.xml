@@ -5,15 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="abd72b32-f6c1-4b42-a1d9-4297dd975b52" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/bean/AgencyBean.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_app/LogiinController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/Applicazione.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/Applicazione.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/bean/UserBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/bean/UserBean.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/HomeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/LoginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/UserHomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/UserHomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/ViewTripController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/ViewTripController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,7 +121,7 @@
       <workItem from="1706008351999" duration="24225000" />
       <workItem from="1706171252488" duration="503000" />
       <workItem from="1706171777746" duration="8142000" />
-      <workItem from="1706271656075" duration="7761000" />
+      <workItem from="1706271656075" duration="8055000" />
     </task>
     <task id="LOCAL-00001" summary="Prova">
       <option name="closed" value="true" />
@@ -241,7 +235,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706271110952</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="fix caricamento pagine">
+      <option name="closed" value="true" />
+      <created>1706287371044</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1706287371044</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -266,7 +268,8 @@
     <MESSAGE value="Aggiunta della schermata di login e del suo controller. Implementata la possibilità di andare dalla schermata di Home a quella di Login e viceversa" />
     <MESSAGE value="Bottoni schermata Accedi" />
     <MESSAGE value="aggiunta schermata userlogin" />
-    <option name="LAST_COMMIT_MESSAGE" value="aggiunta schermata userlogin" />
+    <MESSAGE value="fix caricamento pagine" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix caricamento pagine" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -279,11 +282,6 @@
           <properties class="java.lang.RuntimeException" package="java.lang" />
           <option name="timeStamp" value="3" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/UserHomeController.java</url>
-          <line>45</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

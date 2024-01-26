@@ -2,8 +2,6 @@ package com.example.progetto.controller_graf;
 
 import com.example.progetto.Applicazione;
 import com.example.progetto.bean.UserBean;
-import com.example.progetto.entity.User;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -14,10 +12,8 @@ import com.example.progetto.controller_app.LogiinController;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.sql.SQLException;
 
 public class LoginController {
-    private Stage stage;
 
     @FXML
     private TextField usernameUtente;
@@ -32,12 +28,10 @@ public class LoginController {
     public PasswordField passwordAgenzia;
 
     private Applicazione main;
-    private UserHomeController userhome;
-    private Scene homeloginScene;
 
 
     @FXML
-    private void vai_a_Home(ActionEvent event){
+    private void vai_a_Home(){
 
         main.vai_a_Home();
     }
@@ -49,7 +43,7 @@ public class LoginController {
     }
 
     @FXML
-    private void HandlerLoginUtente() throws SQLException, IOException {
+    private void HandlerLoginUtente() throws IOException {
         String user_utente=usernameUtente.getText();
         String pass_utente=passwordUtente.getText();
         UserBean user = new UserBean(user_utente,pass_utente);
@@ -58,11 +52,11 @@ public class LoginController {
         if(user.getToken()){
             FXMLLoader UserHomeLoader = new FXMLLoader(Applicazione.class.getResource("home_login.fxml"));
             Parent UserHomeRoot = UserHomeLoader.load();
-            homeloginScene = new Scene(UserHomeRoot);
-            userhome = UserHomeLoader.getController();
+            Scene homeloginScene = new Scene(UserHomeRoot);
+            UserHomeController userhome = UserHomeLoader.getController();
             userhome.setMain(main);
             userhome.setUser(user);
-            stage=main.getStage();
+            Stage stage = main.getStage();
             stage.setScene(homeloginScene);
             userhome.setButtonText();
             stage.setTitle("Accedi");
