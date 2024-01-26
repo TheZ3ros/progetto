@@ -12,6 +12,7 @@ public class LogiinController {
     private AgencyBean agencyBean;
 
     public LogiinController(UserBean user){
+
         utentebean=user;
     }
     public LogiinController(AgencyBean agency){

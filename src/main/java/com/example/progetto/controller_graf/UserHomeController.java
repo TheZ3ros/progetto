@@ -1,7 +1,6 @@
 package com.example.progetto.controller_graf;
 import com.example.progetto.Applicazione;
 import com.example.progetto.bean.UserBean;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -32,12 +31,12 @@ public class UserHomeController {
         this.main = main;
     }
     @FXML
-    private void vai_a_Home(ActionEvent event){
+    private void vai_a_Home(){
 
         main.vai_a_Home();
     }
     @FXML
-    private void view_trip(ActionEvent event) throws IOException {
+    private void view_trip() throws IOException {
 
         FXMLLoader ViewTripLoader = new FXMLLoader(Applicazione.class.getResource("view_trip.fxml"));
         Parent ViewTripRoot = ViewTripLoader.load();
