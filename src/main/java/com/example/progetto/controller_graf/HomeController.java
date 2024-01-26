@@ -10,6 +10,7 @@ public class HomeController {
 
    @FXML
    private void vai_a_Login(ActionEvent event){
+
       main.vai_a_Login();
    }
 

@@ -3,6 +3,7 @@ package com.example.progetto;
 import com.example.progetto.controller_graf.HomeController;
 import com.example.progetto.controller_graf.LoginController;
 import com.example.progetto.controller_graf.UserHomeController;
+import com.example.progetto.controller_graf.ViewTripController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -15,6 +16,8 @@ public class Applicazione extends Application {
     private Scene homeScene;
     private Scene loginScene;
     private Scene homeloginScene;
+    private Scene ViewTripScene;
+    private ViewTripController viewtrip;
     private UserHomeController userhome;
     public static void main(String[] args) {
 
@@ -40,7 +43,9 @@ public class Applicazione extends Application {
         Parent UserHomeRoot = UserHomeLoader.load();
         homeloginScene = new Scene(UserHomeRoot);
 
-
+        FXMLLoader ViewTripLoader = new FXMLLoader(Applicazione.class.getResource("view_trip.fxml"));
+        Parent ViewTripRoot = ViewTripLoader.load();
+        ViewTripScene = new Scene(ViewTripRoot);
 
         stage.setScene(homeScene);
         stage.setTitle("Home!");
@@ -53,11 +58,13 @@ public class Applicazione extends Application {
         LoginController loginController = loginLoader.getController();
 
         userhome = UserHomeLoader.getController();
+        viewtrip = ViewTripLoader.getController();
 
         // Impostare il riferimento a Main nel controller di login
         loginController.setMain(this);
 
         userhome.setMain(this);
+        viewtrip.setMain(this);
 
 
         stage.show();
@@ -78,6 +85,13 @@ public class Applicazione extends Application {
         stage.setScene(homeloginScene);
         userhome.setButtonText();
         stage.setTitle("Accedi");
+
+    }
+    public void vai_a_ViewTrip(User utente){
+        viewtrip.setUser(utente);
+        stage.setScene(ViewTripScene);
+        viewtrip.setButtonText();
+        stage.setTitle("Ricerca");
 
     }
 
