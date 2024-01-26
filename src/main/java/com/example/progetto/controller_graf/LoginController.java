@@ -67,7 +67,7 @@ public class LoginController {
     }
 
     @FXML
-    private void HandlerLoginAgenzia(){
+    private void HandlerLoginAgenzia() throws IOException{
 
         String user_Agenzia = usernameAgenzia.getText();
         String pass_Agenzia = passwordAgenzia.getText();
@@ -75,7 +75,16 @@ public class LoginController {
         LogiinController login = new LogiinController(agency);
         login.login_agenzia();
         if(agency.getToken()){
-            System.out.println("daje funziona porcoiddio");
+            FXMLLoader AgencyHomeLoader = new FXMLLoader(Applicazione.class.getResource("agency_home.fxml"));
+            Parent AgencyHomeRoot = AgencyHomeLoader.load();
+            Scene homeloginScene = new Scene(AgencyHomeRoot);
+            AgencyHomeController agencyhome = AgencyHomeLoader.getController();
+            agencyhome.setMain(main);
+            agencyhome.setUser(agency);
+            Stage stage = main.getStage();
+            stage.setScene(homeloginScene);
+            agencyhome.setButtonText();
+            stage.setTitle("Home Agenzia");
         }
 
     }
