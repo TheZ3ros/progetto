@@ -1,32 +1,35 @@
 package com.example.progetto.DAO;
 
-import com.example.progetto.entity.User;
+import com.example.progetto.entity.Trip;
 
 import java.sql.CallableStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Types;
+import java.util.ArrayList;
+import java.util.List;
 
-    public class TripDAO implements GenericDAO <User> {
+public class TripDAO implements GenericDAO <Trip> {
         private final Connectivity connection;
         public TripDAO(){
             connection = Connectivity.getSingletonInstance();
-
         }
 
         @Override
-        public User execute(Object... params) throws SQLException {
-            String username = (String) params[0];
-            User utente=new User();
+        public List<Trip> execute(Object... params) throws SQLException {
             connection.connected();
-            CallableStatement cs = connection.conn.prepareCall("{call GetPassword(?,?)}");
-            cs.setString(1,username);
-            cs.registerOutParameter(2, Types.VARCHAR);
-            cs.executeQuery();
-            utente.setPassword(cs.getString(2));
-            utente.setUser((String) params[0]);
+            List<Trip> viaggi=new ArrayList<>();
+            CallableStatement cs = connection.conn.prepareCall("{call GetTrip(?,?)}");
+            boolean status = cs.execute();
+            if(status) {
+                ResultSet rs=cs.getResultSet();
+                while(rs.next()){
+                    Trip trip=new Trip(rs.getInt(1), rs.getString(6),rs.getDate(3),rs.getDate(4),rs.getFloat(2),rs.getString(5));
+                    viaggi.add(trip);
 
+                }
 
-            return utente;
+            }
+return viaggi;
         }
     }
 

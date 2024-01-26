@@ -9,5 +9,6 @@ module com.example.progetto {
     opens com.example.progetto to javafx.fxml;
     exports com.example.progetto;
     exports com.example.progetto.controller_graf;
+    exports com.example.progetto.bean;
     opens com.example.progetto.controller_graf to javafx.fxml;
 }

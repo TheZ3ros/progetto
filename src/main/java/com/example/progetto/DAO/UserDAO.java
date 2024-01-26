@@ -1,9 +1,11 @@
 package com.example.progetto.DAO;
+import com.example.progetto.entity.Trip;
 import com.example.progetto.entity.User;
 
 import java.sql.CallableStatement;
 import java.sql.SQLException;
 import java.sql.Types;
+import java.util.List;
 
 public class UserDAO implements GenericDAO <User> {
     private final Connectivity connection;
@@ -13,7 +15,7 @@ public class UserDAO implements GenericDAO <User> {
     }
 
     @Override
-    public User execute(Object... params) throws SQLException {
+    public List<Trip> execute(Object... params) throws SQLException {
         String username = (String) params[0];
         User utente=new User();
         connection.connected();

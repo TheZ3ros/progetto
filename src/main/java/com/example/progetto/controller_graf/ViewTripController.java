@@ -8,6 +8,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 
+import static com.example.progetto.controller_app.BookTripController.show_trip;
+
 public class ViewTripController {
     @FXML
     private Button user;
@@ -34,10 +36,7 @@ public class ViewTripController {
     }
     public void initialize() {
         // Inizializza la ListView
-        initListView();
+        show_trip();
     }
-    private void initListView() {
-        TripDAO tripDAO=new TripDAO();
 
-    }
 }
