@@ -1,7 +1,7 @@
 package com.example.progetto.bean;
 public class UserBean {
-    private String username;
-    private String password;
+    private final String username;
+    private final String password;
 
     public UserBean(String username, String password){
         this.username=username;
@@ -14,11 +14,6 @@ public class UserBean {
         return password;
     }
 
-    public void setUsername(String user){
-        username=user;
-    }
-    public void setPassword(String pass){
-        password=pass;
-    }
+
 }
 

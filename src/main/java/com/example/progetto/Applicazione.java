@@ -41,6 +41,7 @@ public class Applicazione extends Application {
         homeloginScene = new Scene(UserHomeRoot);
 
 
+
         stage.setScene(homeScene);
         stage.setTitle("Home!");
 
