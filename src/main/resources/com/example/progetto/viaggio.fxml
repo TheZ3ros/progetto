@@ -7,9 +7,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<VBox prefHeight="176.0" prefWidth="980.0" styleClass="background_trans" stylesheets="@css/sheet.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.progetto.controller_graf.ViaggioController">
+<VBox prefHeight="176.0" prefWidth="980.0"  stylesheets="@css/sheet.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.progetto.controller_graf.ViaggioController">
    <children>
-      <HBox prefHeight="100.0" prefWidth="200.0" styleClass="background_trans" stylesheets="@css/sheet.css">
+      <HBox prefHeight="100.0" prefWidth="200.0"  stylesheets="@css/sheet.css">
          <children>
             <Text fx:id="title" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
             <Pane prefHeight="150.0" prefWidth="141.0" />
@@ -17,7 +17,7 @@
             <Text fx:id="prezzo" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
          </children>
       </HBox>
-      <HBox prefHeight="100.0" prefWidth="200.0" styleClass="background_trans">
+      <HBox prefHeight="100.0" prefWidth="200.0" >
          <children>
             <Text fx:id="data" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
             <Pane prefHeight="200.0" prefWidth="200.0" />
