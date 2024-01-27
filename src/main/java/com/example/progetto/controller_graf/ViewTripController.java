@@ -4,18 +4,12 @@ import com.example.progetto.Applicazione;
 import com.example.progetto.bean.TripBean;
 import com.example.progetto.bean.UserBean;
 import com.example.progetto.controller_app.BookTripController;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.VBox;
-import javafx.util.Callback;
-
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
@@ -56,10 +50,10 @@ public class ViewTripController {
         // Crea un VBox per ciascun elemento nella lista e aggiungilo alla ListView
         for (TripBean viaggio : viaggi) {
             FXMLLoader viaggioLoader = new FXMLLoader(Applicazione.class.getResource("viaggio.fxml"));
-            Parent viaggioRoot = viaggioLoader.load();
-            ViaggioController box = viaggioLoader.getController();
-            VBox viaggioVBox =box.createbox(viaggio);
-            listaview.getItems().add(viaggioVBox);
+            VBox box=viaggioLoader.load();
+            ViaggioController controller = viaggioLoader.getController();
+            controller.createbox(viaggio);
+            listaview.getItems().add(box);
         }
     }
 }

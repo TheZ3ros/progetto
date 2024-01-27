@@ -18,7 +18,7 @@ public class TripBean {
         this.price=price;
         this.image=image;
     }
-    public int getId(){
+    public int getPlaces(){
         return places;
     }
     public String getCity(){

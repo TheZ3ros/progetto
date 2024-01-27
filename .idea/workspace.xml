@@ -5,10 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="abd72b32-f6c1-4b42-a1d9-4297dd975b52" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/ViaggioController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/progetto/viaggio.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/DAO/GenericDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/DAO/GenericDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/bean/TripBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/bean/TripBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/ViaggioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/ViaggioController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/ViewTripController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/ViewTripController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/progetto/css/sheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/progetto/css/sheet.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/progetto/viaggio.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/progetto/viaggio.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/progetto/view_trip.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/progetto/view_trip.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -51,7 +54,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Proprietario/Desktop/java/progetto1/src/main/resources/com/example/progetto&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Proprietario/Desktop/java/progetto1&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -126,7 +129,11 @@
       <workItem from="1706171777746" duration="8142000" />
       <workItem from="1706271656075" duration="8055000" />
       <workItem from="1706290055772" duration="4337000" />
-      <workItem from="1706350543135" duration="9835000" />
+      <workItem from="1706350543135" duration="10253000" />
+      <workItem from="1706361971529" duration="54000" />
+      <workItem from="1706380927444" duration="217000" />
+      <workItem from="1706382019283" duration="72000" />
+      <workItem from="1706386528195" duration="5793000" />
     </task>
     <task id="LOCAL-00001" summary="Prova">
       <option name="closed" value="true" />
@@ -248,7 +255,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706287371044</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="caricamento viaggio(non funziona)">
+      <option name="closed" value="true" />
+      <created>1706361819454</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1706361819454</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -274,7 +289,8 @@
     <MESSAGE value="Bottoni schermata Accedi" />
     <MESSAGE value="aggiunta schermata userlogin" />
     <MESSAGE value="fix caricamento pagine" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix caricamento pagine" />
+    <MESSAGE value="caricamento viaggio(non funziona)" />
+    <option name="LAST_COMMIT_MESSAGE" value="caricamento viaggio(non funziona)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -287,16 +303,6 @@
           <properties class="java.lang.RuntimeException" package="java.lang" />
           <option name="timeStamp" value="3" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/ViewTripController.java</url>
-          <line>57</line>
-          <option name="timeStamp" value="24" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/ViaggioController.java</url>
-          <line>29</line>
-          <option name="timeStamp" value="26" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

@@ -2,15 +2,19 @@ package com.example.progetto.controller_graf;
 
 import com.example.progetto.bean.TripBean;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 
+import java.util.Objects;
+
 public class ViaggioController {
     @FXML
     private ImageView imagine;
-
+    @FXML
+    private Button prenota;
     @FXML
     private Text data;
     @FXML
@@ -24,15 +28,15 @@ public class ViaggioController {
     @FXML
     private Text title;
 
-    public VBox createbox(TripBean bean) {
+    public void createbox(TripBean bean) {
 
- //           imagine.setImage(new Image(bean.image()));
+        imagine.setImage(new Image(Objects.requireNonNull(getClass().getResource(bean.image())).toExternalForm()));
             title.setText(bean.getCity());
             data.setText("dal " + bean.getData_and() + "al " + bean.getData_rit());
             prezzo.setText("prezzo totale:" + bean.getPrice());
-            posti.setText("posti disponibili:" + bean.getData_and());
-            VBox viaggioVbox = new VBox(imagine, title, data,prezzo,posti);
-            return viaggioVbox;
+            posti.setText("posti disponibili:" + bean.getPlaces());
+            prenota.setText("prenota");
+            //VBox viaggioVbox = new VBox(title, imagine, data,prezzo,posti,prenota);
         }
 
 
