@@ -1,49 +1,65 @@
 package com.example.progetto.controller_graf;
 
 import com.example.progetto.Applicazione;
-import com.example.progetto.DAO.TripDAO;
 import com.example.progetto.bean.TripBean;
 import com.example.progetto.bean.UserBean;
 import com.example.progetto.controller_app.BookTripController;
-import com.example.progetto.entity.Trip;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
+import javafx.scene.layout.VBox;
+import javafx.util.Callback;
 
+import java.io.IOException;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
-
-import static com.example.progetto.controller_app.BookTripController.show_trip;
 
 public class ViewTripController {
     @FXML
     private Button user;
     private Applicazione main;
-    private UserBean currentUser;
     @FXML
-    private ListView <Trip> lista;
-    public void setUser(UserBean utente){
+    private ListView listaview;
+    private UserBean currentUser;
 
-        currentUser=utente;
+    public void setUser(UserBean utente) {
+
+        currentUser = utente;
     }
+
     public void setButtonText() {
 
         user.setText(currentUser.getUsername());
     }
-    public void setMain(Applicazione main){
+
+    public void setMain(Applicazione main) {
 
         this.main = main;
     }
+
     @FXML
-    private void vai_a_Home(){
+    private void vai_a_Home() {
 
         main.vai_a_Home();
     }
-    public void initialize() throws SQLException {
-        List<TripBean> viaggibean=new ArrayList<>();
-        // Inizializza la ListView
-        viaggibean=BookTripController.show_trip();
-    }
 
+    public void initialize() throws SQLException, IOException {
+        // Carica la lista di viaggi dal database o da qualsiasi altra sorgente
+        List<TripBean> viaggi = BookTripController.show_trip();
+
+        // Crea un VBox per ciascun elemento nella lista e aggiungilo alla ListView
+        for (TripBean viaggio : viaggi) {
+            FXMLLoader viaggioLoader = new FXMLLoader(Applicazione.class.getResource("viaggio.fxml"));
+            Parent viaggioRoot = viaggioLoader.load();
+            ViaggioController box = viaggioLoader.getController();
+            VBox viaggioVBox =box.createbox(viaggio);
+            listaview.getItems().add(viaggioVBox);
+        }
+    }
 }
