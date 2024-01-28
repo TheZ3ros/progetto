@@ -1,12 +1,12 @@
 /* styles.css */
 
-@font-face {
+/*@font-face {
     font-family: 'just';
     src: url('fonts/JustMeAgainDownHere-Regular.ttf');
 }
 .fontnuovo {
     -fx-font-family: 'just';
-}
+}*/
 .background {
     /*-fx-background-color: linear-gradient(to bottom, #ffffff, #d1cfcf, #828282, #5c5a5a, #000000);*/
     -fx-background-color: linear-gradient(to bottom, #ffffff, #22c1c3, #fdbb2d);
@@ -60,6 +60,7 @@
 .colortext {
     -fx-font-size: 50px;
     -fx-fill: linear-gradient(to right, #da0000, #7b0bea, #0022a4);
+    -fx-font-family: Chiller;
 }
 
 .bottoni_accedi {

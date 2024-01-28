@@ -1,19 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox prefHeight="219.0" prefWidth="335.0" stylesheets="@css/sheet.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.progetto.controller_graf.ViaggioController">
-   <children>
-      <Pane prefHeight="219.0" prefWidth="590.0">
-         <children>
-            <ImageView fx:id="imagine" fitHeight="219.0" fitWidth="335.0" pickOnBounds="true" preserveRatio="true" />
-            <Text fx:id="title" layoutX="22.0" layoutY="185.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-            <Text fx:id="data" layoutX="22.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-            <Text fx:id="prezzo" layoutX="299.0" layoutY="202.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-         </children>
-      </Pane>
-   </children>
+<VBox prefHeight="219.0" prefWidth="335.0" style="-fx-background-color: red;" stylesheets="@css/sheet.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.progetto.controller_graf.ViaggioController">
+   <Pane prefHeight="219.0" prefWidth="590.0" style="-fx-background-color: black;">
+      <ImageView fx:id="imagine" fitHeight="219.0" fitWidth="335.0" pickOnBounds="true" preserveRatio="true" />
+      <Text fx:id="title" layoutX="14.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ciao" wrappingWidth="266.66058349609375">
+         <font>
+            <Font name="Chiller" size="36.0" />
+         </font>
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+            </Lighting>
+         </effect>
+      </Text>
+      <Text fx:id="data" layoutX="22.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text fx:id="prezzo" layoutX="299.0" layoutY="202.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+   </Pane>
 </VBox>

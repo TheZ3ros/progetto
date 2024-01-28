@@ -35,7 +35,7 @@ public class ViaggioController {
             data.setText(bean.getData_and() +"-" + bean.getData_rit());
             prezzo.setText(String.valueOf(bean.getPrice()));
         //    posti.setText("posti disponibili:" + bean.getPlaces());
-          //  prenota.setText("prenota");
+        //  prenota.setText("prenota");
         }
 
 
