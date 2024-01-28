@@ -32,11 +32,10 @@ public class ViaggioController {
 
         imagine.setImage(new Image(Objects.requireNonNull(getClass().getResource(bean.image())).toExternalForm()));
             title.setText(bean.getCity());
-            data.setText("dal " + bean.getData_and() + "al " + bean.getData_rit());
-            prezzo.setText("prezzo totale:" + bean.getPrice());
-            posti.setText("posti disponibili:" + bean.getPlaces());
-            prenota.setText("prenota");
-            //VBox viaggioVbox = new VBox(title, imagine, data,prezzo,posti,prenota);
+            data.setText(bean.getData_and() +"-" + bean.getData_rit());
+            prezzo.setText(String.valueOf(bean.getPrice()));
+        //    posti.setText("posti disponibili:" + bean.getPlaces());
+          //  prenota.setText("prenota");
         }
 
 
