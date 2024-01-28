@@ -1,5 +1,6 @@
 package com.example.progetto.DAO;
 
+
 import java.sql.SQLException;
 
 public interface GenericDAO<P> {

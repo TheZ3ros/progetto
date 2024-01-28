@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="abd72b32-f6c1-4b42-a1d9-4297dd975b52" name="Changes" comment="Login agenzia finita" />
+    <list default="true" id="abd72b32-f6c1-4b42-a1d9-4297dd975b52" name="Changes" comment="parte di login agenzia fatta">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/AgencyHomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/AgencyHomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/progetto/agency_home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/progetto/agency_home.fxml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -119,7 +124,7 @@
       <workItem from="1706171252488" duration="503000" />
       <workItem from="1706171777746" duration="8142000" />
       <workItem from="1706271656075" duration="8055000" />
-      <workItem from="1706290055772" duration="6106000" />
+      <workItem from="1706290055772" duration="5951000" />
     </task>
     <task id="LOCAL-00001" summary="Prova">
       <option name="closed" value="true" />
@@ -249,15 +254,7 @@
       <option name="project" value="LOCAL" />
       <updated>1706294417709</updated>
     </task>
-    <task id="LOCAL-00017" summary="Login agenzia finita">
-      <option name="closed" value="true" />
-      <created>1706296159476</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1706296159476</updated>
-    </task>
-    <option name="localTasksCounter" value="18" />
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -284,8 +281,7 @@
     <MESSAGE value="aggiunta schermata userlogin" />
     <MESSAGE value="fix caricamento pagine" />
     <MESSAGE value="parte di login agenzia fatta" />
-    <MESSAGE value="Login agenzia finita" />
-    <option name="LAST_COMMIT_MESSAGE" value="Login agenzia finita" />
+    <option name="LAST_COMMIT_MESSAGE" value="parte di login agenzia fatta" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

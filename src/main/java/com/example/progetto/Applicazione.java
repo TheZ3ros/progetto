@@ -32,7 +32,6 @@ public class Applicazione extends Application {
         HomeController homeController = homeLoader.getController();
         homeController.setMain(this);
 
-
         stage.show();
     }
 

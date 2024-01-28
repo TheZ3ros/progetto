@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<VBox prefHeight="176.0" prefWidth="980.0"  stylesheets="@css/sheet.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.progetto.controller_graf.ViaggioController">
+   <children>
+      <HBox prefHeight="100.0" prefWidth="200.0"  stylesheets="@css/sheet.css">
+         <children>
+            <Text fx:id="title" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+            <Pane prefHeight="150.0" prefWidth="141.0" />
+            <ImageView fx:id="imagine" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+            <Text fx:id="prezzo" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+         </children>
+      </HBox>
+      <HBox prefHeight="100.0" prefWidth="200.0" >
+         <children>
+            <Text fx:id="data" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+            <Pane prefHeight="200.0" prefWidth="200.0" />
+            <Text fx:id="posti" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+            <Button fx:id="prenota" mnemonicParsing="false" text="Button" />
+         </children>
+      </HBox>
+   </children>
+</VBox>
