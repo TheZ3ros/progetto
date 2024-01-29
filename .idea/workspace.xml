@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="abd72b32-f6c1-4b42-a1d9-4297dd975b52" name="Changes" comment="">
+    <list default="true" id="abd72b32-f6c1-4b42-a1d9-4297dd975b52" name="Changes" comment="parte di login agenzia fatta">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/progetto/viaggio.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/progetto/viaggio.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/AgencyHomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/AgencyHomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/progetto/agency_home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/progetto/agency_home.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +50,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Proprietario/Desktop/java/progetto1&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Proprietario/Desktop/java/progetto1/src/main/resources/com/example/progetto&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -122,12 +124,7 @@
       <workItem from="1706171252488" duration="503000" />
       <workItem from="1706171777746" duration="8142000" />
       <workItem from="1706271656075" duration="8055000" />
-      <workItem from="1706290055772" duration="4337000" />
-      <workItem from="1706350543135" duration="10253000" />
-      <workItem from="1706361971529" duration="54000" />
-      <workItem from="1706380927444" duration="217000" />
-      <workItem from="1706382019283" duration="72000" />
-      <workItem from="1706386528195" duration="6508000" />
+      <workItem from="1706290055772" duration="5951000" />
     </task>
     <task id="LOCAL-00001" summary="Prova">
       <option name="closed" value="true" />
@@ -249,23 +246,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706287371044</updated>
     </task>
-    <task id="LOCAL-00016" summary="caricamento viaggio(non funziona)">
+    <task id="LOCAL-00016" summary="parte di login agenzia fatta">
       <option name="closed" value="true" />
-      <created>1706361819454</created>
+      <created>1706294417709</created>
       <option name="number" value="00016" />
       <option name="presentableId" value="LOCAL-00016" />
       <option name="project" value="LOCAL" />
-      <updated>1706361819454</updated>
+      <updated>1706294417709</updated>
     </task>
-    <task id="LOCAL-00017" summary="caricamento viaggio(quasi funziona)">
-      <option name="closed" value="true" />
-      <created>1706392442949</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1706392442949</updated>
-    </task>
-    <option name="localTasksCounter" value="18" />
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -291,9 +280,8 @@
     <MESSAGE value="Bottoni schermata Accedi" />
     <MESSAGE value="aggiunta schermata userlogin" />
     <MESSAGE value="fix caricamento pagine" />
-    <MESSAGE value="caricamento viaggio(non funziona)" />
-    <MESSAGE value="caricamento viaggio(quasi funziona)" />
-    <option name="LAST_COMMIT_MESSAGE" value="caricamento viaggio(quasi funziona)" />
+    <MESSAGE value="parte di login agenzia fatta" />
+    <option name="LAST_COMMIT_MESSAGE" value="parte di login agenzia fatta" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
