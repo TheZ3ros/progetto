@@ -1,0 +1,257 @@
+Index: src/main/java/com/example/progetto/Applicazione.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.progetto;\r\n\r\nimport com.example.progetto.controller_graf.HomeController;\r\nimport com.example.progetto.controller_graf.LoginController;\r\nimport com.example.progetto.controller_graf.UserHomeController;\r\nimport com.example.progetto.controller_graf.ViewTripController;\r\nimport javafx.application.Application;\r\nimport javafx.fxml.FXMLLoader;\r\nimport javafx.scene.Parent;\r\nimport javafx.scene.Scene;\r\nimport javafx.stage.Stage;\r\nimport com.example.progetto.bean.UserBean;\r\npublic class Applicazione extends Application {\r\n\r\n    private Stage stage;\r\n    private Scene homeScene;\r\n    private Scene ViewTripScene;\r\n    private ViewTripController viewtrip;\r\n    private UserHomeController userhome;\r\n    public static void main(String[] args) {\r\n\r\n        launch(args);\r\n    }\r\n\r\n    @Override\r\n    public void start(Stage stage) throws Exception {\r\n        this.stage = stage;\r\n\r\n        //carico la home\r\n        FXMLLoader homeLoader = new FXMLLoader(Applicazione.class.getResource(\"home.fxml\"));\r\n        Parent homeRoot = homeLoader.load();\r\n        homeScene = new Scene(homeRoot);\r\n\r\n\r\n        FXMLLoader ViewTripLoader = new FXMLLoader(Applicazione.class.getResource(\"view_trip.fxml\"));\r\n        Parent ViewTripRoot = ViewTripLoader.load();\r\n        ViewTripScene = new Scene(ViewTripRoot);\r\n\r\n        stage.setScene(homeScene);\r\n        stage.setTitle(\"Home!\");\r\n\r\n        //mi prendo il controller della schermata Home\r\n        HomeController homeController = homeLoader.getController();\r\n        homeController.setMain(this);\r\n\r\n\r\n        viewtrip = ViewTripLoader.getController();\r\n\r\n        viewtrip.setMain(this);\r\n\r\n\r\n        stage.show();\r\n    }\r\n\r\n    public void vai_a_Home(){\r\n        stage.setScene(homeScene);\r\n        stage.setTitle(\"Home\");\r\n    }\r\n\r\n\r\n\r\npublic Stage getStage(){\r\n        return stage;\r\n}\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/progetto/Applicazione.java b/src/main/java/com/example/progetto/Applicazione.java
+--- a/src/main/java/com/example/progetto/Applicazione.java	(revision 417c02c8c8b24e51afe7121604fbfefb5bc1cbdf)
++++ b/src/main/java/com/example/progetto/Applicazione.java	(date 1706289957279)
+@@ -32,7 +32,7 @@
+         homeScene = new Scene(homeRoot);
+ 
+ 
+-        FXMLLoader ViewTripLoader = new FXMLLoader(Applicazione.class.getResource("view_trip.fxml"));
++        -FXMLLoader ViewTripLoader = new FXMLLoader(Applicazione.class.getResource("view_trip.fxml"));
+         Parent ViewTripRoot = ViewTripLoader.load();
+         ViewTripScene = new Scene(ViewTripRoot);
+ 
+Index: src/main/resources/com/example/progetto/css/sheet.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>/* styles.css */\r\n/*\r\n@font-face {\r\n    font-family: 'just';\r\n    src: url('fonts/JustMeAgainDownHere-Regular.ttf');\r\n}\r\n*/\r\n\r\n\r\n.background {\r\n    -fx-background-color: linear-gradient(to bottom, #ffffff, #d1cfcf, #828282, #5c5a5a, #000000);\r\n}\r\n\r\n.bottoni_barra {\r\n    -fx-background-insets: 0, 0, 1, 2;\r\n    -fx-background-radius: 50;\r\n    -fx-padding: 3 6 4 6;\r\n    -fx-background-color: transparent;\r\n    -fx-text-fill: #9700ae;\r\n    -fx-font-family: garamond;\r\n    -fx-font-size: 16px;\r\n    -fx-pref-height: 30px;\r\n    -fx-pref-width: 60px;\r\n    -fx-cursor: hand;\r\n\r\n}\r\n.sfondo_bottoni {\r\n    -fx-background-insets: 0, 0, 1, 2;\r\n    -fx-background-radius: 5;\r\n    -fx-padding: 3 6 4 6;\r\n    -fx-background-color: #9700ae;\r\n    -fx-text-fill: #000000;\r\n    -fx-font-family: garamond;\r\n    -fx-font-size: 16px;\r\n    -fx-pref-height: 30px;\r\n    -fx-pref-width: 60px;\r\n    -fx-cursor: hand; /* Cambia hand con il tipo di cursore desiderato */\r\n\r\n}\r\n.registra {\r\n    -fx-background-insets: 0, 0, 1, 2;\r\n    -fx-background-radius: 50;\r\n    -fx-padding: 3 6 4 6;\r\n    -fx-background-color: transparent;\r\n    -fx-text-fill: #9700ae;\r\n    -fx-font-family: garamond;\r\n    -fx-font-size: 16px;\r\n    -fx-pref-height: 30px;\r\n    -fx-pref-width: 75px;\r\n    -fx-cursor: hand; /* Cambia hand con il tipo di cursore desiderato */\r\n\r\n}\r\n.mondo {\r\n   -fx-background-image: url('immagini/planisfero.png');\r\n    -fx-background-repeat: no-repeat;\r\n    -fx-background-size:contain,cover;\r\n}\r\n\r\n.colortext {\r\n    -fx-font-size: 50px;\r\n    -fx-fill: linear-gradient(to right, #da0000, #7b0bea, #0022a4);\r\n}\r\n\r\n.bottoni_accedi {\r\n    -fx-pref-height: 80px;\r\n    -fx-pref-width: 300px;\r\n    -fx-background-color: transparent;\r\n    -fx-font-family: Garamond;\r\n    -fx-font-size: 30;\r\n    -fx-font-weight: bold;\r\n}\r\n\r\n.bottoni_accedi_veri {\r\n    -fx-pref-width: 130px;\r\n    -fx-font-weight: bold;\r\n}\r\n\r\n.bottoni_itinerario {\r\n    -fx-font-family: 'allura';\r\n    -fx-background-color: linear-gradient(to right, #cf29ee, #a341ff, #819af5);\r\n    -fx-pref-width: 320px;\r\n    -fx-font-weight: bold;\r\n}\r\n\r\n.prova{\r\n    -fx-background-color: linear-gradient(to right, #cf29ee, #a341ff, #819af5);\r\n\r\n\r\n}\r\n/*\r\n.btn-grad {\r\n    -fx-background-color: linear-gradient(to right, #16A085 0%, #F4D03F 51%, #16A085 100%);\r\n    -fx-margin: 10px;\r\n    -fx-padding: 15px 45px;\r\n    -fx-text-align: center;\r\n    -fx-text-transform: uppercase;\r\n    -fx-transition: 0.5s;\r\n    -fx-background-size: 200% auto;\r\n    -fx-text-fill: white;\r\n    -fx-effect: dropshadow(gaussian, #eee, 0, 0, 0, 20);\r\n    -fx-border-radius: 10px;\r\n    -fx-display: block;\r\n}\r\n*/\r\n\r\n\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/com/example/progetto/css/sheet.css b/src/main/resources/com/example/progetto/css/sheet.css
+--- a/src/main/resources/com/example/progetto/css/sheet.css	(revision 417c02c8c8b24e51afe7121604fbfefb5bc1cbdf)
++++ b/src/main/resources/com/example/progetto/css/sheet.css	(date 1706289122060)
+@@ -8,7 +8,8 @@
+ 
+ 
+ .background {
+-    -fx-background-color: linear-gradient(to bottom, #ffffff, #d1cfcf, #828282, #5c5a5a, #000000);
++    /*-fx-background-color: linear-gradient(to bottom, #ffffff, #d1cfcf, #828282, #5c5a5a, #000000);*/
++    -fx-background-color: linear-gradient(to bottom, #ffffff, #22c1c3, #fdbb2d);
+ }
+ 
+ .bottoni_barra {
+@@ -85,7 +86,6 @@
+ .prova{
+     -fx-background-color: linear-gradient(to right, #cf29ee, #a341ff, #819af5);
+ 
+-
+ }
+ /*
+ .btn-grad {
+Index: src/main/java/com/example/progetto/DAO/AgencyDAO.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/progetto/DAO/AgencyDAO.java b/src/main/java/com/example/progetto/DAO/AgencyDAO.java
+new file mode 100644
+--- /dev/null	(date 1706289122071)
++++ b/src/main/java/com/example/progetto/DAO/AgencyDAO.java	(date 1706289122071)
+@@ -0,0 +1,4 @@
++package com.example.progetto.DAO;
++
++public class AgencyDAO {
++}
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"abd72b32-f6c1-4b42-a1d9-4297dd975b52\" name=\"Changes\" comment=\"\">\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/HomeController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/HomeController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/LoginController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/LoginController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/UserHomeController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/UserHomeController.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Interface\" />\r\n        <option value=\"FxmlFile\" />\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Merge.Settings\">\r\n    <option name=\"BRANCH\" value=\"origin/master\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"ProblemsViewState\">\r\n    <option name=\"selectedTabId\" value=\"CurrentFile\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 4\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2aXqTO3uGcdcE17v7LMnBp8HU9f\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\r\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;master&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;C:/Users/Proprietario/Desktop/java/progetto1/src/main/resources/com/example/progetto&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,\r\n    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,\r\n    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,\r\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\r\n  },\r\n  &quot;keyToStringList&quot;: {\r\n    &quot;ChangesTree.GroupingKeys&quot;: [\r\n    ],\r\n    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [\r\n      &quot;CSS&quot;\r\n    ]\r\n  }\r\n}</component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\Proprietario\\Desktop\\java\\progetto1\\src\\main\\resources\\com\\example\\progetto\" />\r\n      <recent name=\"C:\\Users\\Proprietario\\Desktop\\java\\progetto1\\src\\main\\resources\\com\\example\\progetto\\css\" />\r\n    </key>\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\Proprietario\\Desktop\\java\\progetto1\\src\\main\\resources\\com\\example\\progetto\" />\r\n      <recent name=\"C:\\Users\\AsD\\IdeaProjects\\ipsw\\src\\main\\resources\\com\\example\\progetto\\css\" />\r\n      <recent name=\"C:\\Users\\AsD\\IdeaProjects\\ipsw\\src\\main\\resources\\com\\example\\progetto\\fonts\" />\r\n      <recent name=\"C:\\Users\\Proprietario\\Desktop\\java\\progetto1\\src\\main\\resources\\com\\example\\progetto\\css\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"Applicazione\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"com.example.progetto.Applicazione\" />\r\n      <module name=\"progetto\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"com.example.progetto.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.Applicazione\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"abd72b32-f6c1-4b42-a1d9-4297dd975b52\" name=\"Changes\" comment=\"\" />\r\n      <created>1704471341766</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1704471341766</updated>\r\n      <workItem from=\"1704471342829\" duration=\"4000\" />\r\n      <workItem from=\"1704475280167\" duration=\"377000\" />\r\n      <workItem from=\"1704559869654\" duration=\"5096000\" />\r\n      <workItem from=\"1704566890184\" duration=\"1351000\" />\r\n      <workItem from=\"1704626869016\" duration=\"12038000\" />\r\n      <workItem from=\"1705594583490\" duration=\"10001000\" />\r\n      <workItem from=\"1705746277087\" duration=\"4513000\" />\r\n      <workItem from=\"1705773273353\" duration=\"3722000\" />\r\n      <workItem from=\"1705853629692\" duration=\"165000\" />\r\n      <workItem from=\"1705853806948\" duration=\"1014000\" />\r\n      <workItem from=\"1705935419406\" duration=\"5912000\" />\r\n      <workItem from=\"1706005870260\" duration=\"134000\" />\r\n      <workItem from=\"1706008351999\" duration=\"24225000\" />\r\n      <workItem from=\"1706171252488\" duration=\"503000\" />\r\n      <workItem from=\"1706171777746\" duration=\"8142000\" />\r\n      <workItem from=\"1706271656075\" duration=\"8055000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Prova\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1704475404826</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1704475404826</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"Prova\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1704475434816</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1704475434816</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"sonar\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1704477027057</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1704477027057</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"home\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1704567599335</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1704567599335</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"home\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1704640109679</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1704640109680</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"login\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1705512008451</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1705512008451</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"Aggiunta della schermata di login e del suo controller. Implementata la possibilità di andare dalla schermata di Home a quella di Login e viceversa\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1705609101384</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1705609101384</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00008\" summary=\"Aggiunta della schermata di login e del suo controller. Implementata la possibilità di andare dalla schermata di Home a quella di Login e viceversa\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1705609170017</created>\r\n      <option name=\"number\" value=\"00008\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1705609170017</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00009\" summary=\"Bottoni schermata Accedi\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1705935530160</created>\r\n      <option name=\"number\" value=\"00009\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1705935530160</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00010\" summary=\"Bottoni schermata Accedi\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1706096730347</created>\r\n      <option name=\"number\" value=\"00010\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00010\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1706096730347</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00011\" summary=\"Bottoni schermata Accedi\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1706119249065</created>\r\n      <option name=\"number\" value=\"00011\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00011\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1706119249065</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00012\" summary=\"Bottoni schermata Accedi\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1706122041598</created>\r\n      <option name=\"number\" value=\"00012\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00012\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1706122041599</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00013\" summary=\"aggiunta schermata userlogin\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1706265372057</created>\r\n      <option name=\"number\" value=\"00013\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00013\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1706265372057</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00014\" summary=\"aggiunta schermata userlogin\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1706271110952</created>\r\n      <option name=\"number\" value=\"00014\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00014\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1706271110952</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00015\" summary=\"fix caricamento pagine\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1706287371044</created>\r\n      <option name=\"number\" value=\"00015\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00015\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1706287371044</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"16\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"Prova\" />\r\n    <MESSAGE value=\"sonar\" />\r\n    <MESSAGE value=\"home\" />\r\n    <MESSAGE value=\"login\" />\r\n    <MESSAGE value=\"Aggiunta della schermata di login e del suo controller. Implementata la possibilità di andare dalla schermata di Home a quella di Login e viceversa\" />\r\n    <MESSAGE value=\"Bottoni schermata Accedi\" />\r\n    <MESSAGE value=\"aggiunta schermata userlogin\" />\r\n    <MESSAGE value=\"fix caricamento pagine\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"fix caricamento pagine\" />\r\n  </component>\r\n  <component name=\"XDebuggerManager\">\r\n    <breakpoint-manager>\r\n      <breakpoints>\r\n        <breakpoint type=\"java-exception\">\r\n          <properties class=\"java.lang.reflect.InvocationTargetException\" package=\"java.lang.reflect\" />\r\n          <option name=\"timeStamp\" value=\"1\" />\r\n        </breakpoint>\r\n        <breakpoint type=\"java-exception\">\r\n          <properties class=\"java.lang.RuntimeException\" package=\"java.lang\" />\r\n          <option name=\"timeStamp\" value=\"3\" />\r\n        </breakpoint>\r\n      </breakpoints>\r\n    </breakpoint-manager>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 417c02c8c8b24e51afe7121604fbfefb5bc1cbdf)
++++ b/.idea/workspace.xml	(date 1706289957378)
+@@ -4,10 +4,11 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="abd72b32-f6c1-4b42-a1d9-4297dd975b52" name="Changes" comment="">
+-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/HomeController.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/LoginController.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/UserHomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/UserHomeController.java" afterDir="false" />
++    <list default="true" id="abd72b32-f6c1-4b42-a1d9-4297dd975b52" name="Changes" comment="lavori grafici e aggiunta di agency_home.fxml">
++      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/DAO/AgencyDAO.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/Applicazione.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/Applicazione.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/progetto/css/sheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/progetto/css/sheet.css" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -18,13 +19,10 @@
+     <option name="RECENT_TEMPLATES">
+       <list>
+         <option value="Interface" />
+-        <option value="FxmlFile" />
+         <option value="Class" />
++        <option value="FxmlFile" />
+       </list>
+     </option>
+-  </component>
+-  <component name="Git.Merge.Settings">
+-    <option name="BRANCH" value="origin/master" />
+   </component>
+   <component name="Git.Settings">
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+@@ -53,7 +51,7 @@
+     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
++    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+@@ -72,32 +70,12 @@
+       <recent name="C:\Users\Proprietario\Desktop\java\progetto1\src\main\resources\com\example\progetto\css" />
+     </key>
+     <key name="MoveFile.RECENT_KEYS">
+-      <recent name="C:\Users\Proprietario\Desktop\java\progetto1\src\main\resources\com\example\progetto" />
+       <recent name="C:\Users\AsD\IdeaProjects\ipsw\src\main\resources\com\example\progetto\css" />
+       <recent name="C:\Users\AsD\IdeaProjects\ipsw\src\main\resources\com\example\progetto\fonts" />
+       <recent name="C:\Users\Proprietario\Desktop\java\progetto1\src\main\resources\com\example\progetto\css" />
++      <recent name="C:\Users\Proprietario\Desktop\java\progetto1\src\main\resources\com\example\progetto" />
+     </key>
+   </component>
+-  <component name="RunManager">
+-    <configuration name="Applicazione" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+-      <option name="MAIN_CLASS_NAME" value="com.example.progetto.Applicazione" />
+-      <module name="progetto" />
+-      <extension name="coverage">
+-        <pattern>
+-          <option name="PATTERN" value="com.example.progetto.*" />
+-          <option name="ENABLED" value="true" />
+-        </pattern>
+-      </extension>
+-      <method v="2">
+-        <option name="Make" enabled="true" />
+-      </method>
+-    </configuration>
+-    <recent_temporary>
+-      <list>
+-        <item itemvalue="Application.Applicazione" />
+-      </list>
+-    </recent_temporary>
+-  </component>
+   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="TaskManager">
+     <task active="true" id="Default" summary="Default task">
+@@ -119,9 +97,6 @@
+       <workItem from="1705935419406" duration="5912000" />
+       <workItem from="1706005870260" duration="134000" />
+       <workItem from="1706008351999" duration="24225000" />
+-      <workItem from="1706171252488" duration="503000" />
+-      <workItem from="1706171777746" duration="8142000" />
+-      <workItem from="1706271656075" duration="8055000" />
+     </task>
+     <task id="LOCAL-00001" summary="Prova">
+       <option name="closed" value="true" />
+@@ -195,71 +170,52 @@
+       <option name="project" value="LOCAL" />
+       <updated>1705935530160</updated>
+     </task>
+-    <task id="LOCAL-00010" summary="Bottoni schermata Accedi">
++    <task id="LOCAL-00010" summary="prova commento ale">
+       <option name="closed" value="true" />
+-      <created>1706096730347</created>
++      <created>1706096844703</created>
+       <option name="number" value="00010" />
+       <option name="presentableId" value="LOCAL-00010" />
+       <option name="project" value="LOCAL" />
+-      <updated>1706096730347</updated>
++      <updated>1706096844703</updated>
+     </task>
+-    <task id="LOCAL-00011" summary="Bottoni schermata Accedi">
++    <task id="LOCAL-00011" summary="prova commento ale">
+       <option name="closed" value="true" />
+-      <created>1706119249065</created>
++      <created>1706096861057</created>
+       <option name="number" value="00011" />
+       <option name="presentableId" value="LOCAL-00011" />
+       <option name="project" value="LOCAL" />
+-      <updated>1706119249065</updated>
++      <updated>1706096861057</updated>
+     </task>
+-    <task id="LOCAL-00012" summary="Bottoni schermata Accedi">
++    <task id="LOCAL-00012" summary="prova commento ale">
+       <option name="closed" value="true" />
+-      <created>1706122041598</created>
++      <created>1706096892490</created>
+       <option name="number" value="00012" />
+       <option name="presentableId" value="LOCAL-00012" />
+       <option name="project" value="LOCAL" />
+-      <updated>1706122041599</updated>
++      <updated>1706096892490</updated>
+     </task>
+-    <task id="LOCAL-00013" summary="aggiunta schermata userlogin">
++    <task id="LOCAL-00013" summary="prova commento ale">
+       <option name="closed" value="true" />
+-      <created>1706265372057</created>
++      <created>1706096959946</created>
+       <option name="number" value="00013" />
+       <option name="presentableId" value="LOCAL-00013" />
+       <option name="project" value="LOCAL" />
+-      <updated>1706265372057</updated>
++      <updated>1706096959946</updated>
+     </task>
+-    <task id="LOCAL-00014" summary="aggiunta schermata userlogin">
++    <task id="LOCAL-00014" summary="lavori grafici e aggiunta di agency_home.fxml">
+       <option name="closed" value="true" />
+-      <created>1706271110952</created>
++      <created>1706119041662</created>
+       <option name="number" value="00014" />
+       <option name="presentableId" value="LOCAL-00014" />
+       <option name="project" value="LOCAL" />
+-      <updated>1706271110952</updated>
+-    </task>
+-    <task id="LOCAL-00015" summary="fix caricamento pagine">
+-      <option name="closed" value="true" />
+-      <created>1706287371044</created>
+-      <option name="number" value="00015" />
+-      <option name="presentableId" value="LOCAL-00015" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1706287371044</updated>
++      <updated>1706119041662</updated>
+     </task>
+-    <option name="localTasksCounter" value="16" />
++    <option name="localTasksCounter" value="15" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+     <option name="version" value="3" />
+   </component>
+-  <component name="Vcs.Log.Tabs.Properties">
+-    <option name="TAB_STATES">
+-      <map>
+-        <entry key="MAIN">
+-          <value>
+-            <State />
+-          </value>
+-        </entry>
+-      </map>
+-    </option>
+-  </component>
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="Prova" />
+     <MESSAGE value="sonar" />
+@@ -267,9 +223,10 @@
+     <MESSAGE value="login" />
+     <MESSAGE value="Aggiunta della schermata di login e del suo controller. Implementata la possibilità di andare dalla schermata di Home a quella di Login e viceversa" />
+     <MESSAGE value="Bottoni schermata Accedi" />
+-    <MESSAGE value="aggiunta schermata userlogin" />
+-    <MESSAGE value="fix caricamento pagine" />
+-    <option name="LAST_COMMIT_MESSAGE" value="fix caricamento pagine" />
++    <MESSAGE value="Merge remote-tracking branch 'origin/master'" />
++    <MESSAGE value="prova commento ale" />
++    <MESSAGE value="lavori grafici e aggiunta di agency_home.fxml" />
++    <option name="LAST_COMMIT_MESSAGE" value="lavori grafici e aggiunta di agency_home.fxml" />
+   </component>
+   <component name="XDebuggerManager">
+     <breakpoint-manager>
