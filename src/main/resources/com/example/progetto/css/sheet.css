@@ -7,6 +7,11 @@
 .fontnuovo {
     -fx-font-family: 'Just Me Again Down Here';
 }
+
+.schermata_viaggio{
+    -fx-font-family: 'Just Me Again Down Here';
+    -fx-font-size: 30px;
+}
 .background {
     /*-fx-background-color: linear-gradient(to bottom, #ffffff, #d1cfcf, #828282, #5c5a5a, #000000);*/
     -fx-background-color: linear-gradient(to bottom, #ffffff, #22c1c3, #fdbb2d);

@@ -9,6 +9,7 @@ import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 public class UserHomeController {
     @FXML
@@ -38,16 +39,18 @@ public class UserHomeController {
     }
 
     @FXML
-    private void view_trip() throws IOException {
+    private void view_trip() throws IOException, SQLException {
 
         FXMLLoader ViewTripLoader = new FXMLLoader(Applicazione.class.getResource("view_trip.fxml"));
         Parent ViewTripRoot = ViewTripLoader.load();
         Scene viewTripScene = new Scene(ViewTripRoot);
         ViewTripController viewtrip = ViewTripLoader.getController();
+        viewtrip.setMain(main);
         viewtrip.setUser(currentUser);
         Stage stage = main.getStage();
         stage.setScene(viewTripScene);
         viewtrip.setButtonText();
+        viewtrip.charge();
         stage.setTitle("Ricerca");
 
     }
