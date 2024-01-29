@@ -50,11 +50,14 @@
       </HBox>
    </bottom>
    <center>
-      <ListView fx:id="listaview" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-         <styleClass>
-            <String fx:value="background" />
-            <String fx:value="mondo" />
-         </styleClass>
-      </ListView>
+      <Pane prefHeight="200.0" prefWidth="200.0" styleClass="background" BorderPane.alignment="CENTER">
+         <children>
+            <ListView fx:id="listaview" prefHeight="522.0" prefWidth="436.0">
+               <styleClass>
+                  <String fx:value="list-view" />
+                  <String fx:value="list-cell" />
+               </styleClass></ListView>
+         </children>
+      </Pane>
    </center>
 </BorderPane>

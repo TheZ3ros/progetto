@@ -6,7 +6,6 @@ import com.example.progetto.bean.UserBean;
 import com.example.progetto.controller_app.BookTripController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.VBox;
@@ -49,11 +48,13 @@ public class ViewTripController {
 
         // Crea un VBox per ciascun elemento nella lista e aggiungilo alla ListView
         for (TripBean viaggio : viaggi) {
-            FXMLLoader viaggioLoader = new FXMLLoader(Applicazione.class.getResource("viaggio.fxml"));
-            VBox box=viaggioLoader.load();
-            ViaggioController controller = viaggioLoader.getController();
-            controller.createbox(viaggio);
-            listaview.getItems().add(box);
+             FXMLLoader viaggioLoader = new FXMLLoader(Applicazione.class.getResource("viaggio.fxml"));
+             VBox box=viaggioLoader.load();
+             ViaggioController controller = viaggioLoader.getController();
+             controller.createbox(viaggio);
+             listaview.getItems().add(box);
         }
+
     }
+
 }
