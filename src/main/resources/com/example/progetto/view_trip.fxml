@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ListView?>
@@ -51,7 +52,11 @@
    <center>
       <Pane prefHeight="200.0" prefWidth="200.0" styleClass="background" BorderPane.alignment="CENTER">
          <children>
-            <ListView fx:id="listaview" prefHeight="522.0" prefWidth="436.0" style="-fx-background-color: black;" />
+            <ListView fx:id="listaview" prefHeight="522.0" prefWidth="436.0">
+               <styleClass>
+                  <String fx:value="list-view" />
+                  <String fx:value="list-cell" />
+               </styleClass></ListView>
          </children>
       </Pane>
    </center>

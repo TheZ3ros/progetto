@@ -4,12 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="abd72b32-f6c1-4b42-a1d9-4297dd975b52" name="Changes" comment="caricamento viaggio(quasi funziona)">
+    <list default="true" id="abd72b32-f6c1-4b42-a1d9-4297dd975b52" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/ViaggioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/ViaggioController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/ViewTripController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/ViewTripController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/progetto/css/fonts/JustMeAgainDownHere-Regular.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/progetto/css/JustMeAgainDownHere-Regular.ttf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/progetto/css/sheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/progetto/css/sheet.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/progetto/home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/progetto/home.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/progetto/home_login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/progetto/home_login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/progetto/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/progetto/login.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/progetto/viaggio.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/progetto/viaggio.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/progetto/view_trip.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/progetto/view_trip.fxml" afterDir="false" />
     </list>
@@ -77,10 +80,10 @@
       <recent name="C:\Users\Proprietario\Desktop\java\progetto1\src\main\resources\com\example\progetto\css" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Proprietario\Desktop\java\progetto1\src\main\resources\com\example\progetto\css" />
       <recent name="C:\Users\Proprietario\Desktop\java\progetto1\src\main\resources\com\example\progetto" />
       <recent name="C:\Users\AsD\IdeaProjects\ipsw\src\main\resources\com\example\progetto\css" />
       <recent name="C:\Users\AsD\IdeaProjects\ipsw\src\main\resources\com\example\progetto\fonts" />
-      <recent name="C:\Users\Proprietario\Desktop\java\progetto1\src\main\resources\com\example\progetto\css" />
     </key>
   </component>
   <component name="RunManager">
@@ -134,7 +137,9 @@
       <workItem from="1706382019283" duration="72000" />
       <workItem from="1706386528195" duration="6508000" />
       <workItem from="1706435964622" duration="1663000" />
-      <workItem from="1706437771924" duration="5634000" />
+      <workItem from="1706437771924" duration="5641000" />
+      <workItem from="1706480896646" duration="3000" />
+      <workItem from="1706519692137" duration="8060000" />
     </task>
     <task id="LOCAL-00001" summary="Prova">
       <option name="closed" value="true" />
@@ -272,7 +277,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706392442949</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="caricamento viaggio(quasi funziona)">
+      <option name="closed" value="true" />
+      <created>1706480147492</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1706480147492</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

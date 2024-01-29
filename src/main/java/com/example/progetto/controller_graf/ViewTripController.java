@@ -48,11 +48,13 @@ public class ViewTripController {
 
         // Crea un VBox per ciascun elemento nella lista e aggiungilo alla ListView
         for (TripBean viaggio : viaggi) {
-            FXMLLoader viaggioLoader = new FXMLLoader(Applicazione.class.getResource("viaggio.fxml"));
-            VBox box=viaggioLoader.load();
-            ViaggioController controller = viaggioLoader.getController();
-            controller.createbox(viaggio);
-            listaview.getItems().add(box);
+             FXMLLoader viaggioLoader = new FXMLLoader(Applicazione.class.getResource("viaggio.fxml"));
+             VBox box=viaggioLoader.load();
+             ViaggioController controller = viaggioLoader.getController();
+             controller.createbox(viaggio);
+             listaview.getItems().add(box);
         }
+
     }
+
 }
