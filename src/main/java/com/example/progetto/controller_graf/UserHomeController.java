@@ -31,11 +31,13 @@ public class UserHomeController {
 
         this.main = main;
     }
+
     @FXML
     private void vai_a_Home(){
 
         main.vai_a_Home();
     }
+
     @FXML
     private void view_trip() throws IOException, SQLException {
 

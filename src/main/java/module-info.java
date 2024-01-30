@@ -5,6 +5,7 @@ module com.example.progetto {
     requires org.kordamp.bootstrapfx.core;
     requires com.almasb.fxgl.all;
     requires java.sql;
+    requires java.desktop;
 
     opens com.example.progetto to javafx.fxml;
     exports com.example.progetto;

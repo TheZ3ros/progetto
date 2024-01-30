@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1000.0" styleClass="background" stylesheets="@css/sheet.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.progetto.controller_graf.ViewTripCreationController">
+    <top>
+        <HBox alignment="TOP_RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="1000.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+            <ImageView fitHeight="40.0" fitWidth="86.0" preserveRatio="true">
+                <Image url="@css/immagini/infinito.png" />
+            </ImageView>
+            <Pane prefHeight="47.0" prefWidth="473.0" style="-fx-background-color: white;" stylesheets="@css/sheet.css" HBox.hgrow="ALWAYS" />
+            <Button fx:id="Home" alignment="TOP_LEFT" mnemonicParsing="false" onAction="#vai_a_Home" styleClass="bottoni_barra" text="Home" HBox.hgrow="ALWAYS">
+                <HBox.margin>
+                    <Insets bottom="10.0" left="3.0" top="10.0" />
+                </HBox.margin>
+            </Button>
+            <Button alignment="CENTER_RIGHT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="62.0" styleClass="bottoni_barra" text="Ricerca" HBox.hgrow="ALWAYS">
+                <HBox.margin>
+                    <Insets bottom="10.0" right="3.0" top="10.0" />
+                </HBox.margin>
+            </Button>
+            <Button alignment="CENTER_RIGHT" layoutX="62.0" layoutY="10.0" mnemonicParsing="false" styleClass="registra" text="Registrati" HBox.hgrow="ALWAYS">
+                <HBox.margin>
+                    <Insets bottom="10.0" left="3.0" right="3.0" top="10.0" />
+                </HBox.margin>
+            </Button>
+            <Button fx:id="agency" alignment="TOP_LEFT" mnemonicParsing="false" styleClass="sfondo_bottoni" HBox.hgrow="ALWAYS">
+                <HBox.margin>
+                    <Insets bottom="10.0" left="3.0" right="3.0" top="10.0" />
+                </HBox.margin>
+            </Button>
+        </HBox>
+    </top>
+    <center>
+        <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+            <Pane prefHeight="432.0" prefWidth="1000.0" styleClass="mondo" VBox.vgrow="ALWAYS">
+            <children>
+               <Label layoutX="337.0" layoutY="-13.0" prefHeight="50.0" prefWidth="327.0" text="Creazione itinerario" textFill="#9700ae">
+                  <font>
+                     <Font name="Allura" size="47.0" />
+                  </font>
+               </Label>
+               <TextField fx:id="nome_città" layoutX="50.0" layoutY="100.0" />
+               <Label layoutX="55.0" layoutY="83.0" text="Inserisci il nome della città" />
+               <Label layoutX="34.0" layoutY="172.0" text="Inserisci i posti massimi disponibili" />
+               <TextField fx:id="disponibili" layoutX="50.0" layoutY="189.0" />
+               <DatePicker fx:id="data_and" layoutX="414.0" layoutY="100.0" />
+               <DatePicker fx:id="data_rit" layoutX="414.0" layoutY="189.0" />
+               <Label layoutX="439.0" layoutY="83.0" text="Inserisci data di andata" />
+               <Label layoutX="439.0" layoutY="172.0" text="Inserisci data di ritorno" />
+               <Label layoutX="770.0" layoutY="83.0" text="Inserisci il prezzo dell'itinerario" />
+               <Label layoutX="753.0" layoutY="172.0" text="Inserisci una copertina per l'itinerario" />
+               <TextField fx:id="prezzo" layoutX="777.0" layoutY="100.0" />
+               <Button layoutX="753.0" layoutY="187.0" mnemonicParsing="false" onAction="#insert_image" prefHeight="29.0" prefWidth="197.0" styleClass="prova" text="Inserisci immagine" />
+               <VBox layoutX="729.0" layoutY="250.0" prefHeight="214.0" prefWidth="234.0">
+                  <children>
+                     <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                  </children>
+               </VBox>
+               <Button layoutX="341.0" layoutY="343.0" mnemonicParsing="false" onAction="#submit" styleClass="bottoni_itinerario" text="Invia i dati">
+                  <font>
+                     <Font size="36.0" />
+                  </font>
+               </Button>
+            </children></Pane>
+        </VBox>
+    </center>
+    <bottom>
+        <HBox prefHeight="81.0" prefWidth="1000.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER">
+            <ImageView fx:id="image_viewer" fitHeight="68.0" fitWidth="162.0">
+                <Image url="@css/immagini/logo.png" />
+                <HBox.margin>
+                    <Insets top="10.0" />
+                </HBox.margin>
+            </ImageView>
+        </HBox>
+    </bottom>
+</BorderPane>

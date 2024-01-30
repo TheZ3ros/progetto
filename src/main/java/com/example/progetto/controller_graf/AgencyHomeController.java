@@ -37,20 +37,18 @@ public class AgencyHomeController {
 
         main.vai_a_Home();
     }
-    /*
+
     @FXML
-    private void view_trip() throws IOException {
-
-        FXMLLoader ViewTripLoader = new FXMLLoader(Applicazione.class.getResource("view_trip.fxml"));
-        Parent ViewTripRoot = ViewTripLoader.load();
-        Scene viewTripScene = new Scene(ViewTripRoot);
-        ViewTripController viewtrip = ViewTripLoader.getController();
-        viewtrip.setUser(currentUser);
+    private void view_trip_creation() throws IOException{
+        FXMLLoader ViewTripCreationLoader = new FXMLLoader(Applicazione.class.getResource("view_trip_creation.fxml"));
+        Parent ViewTripCreationRoot = ViewTripCreationLoader.load();
+        Scene TripCreationScene = new Scene(ViewTripCreationRoot);
+        ViewTripCreationController tripcreation = ViewTripCreationLoader.getController();
+        tripcreation.setMain(main);
+        tripcreation.setUser(currentUser);
         Stage stage = main.getStage();
-        stage.setScene(viewTripScene);
-        viewtrip.setButtonText();
-        stage.setTitle("Ricerca");
-
+        stage.setScene(TripCreationScene);
+        tripcreation.setButtonText();
+        stage.setTitle("Crea itinerario");
     }
-*/
 }
