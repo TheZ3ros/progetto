@@ -5,11 +5,7 @@ public class User {
     private String Username;
     private String password;
 
-    public User(){
-        idUser=0;
-        Username=null;
-        password=null;
-    }
+
     public void setUser(String user){
             Username=user;
     }

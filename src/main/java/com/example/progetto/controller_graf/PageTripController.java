@@ -3,6 +3,7 @@ package com.example.progetto.controller_graf;
 import com.example.progetto.Applicazione;
 import com.example.progetto.bean.TripBean;
 import com.example.progetto.bean.UserBean;
+import com.example.progetto.controller_app.BookTripController;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
@@ -58,6 +59,11 @@ public class PageTripController {
     public void setButtonText() {
 
         nome.setText(userBean.getUsername());
+    }
+
+    @FXML
+    public void Booking() throws SQLException {
+        BookTripController.book_trip(userBean,trip);
     }
 
     }
