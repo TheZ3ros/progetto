@@ -9,14 +9,16 @@ public class TripBean {
     private final Date data_rit;
     private final Float price;
     private final String image;
+    private final int id;
 
-    public TripBean(int places, String city, Date data_and, Date data_rit, Float price, String image){
+    public TripBean(int places, String city, Date data_and, Date data_rit, Float price, String image, int id){
         this.places=places;
         this.city=city;
         this.data_and=data_and;
         this.data_rit=data_rit;
         this.price=price;
         this.image=image;
+        this.id=id;
     }
     public int getPlaces(){
         return places;
@@ -35,6 +37,9 @@ public class TripBean {
     }
     public float getPrice(){
         return price;
+    }
+    public int getId(){
+        return id;
     }
 
 }

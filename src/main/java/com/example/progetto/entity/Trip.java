@@ -1,40 +1,63 @@
 package com.example.progetto.entity;
-import com.example.progetto.DAO.TripDAO;
-
 import java.util.Date;
 
 public class Trip {
-    private final int places;
-    private final String city;
-    private final Date data_and;
-    private final Date data_rit;
-    private final Float price;
-    private final String image;
+    private int places;
+    private  String city;
+    private  Date data_and;
+    private  Date data_rit;
+    private  Float price;
+    private  String image;
+    private int id;
 
-public Trip(int places, String city, Date data_and, Date data_rit, Float price, String image){
-    this.places=places;
-    this.city=city;
-    this.data_and=data_and;
-    this.data_rit=data_rit;
-    this.price=price;
-    this.image=image;
-}
-public int getPlaces(){
-    return places;
-}
-public String getCity(){
-    return city;
-}
-public String image(){
-    return image;
-}
-public Date getData_and(){
-    return data_and;
-}
-public Date getData_rit(){
-    return data_rit;
-}
-public float getPrice(){
-    return price;
-}
+
+    public int getPlaces() {
+        return places;
+    }
+    public int getId() {
+        return id;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public String image() {
+        return image;
+    }
+
+    public Date getData_and() {
+        return data_and;
+    }
+
+    public Date getData_rit() {
+        return data_rit;
+    }
+
+    public float getPrice() {
+        return price;
+    }
+
+    public void setPlaces(int posti) {
+        this.places=posti;
+    }
+    public void setCity(String citta) {
+        this.city=citta;
+    }
+    public void setPrice(float prezzo) {
+        this.price=prezzo;
+    }
+    public void setData_rit(Date data) {
+        this.data_rit=data;
+    }
+    public void setData_and(Date data) {
+        this.data_and=data;
+    }
+    public void setImage(String image) {
+        this.image=image;
+    }
+    public void setId(int id){
+        this.id=id;
+    }
+
 }

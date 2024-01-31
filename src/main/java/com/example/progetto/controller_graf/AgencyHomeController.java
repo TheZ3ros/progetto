@@ -2,7 +2,6 @@ package com.example.progetto.controller_graf;
 
 import com.example.progetto.Applicazione;
 import com.example.progetto.bean.AgencyBean;
-import com.example.progetto.bean.UserBean;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

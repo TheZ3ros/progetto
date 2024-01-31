@@ -20,7 +20,6 @@ public class ViewTripController {
     @FXML
     private ListView listaview;
     private UserBean currentUser;
-    private List<TripBean> viaggi;
 
     public void setUser(UserBean utente) {
 
@@ -44,7 +43,7 @@ public class ViewTripController {
 
     public void charge() throws SQLException, IOException {
         // Carica la lista di viaggi dal database o da qualsiasi altra sorgente
-        viaggi = BookTripController.show_trip();
+        List<TripBean> viaggi = BookTripController.show_trip();
 
         // Crea un VBox per ciascun elemento nella lista e aggiungilo alla ListView
         for (TripBean viaggio : viaggi) {

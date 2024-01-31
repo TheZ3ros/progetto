@@ -4,13 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="abd72b32-f6c1-4b42-a1d9-4297dd975b52" name="Changes" comment="Form creazione itinerario">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/DAO/TripCreationDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/bean/TripCreationBean.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/entity/TripCreation.java" afterDir="false" />
+    <list default="true" id="abd72b32-f6c1-4b42-a1d9-4297dd975b52" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_app/CreateTripController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_app/CreateTripController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/ViewTripCreationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/ViewTripCreationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/ViaggioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/ViaggioController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/ViewTripController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/ViewTripController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/progetto/css/fonts/JustMeAgainDownHere-Regular.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/progetto/css/JustMeAgainDownHere-Regular.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/progetto/css/sheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/progetto/css/sheet.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/progetto/home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/progetto/home.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/progetto/home_login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/progetto/home_login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/progetto/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/progetto/login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/progetto/viaggio.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/progetto/viaggio.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/progetto/view_trip.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/progetto/view_trip.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,8 +140,6 @@
       <workItem from="1706437771924" duration="5641000" />
       <workItem from="1706480896646" duration="3000" />
       <workItem from="1706519692137" duration="8060000" />
-      <workItem from="1706610408697" duration="6678000" />
-      <workItem from="1706696047792" duration="6681000" />
     </task>
     <task id="LOCAL-00001" summary="Prova">
       <option name="closed" value="true" />
@@ -283,15 +285,7 @@
       <option name="project" value="LOCAL" />
       <updated>1706480147492</updated>
     </task>
-    <task id="LOCAL-00019" summary="Form creazione itinerario">
-      <option name="closed" value="true" />
-      <created>1706570745804</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1706570745804</updated>
-    </task>
-    <option name="localTasksCounter" value="20" />
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -319,8 +313,7 @@
     <MESSAGE value="fix caricamento pagine" />
     <MESSAGE value="caricamento viaggio(non funziona)" />
     <MESSAGE value="caricamento viaggio(quasi funziona)" />
-    <MESSAGE value="Form creazione itinerario" />
-    <option name="LAST_COMMIT_MESSAGE" value="Form creazione itinerario" />
+    <option name="LAST_COMMIT_MESSAGE" value="caricamento viaggio(quasi funziona)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
