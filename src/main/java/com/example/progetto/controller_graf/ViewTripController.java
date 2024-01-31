@@ -12,13 +12,12 @@ import javafx.scene.layout.VBox;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
-
 public class ViewTripController {
     @FXML
     private Button user;
     private Applicazione main;
     @FXML
-    private ListView listaview;
+    private ListView<VBox> listaview;
     private UserBean currentUser;
 
     public void setUser(UserBean utente) {
