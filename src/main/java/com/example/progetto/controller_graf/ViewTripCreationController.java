@@ -2,6 +2,9 @@ package com.example.progetto.controller_graf;
 
 import com.example.progetto.Applicazione;
 import com.example.progetto.bean.AgencyBean;
+import com.example.progetto.bean.TripBean;
+import com.example.progetto.bean.TripCreationBean;
+import com.example.progetto.controller_app.CreateTripController;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
@@ -77,8 +80,11 @@ public class ViewTripCreationController {
         int available = Integer.parseInt(disponibili.getText());
         LocalDate andata = data_and.getValue();
         LocalDate ritorno = data_rit.getValue();
-        int price = Integer.parseInt(prezzo.getText());
-
+        float price = Float.parseFloat(prezzo.getText());
+        TripCreationBean trip = new TripCreationBean(city,available,andata,ritorno,price,image_path);
+        CreateTripController creation = new CreateTripController(trip);
+        creation.upload_trip();
+        System.out.println("Ultima stampa, vai a controllare cojone");
 
 
     }
