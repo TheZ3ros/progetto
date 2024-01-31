@@ -1,12 +1,10 @@
 package com.example.progetto.DAO;
 
-import com.example.progetto.entity.User;
 import com.example.progetto.entity.UserTrip;
 
 import java.sql.CallableStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Types;
 
 public class UserTripDAO implements GenericDAO <UserTrip> {
     private final Connectivity connection;
@@ -43,14 +41,12 @@ public class UserTripDAO implements GenericDAO <UserTrip> {
         cs.setInt(1,idTrip);
         cs.setString(2, username);
         ResultSet resultSet = cs.executeQuery();
-        if(resultSet.next()!=0){
-            return true;
+        if(resultSet.next()){
+            return resultSet.getInt(1) == 1;
         }
         else{
             return false;
         }
-
-
     }
 
 }

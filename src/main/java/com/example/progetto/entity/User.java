@@ -1,7 +1,6 @@
 package com.example.progetto.entity;
 
 public class User {
-    private int idUser;
     private String Username;
     private String password;
 

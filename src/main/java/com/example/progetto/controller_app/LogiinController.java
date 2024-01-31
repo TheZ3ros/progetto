@@ -25,7 +25,7 @@ public class LogiinController {
         UserDAO dao=new UserDAO();
         User utente;
         try {
-            utente= (User) dao.execute(utentebean.getUsername());
+            utente= dao.execute(utentebean.getUsername());
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -42,7 +42,7 @@ public class LogiinController {
         AgencyDAO dao = new AgencyDAO();
         Agency agenzia;
         try {
-            agenzia = (Agency) dao.execute(agencyBean.getUsername());
+            agenzia = dao.execute(agencyBean.getUsername());
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

@@ -1,11 +1,8 @@
 package com.example.progetto.DAO;
 import com.example.progetto.entity.Trip;
 import java.sql.CallableStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Types;
-import java.util.ArrayList;
-import java.util.List;
 
 public class TripDAO implements GenericDAO<Trip> {
         private final Connectivity connection;

@@ -1,11 +1,9 @@
 package com.example.progetto.DAO;
-import com.example.progetto.entity.Trip;
 import com.example.progetto.entity.User;
 
 import java.sql.CallableStatement;
 import java.sql.SQLException;
 import java.sql.Types;
-import java.util.List;
 
 public class UserDAO implements GenericDAO <User> {
     private final Connectivity connection;
