@@ -32,7 +32,7 @@ public class TripDAO implements GenericDAO<Trip> {
             trip.setCity(cs.getString(2));
             trip.setPrice(cs.getFloat(3));
             trip.setData_and(cs.getDate(4));
-            trip.setPlaces(cs.getInt(5));
+            trip.setAvailable(cs.getInt(5));
             trip.setImage(cs.getString(6));
             trip.setData_rit(cs.getDate(7));
             trip.setId(id);

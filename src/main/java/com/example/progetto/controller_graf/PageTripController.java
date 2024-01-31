@@ -5,10 +5,16 @@ import com.example.progetto.bean.TripBean;
 import com.example.progetto.bean.UserBean;
 import com.example.progetto.controller_app.BookTripController;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -16,7 +22,7 @@ import java.util.Objects;
 
 public class PageTripController {
     private Applicazione main;
-    private TripBean trip;
+    private TripBean currentTrip;
     @FXML
     private Text dove;
     @FXML
@@ -29,7 +35,8 @@ public class PageTripController {
     private ImageView imagine;
     @FXML
     private Button nome;
-    private UserBean userBean;
+    private UserBean currentUser;
+
     public void setMain(Applicazione main){
 
         this.main = main;
@@ -40,31 +47,77 @@ public class PageTripController {
 
         main.vai_a_Home();
     }
-    public void setUserBean(UserBean userBean){
-        this.userBean = userBean;
+    public void setCurrentUser(UserBean currentUser){
+        this.currentUser = currentUser;
     }
     public void set_trip(TripBean trip){
-        this.trip=trip;
+        this.currentTrip =trip;
     }
-    public void charge() throws SQLException, IOException {
+    public void charge() {
 
-        imagine.setImage(new Image(Objects.requireNonNull(getClass().getResource(trip.image())).toExternalForm()));
-        dove.setText(trip.getCity());
-        data.setText(trip.getData_and() +"/" + trip.getData_rit());
-        prezzo.setText((int)trip.getPrice()+"€");
-        posti.setText(trip.getPlaces()+" rimanenti");
+        imagine.setImage(new Image(Objects.requireNonNull(getClass().getResource(currentTrip.image())).toExternalForm()));
+        dove.setText(currentTrip.getCity());
+        data.setText(currentTrip.getData_and() +"/" + currentTrip.getData_rit());
+        prezzo.setText((int) currentTrip.getPrice()+"€");
+        posti.setText(currentTrip.getPlaces()+" rimanenti");
 
 
         }
     public void setButtonText() {
 
-        nome.setText(userBean.getUsername());
+        nome.setText(currentUser.getUsername());
     }
 
     @FXML
     public void Booking() throws SQLException {
-        BookTripController.book_trip(userBean,trip);
+        int n=BookTripController.book_trip(currentUser, currentTrip);
+
+        switch (n){
+            case 1:
+                Alert alert=new Alert(AlertType.CONFIRMATION);
+                alert.setTitle("Informazione");
+                alert.setHeaderText(null);
+                alert.setContentText("Prenotazione effettuata correttamente.");
+                alert.showAndWait();
+                break;
+            case 2:
+                Alert alert2=new Alert(AlertType.ERROR);
+                alert2.setTitle("Informazione");
+                alert2.setHeaderText(null);
+                alert2.setContentText("Posti terminati.");
+                alert2.showAndWait();
+                break;
+            case 3:
+                Alert alert3=new Alert(AlertType.WARNING);
+                alert3.setTitle("Informazione");
+                alert3.setHeaderText(null);
+                alert3.setContentText("Prenotazione già effettuata.");
+                alert3.showAndWait();
+                break;
+
+
+        }
     }
+    @FXML
+    private void view_trip() throws IOException, SQLException {
+
+        view_trip(main, currentUser);
 
     }
+
+    static void view_trip(Applicazione main, UserBean currentUser) throws IOException, SQLException {
+        FXMLLoader ViewTripLoader = new FXMLLoader(Applicazione.class.getResource("view_trip.fxml"));
+        Parent ViewTripRoot = ViewTripLoader.load();
+        Scene viewTripScene = new Scene(ViewTripRoot);
+        ViewTripController viewtrip = ViewTripLoader.getController();
+        viewtrip.setMain(main);
+        viewtrip.setUser(currentUser);
+        Stage stage = main.getStage();
+        stage.setScene(viewTripScene);
+        viewtrip.setButtonText();
+        viewtrip.charge();
+        stage.setTitle("Ricerca");
+    }
+
+}
 

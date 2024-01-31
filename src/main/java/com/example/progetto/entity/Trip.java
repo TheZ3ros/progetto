@@ -2,7 +2,7 @@ package com.example.progetto.entity;
 import java.util.Date;
 
 public class Trip {
-    private int places;
+    private int available;
     private  String city;
     private  Date data_and;
     private  Date data_rit;
@@ -11,8 +11,8 @@ public class Trip {
     private int id;
 
 
-    public int getPlaces() {
-        return places;
+    public int getAvailable() {
+        return available;
     }
     public int getId() {
         return id;
@@ -38,8 +38,8 @@ public class Trip {
         return price;
     }
 
-    public void setPlaces(int posti) {
-        this.places=posti;
+    public void setAvailable(int posti) {
+        this.available =posti;
     }
     public void setCity(String citta) {
         this.city=citta;

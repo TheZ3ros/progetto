@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import com.example.progetto.controller_app.LogiinController;
@@ -62,6 +63,13 @@ public class LoginController {
             userhome.setButtonText();
             stage.setTitle("Accedi");
         }
+        else{
+            Alert alert=new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Login fallito");
+            alert.setHeaderText(null);
+            alert.setContentText("Username o password errati");
+            alert.showAndWait();
+        }
 
 
     }
@@ -85,6 +93,13 @@ public class LoginController {
             stage.setScene(homeloginScene);
             agencyhome.setButtonText();
             stage.setTitle("Home Agenzia");
+        }
+        else{
+            Alert alert=new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Login fallito");
+            alert.setHeaderText(null);
+            alert.setContentText("Username o password errati");
+            alert.showAndWait();
         }
 
     }

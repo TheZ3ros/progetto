@@ -30,7 +30,6 @@ public class UserTripDAO implements GenericDAO <UserTrip> {
                 return null;
             }
         }
-        System.out.println("già prenotato");
         return null;
 
     }

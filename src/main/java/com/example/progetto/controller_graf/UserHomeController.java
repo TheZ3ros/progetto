@@ -41,17 +41,7 @@ public class UserHomeController {
     @FXML
     private void view_trip() throws IOException, SQLException {
 
-        FXMLLoader ViewTripLoader = new FXMLLoader(Applicazione.class.getResource("view_trip.fxml"));
-        Parent ViewTripRoot = ViewTripLoader.load();
-        Scene viewTripScene = new Scene(ViewTripRoot);
-        ViewTripController viewtrip = ViewTripLoader.getController();
-        viewtrip.setMain(main);
-        viewtrip.setUser(currentUser);
-        Stage stage = main.getStage();
-        stage.setScene(viewTripScene);
-        viewtrip.setButtonText();
-        viewtrip.charge();
-        stage.setTitle("Ricerca");
+        PageTripController.view_trip(main, currentUser);
 
     }
 
