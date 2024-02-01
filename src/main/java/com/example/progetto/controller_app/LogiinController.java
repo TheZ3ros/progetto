@@ -31,10 +31,7 @@ public class LogiinController {
         }
         if (utentebean.getPassword().equals(utente.getPassword())){
             utentebean.setToken();
-            System.out.println("accesso eseguito");
-
         }
-        else{System.out.println("accesso non eseguito");}
 
     }
 
@@ -48,9 +45,7 @@ public class LogiinController {
         }
         if (agencyBean.getPassword().equals(agenzia.getPassword())){
             agencyBean.setToken();
-            System.out.println("accesso eseguito");
         }
-        else {System.out.println("accesso non eseguito");}
 
     }
 

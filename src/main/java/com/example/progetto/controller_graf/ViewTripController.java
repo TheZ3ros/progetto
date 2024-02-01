@@ -9,16 +9,16 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.VBox;
+
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
-
 public class ViewTripController {
     @FXML
     private Button user;
     private Applicazione main;
     @FXML
-    private ListView listaview;
+    private ListView<VBox> listaview;
     private UserBean currentUser;
 
     public void setUser(UserBean utente) {
@@ -42,7 +42,6 @@ public class ViewTripController {
     }
 
     public void charge() throws SQLException, IOException {
-        // Carica la lista di viaggi dal database o da qualsiasi altra sorgente
         List<TripBean> viaggi = BookTripController.show_trip();
 
         // Crea un VBox per ciascun elemento nella lista e aggiungilo alla ListView
@@ -56,6 +55,11 @@ public class ViewTripController {
              listaview.getItems().add(box);
         }
 
+    }
+
+    public void ricerca() throws SQLException, IOException {
+        listaview.getItems().clear();
+        charge();
     }
 
 }

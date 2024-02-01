@@ -22,7 +22,7 @@
                <Insets bottom="10.0" left="3.0" top="10.0" />
             </HBox.margin>
          </Button>
-         <Button alignment="CENTER_RIGHT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="62.0" style="-fx-underline: true;" styleClass="bottoni_barra" text="Ricerca" HBox.hgrow="ALWAYS">
+         <Button alignment="CENTER_RIGHT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#ricerca" prefHeight="26.0" prefWidth="62.0" style="-fx-underline: true;" styleClass="bottoni_barra" text="Ricerca" HBox.hgrow="ALWAYS">
             <HBox.margin>
                <Insets bottom="10.0" right="3.0" top="10.0" />
             </HBox.margin>
@@ -50,14 +50,17 @@
       </HBox>
    </bottom>
    <center>
-      <Pane prefHeight="200.0" prefWidth="200.0" styleClass="background" BorderPane.alignment="CENTER">
-         <children>
-            <ListView fx:id="listaview" prefHeight="522.0" prefWidth="436.0">
-               <styleClass>
-                  <String fx:value="list-view" />
-                  <String fx:value="list-cell" />
-               </styleClass></ListView>
-         </children>
+      <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <styleClass>
+            <String fx:value="background" />
+            <String fx:value="mondo" />
+         </styleClass>
+         <ListView fx:id="listaview" layoutX="332.0" prefHeight="522.0" prefWidth="672.0" style="-fx-background-color: transparent;">
+            <styleClass>
+               <String fx:value="list-view" />
+               <String fx:value="list-cell" />
+            </styleClass>
+         </ListView>
       </Pane>
    </center>
 </BorderPane>
