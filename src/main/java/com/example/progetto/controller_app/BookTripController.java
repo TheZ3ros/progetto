@@ -21,7 +21,7 @@ public class BookTripController {
         int i=1;
         while((trip=tripdao.execute(i))!=null){
             i++;
-            TripBean tripBean=new TripBean(trip.getAvailable(),trip.getCity(), trip.getData_and(), trip.getData_rit(),trip.getPrice(), trip.image(),trip.getId());
+            TripBean tripBean=new TripBean(trip.getAvailable(),trip.getCity(), trip.getData_and(), trip.getData_rit(),trip.getPrice(), trip.getImage(),trip.getId());
             viaggi.add(tripBean);
         }
 
@@ -30,30 +30,25 @@ public class BookTripController {
 
 
     }
-    public static int book_trip(UserBean userbean, TripBean tripbean) throws SQLException {
+    public static void book_trip(UserBean userbean, TripBean tripbean) throws SQLException {
+        UserDAO userdao=new UserDAO();
         TripDAO tripdao=new TripDAO();
-        Trip trip=tripdao.execute(tripbean.getId());
-        UserDAO userdao = new UserDAO();
-        User utente = userdao.execute(userbean.getUsername());
-        UserTrip usertrip = new UserTrip();
+       User utente=userdao.execute(userbean.getUsername());
+       Trip trip=tripdao.execute(tripbean.getId());
+        UserTrip usertrip=new UserTrip();
         usertrip.setIdTrip(trip.getId());
         usertrip.setUsername(utente.getUsername());
-        UserTripDAO usertripdao = new UserTripDAO();
-        int result;
+        UserTripDAO usertripdao=new UserTripDAO();
 
-        if (trip.getAvailable() > 0 && usertripdao.execute(usertrip) != null) {
-            tripdao.refresh_available(trip.getId());
-            System.out.println("prenotato");
-            result = 1;
-        } else if (trip.getAvailable() <= 0) {
-            System.out.println("posti finiti");
-            result = 2;
-        } else {
-            System.out.println("già prenotato");
-            result = 3;
+        if((usertripdao.execute(usertrip))!=null){      //controllo devo fare
+             tripdao.refresh_available(trip.getId());
+             System.out.println("prenotato");
         }
 
-        return result;
+
+
+
+
 
 
     }

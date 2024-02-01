@@ -1,5 +1,5 @@
 package com.example.progetto.entity;
-import java.util.Date;
+import java.sql.Date;
 
 public class Trip {
     private int available;
@@ -22,7 +22,7 @@ public class Trip {
         return city;
     }
 
-    public String image() {
+    public String getImage() {
         return image;
     }
 
@@ -61,3 +61,4 @@ public class Trip {
     }
 
 }
+//Controller applicativo controlla il bean, se tutto va bene crea l’entity e la passa al dao.

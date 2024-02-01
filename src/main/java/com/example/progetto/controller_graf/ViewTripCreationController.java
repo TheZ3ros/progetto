@@ -16,6 +16,7 @@ import javafx.stage.Stage;
 
 
 import java.io.File;
+import java.sql.Date;
 import java.time.LocalDate;
 
 public class ViewTripCreationController {
@@ -78,8 +79,8 @@ public class ViewTripCreationController {
     private void submit(){
         String city = nome_città.getText();
         int available = Integer.parseInt(disponibili.getText());
-        LocalDate andata = data_and.getValue();
-        LocalDate ritorno = data_rit.getValue();
+        Date andata = Date.valueOf(data_and.getValue());
+        Date ritorno = Date.valueOf(data_rit.getValue());
         float price = Float.parseFloat(prezzo.getText());
         TripCreationBean trip = new TripCreationBean(city,available,andata,ritorno,price,image_path);
         CreateTripController creation = new CreateTripController(trip);
