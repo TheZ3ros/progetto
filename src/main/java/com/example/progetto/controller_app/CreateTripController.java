@@ -13,8 +13,11 @@ public class CreateTripController {
 
     public CreateTripController(TripCreationBean trip){
         this.tripbean=trip;
-        //controlli sulla validità del bean ancora da implementare
-        new_trip.setCity(tripbean.getCity());
+
+        if (tripbean.getCity()!=null){
+            new_trip.setCity(tripbean.getCity());
+        }
+
         new_trip.setAvailable(trip.getAvailable());
         new_trip.setData_and(tripbean.getData_and());
         new_trip.setData_rit(tripbean.getData_rit());
