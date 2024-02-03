@@ -7,7 +7,7 @@ public class Trip {
     private  Date data_and;
     private  Date data_rit;
     private  Float price;
-    private  String image;
+    private  byte[] image;
     private int id;
 
 
@@ -22,7 +22,7 @@ public class Trip {
         return city;
     }
 
-    public String getImage() {
+    public byte[] getImage() {
         return image;
     }
 
@@ -53,7 +53,7 @@ public class Trip {
     public void setData_and(Date data) {
         this.data_and=data;
     }
-    public void setImage(String image) {
+    public void setImage(byte[] image) {
         this.image=image;
     }
     public void setId(int id){

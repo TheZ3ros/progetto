@@ -6,6 +6,7 @@ import com.example.progetto.bean.TripBean;
 import com.example.progetto.bean.TripCreationBean;
 import com.example.progetto.controller_app.CreateTripController;
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
@@ -15,7 +16,13 @@ import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
+import javafx.embed.swing.SwingFXUtils;
 
+import java.awt.image.BufferedImage;
+import javax.imageio.ImageIO;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.io.File;
 import java.sql.Date;
 import java.time.LocalDate;
@@ -25,6 +32,7 @@ public class ViewTripCreationController {
 
     private Applicazione main;
     private String image_path;
+    private byte[] imageBytes;
     private AgencyBean currentUser;
     @FXML
     private Button agency;
@@ -71,9 +79,28 @@ public class ViewTripCreationController {
         if(selectedFile!=null){
             image_path = selectedFile.getAbsolutePath();
             Image image = new Image(selectedFile.toURI().toString());
-            image_viewer.setImage(image);
+            imageBytes = imageToBytes(image);
+            Image recreatedImage = bytesToImage(imageBytes);
+            image_viewer.setImage(recreatedImage);
         }
 
+    }
+
+
+    private byte[] imageToBytes(Image image) {
+        BufferedImage bufferedImage = SwingFXUtils.fromFXImage(image,null);
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        try {
+            ImageIO.write(bufferedImage,"png",outputStream);
+        } catch (IOException e){
+            e.printStackTrace();
+        }
+        return outputStream.toByteArray();
+    }
+
+    private Image bytesToImage(byte[] bytes) {
+        ByteArrayInputStream inputStream = new ByteArrayInputStream(bytes);
+        return new Image(inputStream);
     }
 
     @FXML
@@ -99,7 +126,7 @@ public class ViewTripCreationController {
             Date andata = Date.valueOf(check_andata);
             Date ritorno = Date.valueOf(check_ritorno);
             float price = Float.parseFloat(prezzo.getText());
-            TripCreationBean trip = new TripCreationBean(city,available,andata,ritorno,price,image_path);
+            TripCreationBean trip = new TripCreationBean(city,available,andata,ritorno,price,imageBytes);
             CreateTripController creation = new CreateTripController(trip);
             System.out.println("Check");
             creation.upload_trip();
