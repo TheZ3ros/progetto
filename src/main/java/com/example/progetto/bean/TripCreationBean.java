@@ -9,9 +9,9 @@ public class TripCreationBean {
     private final Date data_and;
     private final Date data_rit;
     private final Float price;
-    private final String image;
+    private final byte[] image;
 
-    public TripCreationBean(String city,int available, Date data_and, Date data_rit, Float price, String image){
+    public TripCreationBean(String city,int available, Date data_and, Date data_rit, Float price, byte[] image){
         this.available=available;
         this.city=city;
         this.data_and=data_and;
@@ -25,7 +25,7 @@ public class TripCreationBean {
     public String getCity(){
         return city;
     }
-    public String getImage(){
+    public byte[] getImage(){
         return image;
     }
     public Date getData_and(){

@@ -21,8 +21,8 @@ public class BookTripController {
         int i=1;
         while((trip=tripdao.execute(i))!=null){
             i++;
-            TripBean tripBean=new TripBean(trip.getAvailable(),trip.getCity(), trip.getData_and(), trip.getData_rit(),trip.getPrice(), trip.getImage(),trip.getId());
-            viaggi.add(tripBean);
+            //TripBean tripBean=new TripBean(trip.getAvailable(),trip.getCity(), trip.getData_and(), trip.getData_rit(),trip.getPrice(), trip.getImage(),trip.getId());
+            //viaggi.add(tripBean);
         }
 
 

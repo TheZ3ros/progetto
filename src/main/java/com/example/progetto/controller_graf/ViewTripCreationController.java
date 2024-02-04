@@ -6,6 +6,8 @@ import com.example.progetto.bean.TripBean;
 import com.example.progetto.bean.TripCreationBean;
 import com.example.progetto.controller_app.CreateTripController;
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
@@ -14,7 +16,13 @@ import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
+import javafx.embed.swing.SwingFXUtils;
 
+import java.awt.image.BufferedImage;
+import javax.imageio.ImageIO;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.io.File;
 import java.sql.Date;
 import java.time.LocalDate;
@@ -24,6 +32,7 @@ public class ViewTripCreationController {
 
     private Applicazione main;
     private String image_path;
+    private byte[] imageBytes;
     private AgencyBean currentUser;
     @FXML
     private Button agency;
@@ -70,22 +79,67 @@ public class ViewTripCreationController {
         if(selectedFile!=null){
             image_path = selectedFile.getAbsolutePath();
             Image image = new Image(selectedFile.toURI().toString());
-            image_viewer.setImage(image);
+            imageBytes = imageToBytes(image);
+            Image recreatedImage = bytesToImage(imageBytes);
+            image_viewer.setImage(recreatedImage);
         }
 
     }
 
+
+    private byte[] imageToBytes(Image image) {
+        BufferedImage bufferedImage = SwingFXUtils.fromFXImage(image,null);
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        try {
+            ImageIO.write(bufferedImage,"png",outputStream);
+        } catch (IOException e){
+            e.printStackTrace();
+        }
+        return outputStream.toByteArray();
+    }
+
+    private Image bytesToImage(byte[] bytes) {
+        ByteArrayInputStream inputStream = new ByteArrayInputStream(bytes);
+        return new Image(inputStream);
+    }
+
     @FXML
     private void submit(){
-        String city = nome_città.getText();
-        int available = Integer.parseInt(disponibili.getText());
-        Date andata = Date.valueOf(data_and.getValue());
-        Date ritorno = Date.valueOf(data_rit.getValue());
-        float price = Float.parseFloat(prezzo.getText());
-        TripCreationBean trip = new TripCreationBean(city,available,andata,ritorno,price,image_path);
-        CreateTripController creation = new CreateTripController(trip);
-        creation.upload_trip();
-        System.out.println("Ultima stampa, vai a controllare cojone");
+        try{
+            String city = nome_città.getText().trim();
+            if (city.isEmpty() || image_path.isEmpty()){
+                throw new IllegalArgumentException("Stringhe vuote");
+            }
+            int available = Integer.parseInt(disponibili.getText());
+
+            LocalDate check_andata = data_and.getValue();
+            LocalDate check_ritorno = data_rit.getValue();
+
+            if (check_andata.isBefore(LocalDate.now())){
+                data_and.setValue(null);
+                throw new RuntimeException();
+            }
+            else if (check_ritorno.isBefore(check_andata)){
+                data_rit.setValue(null);
+                throw new RuntimeException();
+            }
+            Date andata = Date.valueOf(check_andata);
+            Date ritorno = Date.valueOf(check_ritorno);
+            float price = Float.parseFloat(prezzo.getText());
+            TripCreationBean trip = new TripCreationBean(city,available,andata,ritorno,price,imageBytes);
+            CreateTripController creation = new CreateTripController(trip);
+            System.out.println("Check");
+            creation.upload_trip();
+        } catch (Exception e){
+            Alert alert=new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Creazione fallita");
+            alert.setHeaderText(null);
+            alert.setContentText("Ricontrollare i dati inseriti");
+            alert.showAndWait();
+        }
+
+
+
 
 
     }
