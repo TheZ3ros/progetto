@@ -3,6 +3,7 @@ package com.example.progetto.controller_graf;
 import com.example.progetto.Applicazione;
 import com.example.progetto.bean.TripBean;
 import com.example.progetto.bean.UserBean;
+import com.example.progetto.controller_app.BookTripController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -13,6 +14,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
+import java.awt.print.Book;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Objects;
@@ -41,7 +43,8 @@ public class ViaggioController {
 
     public void createbox(TripBean bean) {
         this.bean=bean;
-        imagine.setImage(new Image(Objects.requireNonNull(getClass().getResource(bean.image())).toExternalForm()));
+        Image image= BookTripController.bytesToImage(bean.getImage());
+        imagine.setImage(image);
             title.setText(bean.getCity());
             data.setText(bean.getData_and() +"/" + bean.getData_rit());
             prezzo.setText((int)bean.getPrice()+"€");

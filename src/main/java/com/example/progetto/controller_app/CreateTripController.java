@@ -1,17 +1,17 @@
 package com.example.progetto.controller_app;
 
 import com.example.progetto.DAO.TripDAO;
-import com.example.progetto.bean.TripCreationBean;
+import com.example.progetto.bean.TripBean;
 import com.example.progetto.entity.Trip;
 
 import java.sql.SQLException;
 
 public class CreateTripController {
 
-    private final TripCreationBean tripbean;
+    private final TripBean tripbean;
     private final Trip new_trip = new Trip();
 
-    public CreateTripController(TripCreationBean trip){
+    public CreateTripController(TripBean trip){
         this.tripbean=trip;
 
         new_trip.setCity(tripbean.getCity());

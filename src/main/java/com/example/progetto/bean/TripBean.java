@@ -1,18 +1,26 @@
 package com.example.progetto.bean;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class TripBean {
-    private final int places;
+    private final int available;
     private final String city;
     private final Date data_and;
     private final Date data_rit;
     private final Float price;
-    private final String image;
-    private final int id;
+    private final byte[] image;
+    private int id;
 
-    public TripBean(int places, String city, Date data_and, Date data_rit, Float price, String image, int id){
-        this.places=places;
+    public TripBean(String city, int available, Date data_and, Date data_rit, Float price, byte[] image){
+        this.available=available;
+        this.city=city;
+        this.data_and=data_and;
+        this.data_rit=data_rit;
+        this.price=price;
+        this.image=image;
+    }
+    public TripBean(int places, String city, Date data_and, Date data_rit, Float price, byte[] image, int id){
+        this.available=places;
         this.city=city;
         this.data_and=data_and;
         this.data_rit=data_rit;
@@ -20,13 +28,13 @@ public class TripBean {
         this.image=image;
         this.id=id;
     }
-    public int getPlaces(){
-        return places;
+    public int getAvailable(){
+        return available;
     }
     public String getCity(){
         return city;
     }
-    public String image(){
+    public byte[] getImage(){
         return image;
     }
     public Date getData_and(){
@@ -41,5 +49,4 @@ public class TripBean {
     public int getId(){
         return id;
     }
-
 }

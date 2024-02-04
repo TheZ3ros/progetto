@@ -54,12 +54,12 @@ public class PageTripController {
         this.currentTrip =trip;
     }
     public void charge() {
-
-        imagine.setImage(new Image(Objects.requireNonNull(getClass().getResource(currentTrip.image())).toExternalForm()));
+        Image image= BookTripController.bytesToImage(currentTrip.getImage());
+        imagine.setImage(image);
         dove.setText(currentTrip.getCity());
         data.setText(currentTrip.getData_and() +"/" + currentTrip.getData_rit());
         prezzo.setText((int) currentTrip.getPrice()+"€");
-        posti.setText(currentTrip.getPlaces()+" rimanenti");
+        posti.setText(currentTrip.getAvailable()+" rimanenti");
 
 
         }
@@ -70,8 +70,7 @@ public class PageTripController {
 
     @FXML
     public void Booking() throws SQLException {
-        //int n=BookTripController.book_trip(currentUser, currentTrip);
-        int n=1;
+       int n=BookTripController.book_trip(currentUser, currentTrip);
         switch (n){
             case 1:
                 Alert alert=new Alert(AlertType.CONFIRMATION);

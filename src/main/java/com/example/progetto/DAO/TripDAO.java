@@ -25,7 +25,7 @@ public class TripDAO implements GenericDAO<Trip> {
             cs.registerOutParameter(3, Types.FLOAT);
         cs.registerOutParameter(4, Types.DATE);
         cs.registerOutParameter(5, Types.INTEGER);
-        cs.registerOutParameter(6, Types.VARCHAR);
+        cs.registerOutParameter(6, Types.BLOB);
         cs.registerOutParameter(7, Types.DATE);
 
         cs.executeQuery();
@@ -34,7 +34,7 @@ public class TripDAO implements GenericDAO<Trip> {
             trip.setPrice(cs.getFloat(3));
             trip.setData_and(cs.getDate(4));
             trip.setAvailable(cs.getInt(5));
-            //trip.setImage(cs.getString(6));
+            trip.setImage(cs.getBytes(6));
             trip.setData_rit(cs.getDate(7));
             trip.setId(id);
 
