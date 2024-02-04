@@ -4,8 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="abd72b32-f6c1-4b42-a1d9-4297dd975b52" name="Changes" comment="Implementato il BLOB sia per la conversione dell'immagine che per il suo caricamento nel DB. Al momento gestisce solo immagini di piccola taglia">
+    <list default="true" id="abd72b32-f6c1-4b42-a1d9-4297dd975b52" name="Changes" comment="Ora possono essere gestite anche immagini di taglia maggiore">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/progetto/css/immagini/frame.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_app/CreateTripController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_app/CreateTripController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/progetto/css/sheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/progetto/css/sheet.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/progetto/view_trip_creation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/progetto/view_trip_creation.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +62,7 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
+    "project.structure.side.proportion": "0.49245062",
     "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
     "vue.rearranger.settings.migration": "true"
   },
@@ -76,6 +80,7 @@
       <recent name="C:\Users\Proprietario\Desktop\java\progetto1\src\main\resources\com\example\progetto\css" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\AsD\IdeaProjects\ipsw\src\main\resources\com\example\progetto\css\immagini" />
       <recent name="C:\Users\Proprietario\Desktop\java\progetto1\src\main\resources\com\example\progetto\css" />
       <recent name="C:\Users\Proprietario\Desktop\java\progetto1\src\main\resources\com\example\progetto" />
       <recent name="C:\Users\AsD\IdeaProjects\ipsw\src\main\resources\com\example\progetto\css" />
@@ -137,7 +142,8 @@
       <workItem from="1706480896646" duration="3000" />
       <workItem from="1706519692137" duration="8060000" />
       <workItem from="1706883429760" duration="7147000" />
-      <workItem from="1706955343112" duration="8432000" />
+      <workItem from="1706955343112" duration="10207000" />
+      <workItem from="1707040288611" duration="10329000" />
     </task>
     <task id="LOCAL-00001" summary="Prova">
       <option name="closed" value="true" />
@@ -299,7 +305,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706976004560</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Ora possono essere gestite anche immagini di taglia maggiore">
+      <option name="closed" value="true" />
+      <created>1706977946766</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1706977946766</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -330,7 +344,8 @@
     <MESSAGE value="Eliminazione classi inutili" />
     <MESSAGE value="Controllo valori inseriti per la creazione della trip" />
     <MESSAGE value="Implementato il BLOB sia per la conversione dell'immagine che per il suo caricamento nel DB. Al momento gestisce solo immagini di piccola taglia" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implementato il BLOB sia per la conversione dell'immagine che per il suo caricamento nel DB. Al momento gestisce solo immagini di piccola taglia" />
+    <MESSAGE value="Ora possono essere gestite anche immagini di taglia maggiore" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ora possono essere gestite anche immagini di taglia maggiore" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -343,11 +358,6 @@
           <properties class="java.lang.RuntimeException" package="java.lang" />
           <option name="timeStamp" value="3" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/ViewTripCreationController.java</url>
-          <line>131</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>

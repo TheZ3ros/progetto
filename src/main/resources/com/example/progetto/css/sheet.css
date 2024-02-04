@@ -83,8 +83,10 @@
 
 .bottoni_itinerario {
     -fx-font-family: 'allura';
+    -fx-font-size: 40px;
     -fx-background-color: linear-gradient(to right, #cf29ee, #a341ff, #819af5);
     -fx-pref-width: 320px;
+    -fx-pref-height: 90px;
     -fx-font-weight: bold;
 }
 

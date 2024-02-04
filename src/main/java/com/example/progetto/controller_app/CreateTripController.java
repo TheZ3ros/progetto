@@ -3,6 +3,7 @@ package com.example.progetto.controller_app;
 import com.example.progetto.DAO.TripDAO;
 import com.example.progetto.bean.TripCreationBean;
 import com.example.progetto.entity.Trip;
+import javafx.scene.control.Alert;
 
 import java.sql.SQLException;
 
@@ -28,7 +29,11 @@ public class CreateTripController {
         try {
             dao.add_trip(new_trip.getCity(),new_trip.getAvailable(),new_trip.getData_and(),new_trip.getData_rit(),new_trip.getPrice(), new_trip.getImage());
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            Alert alert=new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Creazione fallita");
+            alert.setHeaderText(null);
+            alert.setContentText("Impossibile aggiungere il nuovo itinerario al DB");
+            alert.showAndWait();
         }
         System.out.println("Si spera funzioni");
 
