@@ -10,24 +10,24 @@ import java.sql.SQLException;
 public class CreateTripController {
 
     private final TripBean tripbean;
-    private final Trip new_trip = new Trip();
+    private final Trip newTrip = new Trip();
 
     public CreateTripController(TripBean trip){
         this.tripbean=trip;
 
-        new_trip.setCity(tripbean.getCity());
-        new_trip.setAvailable(trip.getAvailable());
-        new_trip.setDataAnd(tripbean.getDataAnd());
-        new_trip.setDataRit(tripbean.getDataRit());
-        new_trip.setPrice(trip.getPrice());
-        new_trip.setImage(trip.getImage());
+        newTrip.setCity(tripbean.getCity());
+        newTrip.setAvailable(trip.getAvailable());
+        newTrip.setDataAnd(tripbean.getDataAnd());
+        newTrip.setDataRit(tripbean.getDataRit());
+        newTrip.setPrice(trip.getPrice());
+        newTrip.setImage(trip.getImage());
     }
 
     public void uploadTrip(){
         TripDAO dao = new TripDAO();
 
         try {
-            dao.add_trip(new_trip.getCity(),new_trip.getAvailable(),new_trip.getDataAnd(),new_trip.getDataRit(),new_trip.getPrice(), new_trip.getImage());
+            dao.add_trip(newTrip.getCity(), newTrip.getAvailable(), newTrip.getDataAnd(), newTrip.getDataRit(), newTrip.getPrice(), newTrip.getImage());
         } catch (SQLException e) {
             Alert alert=new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Creazione fallita");
