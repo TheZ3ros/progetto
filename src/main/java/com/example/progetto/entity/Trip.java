@@ -4,8 +4,8 @@ import java.sql.Date;
 public class Trip {
     private int available;
     private  String city;
-    private  Date data_and;
-    private  Date data_rit;
+    private  Date dataAnd;
+    private  Date dataRits;
     private  Float price;
     private  byte[] image;
     private int id;
@@ -26,12 +26,12 @@ public class Trip {
         return image;
     }
 
-    public Date getData_and() {
-        return data_and;
+    public Date getDataAnd() {
+        return dataAnd;
     }
 
-    public Date getData_rit() {
-        return data_rit;
+    public Date getDataRit() {
+        return dataRit;
     }
 
     public float getPrice() {
@@ -47,11 +47,11 @@ public class Trip {
     public void setPrice(float prezzo) {
         this.price=prezzo;
     }
-    public void setData_rit(Date data) {
-        this.data_rit=data;
+    public void setDataRit(Date data) {
+        this.dataRit =data;
     }
-    public void setData_and(Date data) {
-        this.data_and=data;
+    public void setDataAnd(Date data) {
+        this.dataAnd =data;
     }
     public void setImage(byte[] image) {
         this.image=image;

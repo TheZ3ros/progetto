@@ -17,8 +17,8 @@ public class CreateTripController {
 
         new_trip.setCity(tripbean.getCity());
         new_trip.setAvailable(trip.getAvailable());
-        new_trip.setData_and(tripbean.getDataAnd());
-        new_trip.setData_rit(tripbean.getDataRit());
+        new_trip.setDataAnd(tripbean.getDataAnd());
+        new_trip.setDataRit(tripbean.getDataRit());
         new_trip.setPrice(trip.getPrice());
         new_trip.setImage(trip.getImage());
     }
@@ -27,7 +27,7 @@ public class CreateTripController {
         TripDAO dao = new TripDAO();
 
         try {
-            dao.add_trip(new_trip.getCity(),new_trip.getAvailable(),new_trip.getData_and(),new_trip.getData_rit(),new_trip.getPrice(), new_trip.getImage());
+            dao.add_trip(new_trip.getCity(),new_trip.getAvailable(),new_trip.getDataAnd(),new_trip.getDataRit(),new_trip.getPrice(), new_trip.getImage());
         } catch (SQLException e) {
             Alert alert=new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Creazione fallita");

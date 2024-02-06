@@ -24,7 +24,7 @@ public class BookTripController {
         while ((trip = tripdao.execute(i)) != null) {
             i++;
 
-            TripBean tripBean = new TripBean(trip.getAvailable(), trip.getCity(), trip.getData_and(), trip.getData_rit(), trip.getPrice(), trip.getImage(), trip.getId());
+            TripBean tripBean = new TripBean(trip.getAvailable(), trip.getCity(), trip.getDataAnd(), trip.getDataRit(), trip.getPrice(), trip.getImage(), trip.getId());
             viaggi.add(tripBean);
         }
 
@@ -48,13 +48,10 @@ public class BookTripController {
             int result;
             if (trip.getAvailable() > 0 && usertripdao.execute(usertrip) != null) {
                 tripdao.refresh_available(trip.getId());
-                System.out.println("prenotato");
                 result = 1;
             } else if (trip.getAvailable() <= 0) {
-                System.out.println("posti finiti");
                 result = 2;
             } else {
-                System.out.println("già prenotato");
                 result = 3;
             }
 
