@@ -54,7 +54,7 @@ public class ViaggioController {
             Scene paginaScene = new Scene(PageRoot);
             PageTripController pagetrip = paginaLoader.getController();
             pagetrip.setMain(main);
-            pagetrip.set_trip(bean);
+            pagetrip.setTrip(bean);
             pagetrip.setCurrentUser(user);
             Stage stage = main.getStage();
             stage.setScene(paginaScene);

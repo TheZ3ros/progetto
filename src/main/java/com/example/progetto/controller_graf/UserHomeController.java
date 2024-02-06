@@ -37,7 +37,7 @@ public class UserHomeController {
     @FXML
     private void view_trip() throws IOException, SQLException {
 
-        PageTripController.view_trip(main, currentUser);
+        PageTripController.viewTrip(main, currentUser);
 
     }
 

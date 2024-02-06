@@ -36,20 +36,22 @@ public class PageTripController {
     private Button nome;
     private UserBean currentUser;
 
+    private static final String action="Informazione";
+
     public void setMain(Applicazione main){
 
         this.main = main;
     }
 
     @FXML
-    private void vai_a_Home() {
+    private void vaiAHome() {
 
         main.vaiAHome();
     }
     public void setCurrentUser(UserBean currentUser){
         this.currentUser = currentUser;
     }
-    public void set_trip(TripBean trip){
+    public void setTrip(TripBean trip){
         this.currentTrip =trip;
     }
     public void charge() {
@@ -68,46 +70,48 @@ public class PageTripController {
     }
 
     @FXML
-    public void Booking() throws SQLException {
+    public void booking() throws SQLException {
        int n=BookTripController.bookTrip(currentUser, currentTrip);
         switch (n){
             case 1:
                 Alert alert=new Alert(AlertType.CONFIRMATION);
-                alert.setTitle("Informazione");
+                alert.setTitle(action);
                 alert.setHeaderText(null);
                 alert.setContentText("Prenotazione effettuata correttamente.");
                 alert.showAndWait();
                 break;
             case 2:
                 Alert alert2=new Alert(AlertType.ERROR);
-                alert2.setTitle("Informazione");
+                alert2.setTitle(action);
                 alert2.setHeaderText(null);
                 alert2.setContentText("Posti terminati.");
                 alert2.showAndWait();
                 break;
             case 3:
                 Alert alert3=new Alert(AlertType.WARNING);
-                alert3.setTitle("Informazione");
+                alert3.setTitle(action);
                 alert3.setHeaderText(null);
                 alert3.setContentText("Prenotazione già effettuata.");
                 alert3.showAndWait();
                 break;
+            default:
+                throw new RuntimeException();
 
 
         }
     }
     @FXML
-    private void view_trip() throws IOException, SQLException {
+    private void viewTrip() throws IOException, SQLException {
 
-        view_trip(main, currentUser);
+        viewTrip(main, currentUser);
 
     }
 
-    static void view_trip(Applicazione main, UserBean currentUser) throws IOException, SQLException {
-        FXMLLoader ViewTripLoader = new FXMLLoader(Applicazione.class.getResource("view_trip.fxml"));
-        Parent ViewTripRoot = ViewTripLoader.load();
-        Scene viewTripScene = new Scene(ViewTripRoot);
-        ViewTripController viewtrip = ViewTripLoader.getController();
+    static void viewTrip(Applicazione main, UserBean currentUser) throws IOException, SQLException {
+        FXMLLoader viewtriploader = new FXMLLoader(Applicazione.class.getResource("view_trip.fxml"));
+        Parent viewtriproot = viewtriploader.load();
+        Scene viewTripScene = new Scene(viewtriproot);
+        ViewTripController viewtrip = viewtriploader.getController();
         viewtrip.setMain(main);
         viewtrip.setUser(currentUser);
         Stage stage = main.getStage();
