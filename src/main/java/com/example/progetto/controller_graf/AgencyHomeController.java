@@ -40,8 +40,8 @@ public class AgencyHomeController {
     @FXML
     private void viewTripCreation() throws IOException{
         FXMLLoader viewtripcreationLoader = new FXMLLoader(Applicazione.class.getResource("view_trip_creation.fxml"));
-        Parent ViewTripCreationRoot = viewtripcreationLoader.load();
-        Scene TripCreationScene = new Scene(ViewTripCreationRoot);
+        Parent viewtripcreationroot = viewtripcreationLoader.load();
+        Scene TripCreationScene = new Scene(viewtripcreationroot);
         ViewTripCreationController tripcreation = viewtripcreationLoader.getController();
         tripcreation.setMain(main);
         tripcreation.setUser(currentUser);
