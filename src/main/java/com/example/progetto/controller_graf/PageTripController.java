@@ -18,7 +18,6 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.Objects;
 
 public class PageTripController {
     private Applicazione main;

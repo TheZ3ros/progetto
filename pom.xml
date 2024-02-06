@@ -82,6 +82,8 @@
               <mainClass>com.example.progetto/com.example.progetto.Applicazione</mainClass>
               <launcher>app</launcher>
               <jlinkZipName>app</jlinkZipName>
+              <artifactId>sonar-maven-plugin</artifactId>
+              <version>3.9.0.2155</version> <!-- Aggiorna alla versione più recente -->
               <jlinkImageName>app</jlinkImageName>
               <noManPages>true</noManPages>
               <stripDebug>true</stripDebug>
