@@ -34,7 +34,7 @@ public class LoginController {
 
 
     @FXML
-    private void vai_a_Home(){
+    private void vaiAHome(){
 
         main.vaiAHome();
     }
@@ -46,17 +46,17 @@ public class LoginController {
     }
 
     @FXML
-    private void HandlerLoginUtente() throws IOException, SQLException {
-        String user_utente=usernameUtente.getText();
-        String pass_utente=passwordUtente.getText();
-        UserBean user = new UserBean(user_utente,pass_utente);
+    private void handlerloginutente() throws IOException, SQLException {
+        String userUtente=usernameUtente.getText();
+        String passUtente=passwordUtente.getText();
+        UserBean user = new UserBean(userUtente,passUtente);
         LogiinController login=new LogiinController(user);
         login.loginUtente();
         if(user.getToken()){
-            FXMLLoader UserHomeLoader = new FXMLLoader(Applicazione.class.getResource("home_login.fxml"));
-            Parent UserHomeRoot = UserHomeLoader.load();
-            Scene homeloginScene = new Scene(UserHomeRoot);
-            UserHomeController userhome = UserHomeLoader.getController();
+            FXMLLoader userhomeloader = new FXMLLoader(Applicazione.class.getResource("home_login.fxml"));
+            Parent userhomeroot = userhomeloader.load();
+            Scene homeloginScene = new Scene(userhomeroot);
+            UserHomeController userhome = userhomeloader.getController();
             userhome.setMain(main);
             userhome.setUser(user);
             Stage stage = main.getStage();
@@ -76,18 +76,18 @@ public class LoginController {
     }
 
     @FXML
-    private void HandlerLoginAgenzia() throws IOException, SQLException {
+    private void handlerloginagenzia() throws IOException, SQLException {
 
-        String user_Agenzia = usernameAgenzia.getText();
-        String pass_Agenzia = passwordAgenzia.getText();
-        AgencyBean agency = new AgencyBean(user_Agenzia,pass_Agenzia);
+        String userAgenzia = usernameAgenzia.getText();
+        String passAgenzia = passwordAgenzia.getText();
+        AgencyBean agency = new AgencyBean(userAgenzia,passAgenzia);
         LogiinController login = new LogiinController(agency);
         login.loginAgenzia();
         if(agency.getToken()){
-            FXMLLoader AgencyHomeLoader = new FXMLLoader(Applicazione.class.getResource("agency_home.fxml"));
-            Parent AgencyHomeRoot = AgencyHomeLoader.load();
-            Scene homeloginScene = new Scene(AgencyHomeRoot);
-            AgencyHomeController agencyhome = AgencyHomeLoader.getController();
+            FXMLLoader agencyhomeloader = new FXMLLoader(Applicazione.class.getResource("agency_home.fxml"));
+            Parent agencyhomeroot = agencyhomeloader.load();
+            Scene homeloginScene = new Scene(agencyhomeroot);
+            AgencyHomeController agencyhome = agencyhomeloader.getController();
             agencyhome.setMain(main);
             agencyhome.setUser(agency);
             Stage stage = main.getStage();
