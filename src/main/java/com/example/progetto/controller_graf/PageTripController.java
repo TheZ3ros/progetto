@@ -56,7 +56,7 @@ public class PageTripController {
         Image image= BookTripController.bytesToImage(currentTrip.getImage());
         imagine.setImage(image);
         dove.setText(currentTrip.getCity());
-        data.setText(currentTrip.getData_and() +"/" + currentTrip.getData_rit());
+        data.setText(currentTrip.getDataAnd() +"/" + currentTrip.getDataRit());
         prezzo.setText((int) currentTrip.getPrice()+"€");
         posti.setText(currentTrip.getAvailable()+" rimanenti");
 

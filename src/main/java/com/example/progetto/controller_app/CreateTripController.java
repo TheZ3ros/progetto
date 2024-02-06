@@ -17,8 +17,8 @@ public class CreateTripController {
 
         new_trip.setCity(tripbean.getCity());
         new_trip.setAvailable(trip.getAvailable());
-        new_trip.setData_and(tripbean.getData_and());
-        new_trip.setData_rit(tripbean.getData_rit());
+        new_trip.setData_and(tripbean.getDataAnd());
+        new_trip.setData_rit(tripbean.getDataRit());
         new_trip.setPrice(trip.getPrice());
         new_trip.setImage(trip.getImage());
     }

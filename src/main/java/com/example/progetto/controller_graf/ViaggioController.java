@@ -14,10 +14,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-import java.awt.print.Book;
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.Objects;
 
 public class ViaggioController {
     @FXML
@@ -46,7 +44,7 @@ public class ViaggioController {
         Image image= BookTripController.bytesToImage(bean.getImage());
         imagine.setImage(image);
             title.setText(bean.getCity());
-            data.setText(bean.getData_and() +"/" + bean.getData_rit());
+            data.setText(bean.getDataAnd() +"/" + bean.getDataRit());
             prezzo.setText((int)bean.getPrice()+"€");
         }
 
