@@ -41,12 +41,12 @@ public class AgencyHomeController {
     private void viewTripCreation() throws IOException{
         FXMLLoader viewtripcreationLoader = new FXMLLoader(Applicazione.class.getResource("view_trip_creation.fxml"));
         Parent viewtripcreationroot = viewtripcreationLoader.load();
-        Scene TripCreationScene = new Scene(viewtripcreationroot);
+        Scene tripcreationscene = new Scene(viewtripcreationroot);
         ViewTripCreationController tripcreation = viewtripcreationLoader.getController();
         tripcreation.setMain(main);
         tripcreation.setUser(currentUser);
         Stage stage = main.getStage();
-        stage.setScene(TripCreationScene);
+        stage.setScene(tripcreationscene);
         tripcreation.setButtonText();
         stage.setTitle("Crea itinerario");
     }
