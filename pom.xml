@@ -21,6 +21,12 @@
       <groupId>org.openjfx</groupId>
       <artifactId>javafx-controls</artifactId>
       <version>21-ea+24</version>
+
+    </dependency>
+    <dependency>
+      <groupId>org.openjfx</groupId>
+      <artifactId>javafx-swing</artifactId>
+      <version>18</version> <!-- Assicurati di specificare la versione corretta di JavaFX Swing -->
     </dependency>
 
     <dependency>
