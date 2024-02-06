@@ -32,21 +32,21 @@ public class ViewTripCreationController {
 
 
     private Applicazione main;
-    private String image_path;
+    private String imagePath;
     private byte[] imageBytes;
     private AgencyBean currentUser;
     @FXML
     private Button agency;
     @FXML
-    private ImageView image_viewer;
+    private ImageView imageViewer;
     @FXML
-    private TextField nome_città;
+    private TextField nomeCittà;
     @FXML
     private TextField disponibili;
     @FXML
-    private DatePicker data_and;
+    private DatePicker dataAnd;
     @FXML
-    private DatePicker data_rit;
+    private DatePicker dataRit;
     @FXML
     private TextField prezzo;
 
@@ -66,37 +66,37 @@ public class ViewTripCreationController {
     }
 
     @FXML
-    private void vai_a_Home(){
+    private void vaiAHome(){
 
         main.vaiAHome();
     }
 
     @FXML
-    private void vai_a_Agency_Home() throws IOException {
-        FXMLLoader AgencyHomeLoader = new FXMLLoader(Applicazione.class.getResource("agency_home.fxml"));
-        Parent AgencyHomeRoot = AgencyHomeLoader.load();
-        Scene TripCreationScene = new Scene(AgencyHomeRoot);
-        AgencyHomeController agencyhome = AgencyHomeLoader.getController();
+    private void vaiAAgencyHome() throws IOException {
+        FXMLLoader agencyhomeloader = new FXMLLoader(Applicazione.class.getResource("agency_home.fxml"));
+        Parent agencyhomeroot = agencyhomeloader.load();
+        Scene tripcreationscene = new Scene(agencyhomeroot);
+        AgencyHomeController agencyhome = agencyhomeloader.getController();
         agencyhome.setMain(main);
         agencyhome.setUser(currentUser);
         Stage stage = main.getStage();
-        stage.setScene(TripCreationScene);
+        stage.setScene(tripcreationscene);
         agencyhome.setButtonText();
         stage.setTitle("Home Agenzia");
     }
 
     @FXML
-    private void insert_image(){
-        FileChooser image_uploader = new FileChooser();
-        image_uploader.setTitle("Seleziona l'immagine");
-        image_uploader.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("File immagine","*.png","*.jpg","*.jpeg","*.gif"));
-        File selectedFile = image_uploader.showOpenDialog(new Stage());
+    private void insertImage(){
+        FileChooser imageUploader = new FileChooser();
+        imageUploader.setTitle("Seleziona l'immagine");
+        imageUploader.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("File immagine","*.png","*.jpg","*.jpeg","*.gif"));
+        File selectedFile = imageUploader.showOpenDialog(new Stage());
         if(selectedFile!=null){
-            image_path = selectedFile.getAbsolutePath();
+            imagePath = selectedFile.getAbsolutePath();
             Image image = new Image(selectedFile.toURI().toString());
             imageBytes = imageToBytes(image);
             Image recreatedImage = bytesToImage(imageBytes);
-            image_viewer.setImage(recreatedImage);
+            imageViewer.setImage(recreatedImage);
         }
 
     }
@@ -107,7 +107,7 @@ public class ViewTripCreationController {
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
         try {
             ImageIO.write(bufferedImage,"png",outputStream);
-        } catch (IOException e){
+        } catch (IOException ignored){
         }
         return outputStream.toByteArray();
     }
@@ -120,29 +120,28 @@ public class ViewTripCreationController {
     @FXML
     private void submit(){
         try{
-            String city = nome_città.getText().trim();
-            if (city.isEmpty() || image_path.isEmpty()){
+            String city = nomeCittà.getText().trim();
+            if (city.isEmpty() || imagePath.isEmpty()){
                 throw new IllegalArgumentException("Stringhe vuote");
             }
             int available = Integer.parseInt(disponibili.getText());
 
-            LocalDate check_andata = data_and.getValue();
-            LocalDate check_ritorno = data_rit.getValue();
+            LocalDate checkAndata = dataAnd.getValue();
+            LocalDate checkRitorno = dataRit.getValue();
 
-            if (check_andata.isBefore(LocalDate.now())){
-                data_and.setValue(null);
-                throw new RuntimeException();
+            if (checkAndata.isBefore(LocalDate.now())){
+                dataAnd.setValue(null);
+                throw new IllegalArgumentException("Valore di andata non valido");
             }
-            else if (check_ritorno.isBefore(check_andata)){
-                data_rit.setValue(null);
-                throw new RuntimeException();
+            else if (checkRitorno.isBefore(checkAndata)){
+                dataRit.setValue(null);
+                throw new IllegalArgumentException("Valore di ritorno non valido");
             }
-            Date andata = Date.valueOf(check_andata);
-            Date ritorno = Date.valueOf(check_ritorno);
+            Date andata = Date.valueOf(checkAndata);
+            Date ritorno = Date.valueOf(checkRitorno);
             float price = Float.parseFloat(prezzo.getText());
             TripBean trip = new TripBean(city,available,andata,ritorno,price,imageBytes);
             CreateTripController creation = new CreateTripController(trip);
-            System.out.println("Check");
             creation.uploadTrip();
         } catch (Exception e){
             Alert alert=new Alert(Alert.AlertType.ERROR);

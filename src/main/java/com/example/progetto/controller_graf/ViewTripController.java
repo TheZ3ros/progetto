@@ -36,7 +36,7 @@ public class ViewTripController {
     }
 
     @FXML
-    private void vai_a_Home() {
+    private void vaiAHome() {
 
         main.vaiAHome();
     }

@@ -48,10 +48,10 @@ public class ViaggioController {
             prezzo.setText((int)bean.getPrice()+"€");
         }
 
-    public void pagetrip() throws IOException, SQLException {
+    public void pagetrip() throws IOException {
             FXMLLoader paginaLoader = new FXMLLoader(Applicazione.class.getResource("pagetrip.fxml"));
-            Parent PageRoot = paginaLoader.load();
-            Scene paginaScene = new Scene(PageRoot);
+            Parent pageroot = paginaLoader.load();
+            Scene paginaScene = new Scene(pageroot);
             PageTripController pagetrip = paginaLoader.getController();
             pagetrip.setMain(main);
             pagetrip.setTrip(bean);

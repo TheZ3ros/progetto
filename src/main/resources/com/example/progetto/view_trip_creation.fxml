@@ -20,7 +20,7 @@
                 <Image url="@css/immagini/infinito.png" />
             </ImageView>
             <Pane prefHeight="47.0" prefWidth="473.0" style="-fx-background-color: white;" stylesheets="@css/sheet.css" HBox.hgrow="ALWAYS" />
-            <Button fx:id="Home" alignment="TOP_LEFT" mnemonicParsing="false" onAction="#vai_a_Home" styleClass="bottoni_barra" text="Home" HBox.hgrow="ALWAYS">
+            <Button fx:id="Home" alignment="TOP_LEFT" mnemonicParsing="false" onAction="#vaiAHome" styleClass="bottoni_barra" text="Home" HBox.hgrow="ALWAYS">
                 <HBox.margin>
                     <Insets bottom="10.0" left="3.0" top="10.0" />
                 </HBox.margin>
@@ -30,7 +30,7 @@
                     <Insets bottom="10.0" right="3.0" top="10.0" />
                 </HBox.margin>
             </Button>
-            <Button alignment="CENTER" layoutX="62.0" layoutY="10.0" mnemonicParsing="false" onAction="#vai_a_Agency_Home" styleClass="registra" text="Itinerari" HBox.hgrow="ALWAYS">
+            <Button alignment="CENTER" layoutX="62.0" layoutY="10.0" mnemonicParsing="false" onAction="#vaiAAgencyHome" styleClass="registra" text="Itinerari" HBox.hgrow="ALWAYS">
                 <HBox.margin>
                     <Insets bottom="10.0" left="3.0" right="3.0" top="10.0" />
                 </HBox.margin>
@@ -51,18 +51,18 @@
                      <Font name="Allura" size="47.0" />
                   </font>
                </Label>
-               <TextField fx:id="nome_città" layoutX="87.0" layoutY="100.0" promptText="Città" />
+               <TextField fx:id="nomeCittà" layoutX="87.0" layoutY="100.0" promptText="Città" />
                <TextField fx:id="disponibili" layoutX="87.0" layoutY="188.0" promptText="Posti disponibili" />
-               <DatePicker fx:id="data_and" layoutX="412.0" layoutY="100.0" promptText="Data di andata" />
-               <DatePicker fx:id="data_rit" layoutX="413.0" layoutY="188.0" promptText="Data di ritorno" />
+               <DatePicker fx:id="dataAnd" layoutX="412.0" layoutY="100.0" promptText="Data di andata" />
+               <DatePicker fx:id="dataRit" layoutX="413.0" layoutY="188.0" promptText="Data di ritorno" />
                <TextField fx:id="prezzo" layoutX="737.0" layoutY="100.0" promptText="Prezzo" />
-               <Button layoutX="713.0" layoutY="186.0" mnemonicParsing="false" onAction="#insert_image" prefHeight="29.0" prefWidth="197.0" styleClass="prova" text="Inserisci immagine" />
+               <Button layoutX="713.0" layoutY="186.0" mnemonicParsing="false" onAction="#insertImage" prefHeight="29.0" prefWidth="197.0" styleClass="prova" text="Inserisci immagine" />
                <Button layoutX="339.0" layoutY="330.0" mnemonicParsing="false" onAction="#submit" styleClass="bottoni_itinerario" text="Invia i dati">
                   <font>
                      <Font size="36.0" />
                   </font>
                </Button>
-               <ImageView fx:id="image_viewer" fitHeight="192.0" fitWidth="191.0" layoutX="725.0" layoutY="266.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" />
+               <ImageView fx:id="imageViewer" fitHeight="192.0" fitWidth="191.0" layoutX="725.0" layoutY="266.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" />
                <ImageView fitHeight="231.0" fitWidth="238.0" layoutX="703.0" layoutY="247.0" pickOnBounds="true" preserveRatio="true">
                   <image>
                      <Image url="@css/immagini/frame.png" />
