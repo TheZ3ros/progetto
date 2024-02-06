@@ -30,7 +30,7 @@
                     <Insets bottom="10.0" right="3.0" top="10.0" />
                 </HBox.margin>
             </Button>
-            <Button alignment="CENTER_RIGHT" layoutX="62.0" layoutY="10.0" mnemonicParsing="false" styleClass="registra" text="Registrati" HBox.hgrow="ALWAYS">
+            <Button alignment="CENTER" layoutX="62.0" layoutY="10.0" mnemonicParsing="false" onAction="#vai_a_Agency_Home" styleClass="registra" text="Itinerari" HBox.hgrow="ALWAYS">
                 <HBox.margin>
                     <Insets bottom="10.0" left="3.0" right="3.0" top="10.0" />
                 </HBox.margin>

@@ -5,6 +5,9 @@ import com.example.progetto.bean.AgencyBean;
 import com.example.progetto.bean.TripBean;
 import com.example.progetto.controller_app.CreateTripController;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
@@ -66,6 +69,20 @@ public class ViewTripCreationController {
     private void vai_a_Home(){
 
         main.vaiAHome();
+    }
+
+    @FXML
+    private void vai_a_Agency_Home() throws IOException {
+        FXMLLoader AgencyHomeLoader = new FXMLLoader(Applicazione.class.getResource("agency_home.fxml"));
+        Parent AgencyHomeRoot = AgencyHomeLoader.load();
+        Scene TripCreationScene = new Scene(AgencyHomeRoot);
+        AgencyHomeController agencyhome = AgencyHomeLoader.getController();
+        agencyhome.setMain(main);
+        agencyhome.setUser(currentUser);
+        Stage stage = main.getStage();
+        stage.setScene(TripCreationScene);
+        agencyhome.setButtonText();
+        stage.setTitle("Home Agenzia");
     }
 
     @FXML
