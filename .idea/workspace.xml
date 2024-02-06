@@ -144,7 +144,7 @@
       <workItem from="1706883429760" duration="7147000" />
       <workItem from="1706955343112" duration="8432000" />
       <workItem from="1707227134879" duration="6711000" />
-      <workItem from="1707234158994" duration="458000" />
+      <workItem from="1707234158994" duration="1059000" />
     </task>
     <task id="LOCAL-00001" summary="Prova">
       <option name="closed" value="true" />
@@ -410,7 +410,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707234443738</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="fix code smell">
+      <option name="closed" value="true" />
+      <created>1707234844991</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1707234844991</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -443,7 +451,8 @@
     <MESSAGE value="Implementato il BLOB sia per la conversione dell'immagine che per il suo caricamento nel DB. Al momento gestisce solo immagini di piccola taglia" />
     <MESSAGE value="commit di prova" />
     <MESSAGE value="prova sonar cloud" />
-    <option name="LAST_COMMIT_MESSAGE" value="prova sonar cloud" />
+    <MESSAGE value="fix code smell" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix code smell" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -456,11 +465,6 @@
           <properties class="java.lang.RuntimeException" package="java.lang" />
           <option name="timeStamp" value="3" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/ViewTripCreationController.java</url>
-          <line>131</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>

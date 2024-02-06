@@ -1,7 +1,7 @@
 package com.example.progetto.controller_app;
 
-import com.example.progetto.DAO.AgencyDAO;
-import com.example.progetto.DAO.UserDAO;
+import com.example.progetto.dao.AgencyDAO;
+import com.example.progetto.dao.UserDAO;
 import com.example.progetto.bean.AgencyBean;
 import com.example.progetto.bean.UserBean;
 import com.example.progetto.entity.User;

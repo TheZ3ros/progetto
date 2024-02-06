@@ -1,4 +1,4 @@
-package com.example.progetto.DAO;
+package com.example.progetto.dao;
 
 
 import java.sql.SQLException;

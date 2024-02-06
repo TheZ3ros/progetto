@@ -1,8 +1,8 @@
 package com.example.progetto.controller_app;
 
-import com.example.progetto.DAO.TripDAO;
-import com.example.progetto.DAO.UserDAO;
-import com.example.progetto.DAO.UserTripDAO;
+import com.example.progetto.dao.TripDAO;
+import com.example.progetto.dao.UserDAO;
+import com.example.progetto.dao.UserTripDAO;
 import com.example.progetto.bean.TripBean;
 import com.example.progetto.bean.UserBean;
 import com.example.progetto.entity.Trip;
