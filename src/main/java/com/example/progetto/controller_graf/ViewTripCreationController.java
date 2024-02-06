@@ -40,7 +40,7 @@ public class ViewTripCreationController {
     @FXML
     private ImageView imageViewer;
     @FXML
-    private TextField nomecittà;
+    private TextField nomecitta;
     @FXML
     private TextField disponibili;
     @FXML
@@ -118,7 +118,7 @@ public class ViewTripCreationController {
     @FXML
     private void submit(){
         try{
-            String city = nomecittà.getText().trim();
+            String city = nomecitta.getText().trim();
             if (city.isEmpty() || imagePath.isEmpty()){
                 throw new IllegalArgumentException("Stringhe vuote");
             }
