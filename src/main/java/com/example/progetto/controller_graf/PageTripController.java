@@ -36,7 +36,7 @@ public class PageTripController {
     private Button nome;
     private UserBean currentUser;
 
-    private static final String action="Informazione";
+    private static final String ACTION ="Informazione";
 
     public void setMain(Applicazione main){
 
@@ -75,27 +75,27 @@ public class PageTripController {
         switch (n){
             case 1:
                 Alert alert=new Alert(AlertType.CONFIRMATION);
-                alert.setTitle(action);
+                alert.setTitle(ACTION);
                 alert.setHeaderText(null);
                 alert.setContentText("Prenotazione effettuata correttamente.");
                 alert.showAndWait();
                 break;
             case 2:
                 Alert alert2=new Alert(AlertType.ERROR);
-                alert2.setTitle(action);
+                alert2.setTitle(ACTION);
                 alert2.setHeaderText(null);
                 alert2.setContentText("Posti terminati.");
                 alert2.showAndWait();
                 break;
             case 3:
                 Alert alert3=new Alert(AlertType.WARNING);
-                alert3.setTitle(action);
+                alert3.setTitle(ACTION);
                 alert3.setHeaderText(null);
                 alert3.setContentText("Prenotazione già effettuata.");
                 alert3.showAndWait();
                 break;
             default:
-                throw new RuntimeException();
+                throw new IllegalArgumentException("Valore non valido");
 
 
         }
