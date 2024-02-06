@@ -78,6 +78,7 @@
             <!-- Default configuration for running with: mvn clean javafx:run -->
             <id>default-cli</id>
             <configuration>
+              <sonarJavaHome>C:/Program Files/Java/jdk-21</sonarJavaHome> <!-- Imposta il percorso per Java 17 -->
               <mainClass>com.example.progetto/com.example.progetto.Applicazione</mainClass>
               <launcher>app</launcher>
               <jlinkZipName>app</jlinkZipName>
