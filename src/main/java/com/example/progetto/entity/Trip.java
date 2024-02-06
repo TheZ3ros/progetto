@@ -5,7 +5,7 @@ public class Trip {
     private int available;
     private  String city;
     private  Date dataAnd;
-    private  Date dataRits;
+    private  Date dataRit;
     private  Float price;
     private  byte[] image;
     private int id;
