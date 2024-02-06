@@ -29,13 +29,13 @@ public class UserHomeController {
     }
 
     @FXML
-    private void vai_a_Home(){
+    private void vaiAHome(){
 
         main.vaiAHome();
     }
 
     @FXML
-    private void view_trip() throws IOException, SQLException {
+    private void viewTrip() throws IOException, SQLException {
 
         PageTripController.viewTrip(main, currentUser);
 
