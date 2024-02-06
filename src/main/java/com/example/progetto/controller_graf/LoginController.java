@@ -14,6 +14,7 @@ import com.example.progetto.controller_app.LogiinController;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 public class LoginController {
 
@@ -45,12 +46,12 @@ public class LoginController {
     }
 
     @FXML
-    private void HandlerLoginUtente() throws IOException {
+    private void HandlerLoginUtente() throws IOException, SQLException {
         String user_utente=usernameUtente.getText();
         String pass_utente=passwordUtente.getText();
         UserBean user = new UserBean(user_utente,pass_utente);
         LogiinController login=new LogiinController(user);
-        login.login_utente();
+        login.loginUtente();
         if(user.getToken()){
             FXMLLoader UserHomeLoader = new FXMLLoader(Applicazione.class.getResource("home_login.fxml"));
             Parent UserHomeRoot = UserHomeLoader.load();
@@ -75,13 +76,13 @@ public class LoginController {
     }
 
     @FXML
-    private void HandlerLoginAgenzia() throws IOException{
+    private void HandlerLoginAgenzia() throws IOException, SQLException {
 
         String user_Agenzia = usernameAgenzia.getText();
         String pass_Agenzia = passwordAgenzia.getText();
         AgencyBean agency = new AgencyBean(user_Agenzia,pass_Agenzia);
         LogiinController login = new LogiinController(agency);
-        login.login_agenzia();
+        login.loginAgenzia();
         if(agency.getToken()){
             FXMLLoader AgencyHomeLoader = new FXMLLoader(Applicazione.class.getResource("agency_home.fxml"));
             Parent AgencyHomeRoot = AgencyHomeLoader.load();

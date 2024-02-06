@@ -32,13 +32,13 @@ public class AgencyHomeController {
         this.main = main;
     }
     @FXML
-    private void vai_a_Home(){
+    private void vaiAHome(){
 
         main.vaiAHome();
     }
 
     @FXML
-    private void view_trip_creation() throws IOException{
+    private void viewTripCreation() throws IOException{
         FXMLLoader ViewTripCreationLoader = new FXMLLoader(Applicazione.class.getResource("view_trip_creation.fxml"));
         Parent ViewTripCreationRoot = ViewTripCreationLoader.load();
         Scene TripCreationScene = new Scene(ViewTripCreationRoot);

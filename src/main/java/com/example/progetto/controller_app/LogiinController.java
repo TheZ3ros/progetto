@@ -21,28 +21,20 @@ public class LogiinController {
 
         agencyBean=agency;
     }
-    public void login_utente(){
+    public void loginUtente() throws SQLException {
         UserDAO dao=new UserDAO();
         User utente;
-        try {
             utente= dao.execute(utentebean.getUsername());
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
         if (utentebean.getPassword().equals(utente.getPassword())){
             utentebean.setToken();
         }
 
     }
 
-    public void login_agenzia(){
+    public void loginAgenzia() throws SQLException {
         AgencyDAO dao = new AgencyDAO();
         Agency agenzia;
-        try {
             agenzia = dao.execute(agencyBean.getUsername());
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
         if (agencyBean.getPassword().equals(agenzia.getPassword())){
             agencyBean.setToken();
         }

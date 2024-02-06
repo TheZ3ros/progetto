@@ -126,7 +126,7 @@ public class ViewTripCreationController {
             TripBean trip = new TripBean(city,available,andata,ritorno,price,imageBytes);
             CreateTripController creation = new CreateTripController(trip);
             System.out.println("Check");
-            creation.upload_trip();
+            creation.uploadTrip();
         } catch (Exception e){
             Alert alert=new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Creazione fallita");

@@ -23,7 +23,7 @@ public class CreateTripController {
         new_trip.setImage(trip.getImage());
     }
 
-    public void upload_trip(){
+    public void uploadTrip(){
         TripDAO dao = new TripDAO();
 
         try {
@@ -35,7 +35,6 @@ public class CreateTripController {
             alert.setContentText("Impossibile aggiungere il nuovo itinerario al DB");
             alert.showAndWait();
         }
-        System.out.println("Si spera funzioni");
 
     }
 }

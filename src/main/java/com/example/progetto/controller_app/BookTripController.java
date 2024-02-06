@@ -16,7 +16,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BookTripController {
-    public static List<TripBean> show_trip() throws SQLException {
+    private BookTripController() {
+        throw new IllegalStateException("BookTripController");
+    }
+    public static List<TripBean> showTrip() throws SQLException {
         TripDAO tripdao = new TripDAO();
         Trip trip;
         List<TripBean> viaggi = new ArrayList<>();
@@ -34,7 +37,7 @@ public class BookTripController {
 
     }
 
-    public static int book_trip(UserBean userbean, TripBean tripbean) throws SQLException {
+    public static int bookTrip(UserBean userbean, TripBean tripbean) throws SQLException {
         TripDAO tripdao = new TripDAO();
         UserDAO userdao= new UserDAO();
         User utente = userdao.execute(userbean.getUsername());

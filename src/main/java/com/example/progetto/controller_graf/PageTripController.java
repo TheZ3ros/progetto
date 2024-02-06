@@ -69,7 +69,7 @@ public class PageTripController {
 
     @FXML
     public void Booking() throws SQLException {
-       int n=BookTripController.book_trip(currentUser, currentTrip);
+       int n=BookTripController.bookTrip(currentUser, currentTrip);
         switch (n){
             case 1:
                 Alert alert=new Alert(AlertType.CONFIRMATION);
