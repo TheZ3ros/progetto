@@ -40,7 +40,7 @@ public class ViewTripCreationController {
     @FXML
     private ImageView imageViewer;
     @FXML
-    private TextField nomeCittà;
+    private TextField nomecittà;
     @FXML
     private TextField disponibili;
     @FXML
@@ -86,7 +86,7 @@ public class ViewTripCreationController {
     }
 
     @FXML
-    private void insertImage(){
+    private void insertImage() throws IOException {
         FileChooser imageUploader = new FileChooser();
         imageUploader.setTitle("Seleziona l'immagine");
         imageUploader.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("File immagine","*.png","*.jpg","*.jpeg","*.gif"));
@@ -102,13 +102,11 @@ public class ViewTripCreationController {
     }
 
 
-    private byte[] imageToBytes(Image image) {
+    private byte[] imageToBytes(Image image) throws IOException {
         BufferedImage bufferedImage = SwingFXUtils.fromFXImage(image,null);
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-        try {
-            ImageIO.write(bufferedImage,"png",outputStream);
-        } catch (IOException ignored){
-        }
+        ImageIO.write(bufferedImage,"png",outputStream);
+
         return outputStream.toByteArray();
     }
 
@@ -120,7 +118,7 @@ public class ViewTripCreationController {
     @FXML
     private void submit(){
         try{
-            String city = nomeCittà.getText().trim();
+            String city = nomecittà.getText().trim();
             if (city.isEmpty() || imagePath.isEmpty()){
                 throw new IllegalArgumentException("Stringhe vuote");
             }
