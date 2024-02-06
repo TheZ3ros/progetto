@@ -35,7 +35,7 @@ public class Applicazione extends Application {
         stage.show();
     }
 
-    public void vai_a_Home(){
+    public void vaiAHome(){
         stage.setScene(homeScene);
         stage.setTitle("Home");
     }

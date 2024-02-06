@@ -34,7 +34,7 @@ public class AgencyHomeController {
     @FXML
     private void vai_a_Home(){
 
-        main.vai_a_Home();
+        main.vaiAHome();
     }
 
     @FXML

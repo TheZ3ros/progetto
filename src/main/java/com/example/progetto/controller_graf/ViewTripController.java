@@ -38,7 +38,7 @@ public class ViewTripController {
     @FXML
     private void vai_a_Home() {
 
-        main.vai_a_Home();
+        main.vaiAHome();
     }
 
     public void charge() throws SQLException, IOException {

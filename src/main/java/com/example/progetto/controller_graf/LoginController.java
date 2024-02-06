@@ -35,7 +35,7 @@ public class LoginController {
     @FXML
     private void vai_a_Home(){
 
-        main.vai_a_Home();
+        main.vaiAHome();
     }
 
     public void setMain(Applicazione main){

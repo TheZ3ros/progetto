@@ -44,7 +44,7 @@ public class PageTripController {
     @FXML
     private void vai_a_Home() {
 
-        main.vai_a_Home();
+        main.vaiAHome();
     }
     public void setCurrentUser(UserBean currentUser){
         this.currentUser = currentUser;

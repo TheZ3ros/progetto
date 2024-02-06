@@ -2,11 +2,7 @@ package com.example.progetto.controller_graf;
 import com.example.progetto.Applicazione;
 import com.example.progetto.bean.UserBean;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -35,7 +31,7 @@ public class UserHomeController {
     @FXML
     private void vai_a_Home(){
 
-        main.vai_a_Home();
+        main.vaiAHome();
     }
 
     @FXML

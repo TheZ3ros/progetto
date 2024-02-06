@@ -65,7 +65,7 @@ public class ViewTripCreationController {
     @FXML
     private void vai_a_Home(){
 
-        main.vai_a_Home();
+        main.vaiAHome();
     }
 
     @FXML
@@ -91,7 +91,6 @@ public class ViewTripCreationController {
         try {
             ImageIO.write(bufferedImage,"png",outputStream);
         } catch (IOException e){
-            e.printStackTrace();
         }
         return outputStream.toByteArray();
     }
