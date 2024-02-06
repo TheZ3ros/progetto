@@ -8,7 +8,7 @@ import java.sql.Types;
 public class AgencyDAO implements GenericDAO <Agency> {
     private final Connectivity connection;
     public AgencyDAO(){
-        connection =Connectivity.getSingletonInstance();
+        connection = Connectivity.getSingletonInstance();
 
     }
 
@@ -16,13 +16,24 @@ public class AgencyDAO implements GenericDAO <Agency> {
     public Agency execute(Object... params) throws SQLException {
         String username = (String) params[0];
         Agency utente=new Agency();
-        connection.connected();
-        CallableStatement cs = connection.conn.prepareCall("{call GetPasswordAgenzia(?,?)}");
-        cs.setString(1,username);
-        cs.registerOutParameter(2, Types.VARCHAR);
-        cs.executeQuery();
-        utente.setPassword(cs.getString(2));
-        utente.setUser((String) params[0]);
+        try{
+            connection.connected();
+            CallableStatement cs = connection.conn.prepareCall("{call GetPasswordAgenzia(?,?)}");
+            cs.setString(1,username);
+            cs.registerOutParameter(2, Types.VARCHAR);
+            cs.executeQuery();
+            utente.setPassword(cs.getString(2));
+            utente.setUser((String) params[0]);
+        } finally {
+            if (connection != null && connection.conn != null) {
+                try {
+                    connection.conn.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
 
 
         return utente;
