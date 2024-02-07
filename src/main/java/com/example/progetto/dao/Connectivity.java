@@ -7,7 +7,7 @@ import java.util.Properties;
 
 public class Connectivity {
     protected Connection conn;
-    private static Connectivity SingletonClass=null;
+    private static Connectivity singletonClass =null;
 
     protected Connectivity() throws IOException, SQLException {
         InputStream input = new FileInputStream("src/main/resources/db.properties");
@@ -23,9 +23,9 @@ public class Connectivity {
 
     //creo un singleton per assicurarmi di avere solo un'istanza di connessione
     public static synchronized Connectivity getSingletonInstance () throws SQLException, IOException {
-        if(Connectivity.SingletonClass==null) {
-            Connectivity.SingletonClass = new Connectivity();
+        if(Connectivity.singletonClass ==null) {
+            Connectivity.singletonClass = new Connectivity();
         }
-        return SingletonClass;
+        return singletonClass;
     }
 }

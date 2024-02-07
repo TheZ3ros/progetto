@@ -25,8 +25,6 @@ public class AgencyDAO implements GenericDAO <Agency> {
                 cs.executeQuery();
                 utente.setPassword(cs.getString(2));
                 utente.setUser((String) params[0]);
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
             }
         } finally {
             // Chiudi la connessione
