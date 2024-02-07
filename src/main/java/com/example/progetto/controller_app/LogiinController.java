@@ -7,6 +7,7 @@ import com.example.progetto.bean.UserBean;
 import com.example.progetto.entity.User;
 import com.example.progetto.entity.Agency;
 
+import java.io.IOException;
 import java.sql.SQLException;
 
 public class LogiinController {
@@ -21,7 +22,7 @@ public class LogiinController {
 
         agencyBean=agency;
     }
-    public void loginUtente() throws SQLException {
+    public void loginUtente() throws SQLException, IOException {
         UserDAO dao=new UserDAO();
         User utente;
             utente= dao.execute(utentebean.getUsername());
@@ -31,7 +32,7 @@ public class LogiinController {
 
     }
 
-    public void loginAgenzia() throws SQLException {
+    public void loginAgenzia() throws SQLException, IOException {
         AgencyDAO dao = new AgencyDAO();
         Agency agenzia;
             agenzia = dao.execute(agencyBean.getUsername());

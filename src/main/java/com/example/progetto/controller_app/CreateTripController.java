@@ -5,25 +5,24 @@ import com.example.progetto.bean.TripBean;
 import com.example.progetto.entity.Trip;
 import javafx.scene.control.Alert;
 
+import java.io.IOException;
 import java.sql.SQLException;
 
 public class CreateTripController {
 
-    private final TripBean tripbean;
     private final Trip newTrip = new Trip();
 
     public CreateTripController(TripBean trip){
-        this.tripbean=trip;
 
-        newTrip.setCity(tripbean.getCity());
+        newTrip.setCity(trip.getCity());
         newTrip.setAvailable(trip.getAvailable());
-        newTrip.setDataAnd(tripbean.getDataAnd());
-        newTrip.setDataRit(tripbean.getDataRit());
+        newTrip.setDataAnd(trip.getDataAnd());
+        newTrip.setDataRit(trip.getDataRit());
         newTrip.setPrice(trip.getPrice());
         newTrip.setImage(trip.getImage());
     }
 
-    public void uploadTrip(){
+    public void uploadTrip() throws SQLException, IOException {
         TripDAO dao = new TripDAO();
 
         try {

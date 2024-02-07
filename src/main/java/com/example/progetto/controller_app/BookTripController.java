@@ -11,6 +11,7 @@ import com.example.progetto.entity.UserTrip;
 import javafx.scene.image.Image;
 
 import java.io.ByteArrayInputStream;
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +20,7 @@ public class BookTripController {
     private BookTripController() {
         throw new IllegalStateException("BookTripController");
     }
-    public static List<TripBean> showTrip() throws SQLException {
+    public static List<TripBean> showTrip() throws SQLException, IOException {
         TripDAO tripdao = new TripDAO();
         Trip trip;
         List<TripBean> viaggi = new ArrayList<>();
@@ -37,7 +38,7 @@ public class BookTripController {
 
     }
 
-    public static int bookTrip(UserBean userbean, TripBean tripbean) throws SQLException {
+    public static int bookTrip(UserBean userbean, TripBean tripbean) throws SQLException, IOException {
         TripDAO tripdao = new TripDAO();
         UserDAO userdao= new UserDAO();
         User utente = userdao.execute(userbean.getUsername());

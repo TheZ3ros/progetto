@@ -70,7 +70,7 @@ public class PageTripController {
     }
 
     @FXML
-    public void booking() throws SQLException {
+    public void booking() throws SQLException, IOException {
        int n=BookTripController.bookTrip(currentUser, currentTrip);
         switch (n){
             case 1:
