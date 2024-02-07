@@ -17,7 +17,7 @@ public class UserTripDAO implements GenericDAO <UserTrip> {
         UserTrip tab=(UserTrip) params[0];
         int idTrip=tab.getIdTrip();
         String username=tab.getUsername();
-        if(!already_exist(idTrip,username)){
+        if(!alreadyExist(idTrip,username)){
             CallableStatement cs = connection.conn.prepareCall("{call SetTrip(?,?)}");
             cs.setInt(1, idTrip);
             cs.setString(2, username);
@@ -26,7 +26,6 @@ public class UserTripDAO implements GenericDAO <UserTrip> {
             if (rowsAffected > 0) {
                 return tab;
             } else {
-                System.out.println("La stored procedure non ha influenzato alcuna riga.");
                 return null;
             }
         }
@@ -34,7 +33,7 @@ public class UserTripDAO implements GenericDAO <UserTrip> {
 
     }
 
-    private boolean already_exist(int idTrip,String username) throws SQLException {
+    private boolean alreadyExist(int idTrip, String username) throws SQLException {
         CallableStatement cs = connection.conn.prepareCall("{call CheckUserTrip(?,?)}");
         cs.setInt(1,idTrip);
         cs.setString(2, username);

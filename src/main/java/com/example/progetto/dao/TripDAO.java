@@ -44,13 +44,13 @@ public class TripDAO implements GenericDAO<Trip> {
             return null;
         }
     }
-    public void refresh_available(int id) throws SQLException {
+    public void refreshAvailable(int id) throws SQLException {
         CallableStatement cs = connection.conn.prepareCall("{call decrementa(?)}");
         cs.setInt(1,id);
         cs.executeQuery();
     }
 
-    public void add_trip(String city, int available, Date data_and, Date data_rit, float price, byte[] image) throws SQLException {
+    public void addTrip(String city, int available, Date data_and, Date data_rit, float price, byte[] image) throws SQLException {
         CallableStatement cs = connection.conn.prepareCall("{call AddTrip(?,?,?,?,?,?)}");
         cs.setString(1,city);
         cs.setInt(2,available);
@@ -59,7 +59,6 @@ public class TripDAO implements GenericDAO<Trip> {
         cs.setFloat(5,price);
         cs.setBytes(6,image);
         cs.executeQuery();
-        System.out.println("Query eseguita");
     }
 }
 

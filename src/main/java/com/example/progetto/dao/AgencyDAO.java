@@ -15,7 +15,7 @@ public class AgencyDAO implements GenericDAO <Agency> {
     }
 
     @Override
-    public Agency execute(Object... params) {
+    public Agency execute(Object... params) throws SQLException {
         String username = (String) params[0];
         Agency utente = new Agency();
         try {
@@ -25,16 +25,14 @@ public class AgencyDAO implements GenericDAO <Agency> {
                 cs.executeQuery();
                 utente.setPassword(cs.getString(2));
                 utente.setUser((String) params[0]);
-            } catch (SQLException ignored) {
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
             }
-            // Chiudi lo statement
         } finally {
             // Chiudi la connessione
-            if (connection != null && connection.conn != null) {
-                try {
+            if (connection.conn != null) {
                     connection.conn.close();
-                } catch (SQLException ignored) {
-                }
+
             }
         }
         return utente;

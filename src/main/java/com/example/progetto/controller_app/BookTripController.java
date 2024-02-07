@@ -51,7 +51,7 @@ public class BookTripController {
 
             int result;
             if (trip.getAvailable() > 0 && usertripdao.execute(usertrip) != null) {
-                tripdao.refresh_available(trip.getId());
+                tripdao.refreshAvailable(trip.getId());
                 result = 1;
             } else if (trip.getAvailable() <= 0) {
                 result = 2;

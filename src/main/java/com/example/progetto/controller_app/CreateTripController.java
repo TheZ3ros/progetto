@@ -26,7 +26,7 @@ public class CreateTripController {
         TripDAO dao = new TripDAO();
 
         try {
-            dao.add_trip(newTrip.getCity(), newTrip.getAvailable(), newTrip.getDataAnd(), newTrip.getDataRit(), newTrip.getPrice(), newTrip.getImage());
+            dao.addTrip(newTrip.getCity(), newTrip.getAvailable(), newTrip.getDataAnd(), newTrip.getDataRit(), newTrip.getPrice(), newTrip.getImage());
         } catch (SQLException e) {
             Alert alert=new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Creazione fallita");
