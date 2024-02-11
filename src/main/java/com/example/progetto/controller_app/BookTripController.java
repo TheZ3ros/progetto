@@ -20,6 +20,7 @@ public class BookTripController {
     private BookTripController() {
         throw new IllegalStateException("BookTripController");
     }
+
     public static List<TripBean> showTrip() throws SQLException, IOException {
         TripDAO tripdao = new TripDAO();
         Trip trip;
