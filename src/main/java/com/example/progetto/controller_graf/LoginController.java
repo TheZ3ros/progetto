@@ -46,7 +46,7 @@ public class LoginController {
     }
 
     @FXML
-    private void handlerloginutente() throws IOException, SQLException {
+    public void handlerloginutente() throws IOException, SQLException {
         String userUtente=usernameUtente.getText();
         String passUtente=passwordUtente.getText();
         UserBean user = new UserBean(userUtente,passUtente);

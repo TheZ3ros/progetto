@@ -60,6 +60,11 @@ public class TripDAO implements GenericDAO<Trip> {
         cs.setBytes(6,image);
         cs.executeQuery();
     }
+
+    public void TripUser(String username){
+//la stored procedure funziona
+
+    }
 }
 
 

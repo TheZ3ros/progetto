@@ -115,5 +115,17 @@
 .list-view .list-cell:odd {
     -fx-background-color: transparent;
 }
+.imieiviaggi {
+    -fx-background-insets: 0, 0, 1, 2;
+    -fx-background-radius: 50;
+    -fx-padding: 3 6 4 6;
+    -fx-background-color: transparent;
+    -fx-text-fill: #9700ae;
+    -fx-font-family: garamond;
+    -fx-font-size: 16px;
+    -fx-pref-height: 30px;
+    -fx-pref-width: 90px;
+    -fx-cursor: hand; /* Cambia hand con il tipo di cursore desiderato */
 
+}
 

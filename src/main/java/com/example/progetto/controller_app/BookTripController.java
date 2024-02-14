@@ -17,10 +17,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BookTripController {
-    private BookTripController() {
+    public BookTripController() {
+
         throw new IllegalStateException("BookTripController");
     }
-    public static List<TripBean> showTrip() throws SQLException, IOException {
+    public List<TripBean> showTrip() throws SQLException, IOException {
         TripDAO tripdao = new TripDAO();
         Trip trip;
         List<TripBean> viaggi = new ArrayList<>();
@@ -38,7 +39,7 @@ public class BookTripController {
 
     }
 
-    public static int bookTrip(UserBean userbean, TripBean tripbean) throws SQLException, IOException {
+    public int bookTrip(UserBean userbean, TripBean tripbean) throws SQLException, IOException {
         TripDAO tripdao = new TripDAO();
         UserDAO userdao= new UserDAO();
         User utente = userdao.execute(userbean.getUsername());
@@ -67,6 +68,12 @@ public class BookTripController {
     public static Image bytesToImage ( byte[] bytes){
         ByteArrayInputStream inputStream = new ByteArrayInputStream(bytes);
         return new Image(inputStream);
+    }
+
+    public void GetTripUser(UserBean utente) throws SQLException, IOException {
+        TripDAO tripDAO=new TripDAO();
+        tripDAO.TripUser(utente.getUsername());
+
     }
 
 }

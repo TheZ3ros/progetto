@@ -40,5 +40,7 @@ public class UserHomeController {
         PageTripController.viewTrip(main, currentUser);
 
     }
+    @FXML
+    private void myTrip(){}
 
 }
