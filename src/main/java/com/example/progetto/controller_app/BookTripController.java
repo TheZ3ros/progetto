@@ -82,7 +82,6 @@ public class BookTripController {
             TripBean tripBean = new TripBean(value.getCity(), value.getAvailable(), value.getDataAnd(), value.getDataRit(), value.getPrice(), value.getImage(), value.isStato());
             tripBeanList.add(tripBean);
         }
-        
         return tripBeanList;
     }
 }
