@@ -100,7 +100,15 @@ public class PageTripController {
 
         }
     }
-  
+    @FXML
+ private void viewTrip() throws IOException, SQLException {
+        ViewTripController viewTripController=new ViewTripController();
+        viewTripController.viewTrip(main, currentUser);
+
+    }
+
+
+
 
 }
 

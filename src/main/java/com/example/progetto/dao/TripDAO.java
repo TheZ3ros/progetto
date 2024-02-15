@@ -36,7 +36,8 @@ public class TripDAO implements GenericDAO<Trip> {
             int available=(cs.getInt(5));
             byte[] image=(cs.getBytes(6));
             Date dataRit=(cs.getDate(7));
-            trip =new Trip(available, citta, dataA,dataRit,prezzo,image);
+
+            trip =new Trip(available, citta, dataA,dataRit,prezzo,image,id);
 
             return trip;
         }

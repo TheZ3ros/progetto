@@ -5,13 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="abd72b32-f6c1-4b42-a1d9-4297dd975b52" name="Changes" comment="fix secondari">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_01_02_2024_18_34_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_01_02_2024_18_34__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_app/BookTripController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_app/BookTripController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_app/CreateTripController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_app/CreateTripController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/dao/AgencyDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/dao/AgencyDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/PageTripController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/PageTripController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/UserHomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/UserHomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/dao/TripDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/dao/TripDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/entity/Trip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/entity/Trip.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +40,9 @@
   &quot;associatedIndex&quot;: 4
 }</component>
   <component name="ProjectId" id="2aXqTO3uGcdcE17v7LMnBp8HU9f" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -457,6 +458,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/example/progetto/controller_app/CreateTripController.java</url>
           <line>32</line>
           <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/PageTripController.java</url>
+          <line>54</line>
+          <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

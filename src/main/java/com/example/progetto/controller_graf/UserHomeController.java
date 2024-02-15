@@ -46,6 +46,8 @@ public class UserHomeController {
     }
     @FXML
     private void myTrip() throws SQLException, IOException {
+        MyTripController myTripController=new MyTripController();
+        myTripController.charge();
         FXMLLoader myTripLoader = new FXMLLoader(Applicazione.class.getResource("myTrip.fxml"));
         Parent mytriproot = myTripLoader.load();
         Scene myTripScene = new Scene(mytriproot);

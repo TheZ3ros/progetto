@@ -17,6 +17,15 @@ public class Trip {
         this.dataAnd=dataAnd;
         this.dataRit=dataRit;
     }
+    public Trip(int n, String city, Date dataAnd, Date dataRit,Float price,byte[] image, int id){
+        this.city=city;
+        this.image=image;
+        this.available=n;
+        this.price=price;
+        this.dataAnd=dataAnd;
+        this.dataRit=dataRit;
+        this.id=id;
+    }
 
 
     public int getAvailable() {
