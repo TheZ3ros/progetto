@@ -1,5 +1,7 @@
 package com.example.progetto.controller_app;
 
+import com.example.progetto.Exception.AlreadyPrenotedException;
+import com.example.progetto.Exception.PlacesTerminatedException;
 import com.example.progetto.dao.TripDAO;
 import com.example.progetto.dao.UserDAO;
 import com.example.progetto.dao.UserTripDAO;
@@ -39,7 +41,7 @@ public class BookTripController {
 
     }
 
-    public static int bookTrip(UserBean userbean, TripBean tripbean) throws SQLException, IOException {
+    public static int bookTrip(UserBean userbean, TripBean tripbean) throws SQLException, IOException, PlacesTerminatedException, AlreadyPrenotedException {
         TripDAO tripdao = new TripDAO();
         UserDAO userdao = new UserDAO();
         User utente = userdao.execute(userbean.getUsername());
@@ -56,8 +58,10 @@ public class BookTripController {
             result = 1;
         } else if (trip.getAvailable() <= 0) {
             result = 2;
+            throw new PlacesTerminatedException("i posti per il viaggio sono terminati");
         } else {
             result = 3;
+            throw new AlreadyPrenotedException("sei già prenotato per questo viaggio");
         }
 
         return result;

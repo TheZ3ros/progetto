@@ -1,20 +1,18 @@
 package com.example.progetto.controller_graf;
 
 import com.example.progetto.Applicazione;
+import com.example.progetto.Exception.AlreadyPrenotedException;
+import com.example.progetto.Exception.PlacesTerminatedException;
 import com.example.progetto.bean.TripBean;
 import com.example.progetto.bean.UserBean;
 import com.example.progetto.controller_app.BookTripController;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
-import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -70,9 +68,30 @@ public class PageTripController {
     }
 
     @FXML
-    public void booking() throws SQLException, IOException {
-       int n=BookTripController.bookTrip(currentUser, currentTrip);
-        switch (n){
+    public void booking() throws PlacesTerminatedException, SQLException, AlreadyPrenotedException, IOException {
+       try{
+           int n=BookTripController.bookTrip(currentUser, currentTrip);
+       }
+       catch(PlacesTerminatedException e){
+           Alert alert2=new Alert(AlertType.ERROR);
+           alert2.setTitle(ACTION);
+           alert2.setHeaderText(null);
+           alert2.setContentText("Posti terminati.");
+           alert2.showAndWait();
+        }
+       catch(AlreadyPrenotedException e){
+           Alert alert3=new Alert(AlertType.WARNING);
+           alert3.setTitle(ACTION);
+           alert3.setHeaderText(null);
+           alert3.setContentText("Prenotazione già effettuata.");
+           alert3.showAndWait();
+       }
+        Alert alert=new Alert(AlertType.CONFIRMATION);
+        alert.setTitle(ACTION);
+        alert.setHeaderText(null);
+        alert.setContentText("Prenotazione effettuata correttamente.");
+        alert.showAndWait();
+      /*  switch (n){
             case 1:
                 Alert alert=new Alert(AlertType.CONFIRMATION);
                 alert.setTitle(ACTION);
@@ -98,7 +117,7 @@ public class PageTripController {
                 throw new IllegalArgumentException("Valore non valido");
 
 
-        }
+        }*/
     }
     @FXML
  private void viewTrip() throws IOException, SQLException {

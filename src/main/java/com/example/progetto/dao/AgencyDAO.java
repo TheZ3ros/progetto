@@ -9,7 +9,7 @@ import java.sql.Types;
 
 public class AgencyDAO implements GenericDAO <Agency> {
     private final Connectivity connection;
-    public AgencyDAO() throws SQLException, IOException {
+    public AgencyDAO() throws SQLException, IOException{
         connection = Connectivity.getSingletonInstance();
 
     }

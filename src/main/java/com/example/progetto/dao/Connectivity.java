@@ -1,4 +1,5 @@
 package com.example.progetto.dao;
+
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -9,14 +10,25 @@ public class Connectivity {
     protected Connection conn;
     private static Connectivity singletonClass =null;
 
-    protected Connectivity() throws IOException, SQLException {
-        InputStream input = new FileInputStream("src/main/resources/db.properties");
+    protected Connectivity() throws SQLException, IOException {
+        InputStream input;
+        try{
+            input = new FileInputStream("src/main/resources/db.properties");
+        }
+        catch(IOException e){
+            throw new IOException("errore durante recupero credenziali DB"+e.getMessage());
+        }
         Properties properties = new Properties();
         properties.load(input);
         String connectionUrl = properties.getProperty("CONNECTION_URL");
         String user = properties.getProperty("DB_USER");
         String pass = properties.getProperty("DB_PASS");
-        conn = DriverManager.getConnection(connectionUrl, user, pass);
+        try{
+            conn = DriverManager.getConnection(connectionUrl, user, pass);
+        }
+        catch(SQLException e){
+            throw new SQLException("errore apertura connessione"+e.getMessage());
+        }
 
     }
 
