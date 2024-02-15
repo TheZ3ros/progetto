@@ -17,9 +17,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BookTripController {
-    private BookTripController() {
+    public BookTripController() {
         throw new IllegalStateException("BookTripController");
     }
+
     public static List<TripBean> showTrip() throws SQLException, IOException {
         TripDAO tripdao = new TripDAO();
         Trip trip;
@@ -40,7 +41,7 @@ public class BookTripController {
 
     public static int bookTrip(UserBean userbean, TripBean tripbean) throws SQLException, IOException {
         TripDAO tripdao = new TripDAO();
-        UserDAO userdao= new UserDAO();
+        UserDAO userdao = new UserDAO();
         User utente = userdao.execute(userbean.getUsername());
         Trip trip = tripdao.execute(tripbean.getId());
         UserTrip usertrip = new UserTrip();
@@ -49,28 +50,41 @@ public class BookTripController {
         UserTripDAO usertripdao = new UserTripDAO();
 
 
-            int result;
-            if (trip.getAvailable() > 0 && usertripdao.execute(usertrip) != null) {
-                tripdao.refreshAvailable(trip.getId());
-                result = 1;
-            } else if (trip.getAvailable() <= 0) {
-                result = 2;
-            } else {
-                result = 3;
-            }
-
-            return result;
-
-
+        int result;
+        if (trip.getAvailable() > 0 && usertripdao.execute(usertrip) != null) {
+            tripdao.refreshAvailable(trip.getId());
+            result = 1;
+        } else if (trip.getAvailable() <= 0) {
+            result = 2;
+        } else {
+            result = 3;
         }
 
-    public static Image bytesToImage ( byte[] bytes){
+        return result;
+
+
+    }
+
+    public static Image bytesToImage(byte[] bytes) {
         ByteArrayInputStream inputStream = new ByteArrayInputStream(bytes);
         return new Image(inputStream);
     }
 
-}
 
+    public static List<TripBean> GetTripUser(UserBean utente) throws SQLException, IOException {
+        TripDAO tripDAO = new TripDAO();
+        List<Trip> trip = tripDAO.TripUser(utente.getUsername());
+        List<TripBean> tripBeanList = new ArrayList<>();
+        for (int i = 0; i < trip.size(); i++) {
+
+            TripBean tripBean = new TripBean(trip.get(i).getAvailable(), trip.get(i).getCity(), trip.get(i).getDataAnd(), trip.get(i).getDataRit(), trip.get(i).getPrice(), trip.get(i).getImage(), trip.get(i).getId());
+            tripBeanList.add(tripBean);
+        }
+
+
+        return tripBeanList;
+    }
+}
 
 
 

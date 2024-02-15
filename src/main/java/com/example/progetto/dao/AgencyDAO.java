@@ -1,6 +1,6 @@
 package com.example.progetto.dao;
 
-import com.example.progetto.model.Agency;
+import com.example.progetto.entity.Agency;
 
 import java.io.IOException;
 import java.sql.CallableStatement;

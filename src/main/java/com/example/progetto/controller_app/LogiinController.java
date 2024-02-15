@@ -4,8 +4,8 @@ import com.example.progetto.dao.AgencyDAO;
 import com.example.progetto.dao.UserDAO;
 import com.example.progetto.bean.AgencyBean;
 import com.example.progetto.bean.UserBean;
-import com.example.progetto.model.User;
-import com.example.progetto.model.Agency;
+import com.example.progetto.entity.User;
+import com.example.progetto.entity.Agency;
 
 import java.io.IOException;
 import java.sql.SQLException;

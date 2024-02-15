@@ -5,6 +5,7 @@ import com.example.progetto.bean.TripBean;
 import com.example.progetto.bean.UserBean;
 import com.example.progetto.controller_app.BookTripController;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.VBox;
@@ -41,8 +42,16 @@ public class MyTripController {
         main.vaiAHome();
     }
     public void charge() throws SQLException, IOException {
-        BookTripController bookTripController=new BookTripController();
-        List<TripBean> viaggi = bookTripController.GetTripUser(currentUser);
+        List<TripBean> viaggi = BookTripController.GetTripUser(currentUser);
+        for (TripBean viaggio : viaggi) {
+            FXMLLoader prenotazioneLoader = new FXMLLoader(Applicazione.class.getResource("prenotazione.fxml"));
+            VBox box=prenotazioneLoader.load();
+            PrenotazioneController controller = prenotazioneLoader.getController();
+            controller.setMain(main);
+            controller.setUser(currentUser);
+            controller.createbox(viaggio);
+            listaview.getItems().add(box);
+        }
 
     }
 }

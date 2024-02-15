@@ -71,8 +71,7 @@ public class PageTripController {
 
     @FXML
     public void booking() throws SQLException, IOException {
-        BookTripController bookTripController=new BookTripController();
-       int n=bookTripController.bookTrip(currentUser, currentTrip);
+       int n=BookTripController.bookTrip(currentUser, currentTrip);
         switch (n){
             case 1:
                 Alert alert=new Alert(AlertType.CONFIRMATION);
@@ -101,26 +100,7 @@ public class PageTripController {
 
         }
     }
-    @FXML
-    private void viewTrip() throws IOException, SQLException {
-
-        viewTrip(main, currentUser);
-
-    }
-
-    public void viewTrip(Applicazione main, UserBean currentUser) throws IOException, SQLException {
-        FXMLLoader viewtriploader = new FXMLLoader(Applicazione.class.getResource("view_trip.fxml"));
-        Parent viewtriproot = viewtriploader.load();
-        Scene viewTripScene = new Scene(viewtriproot);
-        ViewTripController viewtrip = viewtriploader.getController();
-        viewtrip.setMain(main);
-        viewtrip.setUser(currentUser);
-        Stage stage = main.getStage();
-        stage.setScene(viewTripScene);
-        viewtrip.setButtonText();
-        viewtrip.charge();
-        stage.setTitle("Ricerca");
-    }
+  
 
 }
 

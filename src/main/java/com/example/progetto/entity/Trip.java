@@ -1,4 +1,4 @@
-package com.example.progetto.model;
+package com.example.progetto.entity;
 import java.sql.Date;
 
 public class Trip {

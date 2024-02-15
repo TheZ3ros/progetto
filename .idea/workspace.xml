@@ -5,7 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="abd72b32-f6c1-4b42-a1d9-4297dd975b52" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/PrenotazioneController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/progetto/prenotazione.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_07_02_2024_16_15__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_07_02_2024_16_15__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_app/BookTripController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_app/BookTripController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_app/CreateTripController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_app/CreateTripController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_app/LogiinController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_app/LogiinController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/MyTripController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/MyTripController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/PageTripController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/PageTripController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/UserHomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/UserHomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/ViewTripController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/ViewTripController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/dao/AgencyDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/dao/AgencyDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/dao/TripDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/dao/TripDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/dao/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/dao/UserTripDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/dao/UserTripDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/model/Agency.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/entity/Agency.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/model/Trip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/entity/Trip.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/model/UserTrip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/entity/UserTrip.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/progetto/prova.fxml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,8 +37,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="FxmlFile" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -32,7 +53,6 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
@@ -72,6 +92,9 @@
   },
   "keyToStringList": {
     "ChangesTree.GroupingKeys": [
+    ],
+    "DatabaseDriversLRU": [
+      "mysql"
     ],
     "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
       "CSS"
@@ -468,9 +491,9 @@
           <option name="timeStamp" value="3" />
         </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/progetto/dao/Connectivity.java</url>
-          <line>25</line>
-          <option name="timeStamp" value="6" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/UserHomeController.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

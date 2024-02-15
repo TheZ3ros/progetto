@@ -1,6 +1,6 @@
 package com.example.progetto.dao;
 
-import com.example.progetto.model.UserTrip;
+import com.example.progetto.entity.UserTrip;
 
 import java.io.IOException;
 import java.sql.CallableStatement;

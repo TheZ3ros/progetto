@@ -1,5 +1,5 @@
 package com.example.progetto.dao;
-import com.example.progetto.model.User;
+import com.example.progetto.entity.User;
 
 import java.io.IOException;
 import java.sql.CallableStatement;

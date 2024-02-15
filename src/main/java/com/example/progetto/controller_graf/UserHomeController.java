@@ -2,7 +2,11 @@ package com.example.progetto.controller_graf;
 import com.example.progetto.Applicazione;
 import com.example.progetto.bean.UserBean;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -36,13 +40,23 @@ public class UserHomeController {
 
     @FXML
     private void viewTrip() throws IOException, SQLException {
-        PageTripController page=new PageTripController();
+        ViewTripController page=new ViewTripController();
         page.viewTrip(main, currentUser);
 
     }
     @FXML
-    private void myTrip(){}
-    MyTripController myTrips=new MyTripController();
-    myTrips.setMain(main);
-
+    private void myTrip() throws SQLException, IOException {
+        FXMLLoader myTripLoader = new FXMLLoader(Applicazione.class.getResource("myTrip.fxml"));
+        Parent mytriproot = myTripLoader.load();
+        Scene myTripScene = new Scene(mytriproot);
+        ViewTripController mytrip = myTripLoader.getController();
+        mytrip.setMain(main);
+        mytrip.setUser(currentUser);
+        Stage stage = main.getStage();
+        stage.setScene(myTripScene);
+        mytrip.setButtonText();
+        mytrip.charge();
+        stage.setTitle("I miei viaggi");
+        
+    }
 }

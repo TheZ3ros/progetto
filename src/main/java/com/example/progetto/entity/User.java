@@ -1,4 +1,4 @@
-package com.example.progetto.model;
+package com.example.progetto.entity;
 
 public class User {
     private String username;
