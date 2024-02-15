@@ -24,7 +24,7 @@ public class Applicazione extends Application {
         Parent homeRoot = homeLoader.load();
         homeScene = new Scene(homeRoot);
 
-
+    stage.setResizable(false);
         stage.setScene(homeScene);
         stage.setTitle("Home!");
 
