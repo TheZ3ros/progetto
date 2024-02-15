@@ -8,14 +8,16 @@ public class Trip {
     private  Date dataRit;
     private  Float price;
     private  byte[] image;
+    private boolean stato;
     private int id;
-    public Trip(int n, String city, Date dataAnd, Date dataRit,Float price,byte[] image){
+    public Trip(int n, String city, Date dataAnd, Date dataRit,Float price,byte[] image, boolean stato){
         this.city=city;
         this.image=image;
         this.available=n;
         this.price=price;
         this.dataAnd=dataAnd;
         this.dataRit=dataRit;
+        this.stato=stato;
     }
     public Trip(int n, String city, Date dataAnd, Date dataRit,Float price,byte[] image, int id){
         this.city=city;
@@ -56,27 +58,8 @@ public class Trip {
         return price;
     }
 
-    public void setAvailable(int posti) {
-        this.available =posti;
+    public boolean isStato() {
+        return stato;
     }
-    public void setCity(String citta) {
-        this.city=citta;
-    }
-    public void setPrice(float prezzo) {
-        this.price=prezzo;
-    }
-    public void setDataRit(Date data) {
-        this.dataRit =data;
-    }
-    public void setDataAnd(Date data) {
-        this.dataAnd =data;
-    }
-    public void setImage(byte[] image) {
-        this.image=image;
-    }
-    public void setId(int id){
-        this.id=id;
-    }
-
 }
 //Controller applicativo controlla il bean, se tutto va bene crea l’entity e la passa al dao.

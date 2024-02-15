@@ -23,8 +23,7 @@ public class PrenotazioneController {
     private Button title;
     @FXML
     private Text data;
-    @FXML
-    private Text prezzo;
+    private Text stato;
     private Applicazione main;
     private TripBean bean;
     private UserBean user;
@@ -44,7 +43,6 @@ public class PrenotazioneController {
         imagine.setImage(image);
         title.setText(bean.getCity());
         data.setText(bean.getDataAnd() +"/" + bean.getDataRit());
-        prezzo.setText((int)bean.getPrice()+"€");
     }
 
 

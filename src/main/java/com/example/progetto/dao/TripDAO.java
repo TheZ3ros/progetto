@@ -73,13 +73,14 @@ public class TripDAO implements GenericDAO<Trip> {
             if (status) {
                 ResultSet rs = cs.getResultSet();
                 while (rs.next()) {
-                    String citta=(rs.getString(1));
-                    Float prezzo=(rs.getFloat(2));
-                    Date dataA=(rs.getDate(3));
-                    int available=(rs.getInt(4));
-                    byte[] image=(rs.getBytes(5));
-                    Date dataRit=(rs.getDate(6));
-                    Trip trips =new Trip(available, citta, dataA,dataRit,prezzo,image);
+                    String citta=rs.getString(1);
+                    Float prezzo=rs.getFloat(2);
+                    Date dataA=rs.getDate(3);
+                    Date dataRit=rs.getDate(4);
+                    int available=rs.getInt(5);
+                    byte[] image=rs.getBytes(6);
+                    boolean state=rs.getBoolean(7);
+                    Trip trips =new Trip(available, citta, dataA,dataRit,prezzo,image,state);
                     trip.add(trips);
                 }
 

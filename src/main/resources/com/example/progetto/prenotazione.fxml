@@ -8,7 +8,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Text?>
 
-<VBox prefHeight="219.0" prefWidth="335.0" style="-fx-background-color: transparent;" stylesheets="@css/sheet.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.progetto.controller_graf.ViaggioController">
+<VBox prefHeight="219.0" prefWidth="335.0" style="-fx-background-color: transparent;" stylesheets="@css/sheet.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.progetto.controller_graf.PrenotazioneController">
     <Pane prefHeight="219.0" prefWidth="590.0" style="-fx-background-color: transparent;">
         <ImageView fx:id="imagine" fitHeight="219.0" fitWidth="335.0" pickOnBounds="true" preserveRatio="true" />
         <Pane prefHeight="219.0" prefWidth="335.0" style="-fx-background-color: transparent;">
@@ -18,7 +18,7 @@
             </ImageView>
             <Text fx:id="data" layoutX="68.0" layoutY="189.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20;" styleClass="fontnuovo" text="Text" wrappingWidth="204.70003700256348" />
             <Text fx:id="stato" layoutX="20.0" layoutY="151.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20;" styleClass="fontnuovo" text="Stato prenotazione:" wrappingWidth="130.78005981445312" />
-            <Button fx:id="title" alignment="TOP_LEFT" layoutX="-15.0" layoutY="-9.0" mnemonicParsing="false" onAction="#pagetrip" prefHeight="79.0" prefWidth="292.0" style="-fx-background-color: transparent; -fx-font-size: 35; -fx-cursor: hand;" styleClass="fontnuovo" text="Button" />
+            <Button fx:id="title" alignment="TOP_LEFT" layoutX="-15.0" layoutY="-9.0" mnemonicParsing="false" prefHeight="79.0" prefWidth="292.0" style="-fx-background-color: transparent; -fx-font-size: 35; -fx-cursor: hand;" styleClass="fontnuovo" text="Button" />
         </Pane>
     </Pane>
 </VBox>

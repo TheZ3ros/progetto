@@ -46,18 +46,15 @@ public class UserHomeController {
     }
     @FXML
     private void myTrip() throws SQLException, IOException {
-        MyTripController myTripController=new MyTripController();
-        myTripController.charge();
         FXMLLoader myTripLoader = new FXMLLoader(Applicazione.class.getResource("myTrip.fxml"));
         Parent mytriproot = myTripLoader.load();
         Scene myTripScene = new Scene(mytriproot);
-        ViewTripController mytrip = myTripLoader.getController();
-        mytrip.setMain(main);
-        mytrip.setUser(currentUser);
+        MyTripController myTripController = myTripLoader.getController();
+        myTripController.setMain(main);
+        myTripController.setUser(currentUser);
+        myTripController.charge();
         Stage stage = main.getStage();
         stage.setScene(myTripScene);
-        mytrip.setButtonText();
-        mytrip.charge();
         stage.setTitle("I miei viaggi");
         
     }

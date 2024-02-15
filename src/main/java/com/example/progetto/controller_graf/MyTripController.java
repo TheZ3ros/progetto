@@ -26,7 +26,10 @@ public class MyTripController {
 
         currentUser = utente;
     }
-
+    public void ricerca() throws SQLException, IOException {
+        listaview.getItems().clear();
+        charge();
+    }
     public void setButtonText() {
 
         user.setText(currentUser.getUsername());
