@@ -71,7 +71,7 @@ public class BookTripController {
         ByteArrayInputStream inputStream = new ByteArrayInputStream(bytes);
         return new Image(inputStream);
     }
-    
+
     public static List<TripBean> GetTripUser(UserBean utente) throws SQLException, IOException {
         TripDAO tripDAO = new TripDAO();
         List<Trip> trip = tripDAO.TripUser(utente.getUsername());
@@ -84,6 +84,5 @@ public class BookTripController {
         return tripBeanList;
     }
 }
-
 
 
