@@ -36,11 +36,13 @@ public class UserHomeController {
 
     @FXML
     private void viewTrip() throws IOException, SQLException {
-
-        PageTripController.viewTrip(main, currentUser);
+        PageTripController page=new PageTripController();
+        page.viewTrip(main, currentUser);
 
     }
     @FXML
     private void myTrip(){}
+    MyTripController myTrips=new MyTripController();
+    myTrips.setMain(main);
 
 }

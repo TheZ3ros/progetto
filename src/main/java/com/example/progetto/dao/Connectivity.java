@@ -28,4 +28,8 @@ public class Connectivity {
         }
         return singletonClass;
     }
+
+    public Connection getConn() {
+        return conn;
+    }
 }

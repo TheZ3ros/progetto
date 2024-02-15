@@ -1,11 +1,10 @@
 package com.example.progetto.dao;
-import com.example.progetto.entity.Trip;
+import com.example.progetto.model.Trip;
 
 import java.io.IOException;
-import java.sql.CallableStatement;
-import java.sql.Date;
-import java.sql.SQLException;
-import java.sql.Types;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class TripDAO implements GenericDAO<Trip> {
         private final Connectivity connection;
@@ -17,7 +16,7 @@ public class TripDAO implements GenericDAO<Trip> {
 
     @Override
     public Trip execute(Object... params) throws SQLException {
-        Trip trip = new Trip();
+        Trip trip;
         int id=(int)params[0];
         CallableStatement cs = connection.conn.prepareCall("{call GetTripDetailsById(?,?,?,?,?,?,?)}");
         cs.setInt(1, id);
@@ -30,13 +29,14 @@ public class TripDAO implements GenericDAO<Trip> {
 
         cs.executeQuery();
         if (cs.getString(2) != null) {
-            trip.setCity(cs.getString(2));
-            trip.setPrice(cs.getFloat(3));
-            trip.setDataAnd(cs.getDate(4));
-            trip.setAvailable(cs.getInt(5));
-            trip.setImage(cs.getBytes(6));
-            trip.setDataRit(cs.getDate(7));
-            trip.setId(id);
+
+            String citta=(cs.getString(2));
+            Float prezzo=(cs.getFloat(3));
+            Date dataA=(cs.getDate(4));
+            int available=(cs.getInt(5));
+            byte[] image=(cs.getBytes(6));
+            Date dataRit=(cs.getDate(7));
+            trip =new Trip(available, citta, dataA,dataRit,prezzo,image);
 
             return trip;
         }
@@ -61,10 +61,45 @@ public class TripDAO implements GenericDAO<Trip> {
         cs.executeQuery();
     }
 
-    public void TripUser(String username){
-//la stored procedure funziona
+    public List<Trip> TripUser(String username) throws SQLException {
+        CallableStatement cs=null;
+        List<Trip> trip=new ArrayList<>();
+        try {
+            cs = connection.getConn().prepareCall("{call GetTripDetailsByUsername(?)}");
+            cs.setString(1,username);
+            assert cs != null;
+            boolean status = cs.execute();
+            if (status) {
+                ResultSet rs = cs.getResultSet();
+                while (rs.next()) {
+                    String citta=(rs.getString(1));
+                    Float prezzo=(rs.getFloat(2));
+                    Date dataA=(rs.getDate(3));
+                    int available=(rs.getInt(4));
+                    byte[] image=(rs.getBytes(5));
+                    Date dataRit=(rs.getDate(6));
+                    Trip trips =new Trip(available, citta, dataA,dataRit,prezzo,image);
+                    trip.add(trips);
+                }
 
+            }
+        }
+        catch (SQLException e) {
+            throw new SQLException("errore durante la lettura: " + e.getMessage());
+        }
+        finally {
+            // Chiudi l'oggetto CallableStatement nel blocco finally
+            if (cs != null) {
+                try {
+                    cs.close();
+                } catch (SQLException ignored) {
+
+                }
+            }
+        }
+        return trip;
     }
-}
+    }
+
 
 

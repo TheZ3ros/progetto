@@ -43,5 +43,6 @@ public class MyTripController {
     public void charge() throws SQLException, IOException {
         BookTripController bookTripController=new BookTripController();
         List<TripBean> viaggi = bookTripController.GetTripUser(currentUser);
+
     }
 }

@@ -2,7 +2,7 @@ package com.example.progetto.controller_app;
 
 import com.example.progetto.dao.TripDAO;
 import com.example.progetto.bean.TripBean;
-import com.example.progetto.entity.Trip;
+import com.example.progetto.model.Trip;
 import javafx.scene.control.Alert;
 
 import java.io.IOException;
@@ -10,16 +10,17 @@ import java.sql.SQLException;
 
 public class CreateTripController {
 
-    private final Trip newTrip = new Trip();
+    private Trip newTrip = null;
 
     public CreateTripController(TripBean trip){
 
-        newTrip.setCity(trip.getCity());
-        newTrip.setAvailable(trip.getAvailable());
-        newTrip.setDataAnd(trip.getDataAnd());
-        newTrip.setDataRit(trip.getDataRit());
-        newTrip.setPrice(trip.getPrice());
-        newTrip.setImage(trip.getImage());
+        String citta=trip.getCity();
+        int n=(trip.getAvailable());
+        java.sql.Date dataA=(trip.getDataAnd());
+        java.sql.Date dataR=trip.getDataRit();
+        Float prezzo=(trip.getPrice());
+        byte[] image=(trip.getImage());
+        newTrip=new Trip(n,citta, dataA,dataR,prezzo,image);
     }
 
     public void uploadTrip() throws SQLException, IOException {

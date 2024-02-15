@@ -108,7 +108,7 @@ public class PageTripController {
 
     }
 
-    static void viewTrip(Applicazione main, UserBean currentUser) throws IOException, SQLException {
+    public void viewTrip(Applicazione main, UserBean currentUser) throws IOException, SQLException {
         FXMLLoader viewtriploader = new FXMLLoader(Applicazione.class.getResource("view_trip.fxml"));
         Parent viewtriproot = viewtriploader.load();
         Scene viewTripScene = new Scene(viewtriproot);
