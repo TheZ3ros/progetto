@@ -5,9 +5,9 @@ import com.example.progetto.dao.UserDAO;
 import com.example.progetto.dao.UserTripDAO;
 import com.example.progetto.bean.TripBean;
 import com.example.progetto.bean.UserBean;
-import com.example.progetto.model.Trip;
-import com.example.progetto.model.User;
-import com.example.progetto.model.UserTrip;
+import com.example.progetto.entity.Trip;
+import com.example.progetto.entity.User;
+import com.example.progetto.entity.UserTrip;
 import javafx.scene.image.Image;
 
 import java.io.ByteArrayInputStream;
@@ -17,11 +17,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BookTripController {
-    public BookTripController() {
-
+    private BookTripController() {
         throw new IllegalStateException("BookTripController");
     }
-    public List<TripBean> showTrip() throws SQLException, IOException {
+    public static List<TripBean> showTrip() throws SQLException, IOException {
         TripDAO tripdao = new TripDAO();
         Trip trip;
         List<TripBean> viaggi = new ArrayList<>();
@@ -39,7 +38,7 @@ public class BookTripController {
 
     }
 
-    public int bookTrip(UserBean userbean, TripBean tripbean) throws SQLException, IOException {
+    public static int bookTrip(UserBean userbean, TripBean tripbean) throws SQLException, IOException {
         TripDAO tripdao = new TripDAO();
         UserDAO userdao= new UserDAO();
         User utente = userdao.execute(userbean.getUsername());
@@ -68,20 +67,6 @@ public class BookTripController {
     public static Image bytesToImage ( byte[] bytes){
         ByteArrayInputStream inputStream = new ByteArrayInputStream(bytes);
         return new Image(inputStream);
-    }
-
-    public List<TripBean> GetTripUser(UserBean utente) throws SQLException, IOException {
-        TripDAO tripDAO=new TripDAO();
-        List <Trip> trip =tripDAO.TripUser(utente.getUsername());
-        List <TripBean> tripBeanList=new ArrayList<>();
-        for (int i=0; i<trip.size();i++) {
-
-            TripBean tripBean = new TripBean(trip.get(i).getAvailable(), trip.get(i).getCity(), trip.get(i).getDataAnd(), trip.get(i).getDataRit(), trip.get(i).getPrice(), trip.get(i).getImage(), trip.get(i).getId());
-            tripBeanList.add(tripBean);
-        }
-
-
-        return tripBeanList;
     }
 
 }
