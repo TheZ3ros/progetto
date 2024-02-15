@@ -41,7 +41,7 @@ public class BookTripController {
 
     }
 
-    public static int bookTrip(UserBean userbean, TripBean tripbean) throws SQLException, IOException, PlacesTerminatedException, AlreadyPrenotedException {
+    public static void bookTrip(UserBean userbean, TripBean tripbean) throws SQLException, IOException, PlacesTerminatedException, AlreadyPrenotedException {
         TripDAO tripdao = new TripDAO();
         UserDAO userdao = new UserDAO();
         User utente = userdao.execute(userbean.getUsername());
@@ -52,19 +52,17 @@ public class BookTripController {
         UserTripDAO usertripdao = new UserTripDAO();
 
 
-        int result;
         if (trip.getAvailable() > 0 && usertripdao.execute(usertrip) != null) {
             tripdao.refreshAvailable(trip.getId());
-            result = 1;
+
         } else if (trip.getAvailable() <= 0) {
-            result = 2;
+
             throw new PlacesTerminatedException("i posti per il viaggio sono terminati");
         } else {
-            result = 3;
+
             throw new AlreadyPrenotedException("sei già prenotato per questo viaggio");
         }
 
-        return result;
 
 
     }
@@ -79,9 +77,9 @@ public class BookTripController {
         TripDAO tripDAO = new TripDAO();
         List<Trip> trip = tripDAO.TripUser(utente.getUsername());
         List<TripBean> tripBeanList = new ArrayList<>();
-        for (int i = 0; i < trip.size(); i++) {
+        for (Trip value : trip) {
 
-            TripBean tripBean = new TripBean(trip.get(i).getCity(), trip.get(i).getAvailable(), trip.get(i).getDataAnd(), trip.get(i).getDataRit(), trip.get(i).getPrice(), trip.get(i).getImage(), trip.get(i).isStato());
+            TripBean tripBean = new TripBean(value.getCity(), value.getAvailable(), value.getDataAnd(), value.getDataRit(), value.getPrice(), value.getImage(), value.isStato());
             tripBeanList.add(tripBean);
         }
 

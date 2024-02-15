@@ -1,5 +1,6 @@
 package com.example.progetto.controller_app;
 
+import com.example.progetto.Exception.CredentialError;
 import com.example.progetto.dao.AgencyDAO;
 import com.example.progetto.dao.UserDAO;
 import com.example.progetto.bean.AgencyBean;
@@ -22,22 +23,27 @@ public class LogiinController {
 
         agencyBean=agency;
     }
-    public void loginUtente() throws SQLException, IOException {
+    public void loginUtente() throws SQLException, IOException, CredentialError {
         UserDAO dao=new UserDAO();
         User utente;
             utente= dao.execute(utentebean.getUsername());
         if (utentebean.getPassword().equals(utente.getPassword())){
             utentebean.setToken();
         }
+        else{
+            throw new CredentialError("credenziali errate");
+        }
 
     }
 
-    public void loginAgenzia() throws SQLException, IOException {
+    public void loginAgenzia() throws SQLException, IOException, CredentialError {
         AgencyDAO dao = new AgencyDAO();
         Agency agenzia;
             agenzia = dao.execute(agencyBean.getUsername());
         if (agencyBean.getPassword().equals(agenzia.getPassword())){
             agencyBean.setToken();
+        }        else{
+            throw new CredentialError("credenziali errate");
         }
 
     }

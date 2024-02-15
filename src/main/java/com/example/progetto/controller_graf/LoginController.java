@@ -1,6 +1,7 @@
 package com.example.progetto.controller_graf;
 
 import com.example.progetto.Applicazione;
+import com.example.progetto.Exception.CredentialError;
 import com.example.progetto.bean.AgencyBean;
 import com.example.progetto.bean.UserBean;
 import javafx.fxml.FXML;
@@ -46,13 +47,13 @@ public class LoginController {
     }
 
     @FXML
-    public void handlerloginutente() throws IOException, SQLException {
+    public void handlerloginutente() throws IOException, SQLException, CredentialError {
         String userUtente=usernameUtente.getText();
         String passUtente=passwordUtente.getText();
         UserBean user = new UserBean(userUtente,passUtente);
         LogiinController login=new LogiinController(user);
-        login.loginUtente();
-        if(user.getToken()){
+        try{
+            login.loginUtente();
             FXMLLoader userhomeloader = new FXMLLoader(Applicazione.class.getResource("home_login.fxml"));
             Parent userhomeroot = userhomeloader.load();
             Scene homeloginScene = new Scene(userhomeroot);
@@ -64,7 +65,8 @@ public class LoginController {
             userhome.setButtonText();
             stage.setTitle("Accedi");
         }
-        else{
+        catch(CredentialError e){
+
             Alert alert=new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Login fallito");
             alert.setHeaderText(null);
@@ -72,18 +74,17 @@ public class LoginController {
             alert.showAndWait();
         }
 
-
     }
 
     @FXML
-    private void handlerloginagenzia() throws IOException, SQLException {
+    private void handlerloginagenzia() throws IOException, SQLException, CredentialError {
 
         String userAgenzia = usernameAgenzia.getText();
         String passAgenzia = passwordAgenzia.getText();
         AgencyBean agency = new AgencyBean(userAgenzia,passAgenzia);
         LogiinController login = new LogiinController(agency);
-        login.loginAgenzia();
-        if(agency.getToken()){
+        try{
+            login.loginAgenzia();
             FXMLLoader agencyhomeloader = new FXMLLoader(Applicazione.class.getResource("agency_home.fxml"));
             Parent agencyhomeroot = agencyhomeloader.load();
             Scene homeloginScene = new Scene(agencyhomeroot);
@@ -95,13 +96,15 @@ public class LoginController {
             agencyhome.setButtonText();
             stage.setTitle("Home Agenzia");
         }
-        else{
+        catch(CredentialError e){
+
             Alert alert=new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Login fallito");
             alert.setHeaderText(null);
             alert.setContentText("Username o password errati");
             alert.showAndWait();
         }
+
 
     }
 }

@@ -70,7 +70,12 @@ public class PageTripController {
     @FXML
     public void booking() throws PlacesTerminatedException, SQLException, AlreadyPrenotedException, IOException {
        try{
-           int n=BookTripController.bookTrip(currentUser, currentTrip);
+           BookTripController.bookTrip(currentUser, currentTrip);
+           Alert alert=new Alert(AlertType.CONFIRMATION);
+           alert.setTitle(ACTION);
+           alert.setHeaderText(null);
+           alert.setContentText("Prenotazione effettuata correttamente.");
+           alert.showAndWait();
        }
        catch(PlacesTerminatedException e){
            Alert alert2=new Alert(AlertType.ERROR);
@@ -86,11 +91,6 @@ public class PageTripController {
            alert3.setContentText("Prenotazione già effettuata.");
            alert3.showAndWait();
        }
-        Alert alert=new Alert(AlertType.CONFIRMATION);
-        alert.setTitle(ACTION);
-        alert.setHeaderText(null);
-        alert.setContentText("Prenotazione effettuata correttamente.");
-        alert.showAndWait();
       /*  switch (n){
             case 1:
                 Alert alert=new Alert(AlertType.CONFIRMATION);
