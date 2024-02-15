@@ -50,8 +50,7 @@ public class MyTripController {
             FXMLLoader prenotazioneLoader = new FXMLLoader(Applicazione.class.getResource("prenotazione.fxml"));
             VBox box=prenotazioneLoader.load();
             PrenotazioneController controller = prenotazioneLoader.getController();
-            controller.setMain(main);
-            controller.setUser(currentUser);
+            setButtonText();
             controller.createbox(viaggio);
             listaview.getItems().add(box);
         }

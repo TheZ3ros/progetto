@@ -5,9 +5,9 @@ import com.example.progetto.dao.UserDAO;
 import com.example.progetto.dao.UserTripDAO;
 import com.example.progetto.bean.TripBean;
 import com.example.progetto.bean.UserBean;
-import com.example.progetto.entity.Trip;
-import com.example.progetto.entity.User;
-import com.example.progetto.entity.UserTrip;
+import com.example.progetto.model.Trip;
+import com.example.progetto.model.User;
+import com.example.progetto.model.UserTrip;
 import javafx.scene.image.Image;
 
 import java.io.ByteArrayInputStream;
@@ -77,7 +77,7 @@ public class BookTripController {
         List<TripBean> tripBeanList = new ArrayList<>();
         for (int i = 0; i < trip.size(); i++) {
 
-            TripBean tripBean = new TripBean(trip.get(i).getAvailable(), trip.get(i).getCity(), trip.get(i).getDataAnd(), trip.get(i).getDataRit(), trip.get(i).getPrice(), trip.get(i).getImage(), trip.get(i).getId());
+            TripBean tripBean = new TripBean(trip.get(i).getCity(), trip.get(i).getAvailable(), trip.get(i).getDataAnd(), trip.get(i).getDataRit(), trip.get(i).getPrice(), trip.get(i).getImage(), trip.get(i).isStato());
             tripBeanList.add(tripBean);
         }
 

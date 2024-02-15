@@ -2,7 +2,7 @@ package com.example.progetto.controller_app;
 
 import com.example.progetto.dao.TripDAO;
 import com.example.progetto.bean.TripBean;
-import com.example.progetto.entity.Trip;
+import com.example.progetto.model.Trip;
 import javafx.scene.control.Alert;
 
 import java.io.IOException;

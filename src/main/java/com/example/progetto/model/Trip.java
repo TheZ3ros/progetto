@@ -1,4 +1,4 @@
-package com.example.progetto.entity;
+package com.example.progetto.model;
 import java.sql.Date;
 
 public class Trip {
@@ -29,7 +29,14 @@ public class Trip {
         this.id=id;
     }
 
-
+    public Trip(int n, String city, Date dataAnd, Date dataRit,Float price,byte[] image){
+        this.city=city;
+        this.image=image;
+        this.available=n;
+        this.price=price;
+        this.dataAnd=dataAnd;
+        this.dataRit=dataRit;
+    }
     public int getAvailable() {
         return available;
     }

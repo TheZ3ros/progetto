@@ -11,6 +11,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -23,26 +24,24 @@ public class PrenotazioneController {
     private Button title;
     @FXML
     private Text data;
-    private Text stato;
-    private Applicazione main;
-    private TripBean bean;
-    private UserBean user;
     @FXML
-    public void setMain(Applicazione main){
+    private Text stato;
 
-        this.main = main;
-    }
-
-    public void setUser(UserBean user){
-        this.user=user;
-    }
 
     public void createbox(TripBean bean) {
-        this.bean=bean;
         Image image= BookTripController.bytesToImage(bean.getImage());
         imagine.setImage(image);
         title.setText(bean.getCity());
         data.setText(bean.getDataAnd() +"/" + bean.getDataRit());
+        if(bean.isStato()){
+            stato.setText("Confermata");
+            stato.setFill(Color.GREEN);
+        }
+        else{
+            stato.setText("in lavorazione");
+
+            stato.setFill(Color.RED);
+        }
     }
 
 
