@@ -10,12 +10,14 @@ import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 public class AgencyHomeController {
     @FXML
     private Button agency;
     private Applicazione main;
     private AgencyBean currentUser;
+
 
     public void setUser(AgencyBean utente){
 
@@ -49,5 +51,11 @@ public class AgencyHomeController {
         stage.setScene(tripcreationscene);
         tripcreation.setButtonText();
         stage.setTitle("Crea itinerario");
+    }
+
+    @FXML
+    private void agencyTrips() throws IOException, SQLException {
+        AgencyTripsController mytrips = new AgencyTripsController();
+        mytrips.agencyTrips(main,currentUser);
     }
 }
