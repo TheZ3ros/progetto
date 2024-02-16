@@ -1,6 +1,5 @@
 package com.example.progetto.controller_app;
 
-import com.example.progetto.Exception.NotValidCouponException;
 import com.example.progetto.bean.TripStatusBean;
 import com.example.progetto.dao.TripStatusDAO;
 import com.example.progetto.model.TripStatus;
@@ -11,7 +10,7 @@ import java.util.List;
 
 public class GetTripStatusController {
 
-    public static List<TripStatusBean> showtripstatus(int id) throws SQLException, IOException, NotValidCouponException {
+    public static List<TripStatusBean> showtripstatus(int id) throws SQLException, IOException {
         TripStatusDAO statusDAO = new TripStatusDAO();
         List <TripStatusBean> statusBeans = new ArrayList<>();
 

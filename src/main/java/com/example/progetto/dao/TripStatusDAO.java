@@ -1,6 +1,5 @@
 package com.example.progetto.dao;
 
-import com.example.progetto.Exception.NotValidCouponException;
 import com.example.progetto.model.TripStatus;
 
 import java.io.IOException;
@@ -18,19 +17,17 @@ public class TripStatusDAO implements GenericDAO<List<TripStatus>> {
     }
 
     @Override
-    public List<TripStatus> execute(Object... params) throws SQLException, NotValidCouponException {
+    public List<TripStatus> execute(Object... params) throws SQLException {
         List<TripStatus> tripStatuses = new ArrayList<>();
         int id=(int)params[0];
-        CallableStatement cs = connection.conn.prepareCall("{call GetTripStatus(?,?,?)}");
+        CallableStatement cs = connection.conn.prepareCall("{call GetTripStatus(?)}");
         cs.setInt(1,id);
-        cs.registerOutParameter(2, Types.VARCHAR);
-        cs.registerOutParameter(3,Types.BIT);
 
         ResultSet rs = cs.executeQuery();
 
         while (rs.next()){
-            String username = rs.getString("UsernameUser");
-            boolean status = rs.getBoolean("state");
+            String username = rs.getString(2);
+            boolean status = rs.getBoolean(1);
             TripStatus tripStatus = new TripStatus(username,status);
             tripStatuses.add(tripStatus);
         }
