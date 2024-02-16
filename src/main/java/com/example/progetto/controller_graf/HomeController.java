@@ -16,7 +16,7 @@ public class HomeController {
    @FXML
    private void vaiALogin() throws IOException {
 
-      FXMLLoader loginLoader = new FXMLLoader(Applicazione.class.getResource("login.fxml"));
+      FXMLLoader loginLoader = new FXMLLoader(Applicazione.class.getResource("view1/login.fxml"));
       Parent loginRoot = loginLoader.load();
       Scene loginScene = new Scene(loginRoot);
       LoginController loginController = loginLoader.getController();

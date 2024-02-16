@@ -1,4 +1,4 @@
-package com.example.progetto.controller_graf;
+package com.example.progetto.controller_graf.agenzia;
 
 import com.example.progetto.Applicazione;
 import com.example.progetto.bean.AgencyBean;
@@ -50,7 +50,7 @@ public class GetAgencyTripsController {
     }
 
     public void tripstatus() throws IOException {
-        FXMLLoader paginaLoader = new FXMLLoader(Applicazione.class.getResource("tripstatus.fxml"));
+        FXMLLoader paginaLoader = new FXMLLoader(Applicazione.class.getResource("view1/agenzia/tripstatus.fxml"));
         Parent pageroot = paginaLoader.load();
         Scene paginaScene = new Scene(pageroot);
         TripStatusController tripstatus = paginaLoader.getController();

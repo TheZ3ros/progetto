@@ -2,9 +2,10 @@ package com.example.progetto.controller_app;
 
 import com.example.progetto.Exception.AlreadyPrenotedException;
 import com.example.progetto.Exception.PlacesTerminatedException;
+import com.example.progetto.bean.BookBean;
 import com.example.progetto.dao.TripDAO;
 import com.example.progetto.dao.UserDAO;
-import com.example.progetto.dao.UserTripDAO;
+import com.example.progetto.dao.BookingDAO;
 import com.example.progetto.bean.TripBean;
 import com.example.progetto.bean.UserBean;
 import com.example.progetto.model.Trip;
@@ -41,26 +42,29 @@ public class BookTripController {
 
     }
 
-    public static void bookTrip(UserBean userbean, TripBean tripbean) throws SQLException, IOException, PlacesTerminatedException, AlreadyPrenotedException {
+    public static void bookTrip(BookBean booking) throws SQLException, IOException, PlacesTerminatedException, AlreadyPrenotedException {
         TripDAO tripdao = new TripDAO();
         UserDAO userdao = new UserDAO();
-        User utente = userdao.execute(userbean.getUsername());
-        Trip trip = tripdao.execute(tripbean.getId());
+        User utente = userdao.execute(booking.getUsername());
+        Trip trip = tripdao.execute(booking.getTripId());
         UserTrip usertrip = new UserTrip();
         usertrip.setIdTrip(trip.getId());
         usertrip.setUsername(utente.getUsername());
-        UserTripDAO usertripdao = new UserTripDAO();
+        BookingDAO usertripdao = new BookingDAO();
 
+        try{
+            usertripdao.SetTripBook(usertrip);
+        }
+        catch(AlreadyPrenotedException e){
+            throw new AlreadyPrenotedException(e.getMessage());
+        }
+        if (trip.getAvailable() > 0) {
 
-        if (trip.getAvailable() > 0 && usertripdao.execute(usertrip) != null) {
             tripdao.refreshAvailable(trip.getId());
 
-        } else if (trip.getAvailable() <= 0) {
-
-            throw new PlacesTerminatedException("i posti per il viaggio sono terminati");
         } else {
 
-            throw new AlreadyPrenotedException("sei già prenotato per questo viaggio");
+            throw new PlacesTerminatedException("i posti per il viaggio sono terminati");
         }
 
 

@@ -20,7 +20,7 @@ public class Applicazione extends Application {
         this.stage = stage;
 
         //carico la home
-        FXMLLoader homeLoader = new FXMLLoader(Applicazione.class.getResource("home.fxml"));
+        FXMLLoader homeLoader = new FXMLLoader(Applicazione.class.getResource("view1/home.fxml"));
         Parent homeRoot = homeLoader.load();
         homeScene = new Scene(homeRoot);
 

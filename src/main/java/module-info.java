@@ -13,4 +13,8 @@ module com.example.progetto {
     exports com.example.progetto.controller_graf;
     exports com.example.progetto.bean;
     opens com.example.progetto.controller_graf to javafx.fxml;
+    exports com.example.progetto.controller_graf.agenzia;
+    opens com.example.progetto.controller_graf.agenzia to javafx.fxml;
+    exports com.example.progetto.controller_graf.utente;
+    opens com.example.progetto.controller_graf.utente to javafx.fxml;
 }

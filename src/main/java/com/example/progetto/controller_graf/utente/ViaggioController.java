@@ -1,9 +1,10 @@
-package com.example.progetto.controller_graf;
+package com.example.progetto.controller_graf.utente;
 
 import com.example.progetto.Applicazione;
 import com.example.progetto.bean.TripBean;
 import com.example.progetto.bean.UserBean;
 import com.example.progetto.controller_app.BookTripController;
+import com.example.progetto.controller_graf.utente.PageTripController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -48,7 +49,7 @@ public class ViaggioController {
         }
 
     public void pagetrip() throws IOException {
-            FXMLLoader paginaLoader = new FXMLLoader(Applicazione.class.getResource("pagetrip.fxml"));
+            FXMLLoader paginaLoader = new FXMLLoader(Applicazione.class.getResource("view1/utente/pagetrip.fxml"));
             Parent pageroot = paginaLoader.load();
             Scene paginaScene = new Scene(pageroot);
             PageTripController pagetrip = paginaLoader.getController();

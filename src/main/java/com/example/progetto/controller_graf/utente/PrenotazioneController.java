@@ -1,4 +1,4 @@
-package com.example.progetto.controller_graf;
+package com.example.progetto.controller_graf.utente;
 
 import com.example.progetto.Applicazione;
 import com.example.progetto.bean.TripBean;

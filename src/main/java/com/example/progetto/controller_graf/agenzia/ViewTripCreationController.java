@@ -1,9 +1,10 @@
-package com.example.progetto.controller_graf;
+package com.example.progetto.controller_graf.agenzia;
 
 import com.example.progetto.Applicazione;
 import com.example.progetto.bean.AgencyBean;
 import com.example.progetto.bean.TripBean;
 import com.example.progetto.controller_app.CreateTripController;
+import com.example.progetto.controller_graf.agenzia.AgencyHomeController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -73,7 +74,7 @@ public class ViewTripCreationController {
 
     @FXML
     private void vaiAAgencyHome() throws IOException {
-        FXMLLoader agencyhomeloader = new FXMLLoader(Applicazione.class.getResource("agency_home.fxml"));
+        FXMLLoader agencyhomeloader = new FXMLLoader(Applicazione.class.getResource("view1/agenzia/agency_home.fxml"));
         Parent agencyhomeroot = agencyhomeloader.load();
         Scene tripcreationscene = new Scene(agencyhomeroot);
         AgencyHomeController agencyhome = agencyhomeloader.getController();

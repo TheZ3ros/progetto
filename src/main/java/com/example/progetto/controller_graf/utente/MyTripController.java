@@ -1,4 +1,4 @@
-package com.example.progetto.controller_graf;
+package com.example.progetto.controller_graf.utente;
 
 import com.example.progetto.Applicazione;
 import com.example.progetto.bean.TripBean;
@@ -47,7 +47,7 @@ public class MyTripController {
     public void charge() throws SQLException, IOException {
         List<TripBean> viaggi = BookTripController.GetTripUser(currentUser);
         for (TripBean viaggio : viaggi) {
-            FXMLLoader prenotazioneLoader = new FXMLLoader(Applicazione.class.getResource("prenotazione.fxml"));
+            FXMLLoader prenotazioneLoader = new FXMLLoader(Applicazione.class.getResource("view1/utente/prenotazione.fxml"));
             VBox box=prenotazioneLoader.load();
             PrenotazioneController controller = prenotazioneLoader.getController();
             setButtonText();
@@ -55,5 +55,11 @@ public class MyTripController {
             listaview.getItems().add(box);
         }
 
+
     }
-}
+    @FXML
+    private void viewTrip() throws IOException, SQLException {
+        ViewTripController page = new ViewTripController();
+        page.viewTrip(main, currentUser);
+        }
+    }

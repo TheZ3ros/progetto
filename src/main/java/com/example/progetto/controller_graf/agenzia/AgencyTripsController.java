@@ -1,9 +1,8 @@
-package com.example.progetto.controller_graf;
+package com.example.progetto.controller_graf.agenzia;
 
 import com.example.progetto.Applicazione;
 import com.example.progetto.bean.AgencyBean;
 import com.example.progetto.bean.TripBean;
-import com.example.progetto.bean.UserBean;
 import com.example.progetto.controller_app.BookTripController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -51,7 +50,7 @@ public class AgencyTripsController {
 
         // Crea un VBox per ciascun elemento nella lista e aggiungilo alla ListView
         for (TripBean viaggio : viaggi) {
-            FXMLLoader getagencytripsLoader = new FXMLLoader(Applicazione.class.getResource("singleagencytrip.fxml"));
+            FXMLLoader getagencytripsLoader = new FXMLLoader(Applicazione.class.getResource("view1/agenzia/singleagencytrip.fxml"));
             VBox box=getagencytripsLoader.load();
             GetAgencyTripsController controller = getagencytripsLoader.getController();
             controller.setMain(main);
@@ -63,7 +62,7 @@ public class AgencyTripsController {
     }
 
     public void agencyTrips(Applicazione main, AgencyBean currentUser) throws IOException, SQLException {
-        FXMLLoader agencytripsLoader = new FXMLLoader(Applicazione.class.getResource("agencytrips.fxml"));
+        FXMLLoader agencytripsLoader = new FXMLLoader(Applicazione.class.getResource("view1/agenzia/agencytrips.fxml"));
         Parent agencytripsroot = agencytripsLoader.load();
         Scene agencytripscene = new Scene(agencytripsroot);
         AgencyTripsController agencytrips = agencytripsLoader.getController();

@@ -1,4 +1,4 @@
-package com.example.progetto.controller_graf;
+package com.example.progetto.controller_graf.utente;
 import com.example.progetto.Applicazione;
 import com.example.progetto.bean.UserBean;
 import javafx.fxml.FXML;
@@ -46,7 +46,7 @@ public class UserHomeController {
     }
     @FXML
     private void myTrip() throws SQLException, IOException {
-        FXMLLoader myTripLoader = new FXMLLoader(Applicazione.class.getResource("myTrip.fxml"));
+        FXMLLoader myTripLoader = new FXMLLoader(Applicazione.class.getResource("view1/utente/myTrip.fxml"));
         Parent mytriproot = myTripLoader.load();
         Scene myTripScene = new Scene(mytriproot);
         MyTripController myTripController = myTripLoader.getController();

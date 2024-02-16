@@ -4,6 +4,8 @@ import com.example.progetto.Applicazione;
 import com.example.progetto.Exception.CredentialError;
 import com.example.progetto.bean.AgencyBean;
 import com.example.progetto.bean.UserBean;
+import com.example.progetto.controller_graf.agenzia.AgencyHomeController;
+import com.example.progetto.controller_graf.utente.UserHomeController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -47,14 +49,14 @@ public class LoginController {
     }
 
     @FXML
-    public void handlerloginutente() throws IOException, SQLException, CredentialError {
+    public void handlerloginutente() throws IOException, SQLException {
         String userUtente=usernameUtente.getText();
         String passUtente=passwordUtente.getText();
         UserBean user = new UserBean(userUtente,passUtente);
         LogiinController login=new LogiinController(user);
         try{
             login.loginUtente();
-            FXMLLoader userhomeloader = new FXMLLoader(Applicazione.class.getResource("home_login.fxml"));
+            FXMLLoader userhomeloader = new FXMLLoader(Applicazione.class.getResource("view1/utente/home_login.fxml"));
             Parent userhomeroot = userhomeloader.load();
             Scene homeloginScene = new Scene(userhomeroot);
             UserHomeController userhome = userhomeloader.getController();
@@ -77,7 +79,7 @@ public class LoginController {
     }
 
     @FXML
-    private void handlerloginagenzia() throws IOException, SQLException, CredentialError {
+    private void handlerloginagenzia() throws IOException, SQLException {
 
         String userAgenzia = usernameAgenzia.getText();
         String passAgenzia = passwordAgenzia.getText();
@@ -85,7 +87,7 @@ public class LoginController {
         LogiinController login = new LogiinController(agency);
         try{
             login.loginAgenzia();
-            FXMLLoader agencyhomeloader = new FXMLLoader(Applicazione.class.getResource("agency_home.fxml"));
+            FXMLLoader agencyhomeloader = new FXMLLoader(Applicazione.class.getResource("view1/agenzia/agency_home.fxml"));
             Parent agencyhomeroot = agencyhomeloader.load();
             Scene homeloginScene = new Scene(agencyhomeroot);
             AgencyHomeController agencyhome = agencyhomeloader.getController();

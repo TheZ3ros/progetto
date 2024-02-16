@@ -1,4 +1,4 @@
-package com.example.progetto.controller_graf;
+package com.example.progetto.controller_graf.utente;
 
 import com.example.progetto.Applicazione;
 import com.example.progetto.bean.TripBean;
@@ -49,7 +49,7 @@ public class ViewTripController {
 
         // Crea un VBox per ciascun elemento nella lista e aggiungilo alla ListView
         for (TripBean viaggio : viaggi) {
-             FXMLLoader viaggioLoader = new FXMLLoader(Applicazione.class.getResource("viaggio.fxml"));
+             FXMLLoader viaggioLoader = new FXMLLoader(Applicazione.class.getResource("view1/utente/viaggio.fxml"));
              VBox box=viaggioLoader.load();
              ViaggioController controller = viaggioLoader.getController();
              controller.setMain(main);
@@ -65,7 +65,7 @@ public class ViewTripController {
         charge();
     }
     public void viewTrip(Applicazione main, UserBean currentUser) throws IOException, SQLException {
-        FXMLLoader viewtriploader = new FXMLLoader(Applicazione.class.getResource("view_trip.fxml"));
+        FXMLLoader viewtriploader = new FXMLLoader(Applicazione.class.getResource("view1/utente/view_trip.fxml"));
         Parent viewtriproot = viewtriploader.load();
         Scene viewTripScene = new Scene(viewtriproot);
         ViewTripController viewtrip = viewtriploader.getController();
@@ -77,5 +77,20 @@ public class ViewTripController {
         viewtrip.charge();
         stage.setTitle("Ricerca");
     }
+    @FXML
+    private void myTrip() throws SQLException, IOException {
+        FXMLLoader myTripLoader = new FXMLLoader(Applicazione.class.getResource("view1/utente/myTrip.fxml"));
+        Parent mytriproot = myTripLoader.load();
+        Scene myTripScene = new Scene(mytriproot);
+        MyTripController myTripController = myTripLoader.getController();
+        myTripController.setMain(main);
+        myTripController.setUser(currentUser);
+        myTripController.charge();
+        Stage stage = main.getStage();
+        stage.setScene(myTripScene);
+        stage.setTitle("I miei viaggi");
+
+    }
+
 
 }

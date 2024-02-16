@@ -1,9 +1,10 @@
-package com.example.progetto.controller_graf;
+package com.example.progetto.controller_graf.agenzia;
 
 import com.example.progetto.Applicazione;
 import com.example.progetto.bean.AgencyBean;
 import com.example.progetto.bean.TripBean;
 import com.example.progetto.controller_app.BookTripController;
+import com.example.progetto.controller_graf.agenzia.AgencyTripsController;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
