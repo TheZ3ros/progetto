@@ -1,8 +1,11 @@
 package com.example.progetto.controller_graf.utente;
 
 import com.example.progetto.Applicazione;
+import com.example.progetto.Exception.AlreadyPrenotedException;
 import com.example.progetto.Exception.CardNotTrueException;
 import com.example.progetto.Exception.NotValidCouponException;
+import com.example.progetto.Exception.PlacesTerminatedException;
+import com.example.progetto.bean.BookBean;
 import com.example.progetto.bean.BuonoBean;
 import com.example.progetto.bean.TripBean;
 import com.example.progetto.bean.UserBean;
@@ -17,6 +20,7 @@ import javafx.scene.text.Text;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.time.LocalDate;
 
 public class PagamentoController {
 
@@ -45,7 +49,7 @@ public class PagamentoController {
 
         main.vaiAHome();
     }
-    
+
     @FXML
     private void viewTrip() throws IOException, SQLException {
         ViewTripController page=new ViewTripController();
@@ -62,23 +66,22 @@ public class PagamentoController {
     public void setButtonText() {
 
         agency.setText(currentUser.getUsername());
-        price.setText("totale"+ (int) currentTrip.getPrice());
+        price.setText("Totale "+ (int) currentTrip.getPrice()+"€");
 
     }
 
     @FXML
-    private void submit() throws CardNotTrueException, SQLException, IOException, NotValidCouponException {
-
+    private void submit() throws SQLException, IOException {
         String numeroCarta=numero.getText();
         String cvvCode=cvv.getText();
+        LocalDate data=scadenza.getValue();
+
         try {
-            if (numeroCarta.length() != 16 || cvvCode.length() != 3) {
+            if (numeroCarta.length() != 16 || cvvCode.length() != 3|| !(data.isAfter(LocalDate.now()))) {
                 throw new CardNotTrueException("dati carta non validi");
             }
-            String buonoSpesa = (buono.getText());
-            BuonoBean buonoBean = new BuonoBean();
-            buonoBean.setCodice(buonoSpesa);
-            CheckBuono(buonoBean);
+            BookBean book=new BookBean(currentUser.getUsername(),currentTrip.getId());
+            BookTripController.bookTrip(book);
         }
         catch(CardNotTrueException e){
             Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -86,18 +89,33 @@ public class PagamentoController {
             alert.setHeaderText(null);
             alert.setContentText(e.getMessage());
             alert.showAndWait();
+        } catch (PlacesTerminatedException e) {
+            Alert alert2=new Alert(Alert.AlertType.ERROR);
+            alert2.setTitle(ACTION);
+            alert2.setHeaderText(null);
+            alert2.setContentText(e.getMessage());
+            alert2.showAndWait();
+        } catch (AlreadyPrenotedException e) {
+            Alert alert3=new Alert(Alert.AlertType.WARNING);
+            alert3.setTitle(ACTION);
+            alert3.setHeaderText(null);
+            alert3.setContentText(e.getMessage());
+            alert3.showAndWait();;
         }
 
 
     }
 
-
-    private void CheckBuono(BuonoBean buonoBean) throws SQLException, IOException {
+    @FXML
+    private void CheckBuono() throws SQLException, IOException {
+        String buonoSpesa = buono.getText();
+        BuonoBean buonoBean=new BuonoBean();
+        buonoBean.setCodice(buonoSpesa);
         PagamentoControllerApp pagamento=new PagamentoControllerApp();
         try{
             buonoBean=pagamento.CheckBuono(buonoBean);
             int totale=((int)currentTrip.getPrice()-buonoBean.getValore());
-            price.setText("totale"+totale);
+            price.setText("Totale "+totale+"€");
 
         }
         catch(NotValidCouponException e){

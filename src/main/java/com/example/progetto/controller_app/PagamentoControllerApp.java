@@ -11,7 +11,7 @@ import java.sql.SQLException;
 public class PagamentoControllerApp {
     public BuonoBean CheckBuono(BuonoBean buonobean) throws SQLException, IOException, NotValidCouponException {
         BuonoDAO buonoDAO=new BuonoDAO();
-        Buono buono=null;
+        Buono buono;
         try{
             buono=buonoDAO.execute(buonobean);
         }

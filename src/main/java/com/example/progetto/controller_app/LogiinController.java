@@ -40,12 +40,10 @@ public class LogiinController {
         AgencyDAO dao = new AgencyDAO();
         Agency agenzia;
             agenzia = dao.execute(agencyBean.getUsername());
-        if (agencyBean.getPassword().equals(agenzia.getPassword())){
-            agencyBean.setToken();
-        }        else{
+        if (!agencyBean.getPassword().equals(agenzia.getPassword()))
             throw new CredentialError("credenziali errate");
         }
 
     }
 
-}
+

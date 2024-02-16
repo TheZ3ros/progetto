@@ -130,9 +130,17 @@
 }
 .bottoni_pagamento {
     -fx-font-family: 'allura';
-    -fx-font-size: 40px;
+    -fx-font-size: 30px;
     -fx-background-color: linear-gradient(to right, #cf29ee, #a341ff, #819af5);
-    -fx-pref-width: 500px;
-    -fx-pref-height: 90px;
+    -fx-pref-width: 350px;
+    -fx-pref-height: 70px;
+    -fx-font-weight: bold;
+}
+.bottoni_coupon {
+    -fx-font-family: 'allura';
+    -fx-font-size: 10px;
+    -fx-background-color: linear-gradient(to right, #cf29ee, #a341ff, #819af5);
+    -fx-pref-width: 130px;
+    -fx-pref-height: 10px;
     -fx-font-weight: bold;
 }

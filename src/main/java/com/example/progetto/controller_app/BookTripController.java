@@ -35,11 +35,7 @@ public class BookTripController {
             TripBean tripBean = new TripBean(trip.getAvailable(), trip.getCity(), trip.getDataAnd(), trip.getDataRit(), trip.getPrice(), trip.getImage(), trip.getId());
             viaggi.add(tripBean);
         }
-
-
         return viaggi;
-
-
     }
 
     public static void bookTrip(BookBean booking) throws SQLException, IOException, PlacesTerminatedException, AlreadyPrenotedException {
