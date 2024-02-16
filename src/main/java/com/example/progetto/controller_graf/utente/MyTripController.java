@@ -45,7 +45,8 @@ public class MyTripController {
         main.vaiAHome();
     }
     public void charge() throws SQLException, IOException {
-        List<TripBean> viaggi = BookTripController.GetTripUser(currentUser);
+        BookTripController bookTripController =new BookTripController();
+        List<TripBean> viaggi = bookTripController.getTripUser(currentUser);
         for (TripBean viaggio : viaggi) {
             FXMLLoader prenotazioneLoader = new FXMLLoader(Applicazione.class.getResource("view1/utente/prenotazione.fxml"));
             VBox box=prenotazioneLoader.load();

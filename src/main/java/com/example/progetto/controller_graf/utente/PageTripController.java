@@ -74,7 +74,7 @@ public class PageTripController {
 
     }
     @FXML
-    private void Pagamento() throws IOException{
+    private void pagamento() throws IOException{
         FXMLLoader pagamentoLoader = new FXMLLoader(Applicazione.class.getResource("view1/utente/pagamento.fxml"));
         Parent pagamentoroot = pagamentoLoader.load();
         Scene pagamentoScene = new Scene(pagamentoroot);

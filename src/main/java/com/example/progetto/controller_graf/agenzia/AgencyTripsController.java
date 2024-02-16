@@ -46,7 +46,8 @@ public class AgencyTripsController {
     }
 
     public void charge() throws SQLException, IOException {
-        List<TripBean> viaggi = BookTripController.showTrip();
+        BookTripController bookTripController=new BookTripController();
+        List<TripBean> viaggi = bookTripController.showTrip();
 
         // Crea un VBox per ciascun elemento nella lista e aggiungilo alla ListView
         for (TripBean viaggio : viaggi) {

@@ -1,12 +1,10 @@
 package com.example.progetto.dao;
 
-import com.example.progetto.Exception.AlreadyPrenotedException;
-import com.example.progetto.bean.BookBean;
+import com.example.progetto.exception.AlreadyPrenotedException;
 import com.example.progetto.model.UserTrip;
 
 import java.io.IOException;
 import java.sql.CallableStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Types;
 
@@ -17,7 +15,7 @@ public class BookingDAO  {
         connection = Connectivity.getSingletonInstance();
     }
 
-    public void SetTripBook(UserTrip book) throws SQLException, AlreadyPrenotedException {
+    public void setTripBook(UserTrip book) throws SQLException, AlreadyPrenotedException {
         int idTrip = book.getIdTrip();
         String username = book.getUsername();
         try{

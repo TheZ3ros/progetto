@@ -1,7 +1,7 @@
 package com.example.progetto.controller_app;
 
-import com.example.progetto.Exception.AlreadyPrenotedException;
-import com.example.progetto.Exception.PlacesTerminatedException;
+import com.example.progetto.exception.AlreadyPrenotedException;
+import com.example.progetto.exception.PlacesTerminatedException;
 import com.example.progetto.bean.BookBean;
 import com.example.progetto.dao.TripDAO;
 import com.example.progetto.dao.UserDAO;
@@ -20,11 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BookTripController {
-    public BookTripController() {
-        throw new IllegalStateException("BookTripController");
-    }
-
-    public static List<TripBean> showTrip() throws SQLException, IOException {
+    public List<TripBean> showTrip() throws SQLException, IOException {
         TripDAO tripdao = new TripDAO();
         Trip trip;
         List<TripBean> viaggi = new ArrayList<>();
@@ -38,7 +34,7 @@ public class BookTripController {
         return viaggi;
     }
 
-    public static void bookTrip(BookBean booking) throws SQLException, IOException, PlacesTerminatedException, AlreadyPrenotedException {
+    public void bookTrip(BookBean booking) throws SQLException, IOException, PlacesTerminatedException, AlreadyPrenotedException {
         TripDAO tripdao = new TripDAO();
         UserDAO userdao = new UserDAO();
         User utente = userdao.execute(booking.getUsername());
@@ -49,7 +45,7 @@ public class BookTripController {
         BookingDAO usertripdao = new BookingDAO();
 
         try{
-            usertripdao.SetTripBook(usertrip);
+            usertripdao.setTripBook(usertrip);
         }
         catch(AlreadyPrenotedException e){
             throw new AlreadyPrenotedException(e.getMessage());
@@ -72,9 +68,9 @@ public class BookTripController {
         return new Image(inputStream);
     }
 
-    public static List<TripBean> GetTripUser(UserBean utente) throws SQLException, IOException {
+    public List<TripBean> getTripUser(UserBean utente) throws SQLException, IOException {
         TripDAO tripDAO = new TripDAO();
-        List<Trip> trip = tripDAO.TripUser(utente.getUsername());
+        List<Trip> trip = tripDAO.tripUser(utente.getUsername());
         List<TripBean> tripBeanList = new ArrayList<>();
         for (Trip value : trip) {
 

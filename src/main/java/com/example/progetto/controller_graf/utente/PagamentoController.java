@@ -1,16 +1,16 @@
 package com.example.progetto.controller_graf.utente;
 
 import com.example.progetto.Applicazione;
-import com.example.progetto.Exception.AlreadyPrenotedException;
-import com.example.progetto.Exception.CardNotTrueException;
-import com.example.progetto.Exception.NotValidCouponException;
-import com.example.progetto.Exception.PlacesTerminatedException;
+import com.example.progetto.exception.AlreadyPrenotedException;
+import com.example.progetto.exception.CardNotTrueException;
+import com.example.progetto.exception.NotValidCouponException;
+import com.example.progetto.exception.PlacesTerminatedException;
 import com.example.progetto.bean.BookBean;
 import com.example.progetto.bean.BuonoBean;
 import com.example.progetto.bean.TripBean;
 import com.example.progetto.bean.UserBean;
 import com.example.progetto.controller_app.BookTripController;
-import com.example.progetto.controller_app.PagamentoControllerApp;
+import com.example.progetto.controller_app.pagamentoControllerApp;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -81,7 +81,8 @@ public class PagamentoController {
                 throw new CardNotTrueException("dati carta non validi");
             }
             BookBean book=new BookBean(currentUser.getUsername(),currentTrip.getId());
-            BookTripController.bookTrip(book);
+            BookTripController bookTripController=new BookTripController();
+            bookTripController.bookTrip(book);
         }
         catch(CardNotTrueException e){
             Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -100,18 +101,18 @@ public class PagamentoController {
             alert3.setTitle(ACTION);
             alert3.setHeaderText(null);
             alert3.setContentText(e.getMessage());
-            alert3.showAndWait();;
+            alert3.showAndWait();
         }
 
 
     }
 
     @FXML
-    private void CheckBuono() throws SQLException, IOException {
+    private void checkBuono() throws SQLException, IOException {
         String buonoSpesa = buono.getText();
         BuonoBean buonoBean=new BuonoBean();
         buonoBean.setCodice(buonoSpesa);
-        PagamentoControllerApp pagamento=new PagamentoControllerApp();
+        pagamentoControllerApp pagamento=new pagamentoControllerApp();
         try{
             buonoBean=pagamento.CheckBuono(buonoBean);
             int totale=((int)currentTrip.getPrice()-buonoBean.getValore());

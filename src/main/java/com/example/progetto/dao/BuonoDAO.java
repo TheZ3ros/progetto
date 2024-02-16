@@ -1,9 +1,8 @@
 package com.example.progetto.dao;
 
-import com.example.progetto.Exception.NotValidCouponException;
+import com.example.progetto.exception.NotValidCouponException;
 import com.example.progetto.bean.BuonoBean;
 import com.example.progetto.model.Buono;
-import com.example.progetto.model.User;
 
 import java.io.IOException;
 import java.sql.CallableStatement;

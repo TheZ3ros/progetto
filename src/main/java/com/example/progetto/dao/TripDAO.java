@@ -69,8 +69,8 @@ public class TripDAO implements GenericDAO<Trip> {
         }
     }
 
-    public List<Trip> TripUser(String username) throws SQLException {
-        CallableStatement cs=null;
+    public List<Trip> tripUser(String username) throws SQLException {
+        CallableStatement cs;
         List<Trip> trip=new ArrayList<>();
         try {
             cs = connection.getConn().prepareCall("{call GetTripDetailsByUsername(?)}");
@@ -95,16 +95,8 @@ public class TripDAO implements GenericDAO<Trip> {
         catch (SQLException e) {
             throw new SQLException("errore durante la lettura: " + e.getMessage());
         }
-        finally {
-            // Chiudi l'oggetto CallableStatement nel blocco finally
-            if (cs != null) {
-                try {
-                    cs.close();
-                } catch (SQLException ignored) {
+                cs.close();
 
-                }
-            }
-        }
         return trip;
     }
     }

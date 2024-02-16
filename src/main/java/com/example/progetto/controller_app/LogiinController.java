@@ -1,6 +1,6 @@
 package com.example.progetto.controller_app;
 
-import com.example.progetto.Exception.CredentialError;
+import com.example.progetto.exception.CredentialError;
 import com.example.progetto.dao.AgencyDAO;
 import com.example.progetto.dao.UserDAO;
 import com.example.progetto.bean.AgencyBean;
