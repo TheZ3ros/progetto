@@ -1,4 +1,4 @@
-package com.example.progetto.Exception;
+package com.example.progetto.exception;
 
 public class CredentialError extends Exception{
     public  CredentialError(String message){

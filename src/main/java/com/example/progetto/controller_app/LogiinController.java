@@ -1,6 +1,6 @@
 package com.example.progetto.controller_app;
 
-import com.example.progetto.Exception.CredentialError;
+import com.example.progetto.exception.CredentialError;
 import com.example.progetto.dao.AgencyDAO;
 import com.example.progetto.dao.UserDAO;
 import com.example.progetto.bean.AgencyBean;
@@ -40,12 +40,10 @@ public class LogiinController {
         AgencyDAO dao = new AgencyDAO();
         Agency agenzia;
             agenzia = dao.execute(agencyBean.getUsername());
-        if (agencyBean.getPassword().equals(agenzia.getPassword())){
-            agencyBean.setToken();
-        }        else{
+        if (!agencyBean.getPassword().equals(agenzia.getPassword()))
             throw new CredentialError("credenziali errate");
         }
 
     }
 
-}
+

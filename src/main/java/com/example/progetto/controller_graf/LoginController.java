@@ -1,7 +1,7 @@
 package com.example.progetto.controller_graf;
 
 import com.example.progetto.Applicazione;
-import com.example.progetto.Exception.CredentialError;
+import com.example.progetto.exception.CredentialError;
 import com.example.progetto.bean.AgencyBean;
 import com.example.progetto.bean.UserBean;
 import com.example.progetto.controller_graf.agenzia.AgencyHomeController;

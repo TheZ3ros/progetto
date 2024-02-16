@@ -1,21 +1,14 @@
 package com.example.progetto.controller_graf.utente;
 
-import com.example.progetto.Applicazione;
 import com.example.progetto.bean.TripBean;
-import com.example.progetto.bean.UserBean;
 import com.example.progetto.controller_app.BookTripController;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
-import javafx.stage.Stage;
 
-import java.io.IOException;
 
 public class PrenotazioneController {
     @FXML

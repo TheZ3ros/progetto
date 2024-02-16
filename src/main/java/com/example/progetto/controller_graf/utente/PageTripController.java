@@ -1,9 +1,6 @@
 package com.example.progetto.controller_graf.utente;
 
 import com.example.progetto.Applicazione;
-import com.example.progetto.Exception.AlreadyPrenotedException;
-import com.example.progetto.Exception.PlacesTerminatedException;
-import com.example.progetto.bean.BookBean;
 import com.example.progetto.bean.TripBean;
 import com.example.progetto.bean.UserBean;
 import com.example.progetto.controller_app.BookTripController;
@@ -11,8 +8,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -39,7 +34,6 @@ public class PageTripController {
     private Button nome;
     private UserBean currentUser;
 
-    private static final String ACTION ="Informazione";
 
     public void setMain(Applicazione main){
 
@@ -72,33 +66,7 @@ public class PageTripController {
         nome.setText(currentUser.getUsername());
     }
 
-    @FXML
-    public void booking() throws SQLException, IOException {
-        BookBean booking=new BookBean(currentUser.getUsername(),currentTrip.getId());
-       try{
-           BookTripController.bookTrip(booking);
-           Alert alert=new Alert(AlertType.CONFIRMATION);
-           alert.setTitle(ACTION);
-           alert.setHeaderText(null);
-           alert.setContentText("Prenotazione effettuata correttamente.");
-           alert.showAndWait();
-       }
-       catch(PlacesTerminatedException e){
-           Alert alert2=new Alert(AlertType.ERROR);
-           alert2.setTitle(ACTION);
-           alert2.setHeaderText(null);
-           alert2.setContentText("Posti terminati.");
-           alert2.showAndWait();
-        }
-       catch(AlreadyPrenotedException e){
-           Alert alert3=new Alert(AlertType.WARNING);
-           alert3.setTitle(ACTION);
-           alert3.setHeaderText(null);
-           alert3.setContentText("Prenotazione già effettuata.");
-           alert3.showAndWait();
-       }
 
-    }
     @FXML
  private void viewTrip() throws IOException, SQLException {
         ViewTripController viewTripController=new ViewTripController();
@@ -106,7 +74,7 @@ public class PageTripController {
 
     }
     @FXML
-    private void Pagamento() throws IOException{
+    private void pagamento() throws IOException{
         FXMLLoader pagamentoLoader = new FXMLLoader(Applicazione.class.getResource("view1/utente/pagamento.fxml"));
         Parent pagamentoroot = pagamentoLoader.load();
         Scene pagamentoScene = new Scene(pagamentoroot);

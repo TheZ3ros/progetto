@@ -4,7 +4,6 @@ import com.example.progetto.Applicazione;
 import com.example.progetto.bean.AgencyBean;
 import com.example.progetto.bean.TripBean;
 import com.example.progetto.controller_app.CreateTripController;
-import com.example.progetto.controller_graf.agenzia.AgencyHomeController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

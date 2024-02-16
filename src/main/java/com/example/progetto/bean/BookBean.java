@@ -2,9 +2,9 @@ package com.example.progetto.bean;
 
 public class BookBean {
 private String username;
-private int trip_id;
+private int tripId;
 public BookBean(String username, int id){
-    this.trip_id=id;
+    this.tripId =id;
     this.username=username;
 }
 
@@ -13,11 +13,11 @@ public BookBean(String username, int id){
     }
 
     public int getTripId() {
-        return trip_id;
+        return tripId;
     }
 
-    public void setTrip_id(int trip_id) {
-        this.trip_id = trip_id;
+    public void setTripId(int tripId) {
+        this.tripId = tripId;
     }
 
     public void setUsername(String username) {

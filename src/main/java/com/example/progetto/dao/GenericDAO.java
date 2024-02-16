@@ -1,7 +1,7 @@
 package com.example.progetto.dao;
 
 
-import com.example.progetto.Exception.NotValidCouponException;
+import com.example.progetto.exception.NotValidCouponException;
 
 import java.sql.SQLException;
 

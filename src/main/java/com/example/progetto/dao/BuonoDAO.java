@@ -1,9 +1,8 @@
 package com.example.progetto.dao;
 
-import com.example.progetto.Exception.NotValidCouponException;
+import com.example.progetto.exception.NotValidCouponException;
 import com.example.progetto.bean.BuonoBean;
 import com.example.progetto.model.Buono;
-import com.example.progetto.model.User;
 
 import java.io.IOException;
 import java.sql.CallableStatement;
@@ -20,8 +19,7 @@ public class BuonoDAO implements GenericDAO <Buono> {
     public Buono execute(Object... params) throws SQLException, NotValidCouponException {
         BuonoBean buonobean = (BuonoBean) params[0];
         Buono buono;
-        try {
-            CallableStatement cs = connection.conn.prepareCall("{call GetBuono(?,?)}");
+        try (CallableStatement cs = connection.conn.prepareCall("{call GetBuono(?,?)}")){
 
             cs.setString(1, buonobean.getCodice());
             cs.registerOutParameter(2, Types.INTEGER);

@@ -18,7 +18,7 @@ public class TripDAO implements GenericDAO<Trip> {
     public Trip execute(Object... params) throws SQLException {
         Trip trip;
         int id=(int)params[0];
-        CallableStatement cs = connection.conn.prepareCall("{call GetTripDetailsById(?,?,?,?,?,?,?)}");
+        try(CallableStatement cs = connection.conn.prepareCall("{call GetTripDetailsById(?,?,?,?,?,?,?)}")){
         cs.setInt(1, id);
         cs.registerOutParameter(2, Types.VARCHAR);
             cs.registerOutParameter(3, Types.FLOAT);
@@ -43,19 +43,23 @@ public class TripDAO implements GenericDAO<Trip> {
         }
         else {
             return null;
+            }
         }
     }
     public void refreshAvailable(int id) throws SQLException {
 
-            CallableStatement cs = connection.conn.prepareCall("{call decrementa(?)}");
-            cs.setInt(1, id);
+            
+            try(CallableStatement cs = connection.conn.prepareCall("{call decrementa(?)}")) {
+                cs.setInt(1, id);
                 cs.executeQuery();
-
+            }catch(SQLException e){
+                throw new SQLException(e.getMessage());
+            }
         }
 
     public void addTrip(String city, int available, Date dataAnd, Date dataRit, float price, byte[] image) throws SQLException {
-        try {
-            CallableStatement cs = connection.conn.prepareCall("{call AddTrip(?,?,?,?,?,?)}");
+        try (CallableStatement cs = connection.conn.prepareCall("{call AddTrip(?,?,?,?,?,?)}")){
+
             cs.setString(1, city);
             cs.setInt(2, available);
             cs.setDate(3, dataAnd);
@@ -69,11 +73,9 @@ public class TripDAO implements GenericDAO<Trip> {
         }
     }
 
-    public List<Trip> TripUser(String username) throws SQLException {
-        CallableStatement cs=null;
+    public List<Trip> tripUser(String username) throws SQLException {
         List<Trip> trip=new ArrayList<>();
-        try {
-            cs = connection.getConn().prepareCall("{call GetTripDetailsByUsername(?)}");
+        try (CallableStatement cs = connection.getConn().prepareCall("{call GetTripDetailsByUsername(?)}")){
             cs.setString(1,username);
             boolean status = cs.execute();
             if (status) {
@@ -94,16 +96,6 @@ public class TripDAO implements GenericDAO<Trip> {
         }
         catch (SQLException e) {
             throw new SQLException("errore durante la lettura: " + e.getMessage());
-        }
-        finally {
-            // Chiudi l'oggetto CallableStatement nel blocco finally
-            if (cs != null) {
-                try {
-                    cs.close();
-                } catch (SQLException ignored) {
-
-                }
-            }
         }
         return trip;
     }
