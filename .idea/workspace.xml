@@ -6,32 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="abd72b32-f6c1-4b42-a1d9-4297dd975b52" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/Exception/AlreadyPrenotedException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/exception/AlreadyPrenotedException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/Exception/CardNotTrueException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/exception/CardNotTrueException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/Exception/CredentialError.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/exception/CredentialError.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/Exception/NotValidCouponException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/exception/NotValidCouponException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/Exception/PlacesTerminatedException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/exception/PlacesTerminatedException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/bean/BookBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/bean/BookBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_app/BookTripController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_app/BookTripController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_app/LogiinController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_app/LogiinController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_app/PagamentoControllerApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_app/pagamentoControllerApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/agenzia/AgencyTripsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/agenzia/AgencyTripsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/agenzia/TripStatusController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/agenzia/TripStatusController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/agenzia/ViewTripCreationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/agenzia/ViewTripCreationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/utente/MyTripController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/utente/MyTripController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/utente/PagamentoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/utente/PagamentoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/utente/PageTripController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/utente/PageTripController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/utente/PrenotazioneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/utente/PrenotazioneController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/utente/ViaggioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/utente/ViaggioController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/utente/ViewTripController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/utente/ViewTripController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/dao/AgencyDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/dao/AgencyDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/dao/BookingDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/dao/BookingDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/dao/BuonoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/dao/BuonoDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/dao/GenericDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/dao/GenericDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/dao/TripDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/dao/TripDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/progetto/view1/utente/pagamento.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/progetto/view1/utente/pagamento.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/progetto/view1/utente/pagetrip.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/progetto/view1/utente/pagetrip.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/dao/UserDAO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,7 +150,7 @@
       <workItem from="1707503150111" duration="601000" />
       <workItem from="1707574200311" duration="1268000" />
       <workItem from="1707650092991" duration="1702000" />
-      <workItem from="1708079122942" duration="15368000" />
+      <workItem from="1708079122942" duration="16097000" />
     </task>
     <task id="LOCAL-00001" summary="Prova">
       <option name="closed" value="true" />
@@ -502,7 +480,23 @@
       <option name="project" value="LOCAL" />
       <updated>1708094724111</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="fix code smell">
+      <option name="closed" value="true" />
+      <created>1708095715684</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1708095715684</updated>
+    </task>
+    <task id="LOCAL-00043" summary="fix code smell">
+      <option name="closed" value="true" />
+      <created>1708095829964</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1708095829964</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -534,14 +528,14 @@
     <MESSAGE value="Controllo valori inseriti per la creazione della trip" />
     <MESSAGE value="Implementato il BLOB sia per la conversione dell'immagine che per il suo caricamento nel DB. Al momento gestisce solo immagini di piccola taglia" />
     <MESSAGE value="1" />
-    <MESSAGE value="fix code smell" />
     <MESSAGE value="fix secondari" />
     <MESSAGE value="c'è speranza" />
     <MESSAGE value="i miei viaggi" />
     <MESSAGE value="qualche eccezione" />
     <MESSAGE value="pagina pagamento e fix cartelle" />
     <MESSAGE value="funziona tutto" />
-    <option name="LAST_COMMIT_MESSAGE" value="funziona tutto" />
+    <MESSAGE value="fix code smell" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix code smell" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -561,7 +555,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/progetto/dao/BuonoDAO.java</url>
-          <line>22</line>
+          <line>21</line>
           <option name="timeStamp" value="46" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">

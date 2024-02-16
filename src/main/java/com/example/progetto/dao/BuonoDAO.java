@@ -19,8 +19,7 @@ public class BuonoDAO implements GenericDAO <Buono> {
     public Buono execute(Object... params) throws SQLException, NotValidCouponException {
         BuonoBean buonobean = (BuonoBean) params[0];
         Buono buono;
-        try {
-            CallableStatement cs = connection.conn.prepareCall("{call GetBuono(?,?)}");
+        try (CallableStatement cs = connection.conn.prepareCall("{call GetBuono(?,?)}")){
 
             cs.setString(1, buonobean.getCodice());
             cs.registerOutParameter(2, Types.INTEGER);
