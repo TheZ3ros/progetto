@@ -7,6 +7,7 @@ module com.example.progetto {
     requires java.sql;
     requires java.desktop;
     requires javafx.swing;
+    requires java.rmi;
 
     opens com.example.progetto to javafx.fxml;
     exports com.example.progetto;

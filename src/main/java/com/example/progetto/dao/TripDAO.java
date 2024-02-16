@@ -48,7 +48,7 @@ public class TripDAO implements GenericDAO<Trip> {
     }
     public void refreshAvailable(int id) throws SQLException {
 
-            
+
             try(CallableStatement cs = connection.conn.prepareCall("{call decrementa(?)}")) {
                 cs.setInt(1, id);
                 cs.executeQuery();
