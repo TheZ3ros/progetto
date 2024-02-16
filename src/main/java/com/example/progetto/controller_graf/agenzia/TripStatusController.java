@@ -7,6 +7,7 @@ import com.example.progetto.bean.TripStatusBean;
 import com.example.progetto.controller_app.BookTripController;
 import com.example.progetto.controller_app.GetTripStatusController;
 import com.example.progetto.controller_graf.agenzia.AgencyTripsController;
+import com.example.progetto.exception.NotValidCouponException;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
@@ -51,7 +52,7 @@ public class TripStatusController {
     public void setTrip(TripBean trip){
         this.currentTrip =trip;
     }
-    public void charge() throws SQLException, IOException {
+    public void charge() throws SQLException, IOException, NotValidCouponException {
         Image image= BookTripController.bytesToImage(currentTrip.getImage());
         imagine.setImage(image);
 
