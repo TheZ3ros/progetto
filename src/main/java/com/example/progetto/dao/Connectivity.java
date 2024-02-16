@@ -11,26 +11,30 @@ public class Connectivity {
     private static Connectivity singletonClass =null;
 
     protected Connectivity() throws SQLException, IOException {
-        InputStream input;
-        try{
+        InputStream input = null;
+        try {
             input = new FileInputStream("src/main/resources/db.properties");
-        }
-        catch(IOException e){
-            throw new IOException("errore durante recupero credenziali DB"+e.getMessage());
-        }
-        Properties properties = new Properties();
-        properties.load(input);
-        String connectionUrl = properties.getProperty("CONNECTION_URL");
-        String user = properties.getProperty("DB_USER");
-        String pass = properties.getProperty("DB_PASS");
-        try{
+            Properties properties = new Properties();
+            properties.load(input);
+            String connectionUrl = properties.getProperty("CONNECTION_URL");
+            String user = properties.getProperty("DB_USER");
+            String pass = properties.getProperty("DB_PASS");
             conn = DriverManager.getConnection(connectionUrl, user, pass);
+        } catch (IOException e) {
+            throw new IOException("Errore durante il recupero delle credenziali del database: " + e.getMessage());
+        } catch (SQLException e) {
+            throw new SQLException("Errore durante l'apertura della connessione: " + e.getMessage());
+        } finally {
+            if (input != null) {
+                try {
+                    input.close();
+                } catch (IOException e) {
+                    System.err.println("Errore durante la chiusura del FileInputStream: " + e.getMessage());
+                }
+            }
         }
-        catch(SQLException e){
-            throw new SQLException("errore apertura connessione"+e.getMessage());
-        }
-
     }
+
 
 
     //creo un singleton per assicurarmi di avere solo un'istanza di connessione

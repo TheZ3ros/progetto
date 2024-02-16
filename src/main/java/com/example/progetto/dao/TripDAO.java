@@ -48,10 +48,12 @@ public class TripDAO implements GenericDAO<Trip> {
     }
     public void refreshAvailable(int id) throws SQLException {
 
-            CallableStatement cs = connection.conn.prepareCall("{call decrementa(?)}");
-            cs.setInt(1, id);
+            try(CallableStatement cs = connection.conn.prepareCall("{call decrementa(?)}")) {
+                cs.setInt(1, id);
                 cs.executeQuery();
-
+            }catch(SQLException e){
+                throw new SQLException(e.getMessage());
+            }
         }
 
     public void addTrip(String city, int available, Date dataAnd, Date dataRit, float price, byte[] image) throws SQLException {
