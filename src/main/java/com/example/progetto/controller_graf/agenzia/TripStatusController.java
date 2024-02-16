@@ -63,8 +63,7 @@ public class TripStatusController {
             System.out.println("Stato: "+bean.isStatus());
         }
 
-
-
+        
 
     }
     public void setButtonText() {
