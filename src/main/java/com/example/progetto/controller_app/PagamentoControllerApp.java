@@ -8,8 +8,8 @@ import com.example.progetto.model.Buono;
 import java.io.IOException;
 import java.sql.SQLException;
 
-public class pagamentoControllerApp {
-    public BuonoBean CheckBuono(BuonoBean buonobean) throws SQLException, IOException, NotValidCouponException {
+public class PagamentoControllerApp {
+    public BuonoBean checkBuono(BuonoBean buonobean) throws SQLException, IOException, NotValidCouponException {
         BuonoDAO buonoDAO=new BuonoDAO();
         Buono buono;
         try{

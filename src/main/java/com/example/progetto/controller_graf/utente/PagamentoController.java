@@ -10,7 +10,7 @@ import com.example.progetto.bean.BuonoBean;
 import com.example.progetto.bean.TripBean;
 import com.example.progetto.bean.UserBean;
 import com.example.progetto.controller_app.BookTripController;
-import com.example.progetto.controller_app.pagamentoControllerApp;
+import com.example.progetto.controller_app.PagamentoControllerApp;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -112,9 +112,9 @@ public class PagamentoController {
         String buonoSpesa = buono.getText();
         BuonoBean buonoBean=new BuonoBean();
         buonoBean.setCodice(buonoSpesa);
-        pagamentoControllerApp pagamento=new pagamentoControllerApp();
+        PagamentoControllerApp pagamento=new PagamentoControllerApp();
         try{
-            buonoBean=pagamento.CheckBuono(buonoBean);
+            buonoBean=pagamento.checkBuono(buonoBean);
             int totale=((int)currentTrip.getPrice()-buonoBean.getValore());
             price.setText("Totale "+totale+"€");
 
