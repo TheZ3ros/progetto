@@ -3,7 +3,9 @@ package com.example.progetto.controller_graf.agenzia;
 import com.example.progetto.Applicazione;
 import com.example.progetto.bean.AgencyBean;
 import com.example.progetto.bean.TripBean;
+import com.example.progetto.bean.TripStatusBean;
 import com.example.progetto.controller_app.BookTripController;
+import com.example.progetto.controller_app.GetTripStatusController;
 import com.example.progetto.controller_graf.agenzia.AgencyTripsController;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -13,6 +15,7 @@ import javafx.scene.text.Text;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.List;
 
 public class TripStatusController {
     private Applicazione main;
@@ -48,13 +51,18 @@ public class TripStatusController {
     public void setTrip(TripBean trip){
         this.currentTrip =trip;
     }
-    public void charge() {
+    public void charge() throws SQLException, IOException {
         Image image= BookTripController.bytesToImage(currentTrip.getImage());
         imagine.setImage(image);
-        dove.setText(currentTrip.getCity());
-        data.setText(currentTrip.getDataAnd() +"/" + currentTrip.getDataRit());
-        prezzo.setText((int) currentTrip.getPrice()+"€");
-        posti.setText(currentTrip.getAvailable()+" rimanenti");
+
+        List<TripStatusBean> stati = GetTripStatusController.showtripstatus(currentTrip.getId());
+
+        for(TripStatusBean bean : stati){ //da aggiornare mettendo le label
+            System.out.println("Username: "+bean.getUsername());
+            System.out.println("Stato: "+bean.isStatus());
+        }
+
+
 
 
     }
