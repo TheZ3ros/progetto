@@ -1,6 +1,6 @@
 package com.example.progetto.dao;
 
-import com.example.progetto.Exception.NotValidCouponException;
+import com.example.progetto.exception.NotValidCouponException;
 import com.example.progetto.model.TripStatus;
 
 import java.io.IOException;

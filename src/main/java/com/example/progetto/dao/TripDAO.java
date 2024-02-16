@@ -12,8 +12,6 @@ public class TripDAO implements GenericDAO<Trip> {
             connection = Connectivity.getSingletonInstance();
         }
 
-
-
     @Override
     public Trip execute(Object... params) throws SQLException {
         Trip trip;
