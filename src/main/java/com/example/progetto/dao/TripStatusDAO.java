@@ -35,11 +35,15 @@ public class TripStatusDAO implements GenericDAO<List<TripStatus>> {
     }
 
 
-    public void update(int id,String username) throws SQLException {
+    public boolean update(int id,String username) throws SQLException {
 
         CallableStatement cs = connection.conn.prepareCall("{call UpdateTripStatus(?,?)}");
         cs.setInt(1,id);
         cs.setString(2,username);
-        cs.executeQuery();
+        ResultSet rs = cs.executeQuery();
+        if (rs != null){
+            return true;
+        }
+        return false;
     }
 }

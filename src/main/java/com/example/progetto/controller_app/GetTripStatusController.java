@@ -2,7 +2,9 @@ package com.example.progetto.controller_app;
 
 
 import com.example.progetto.bean.TripStatusBean;
+import com.example.progetto.controller_graf.agenzia.TripStatusController;
 import com.example.progetto.dao.TripStatusDAO;
+import com.example.progetto.exception.NotValidCouponException;
 import com.example.progetto.model.TripStatus;
 import java.io.IOException;
 import java.sql.SQLException;
@@ -24,9 +26,9 @@ public class GetTripStatusController {
         return statusBeans;
     }
 
-    public void updatetripstatus(int id,String username) throws SQLException, IOException {
+    public boolean updatetripstatus(int id,String username) throws SQLException, IOException, NotValidCouponException {
         TripStatusDAO statusDAO = new TripStatusDAO();
-        statusDAO.update(id,username);
+        return statusDAO.update(id,username);
 
     }
 }
