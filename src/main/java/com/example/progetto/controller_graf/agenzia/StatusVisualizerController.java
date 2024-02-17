@@ -45,7 +45,6 @@ public class StatusVisualizerController {
     }
 
     public void conferma() throws SQLException, IOException, NotValidCouponException {
-        //state.setText("true");
         GetTripStatusController statusupdater = new GetTripStatusController();
         boolean b = statusupdater.updatetripstatus(currentTrip.getId(), statusbean.getUsername());
         if (b){
