@@ -5,9 +5,13 @@ import com.example.progetto.bean.UserBean;
 import com.example.progetto.controller_app.RegLoginControllerApp;
 import com.example.progetto.exception.PasswordIllegalException;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -24,7 +28,7 @@ private TextField usernameUtente;
 
 
     @FXML
-    private void vaiAHome(){
+    public void vaiAHome(){
 
         main.vaiAHome();
     }
@@ -44,6 +48,11 @@ private TextField usernameUtente;
         try{
             RegLoginControllerApp regLoginControllerApp=new RegLoginControllerApp(user);
             regLoginControllerApp.registrazione();
+            Alert alert=new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Registrazione");
+            alert.setHeaderText(null);
+            alert.setContentText("Registrazione avvenuta con successo");
+            alert.showAndWait();
         }
         catch(PasswordIllegalException e){
 
@@ -54,6 +63,18 @@ private TextField usernameUtente;
             alert.showAndWait();
         }
 
+    }
+    @FXML
+    private void vaiALogin() throws IOException {
+
+        FXMLLoader loginLoader = new FXMLLoader(Applicazione.class.getResource("view1/login.fxml"));
+        Parent loginRoot = loginLoader.load();
+        Scene loginScene = new Scene(loginRoot);
+        LoginController loginController = loginLoader.getController();
+        loginController.setMain(main);
+        Stage stage = main.getStage();
+        stage.setScene(loginScene);
+        stage.setTitle("Accedi");
     }
 
 

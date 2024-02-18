@@ -68,11 +68,10 @@ public class LoginController {
             stage.setTitle("Accedi");
         }
         catch(CredentialErrorException e){
-
             Alert alert=new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Login fallito");
             alert.setHeaderText(null);
-            alert.setContentText("Username o password errati");
+            alert.setContentText(e.getMessage());
             alert.showAndWait();
         }
 

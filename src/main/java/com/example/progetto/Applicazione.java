@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import view2.ControllerHomeCLI;
 
 import java.util.Scanner;
 
@@ -47,10 +48,12 @@ public class Applicazione extends Application {
                 break;
             }
             else if(n==2){
-
+                ControllerHomeCLI controllerHomeCLI=new ControllerHomeCLI();
+                controllerHomeCLI.start();
+                break;
             }
             else{
-                System.out.println("inserire un pozione valida");
+                System.out.println("inserire un'opzione valida");
             }
 
         }
