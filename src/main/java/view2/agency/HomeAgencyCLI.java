@@ -1,14 +1,13 @@
 package view2.agency;
 
 import com.example.progetto.bean.AgencyBean;
-import view2.user.LoginUserCLI;
 
 import java.util.Scanner;
 
-public class HomeAgency {
+public class HomeAgencyCLI {
     private final AgencyBean currentAgency;
 
-    public HomeAgency(AgencyBean currentAgency) {
+    public HomeAgencyCLI(AgencyBean currentAgency) {
         this.currentAgency = currentAgency;
     }
 
