@@ -10,6 +10,8 @@ module com.example.progetto {
     requires java.rmi;
     requires com.opencsv;
     requires commons.lang;
+    requires com.opencsv;
+    requires org.apache.commons.lang;
 
     opens com.example.progetto to javafx.fxml;
     exports com.example.progetto;
