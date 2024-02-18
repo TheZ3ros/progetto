@@ -7,6 +7,7 @@ import com.example.progetto.controller_app.BookTripController;
 import com.example.progetto.exception.AlreadyPrenotedException;
 import com.example.progetto.exception.CardNotTrueException;
 import com.example.progetto.exception.PlacesTerminatedException;
+import view2.Printer;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -25,26 +26,25 @@ public class TripViewCLI {
         BookTripController bookTripController = new BookTripController();
         List<TripBean> viaggi = bookTripController.showTrip();
         for (TripBean viaggio : viaggi) {
-            System.out.println("ID:" + viaggio.getId());
-            System.out.println("Città:" + viaggio.getCity());
-            System.out.println("Prezzo:" + viaggio.getPrice());
-            System.out.println("Data di partenza:" + viaggio.getDataAnd());
-            System.out.println("Data di ritorno:" + viaggio.getDataRit());
-            System.out.println("Posti disponibili:" + viaggio.getAvailable());
-            System.out.println("---------------------------------");
+            Printer.printMessage("ID:" + viaggio.getId());
+            Printer.printMessage("Città:" + viaggio.getCity());
+            Printer.printMessage("Prezzo:" + viaggio.getPrice());
+            Printer.printMessage("Data di partenza:" + viaggio.getDataAnd());
+            Printer.printMessage("Data di ritorno:" + viaggio.getDataRit());
+            Printer.printMessage("Posti disponibili:" + viaggio.getAvailable());
+            Printer.printMessage("---------------------------------");
         }
-        System.out.println("Inserire l'ID del viaggio che si vuole prenotare, 0 per tornare alla pagina precedente");
+        Printer.printMessage("Inserire l'ID del viaggio che si vuole prenotare, 0 per tornare alla pagina precedente");
         Scanner reader = new Scanner(System.in);
         int n;
         while (true) {
             n = reader.nextInt();
             if (n > viaggi.size()) {
-                System.out.println("inserire un numero valido");
+                Printer.printMessage("inserire un numero valido");
             }
             else if(n==0){
                 login.start();
             }
-            BookBean bookBean = new BookBean(currentUser.getUsername(), n);
 
 
             try {
@@ -52,7 +52,7 @@ public class TripViewCLI {
                 paymentCLI.start(login);
                 break;
             } catch (CardNotTrueException e) {
-               System.out.println(e.getMessage());
+                Printer.printMessage(e.getMessage());
                login.start();
             }
         }

@@ -10,6 +10,7 @@ import com.example.progetto.exception.AlreadyPrenotedException;
 import com.example.progetto.exception.CardNotTrueException;
 import com.example.progetto.exception.NotValidCouponException;
 import com.example.progetto.exception.PlacesTerminatedException;
+import view2.Printer;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -30,14 +31,14 @@ public class PaymentCLI {
     }
     public void start(HomeLoginCLI login) throws CardNotTrueException {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Si vuole inserire un coupon?");
-        System.out.println("1- sì");
-        System.out.println("2- no");
+        Printer.printMessage("Si vuole inserire un coupon?");
+        Printer.printMessage("1- sì");
+        Printer.printMessage("2- no");
         Scanner reader = new Scanner(System.in);
         int n;
         n = reader.nextInt();
             if (n==1) {
-                System.out.println("inserire coupon");
+                Printer.printMessage("inserire coupon");
                 String coupon = scanner.nextLine();
                 BuonoBean buonoBean = new BuonoBean();
                 buonoBean.setCodice(coupon);
@@ -45,19 +46,19 @@ public class PaymentCLI {
                 try {
                     buonoBean = pagamentoControllerApp.checkBuono(buonoBean);
                 } catch (SQLException | IOException | NotValidCouponException e) {
-                    System.out.println(e.getMessage());
+                    Printer.printMessage(e.getMessage());
                 }
                 int prezzo = (int) trip.getPrice() - buonoBean.getValore();
-                System.out.println("Nuovo prezzo:" + prezzo);
+                Printer.printMessage("Nuovo prezzo:" + prezzo);
             }
-                System.out.println("inserire nome");
+        Printer.printMessage("inserire nome");
             String nome = scanner.nextLine();
-            System.out.println("inserire numero carta");
+        Printer.printMessage("inserire numero carta");
             String numeroCarta = scanner.nextLine();
-            System.out.println("inserire cvv");
+        Printer.printMessage("inserire cvv");
             String cvvCode = scanner.nextLine();
-            System.out.println("inserire data");
-        System.out.println("Inserisci una data (formato: YYYY-MM-DD):");
+        Printer.printMessage("inserire data");
+        Printer.printMessage("Inserisci una data (formato: YYYY-MM-DD):");
         String input = scanner.nextLine();
 
         // Converte la stringa in un oggetto LocalDate
@@ -72,10 +73,10 @@ public class PaymentCLI {
             BookBean bookBean = new BookBean(user.getUsername(), trip.getId());
             try {
                 bookTripController.bookTrip(bookBean);
-                System.out.println("Prenotazione avvenuta con successo");
+                Printer.printMessage("Prenotazione avvenuta con successo");
                 login.start();
             } catch (SQLException | IOException | PlacesTerminatedException | AlreadyPrenotedException e) {
-                System.out.println(e.getMessage());
+                Printer.printMessage(e.getMessage());
             }
         }
     }

@@ -10,10 +10,10 @@ import java.util.Scanner;
 
 public class ControllerHomeCLI {
 public void start() throws SQLException, IOException, PlacesTerminatedException, AlreadyPrenotedException {
-    System.out.println("Scegliere l'operazione da eseguire");
-    System.out.println("1-Registrazione");
-    System.out.println("2-Login come utente");
-    System.out.println("3-Login come azienda");
+    Printer.printMessage("Scegliere l'operazione da eseguire");
+    Printer.printMessage("1-Registrazione");
+    Printer.printMessage("2-Login come utente");
+    Printer.printMessage("3-Login come azienda");
     Scanner reader = new Scanner(System.in);
     int n;
     while (true) {
@@ -27,7 +27,7 @@ public void start() throws SQLException, IOException, PlacesTerminatedException,
                 loginUserCLI.login();
             case 3:
             default:
-                System.out.println("inserire un'opzione valida");
+                Printer.printMessage("inserire un'opzione valida");
         }
         }
 

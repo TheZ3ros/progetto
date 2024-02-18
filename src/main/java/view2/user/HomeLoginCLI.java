@@ -3,6 +3,7 @@ package view2.user;
 import com.example.progetto.bean.UserBean;
 import com.example.progetto.exception.AlreadyPrenotedException;
 import com.example.progetto.exception.PlacesTerminatedException;
+import view2.Printer;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -16,9 +17,9 @@ public class HomeLoginCLI {
         this.currentUser = currentUser;
     }
     public void start() throws SQLException, IOException, PlacesTerminatedException, AlreadyPrenotedException {
-        System.out.println("Scegliere l'operazione da eseguire");
-        System.out.println("1-Prenota un nuovo viaggio");
-        System.out.println("2-Visualizza stato dei viaggi prenotati");
+        Printer.printMessage("Scegliere l'operazione da eseguire");
+        Printer.printMessage("1-Prenota un nuovo viaggio");
+        Printer.printMessage("2-Visualizza stato dei viaggi prenotati");
         Scanner reader = new Scanner(System.in);
         int n;
         while (true) {
@@ -33,7 +34,7 @@ public class HomeLoginCLI {
                     bookedTripCLI.start(this);
                     break;
                 default:
-                    System.out.println("inserire un'opzione valida");
+                    Printer.printMessage("inserire un'opzione valida");
             }
         }
     }
