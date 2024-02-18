@@ -8,7 +8,13 @@
   <artifactId>progetto</artifactId>
   <version>1.0-SNAPSHOT</version>
   <name>progetto</name>
-
+  <repositories>
+    <!-- Aggiungi il repository Maven personalizzato -->
+    <repository>
+      <id>repo</id>
+      <url>https://mvnrepository.com</url>
+    </repository>
+  </repositories>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <sonar.organization>luca-ale</sonar.organization>
@@ -16,7 +22,6 @@
       <sonar.host.url>https://sonarcloud.io</sonar.host.url>
     <sonar.projectKey>lucaaa02_progetto</sonar.projectKey>
 <junit.version>5.9.2</junit.version>  </properties>
-    <!-- Repository di opencsv -->
 
   <dependencies>
     <dependency>
@@ -31,17 +36,17 @@
       <version>18</version> <!-- Assicurati di specificare la versione corretta di JavaFX Swing -->
     </dependency>
 
+    <!-- Dipendenza per commons-lang -->
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+      <version>3.12.0</version> <!-- Aggiorna alla versione più recente -->
+    </dependency>
     <dependency>
       <groupId>org.openjfx</groupId>
       <artifactId>javafx-fxml</artifactId>
       <version>21-ea+24</version>
     </dependency>
-    <dependency>
-      <groupId>com.opencsv</groupId>
-      <artifactId>opencsv</artifactId>
-      <version>5.5.1</version> <!-- Versione specifica di opencsv -->
-    </dependency>
-
     <dependency>
       <groupId>org.apache.commons</groupId>
       <artifactId>commons-lang3</artifactId>
