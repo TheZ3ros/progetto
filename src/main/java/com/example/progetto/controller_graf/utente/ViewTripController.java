@@ -83,6 +83,5 @@ public class ViewTripController {
         MyTripController myTripController=new MyTripController();
         myTripController.myTrip(currentUser,main);
     }
-
-
+    
 }
