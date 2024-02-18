@@ -5,8 +5,8 @@ import com.example.progetto.bean.AgencyBean;
 import com.example.progetto.bean.TripBean;
 import com.example.progetto.bean.TripStatusBean;
 import com.example.progetto.controller_app.GetTripStatusController;
+import com.example.progetto.exception.NotValidCouponException;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
 import java.io.IOException;
@@ -22,8 +22,6 @@ public class StatusVisualizerController {
     private Label usernameuser;
     @FXML
     private Label state;
-    @FXML
-    private Button confirm;
 
     @FXML
     public void setMain(Applicazione main){
@@ -31,8 +29,8 @@ public class StatusVisualizerController {
         this.main = main;
     }
 
-    public void setTrip(TripBean trip){
-        this.currentTrip =trip;
+    public void setTrip(TripBean currentTrip){
+        this.currentTrip = currentTrip;
     }
 
     public void setCurrentUser(AgencyBean currentUser){
@@ -46,9 +44,14 @@ public class StatusVisualizerController {
 
     }
 
-    public void conferma() throws SQLException, IOException {
-        //state.setText("true");
+    public void conferma() throws SQLException, IOException, NotValidCouponException {
         GetTripStatusController statusupdater = new GetTripStatusController();
-        statusupdater.updatetripstatus(currentTrip.getId(), statusbean.getUsername());
+        boolean b = statusupdater.updatetripstatus(currentTrip.getId(), statusbean.getUsername());
+        if (b){
+            state.setText("True");
+        }
+        else{
+            System.out.println("Query non eseguita");
+        }
     }
 }
