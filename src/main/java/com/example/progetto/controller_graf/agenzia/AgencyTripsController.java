@@ -53,7 +53,7 @@ public class AgencyTripsController {
         for (TripBean viaggio : viaggi) {
             FXMLLoader getagencytripsLoader = new FXMLLoader(Applicazione.class.getResource("view1/agenzia/singleagencytrip.fxml"));
             VBox box=getagencytripsLoader.load();
-            GetAgencyTripsController controller = getagencytripsLoader.getController();
+            SingleAgencyTripsController controller = getagencytripsLoader.getController();
             controller.setMain(main);
             controller.setUser(currentUser);
             controller.createbox(viaggio);

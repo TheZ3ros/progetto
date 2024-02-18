@@ -18,7 +18,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.sql.SQLException;
 
-public class GetAgencyTripsController {
+public class SingleAgencyTripsController {
     @FXML
     private ImageView imagine;
     @FXML
