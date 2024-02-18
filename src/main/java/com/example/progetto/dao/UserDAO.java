@@ -27,4 +27,17 @@ public class UserDAO implements GenericDAO <User> {
 
         return utente;
     }
+    public void registrazione(User user){
+
+        String username=user.getUsername();
+        String password= user.getPassword();
+        try(CallableStatement cs = connection.conn.prepareCall("{call SetUser(?,?)}")) {
+            cs.setString(1, username);
+            cs.setString(2, password);
+            cs.executeQuery();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
 }

@@ -13,7 +13,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import com.example.progetto.controller_app.LogiinController;
+import com.example.progetto.controller_app.RegLoginControllerApp;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -53,7 +53,7 @@ public class LoginController {
         String userUtente=usernameUtente.getText();
         String passUtente=passwordUtente.getText();
         UserBean user = new UserBean(userUtente,passUtente);
-        LogiinController login=new LogiinController(user);
+        RegLoginControllerApp login=new RegLoginControllerApp(user);
         try{
             login.loginUtente();
             FXMLLoader userhomeloader = new FXMLLoader(Applicazione.class.getResource("view1/utente/home_login.fxml"));
@@ -84,7 +84,7 @@ public class LoginController {
         String userAgenzia = usernameAgenzia.getText();
         String passAgenzia = passwordAgenzia.getText();
         AgencyBean agency = new AgencyBean(userAgenzia,passAgenzia);
-        LogiinController login = new LogiinController(agency);
+        RegLoginControllerApp login = new RegLoginControllerApp(agency);
         try{
             login.loginAgenzia();
             FXMLLoader agencyhomeloader = new FXMLLoader(Applicazione.class.getResource("view1/agenzia/agency_home.fxml"));
@@ -108,5 +108,16 @@ public class LoginController {
         }
 
 
+    }
+    @FXML
+    private void registrati() throws IOException {
+        FXMLLoader regloader = new FXMLLoader(Applicazione.class.getResource("view1/registrazione.fxml"));
+        Parent regroot = regloader.load();
+        Scene regScene = new Scene(regroot);
+        RegistrazioneController reghome = regloader.getController();
+        reghome.setMain(main);
+        Stage stage = main.getStage();
+        stage.setScene(regScene);
+        stage.setTitle("Registrazione");
     }
 }
