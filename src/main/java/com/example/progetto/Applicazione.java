@@ -6,6 +6,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+
+import java.util.Scanner;
+
 public class Applicazione extends Application {
 
     private Stage stage;
@@ -17,22 +20,41 @@ public class Applicazione extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        this.stage = stage;
+        System.out.println("Come si vuole avviare il programma?");
+        int n;
+        System.out.println("1-Interfaccia grafica");
+        System.out.println("2-Linea di comando");
+        Scanner reader = new Scanner(System.in);
+        while (true) {
+            n = reader.nextInt();
+            if(n==1){
+                this.stage = stage;
 
-        //carico la home
-        FXMLLoader homeLoader = new FXMLLoader(Applicazione.class.getResource("view1/home.fxml"));
-        Parent homeRoot = homeLoader.load();
-        homeScene = new Scene(homeRoot);
+                //carico la home
+                FXMLLoader homeLoader = new FXMLLoader(Applicazione.class.getResource("view1/home.fxml"));
+                Parent homeRoot = homeLoader.load();
+                homeScene = new Scene(homeRoot);
 
-    stage.setResizable(false);
-        stage.setScene(homeScene);
-        stage.setTitle("Home!");
+                stage.setResizable(false);
+                stage.setScene(homeScene);
+                stage.setTitle("Home!");
 
-        //mi prendo il controller della schermata Home
-        HomeController homeController = homeLoader.getController();
-        homeController.setMain(this);
+                //mi prendo il controller della schermata Home
+                HomeController homeController = homeLoader.getController();
+                homeController.setMain(this);
 
-        stage.show();
+                stage.show();
+                break;
+            }
+            else if(n==2){
+
+            }
+            else{
+                System.out.println("inserire un pozione valida");
+            }
+
+        }
+
     }
 
     public void vaiAHome(){
