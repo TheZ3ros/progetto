@@ -21,7 +21,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BookTripController {
-    private final String writer="dbms";
+    private final String writer="dms";
     public List<TripBean> showTrip() throws SQLException, IOException {
         TripDAO tripdao = new TripDAO();
         Trip trip;

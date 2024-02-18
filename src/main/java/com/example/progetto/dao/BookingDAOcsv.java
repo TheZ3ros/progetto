@@ -3,7 +3,6 @@ package com.example.progetto.dao;
 import com.example.progetto.exception.AlreadyPrenotedException;
 import com.example.progetto.model.UserTrip;
 
-import java.io.*;
 import java.sql.SQLException;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

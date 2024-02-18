@@ -18,11 +18,7 @@
 <junit.version>5.9.2</junit.version>  </properties>
   <repositories>
     <!-- Repository di opencsv -->
-    <repository>
-      <id>opencsv</id>
-      <url>https://repo.maven.apache.org/maven2/com/opencsv/</url> <!-- Aggiungi il repository Maven di opencsv -->
-    </repository>
-  </repositories>
+
   <dependencies>
     <dependency>
       <groupId>org.openjfx</groupId>
@@ -40,11 +36,6 @@
       <groupId>org.openjfx</groupId>
       <artifactId>javafx-fxml</artifactId>
       <version>21-ea+24</version>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.commons</groupId>
-      <artifactId>commons-lang3</artifactId>
-      <version>3.12.0</version>
     </dependency>
 <dependency>
 
