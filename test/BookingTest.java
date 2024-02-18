@@ -21,7 +21,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class BookingTest {
     @Test
     public void voh() throws ParseException, SQLException, IOException {
-        int flag = 1;
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         Date dateand = dateFormat.parse("2024-03-11");
         Date daterit = dateFormat.parse("2024-03-18");
