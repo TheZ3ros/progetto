@@ -9,7 +9,9 @@ module com.example.progetto {
     requires javafx.swing;
     requires java.rmi;
 
+
     opens com.example.progetto to javafx.fxml;
+    requires com.opencsv;
     exports com.example.progetto;
     exports com.example.progetto.controller_graf;
     exports com.example.progetto.bean;
