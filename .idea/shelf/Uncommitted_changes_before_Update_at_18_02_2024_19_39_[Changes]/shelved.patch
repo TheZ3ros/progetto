@@ -1,0 +1,80 @@
+Index: src/main/java/view2/agency/HomeAgency.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/view2/agency/HomeAgency.java b/src/main/java/view2/agency/HomeAgencyCLI.java
+rename from src/main/java/view2/agency/HomeAgency.java
+rename to src/main/java/view2/agency/HomeAgencyCLI.java
+--- a/src/main/java/view2/agency/HomeAgency.java	
++++ b/src/main/java/view2/agency/HomeAgencyCLI.java	
+@@ -1,18 +1,19 @@
+ package view2.agency;
+ 
+ import com.example.progetto.bean.AgencyBean;
+-import view2.user.LoginUserCLI;
+ 
++import java.io.IOException;
++import java.sql.SQLException;
+ import java.util.Scanner;
+ 
+-public class HomeAgency {
++public class HomeAgencyCLI {
+     private final AgencyBean currentAgency;
+ 
+-    public HomeAgency(AgencyBean currentAgency) {
++    public HomeAgencyCLI(AgencyBean currentAgency) {
+         this.currentAgency = currentAgency;
+     }
+ 
+-    public void start(){
++    public void start() throws SQLException, IOException {
+         System.out.println("Scegliere l'operazione da eseguire");
+         System.out.println("1-Inserisci un nuovo viaggio");
+         System.out.println("2-Controlla stato dei viaggi");
+@@ -22,7 +23,8 @@
+             n = reader.nextInt();
+             switch (n) {
+                 case 1:
+-                    //inserisci viaggio
++                    TripCreationCLI tripCreationCLI = new TripCreationCLI(currentAgency);
++                    tripCreationCLI.start();
+                 case 2:
+                     //controlla stato dei viaggi
+                 default:
+Index: src/main/java/view2/agency/LoginAgenziaCLI.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/view2/agency/LoginAgenziaCLI.java b/src/main/java/view2/agency/LoginAgencyCLI.java
+rename from src/main/java/view2/agency/LoginAgenziaCLI.java
+rename to src/main/java/view2/agency/LoginAgencyCLI.java
+--- a/src/main/java/view2/agency/LoginAgenziaCLI.java	
++++ b/src/main/java/view2/agency/LoginAgencyCLI.java	
+@@ -1,7 +1,6 @@
+ package view2.agency;
+ 
+ import com.example.progetto.bean.AgencyBean;
+-import com.example.progetto.bean.UserBean;
+ import com.example.progetto.controller_app.RegLoginControllerApp;
+ import com.example.progetto.exception.CredentialErrorException;
+ 
+@@ -9,7 +8,7 @@
+ import java.sql.SQLException;
+ import java.util.Scanner;
+ 
+-public class LoginAgenziaCLI {
++public class LoginAgencyCLI {
+     public void login(){
+         Scanner scanner = new Scanner(System.in);
+         System.out.println("inserire username");
+@@ -22,6 +21,8 @@
+             RegLoginControllerApp regLoginControllerApp=new RegLoginControllerApp(agencyBean);
+             regLoginControllerApp.loginUtente();
+             System.out.println("login avvenuto con successo");
++            HomeAgencyCLI homeAgencyCLI =new HomeAgencyCLI(agencyBean);
++            homeAgencyCLI.start();
+ 
+         }
+         catch(CredentialErrorException e){
