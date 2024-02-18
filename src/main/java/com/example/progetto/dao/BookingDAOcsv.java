@@ -32,7 +32,7 @@ public class BookingDAOcsv implements BookingDAO{
             throw new AlreadyPrenotedException(e.getMessage());
         }
 
-        try(CSVWriter csvWriter = new CSVWriter(new BufferedWriter(new FileWriter(fd)))) {
+        try(CSVWriter csvWriter = new CSVWriter(new BufferedWriter(new FileWriter(fd,true)))) {
             csvWriter.writeNext(new String[]{line});
 
         } catch (IOException e) {
