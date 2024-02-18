@@ -34,7 +34,9 @@ public class TripStatusCLI {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Inserire lo username di cui confermare la prenotazione (non scrivere nulla se non si desidera fare nulla): ");
         String user = scanner.nextLine();
-        if(user.isEmpty()){home.start();} //verificare se sia meglio sostituire questo if con un ciclo while
+        if(user.isEmpty()){
+            home.start();
+        } //verificare se sia meglio sostituire questo if con un ciclo while
         else{
             GetTripStatusController statusupdater = new GetTripStatusController();
             boolean b = statusupdater.updatetripstatus(id,user);

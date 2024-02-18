@@ -5,10 +5,12 @@ import com.example.progetto.exception.PlacesTerminatedException;
 import view2.agency.LoginAgencyCLI;
 import view2.user.LoginUserCLI;
 
+import java.io.IOException;
+import java.sql.SQLException;
 import java.util.Scanner;
 
 public class ControllerHomeCLI {
-public void start() throws PlacesTerminatedException, AlreadyPrenotedException {
+public void start() throws PlacesTerminatedException, AlreadyPrenotedException, SQLException, IOException {
     System.out.println("Scegliere l'operazione da eseguire");
     System.out.println("1-Registrazione");
     System.out.println("2-Login come utente");
@@ -19,9 +21,11 @@ public void start() throws PlacesTerminatedException, AlreadyPrenotedException {
         n = reader.nextInt();
         switch (n) {
             case 1:
-
+                RegistrazioneUserCLI registrazioneUserCLI = new RegistrazioneUserCLI();
+                registrazioneUserCLI.start(this);
             case 2:
-
+                LoginUserCLI loginUserCLI = new LoginUserCLI();
+                loginUserCLI.login();
             case 3:
                 LoginAgencyCLI loginAgencyCLI = new LoginAgencyCLI();
                 loginAgencyCLI.login();
