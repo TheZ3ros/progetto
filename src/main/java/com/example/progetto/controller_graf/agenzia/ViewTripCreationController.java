@@ -92,6 +92,7 @@ public class ViewTripCreationController {
         imageUploader.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("File immagine","*.png","*.jpg","*.jpeg","*.gif"));
         File selectedFile = imageUploader.showOpenDialog(new Stage());
         if(selectedFile!=null){
+
             imagePath = selectedFile.getAbsolutePath();
             Image image = new Image(selectedFile.toURI().toString());
             imageBytes = imageToBytes(image);
@@ -102,7 +103,7 @@ public class ViewTripCreationController {
     }
 
 
-    private byte[] imageToBytes(Image image) throws IOException {
+    public byte[] imageToBytes(Image image) throws IOException {
         BufferedImage bufferedImage = SwingFXUtils.fromFXImage(image,null);
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
         ImageIO.write(bufferedImage,"png",outputStream);

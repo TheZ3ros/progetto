@@ -20,4 +20,6 @@ module com.example.progetto {
     opens com.example.progetto.controller_graf.agenzia to javafx.fxml;
     exports com.example.progetto.controller_graf.utente;
     opens com.example.progetto.controller_graf.utente to javafx.fxml;
+    exports view2.agency;
+    opens view2.agency to javafx.fxml;
 }
