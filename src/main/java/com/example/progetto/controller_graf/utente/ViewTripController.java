@@ -79,19 +79,10 @@ public class ViewTripController {
         stage.setTitle("Ricerca");
     }
     @FXML
-    private void myTrip() throws SQLException, IOException {
-        FXMLLoader myTripLoader = new FXMLLoader(Applicazione.class.getResource("view1/utente/myTrip.fxml"));
-        Parent mytriproot = myTripLoader.load();
-        Scene myTripScene = new Scene(mytriproot);
-        MyTripController myTripController = myTripLoader.getController();
-        myTripController.setMain(main);
-        myTripController.setUser(currentUser);
-        myTripController.charge();
-        Stage stage = main.getStage();
-        stage.setScene(myTripScene);
-        stage.setTitle("I miei viaggi");
-
+    public void myTrip() throws SQLException, IOException {
+        MyTripController myTripController=new MyTripController();
+        myTripController.myTrip(currentUser,main);
     }
 
-
+    
 }
