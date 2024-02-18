@@ -5,6 +5,7 @@ import com.example.progetto.bean.TripBean;
 import com.example.progetto.bean.UserBean;
 import com.example.progetto.controller_app.BookTripController;
 import com.example.progetto.exception.AlreadyPrenotedException;
+import com.example.progetto.exception.CardNotTrueException;
 import com.example.progetto.exception.PlacesTerminatedException;
 
 import java.io.IOException;
@@ -47,12 +48,12 @@ public class TripViewCLI {
 
 
             try {
-                bookTripController.bookTrip(bookBean);
-                System.out.println("Prenotazione avvenuta con successo");
+                PaymentCLI paymentCLI=new PaymentCLI(viaggi.get(n-1),currentUser);
+                paymentCLI.start(login);
                 break;
-            } catch (PlacesTerminatedException | AlreadyPrenotedException e) {
-                System.out.println(e.getMessage());
-                login.start();
+            } catch (CardNotTrueException e) {
+               System.out.println(e.getMessage());
+               login.start();
             }
         }
     }

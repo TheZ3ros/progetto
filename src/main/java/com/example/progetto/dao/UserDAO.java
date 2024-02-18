@@ -1,4 +1,8 @@
 package com.example.progetto.dao;
+import com.example.progetto.bean.BuonoBean;
+import com.example.progetto.exception.ExistsUserException;
+import com.example.progetto.exception.NotValidCouponException;
+import com.example.progetto.model.Buono;
 import com.example.progetto.model.User;
 
 import java.io.IOException;
@@ -27,8 +31,8 @@ public class UserDAO implements GenericDAO <User> {
 
         return utente;
     }
-    public void registrazione(User user){
-
+    public void registrazione(User user) throws ExistsUserException, SQLException {
+        checkUser(user);
         String username=user.getUsername();
         String password= user.getPassword();
         try(CallableStatement cs = connection.conn.prepareCall("{call SetUser(?,?)}")) {
@@ -40,4 +44,23 @@ public class UserDAO implements GenericDAO <User> {
         }
 
     }
-}
+
+    public void checkUser(User user) throws ExistsUserException, SQLException {
+        try (CallableStatement cs = connection.conn.prepareCall("{call CheckUser(?,?)}")){
+
+            cs.setString(1, user.getUsername());
+            cs.registerOutParameter(2, Types.INTEGER);
+            cs.executeQuery();
+            int n = cs.getInt(2);
+            if (n == 1) {
+                throw new ExistsUserException("utente già esistente");
+            }
+        }
+        catch (SQLException e){
+            throw new SQLException("errore username"+e.getMessage());
+        }
+
+
+    }
+    }
+

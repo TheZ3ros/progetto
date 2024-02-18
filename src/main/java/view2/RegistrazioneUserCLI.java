@@ -3,6 +3,7 @@ package view2;
 import com.example.progetto.bean.UserBean;
 import com.example.progetto.controller_app.RegLoginControllerApp;
 import com.example.progetto.exception.AlreadyPrenotedException;
+import com.example.progetto.exception.ExistsUserException;
 import com.example.progetto.exception.PasswordIllegalException;
 import com.example.progetto.exception.PlacesTerminatedException;
 
@@ -26,8 +27,10 @@ public class RegistrazioneUserCLI {
         }
         catch(PasswordIllegalException | PlacesTerminatedException | AlreadyPrenotedException e){
             System.out.println("La password deve essere di almeno 8 caratteri");
+        } catch (ExistsUserException e) {
+            System.out.println(e.getMessage());
         }
-        }
+    }
 
     }
 

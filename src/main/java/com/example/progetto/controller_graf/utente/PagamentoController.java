@@ -45,7 +45,7 @@ public class PagamentoController {
         this.main = main;
     }
     @FXML
-    private void vaiAHome() {
+    public void vaiAHome() {
 
         main.vaiAHome();
     }
@@ -77,9 +77,9 @@ public class PagamentoController {
         LocalDate data=scadenza.getValue();
 
         try {
-            if (numeroCarta.length() != 16 || cvvCode.length() != 3|| !(data.isAfter(LocalDate.now()))) {
-                throw new CardNotTrueException("dati carta non validi");
-            }
+
+            PagamentoControllerApp pagamentoControllerApp=new PagamentoControllerApp();
+            pagamentoControllerApp.checkCard(numeroCarta,cvvCode,data);
             BookBean book=new BookBean(currentUser.getUsername(),currentTrip.getId());
             BookTripController bookTripController=new BookTripController();
             bookTripController.bookTrip(book);

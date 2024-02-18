@@ -5,6 +5,7 @@ import com.example.progetto.dao.AgencyDAO;
 import com.example.progetto.dao.UserDAO;
 import com.example.progetto.bean.AgencyBean;
 import com.example.progetto.bean.UserBean;
+import com.example.progetto.exception.ExistsUserException;
 import com.example.progetto.exception.PasswordIllegalException;
 import com.example.progetto.model.User;
 import com.example.progetto.model.Agency;
@@ -44,7 +45,7 @@ public class RegLoginControllerApp {
         if (!agencyBean.getPassword().equals(agenzia.getPassword()))
             throw new CredentialErrorException("credenziali errate");
         }
-public void registrazione() throws PasswordIllegalException, SQLException, IOException {
+public void registrazione() throws PasswordIllegalException, SQLException, IOException, ExistsUserException {
         String username= this.utentebean.getUsername();
         String password= this.utentebean.getPassword();
         if (password.length()<8){

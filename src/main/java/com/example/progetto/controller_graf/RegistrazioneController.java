@@ -3,6 +3,7 @@ package com.example.progetto.controller_graf;
 import com.example.progetto.Applicazione;
 import com.example.progetto.bean.UserBean;
 import com.example.progetto.controller_app.RegLoginControllerApp;
+import com.example.progetto.exception.ExistsUserException;
 import com.example.progetto.exception.PasswordIllegalException;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -54,7 +55,7 @@ private TextField usernameUtente;
             alert.setContentText("Registrazione avvenuta con successo");
             alert.showAndWait();
         }
-        catch(PasswordIllegalException e){
+        catch(PasswordIllegalException | ExistsUserException e){
 
             Alert alert=new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Registrazione fallita");
