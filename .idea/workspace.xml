@@ -5,15 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="abd72b32-f6c1-4b42-a1d9-4297dd975b52" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/view2/Printer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/BookingTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/CouponTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view2/ControllerHomeCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view2/ControllerHomeCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view2/RegistrazioneUserCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view2/RegistrazioneUserCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view2/user/BookedTripCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view2/user/BookedTripCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view2/user/HomeLoginCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view2/user/HomeLoginCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view2/user/LoginUserCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view2/user/LoginUserCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view2/user/PaymentCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view2/user/PaymentCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view2/user/TripViewCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view2/user/TripViewCLI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/bean/TripBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/bean/TripBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/LoginControllerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/TestLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/TestLogin.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +91,7 @@
       <recent name="C:\Users\Proprietario\Desktop\java\progetto1\src\main\resources\com\example\progetto\css" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.BookingTest.voh">
     <configuration name="Applicazione" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.progetto.Applicazione" />
       <module name="progetto" />
@@ -107,8 +105,41 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="BookingTest.voh" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="progetto" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="BookingTest" />
+      <option name="METHOD_NAME" value="voh" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestLoginController.testLogin" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="progetto" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestLoginController" />
+      <option name="METHOD_NAME" value="testLogin" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestLogin.testLogin" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="progetto" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestLogin" />
+      <option name="METHOD_NAME" value="testLogin" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.BookingTest.voh" />
+        <item itemvalue="JUnit.TestLogin.testLogin" />
+        <item itemvalue="JUnit.TestLoginController.testLogin" />
         <item itemvalue="Application.Applicazione" />
       </list>
     </recent_temporary>
@@ -502,7 +533,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708279335425</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="aggiornamento seconda view">
+      <option name="closed" value="true" />
+      <created>1708280799095</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1708280799095</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -571,14 +610,12 @@
           <line>23</line>
           <option name="timeStamp" value="46" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/view2/user/BookedTripCLI.java</url>
-          <line>24</line>
-          <option name="timeStamp" value="57" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
+      <configuration name="JUnit">
+        <watch expression="giusto.stato" />
+      </configuration>
       <configuration name="Application">
         <watch expression="e" />
       </configuration>

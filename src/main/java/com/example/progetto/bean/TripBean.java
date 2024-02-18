@@ -8,7 +8,7 @@ public class TripBean {
     private final Date dataAnd;
     private final Date dataRit;
     private final Float price;
-    private final byte[] image;
+    private byte[] image;
     private int id;
     private boolean stato;
 
@@ -38,6 +38,14 @@ public class TripBean {
         this.price=price;
         this.image=image;
     }
+    public TripBean(int id,String city, int available, Date dataAnd, Date dataRit, Float price){
+        this.id=id;
+        this.available=available;
+        this.city=city;
+        this.dataAnd = dataAnd;
+        this.dataRit = dataRit;
+        this.price=price;
+    }
     public int getAvailable(){
         return available;
     }
@@ -62,5 +70,9 @@ public class TripBean {
 
     public boolean isStato() {
         return stato;
+    }
+
+    public void setImage(byte[] image) {
+        this.image = image;
     }
 }
