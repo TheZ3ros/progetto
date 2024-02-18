@@ -16,7 +16,13 @@
       <sonar.host.url>https://sonarcloud.io</sonar.host.url>
     <sonar.projectKey>lucaaa02_progetto</sonar.projectKey>
 <junit.version>5.9.2</junit.version>  </properties>
-
+  <repositories>
+    <!-- Repository di opencsv -->
+    <repository>
+      <id>opencsv</id>
+      <url>https://repo.maven.apache.org/maven2/com/opencsv/</url> <!-- Aggiungi il repository Maven di opencsv -->
+    </repository>
+  </repositories>
   <dependencies>
     <dependency>
       <groupId>org.openjfx</groupId>
@@ -40,7 +46,6 @@
       <artifactId>commons-lang3</artifactId>
       <version>3.12.0</version>
     </dependency>
-
 <dependency>
 
       <groupId>org.openjfx</groupId>

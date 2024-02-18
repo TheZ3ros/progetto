@@ -4,16 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="abd72b32-f6c1-4b42-a1d9-4297dd975b52" name="Changes" comment="realizzazione stato prenotazioni e loro visualizzazione (funzionante, aggiunte grafiche da implementare)">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/agenzia/StatusVisualizerController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/progetto/view1/agenzia/statusvisualizer.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ef164cb4-3b91-4025-9266-42b4f81bb44a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/ef164cb4-3b91-4025-9266-42b4f81bb44a.xml" afterDir="false" />
+    <list default="true" id="abd72b32-f6c1-4b42-a1d9-4297dd975b52" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_app/GetTripStatusController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_app/GetTripStatusController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/agenzia/TripStatusController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/agenzia/TripStatusController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/dao/TripStatusDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/dao/TripStatusDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/progetto/view1/agenzia/tripstatus.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/progetto/view1/agenzia/tripstatus.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -469,7 +462,23 @@
       <option name="project" value="LOCAL" />
       <updated>1708036860641</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="prova">
+      <option name="closed" value="true" />
+      <created>1708256958605</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1708256958605</updated>
+    </task>
+    <task id="LOCAL-00041" summary="prova">
+      <option name="closed" value="true" />
+      <created>1708257094547</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1708257094547</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -507,7 +516,9 @@
     <MESSAGE value="i miei viaggi" />
     <MESSAGE value="qualche eccezione" />
     <MESSAGE value="pagina pagamento e fix cartelle" />
-    <option name="LAST_COMMIT_MESSAGE" value="pagina pagamento e fix cartelle" />
+    <MESSAGE value="realizzazione stato prenotazioni e loro visualizzazione (funzionante, aggiunte grafiche da implementare)" />
+    <MESSAGE value="prova" />
+    <option name="LAST_COMMIT_MESSAGE" value="prova" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
