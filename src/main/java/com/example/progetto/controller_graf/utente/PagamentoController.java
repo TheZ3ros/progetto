@@ -83,6 +83,12 @@ public class PagamentoController {
             BookBean book=new BookBean(currentUser.getUsername(),currentTrip.getId());
             BookTripController bookTripController=new BookTripController();
             bookTripController.bookTrip(book);
+
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Prenotato");
+            alert.setHeaderText(null);
+            alert.setContentText("prenotazione effettuata correttamente");
+            alert.showAndWait();
         }
         catch(CardNotTrueException e){
             Alert alert = new Alert(Alert.AlertType.ERROR);

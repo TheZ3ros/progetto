@@ -8,6 +8,8 @@ module com.example.progetto {
     requires java.desktop;
     requires javafx.swing;
     requires java.rmi;
+    requires com.opencsv;
+    requires commons.lang;
 
     opens com.example.progetto to javafx.fxml;
     exports com.example.progetto;

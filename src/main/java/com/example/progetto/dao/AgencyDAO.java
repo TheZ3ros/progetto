@@ -14,7 +14,6 @@ public class AgencyDAO implements GenericDAO <Agency> {
 
     }
 
-
 @Override
 public Agency execute(Object... params) throws SQLException {
     String username = (String) params[0];

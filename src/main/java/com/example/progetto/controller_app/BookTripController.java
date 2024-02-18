@@ -1,11 +1,12 @@
 package com.example.progetto.controller_app;
 
+import com.example.progetto.dao.BookingDAOcsv;
 import com.example.progetto.exception.AlreadyPrenotedException;
 import com.example.progetto.exception.PlacesTerminatedException;
 import com.example.progetto.bean.BookBean;
 import com.example.progetto.dao.TripDAO;
 import com.example.progetto.dao.UserDAO;
-import com.example.progetto.dao.BookingDAO;
+import com.example.progetto.dao.BookingDAOdbms;
 import com.example.progetto.bean.TripBean;
 import com.example.progetto.bean.UserBean;
 import com.example.progetto.model.Trip;
@@ -20,6 +21,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BookTripController {
+    private final String writer="dms";
     public List<TripBean> showTrip() throws SQLException, IOException {
         TripDAO tripdao = new TripDAO();
         Trip trip;
@@ -42,7 +44,8 @@ public class BookTripController {
         UserTrip usertrip = new UserTrip();
         usertrip.setIdTrip(trip.getId());
         usertrip.setUsername(utente.getUsername());
-        BookingDAO usertripdao = new BookingDAO();
+        if(writer.equals("dbms")){
+        BookingDAOdbms usertripdao = new BookingDAOdbms();
 
         try{
             usertripdao.setTripBook(usertrip);
@@ -50,6 +53,17 @@ public class BookTripController {
         catch(AlreadyPrenotedException e){
             throw new AlreadyPrenotedException(e.getMessage());
         }
+        }
+        else{
+            BookingDAOcsv bookingDAOcsv=new BookingDAOcsv();
+            try{
+                bookingDAOcsv.setTripBook(usertrip);
+            }
+            catch(AlreadyPrenotedException e){
+                throw new AlreadyPrenotedException(e.getMessage());
+            }
+        }
+
         if (trip.getAvailable() > 0) {
 
             tripdao.refreshAvailable(trip.getId());

@@ -1,7 +1,7 @@
 package com.example.progetto.controller_graf;
 
 import com.example.progetto.Applicazione;
-import com.example.progetto.exception.CredentialError;
+import com.example.progetto.exception.CredentialErrorException;
 import com.example.progetto.bean.AgencyBean;
 import com.example.progetto.bean.UserBean;
 import com.example.progetto.controller_graf.agenzia.AgencyHomeController;
@@ -67,7 +67,7 @@ public class LoginController {
             userhome.setButtonText();
             stage.setTitle("Accedi");
         }
-        catch(CredentialError e){
+        catch(CredentialErrorException e){
 
             Alert alert=new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Login fallito");
@@ -98,7 +98,7 @@ public class LoginController {
             agencyhome.setButtonText();
             stage.setTitle("Home Agenzia");
         }
-        catch(CredentialError e){
+        catch(CredentialErrorException e){
 
             Alert alert=new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Login fallito");
