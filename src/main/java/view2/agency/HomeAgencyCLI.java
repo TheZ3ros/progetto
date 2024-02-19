@@ -3,6 +3,7 @@ package view2.agency;
 import com.example.progetto.bean.AgencyBean;
 import com.example.progetto.exception.NotValidCouponException;
 import com.example.progetto.pattern.Factory.BeanFactory;
+import view2.Printer;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -16,9 +17,9 @@ public class HomeAgencyCLI {
     }
 
     public void start() throws SQLException, IOException, NotValidCouponException {
-        System.out.println("Scegliere l'operazione da eseguire");
-        System.out.println("1-Inserisci un nuovo viaggio");
-        System.out.println("2-Controlla stato dei viaggi");
+        Printer.printMessage("Scegliere l'operazione da eseguire");
+        Printer.printMessage("1-Inserisci un nuovo viaggio");
+        Printer.printMessage("2-Controlla stato dei viaggi");
         Scanner reader = new Scanner(System.in);
         int n;
         while (true) {
@@ -31,7 +32,7 @@ public class HomeAgencyCLI {
                     AgencyTripsCLI agencyTripsCLI = new AgencyTripsCLI(currentAgency);
                     agencyTripsCLI.start(this);
                 default:
-                    System.out.println("inserire un'opzione valida");
+                    Printer.printMessage("inserire un'opzione valida");
             }
         }
 

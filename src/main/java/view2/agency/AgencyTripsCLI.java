@@ -5,6 +5,7 @@ import com.example.progetto.bean.TripBean;
 import com.example.progetto.controller_app.BookTripController;
 import com.example.progetto.exception.NotValidCouponException;
 import com.example.progetto.pattern.Factory.BeanFactory;
+import view2.Printer;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -22,12 +23,12 @@ public class AgencyTripsCLI {
         List<TripBean> viaggi = bookTripController.showTrip();
         for(TripBean viaggio : viaggi){
             String nome = viaggio.getCity();
-            System.out.println("/////////////////////////");
-            System.out.println("Città: "+nome);
+            Printer.printMessage("/////////////////////////");
+            Printer.printMessage("Città: "+nome);
             int id = viaggio.getId();
-            System.out.println("ID: "+id);
+            Printer.printMessage("ID: "+id);
         }
-        System.out.println("Seleziona l'id del viaggio di cui vuoi visualizzare lo stato: ");
+        Printer.printMessage("Seleziona l'id del viaggio di cui vuoi visualizzare lo stato: ");
         int id = scanner.nextInt();
         TripStatusCLI tripStatusCLI = new TripStatusCLI(currentAgency);
         tripStatusCLI.start(home,id);

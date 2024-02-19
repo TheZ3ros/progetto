@@ -4,6 +4,7 @@ import com.example.progetto.bean.TripStatusBean;
 import com.example.progetto.controller_app.GetTripStatusController;
 import com.example.progetto.exception.NotValidCouponException;
 import com.example.progetto.pattern.Factory.BeanFactory;
+import view2.Printer;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -24,13 +25,13 @@ public class TripStatusCLI {
         for (TripStatusBean stato : stati){
             username = stato.getUsername();
             state = stato.isStatus();
-            System.out.println("_________________________");
-            System.out.println("Username: "+username);
-            System.out.println("Stato: "+state);
+            Printer.printMessage("_________________________");
+            Printer.printMessage("Username: "+username);
+            Printer.printMessage("Stato: "+state);
         }
 
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Inserire lo username di cui confermare la prenotazione (non scrivere nulla se non si desidera fare nulla): ");
+        Printer.printMessage("Inserire lo username di cui confermare la prenotazione (non scrivere nulla se non si desidera fare nulla): ");
         String user = scanner.nextLine();
         if(user.isEmpty()){
             home.start();
@@ -39,11 +40,11 @@ public class TripStatusCLI {
             GetTripStatusController statusupdater = new GetTripStatusController();
             boolean b = statusupdater.updatetripstatus(id,user);
             if (b){
-                System.out.println("Stato aggiornato");
+                Printer.printMessage("Stato aggiornato");
                 start(home,id);
             }
             else{
-                System.out.println("Query non eseguita");
+                Printer.printMessage("Query non eseguita");
                 home.start();
             }
         }
