@@ -1,6 +1,7 @@
 package com.example.progetto.dao.csv_dbms;
 
 import com.example.progetto.exception.AlreadyPrenotedException;
+import com.example.progetto.exception.CSVInteractionException;
 import com.example.progetto.model.UserTrip;
 
 import java.io.BufferedReader;
@@ -27,7 +28,7 @@ public class BookingDAOcsv implements BookingDAO {
         try{
             alreadyExist(book);
         }
-        catch(AlreadyPrenotedException e){
+        catch(AlreadyPrenotedException | CSVInteractionException e){
             throw new AlreadyPrenotedException(e.getMessage());
         }
 
@@ -40,7 +41,7 @@ public class BookingDAOcsv implements BookingDAO {
 
     }
     @Override
-    public void alreadyExist(UserTrip booking) throws  AlreadyPrenotedException, IOException {
+    public void alreadyExist(UserTrip booking) throws AlreadyPrenotedException, IOException, CSVInteractionException {
         String usernameToFind=booking.getUsername();
         int idToFind=booking.getIdTrip();
 
@@ -60,7 +61,7 @@ public class BookingDAOcsv implements BookingDAO {
         } catch (IOException e) {
             throw new IOException("errore lettura file");
         } catch (CsvValidationException e) {
-            throw new RuntimeException(e);
+            throw new CSVInteractionException("Errore nell'interazione con il CSV");
         }
     }
 }
