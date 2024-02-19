@@ -4,6 +4,7 @@ import com.example.progetto.Applicazione;
 import com.example.progetto.bean.TripBean;
 import com.example.progetto.bean.UserBean;
 import com.example.progetto.controller_app.BookTripController;
+import com.example.progetto.pattern.Factory.BeanFactory;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -23,9 +24,9 @@ public class MyTripController {
     private Applicazione main;
     @FXML
     private ListView<VBox> listaview;
-    private UserBean currentUser;
+    private BeanFactory currentUser;
 
-    public void setUser(UserBean utente) {
+    public void setUser(BeanFactory utente) {
 
         currentUser = utente;
     }
@@ -66,7 +67,7 @@ public class MyTripController {
         ViewTripController page = new ViewTripController();
         page.viewTrip(main, currentUser);
         }
-    public void myTrip(UserBean user, Applicazione main) throws SQLException, IOException {
+    public void myTrip(BeanFactory user, Applicazione main) throws SQLException, IOException {
         FXMLLoader myTripLoader = new FXMLLoader(Applicazione.class.getResource("view1/utente/myTrip.fxml"));
         Parent mytriproot = myTripLoader.load();
         Scene myTripScene = new Scene(mytriproot);

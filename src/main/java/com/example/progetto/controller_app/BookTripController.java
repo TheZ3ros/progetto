@@ -12,6 +12,7 @@ import com.example.progetto.bean.UserBean;
 import com.example.progetto.model.Trip;
 import com.example.progetto.model.User;
 import com.example.progetto.model.UserTrip;
+import com.example.progetto.pattern.Factory.BeanFactory;
 import javafx.scene.image.Image;
 
 import java.io.ByteArrayInputStream;
@@ -82,7 +83,7 @@ public class BookTripController {
         return new Image(inputStream);
     }
 
-    public List<TripBean> getTripUser(UserBean utente) throws SQLException, IOException {
+    public List<TripBean> getTripUser(BeanFactory utente) throws SQLException, IOException {
         TripDAO tripDAO = new TripDAO();
         List<Trip> trip = tripDAO.tripUser(utente.getUsername());
         List<TripBean> tripBeanList = new ArrayList<>();

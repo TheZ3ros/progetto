@@ -13,12 +13,13 @@ import java.util.Scanner;
 
 import com.example.progetto.controller_graf.agenzia.ViewTripCreationController;
 import com.example.progetto.exception.NotValidCouponException;
+import com.example.progetto.pattern.Factory.BeanFactory;
 import javafx.scene.image.Image;
 
 public class TripCreationCLI {
-    private final AgencyBean currentAgency;
+    private final BeanFactory currentAgency;
 
-    public TripCreationCLI(AgencyBean currentAgency) {
+    public TripCreationCLI(BeanFactory currentAgency) {
         this.currentAgency = currentAgency;
     }
     public void start(HomeAgencyCLI home) throws SQLException, IOException, NotValidCouponException {

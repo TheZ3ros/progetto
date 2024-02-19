@@ -1,29 +1,35 @@
 package com.example.progetto.bean;
-public class UserBean {
-    private final String username;
-    private final String password;
-    private boolean token;
 
-    public UserBean(String username, String password){
-        this.username=username;
-        this.password=password;
-        token=false;
-    }
+import com.example.progetto.pattern.Factory.BeanFactory;
+
+public class UserBean implements BeanFactory {
+    private String username;
+    private String password;
+
+@Override
     public String getUsername(){
 
         return username;
     }
+    @Override
     public String getPassword(){
 
         return password;
     }
-    public void setToken(){
-        token=true;
+    @Override
+
+    public void setPassword(String password) {
+        this.password = password;
     }
-    public boolean getToken(){
-        return token;
+    @Override
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-
+    @Override
+    public BeanFactory createLoginBean() {
+        return this;
+    }
 }
 

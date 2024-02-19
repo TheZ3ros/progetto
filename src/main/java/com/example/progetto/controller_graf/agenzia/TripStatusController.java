@@ -7,6 +7,7 @@ import com.example.progetto.bean.TripStatusBean;
 import com.example.progetto.controller_app.BookTripController;
 import com.example.progetto.controller_app.GetTripStatusController;
 import com.example.progetto.exception.NotValidCouponException;
+import com.example.progetto.pattern.Factory.BeanFactory;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
@@ -29,7 +30,7 @@ public class TripStatusController {
     private ImageView imagine;
     @FXML
     private Button nome;
-    private AgencyBean currentUser;
+    private BeanFactory currentUser;
 
     public void setMain(Applicazione main){
 
@@ -42,7 +43,7 @@ public class TripStatusController {
         main.vaiAHome();
     }
 
-    public void setCurrentUser(AgencyBean currentUser){
+    public void setCurrentUser(BeanFactory currentUser){
         this.currentUser = currentUser;
     }
     public void setTrip(TripBean trip){

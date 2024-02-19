@@ -5,6 +5,8 @@ import com.example.progetto.controller_app.RegLoginControllerApp;
 import com.example.progetto.exception.AlreadyPrenotedException;
 import com.example.progetto.exception.CredentialErrorException;
 import com.example.progetto.exception.PlacesTerminatedException;
+import com.example.progetto.pattern.Factory.BeanFactory;
+import com.example.progetto.pattern.Factory.Factory;
 import view2.Printer;
 
 import java.io.IOException;
@@ -13,13 +15,16 @@ import java.util.Scanner;
 
 public class LoginUserCLI {
 
-    public void login() throws PlacesTerminatedException, AlreadyPrenotedException {
+    public void login() throws Exception {
         Scanner scanner = new Scanner(System.in);
         Printer.printMessage("inserire username");
         String username = scanner.nextLine();
         Printer.printMessage("inserire password");
         String password= scanner.nextLine();
-        UserBean userBean=new UserBean(username, password);
+        Factory factory=new Factory();
+        BeanFactory userBean=factory.createBean(1);
+        userBean.setPassword(password);
+        userBean.setUsername(username);
 
         try{
             RegLoginControllerApp regLoginControllerApp=new RegLoginControllerApp(userBean);

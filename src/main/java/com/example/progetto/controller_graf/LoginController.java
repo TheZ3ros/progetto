@@ -6,6 +6,8 @@ import com.example.progetto.bean.AgencyBean;
 import com.example.progetto.bean.UserBean;
 import com.example.progetto.controller_graf.agenzia.AgencyHomeController;
 import com.example.progetto.controller_graf.utente.UserHomeController;
+import com.example.progetto.pattern.Factory.BeanFactory;
+import com.example.progetto.pattern.Factory.Factory;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -37,7 +39,7 @@ public class LoginController {
 
 
     @FXML
-    private void vaiAHome(){
+    public void vaiAHome(){
 
         main.vaiAHome();
     }
@@ -49,10 +51,14 @@ public class LoginController {
     }
 
     @FXML
-    public void handlerloginutente() throws IOException, SQLException {
+    public void handlerloginutente() throws Exception {
         String userUtente=usernameUtente.getText();
         String passUtente=passwordUtente.getText();
-        UserBean user = new UserBean(userUtente,passUtente);
+        Factory factory=new Factory();
+        BeanFactory user= factory.createBean(1);
+        user.setUsername(userUtente);
+        user.setPassword(passUtente);
+
         RegLoginControllerApp login=new RegLoginControllerApp(user);
         try{
             login.loginUtente();
@@ -78,11 +84,14 @@ public class LoginController {
     }
 
     @FXML
-    private void handlerloginagenzia() throws IOException, SQLException {
+    private void handlerloginagenzia() throws Exception {
 
         String userAgenzia = usernameAgenzia.getText();
         String passAgenzia = passwordAgenzia.getText();
-        AgencyBean agency = new AgencyBean(userAgenzia,passAgenzia);
+        Factory factory=new Factory();
+        BeanFactory agency= factory.createBean(2);
+        agency.setUsername(userAgenzia);
+        agency.setPassword(passAgenzia);
         RegLoginControllerApp login = new RegLoginControllerApp(agency);
         try{
             login.loginAgenzia();

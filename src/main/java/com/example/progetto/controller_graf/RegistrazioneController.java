@@ -5,6 +5,8 @@ import com.example.progetto.bean.UserBean;
 import com.example.progetto.controller_app.RegLoginControllerApp;
 import com.example.progetto.exception.ExistsUserException;
 import com.example.progetto.exception.PasswordIllegalException;
+import com.example.progetto.pattern.Factory.BeanFactory;
+import com.example.progetto.pattern.Factory.Factory;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -41,10 +43,13 @@ private TextField usernameUtente;
     }
 
     @FXML
-    public void registrazioneutente() throws IOException, SQLException {
+    public void registrazioneutente() throws Exception {
         String userUtente=usernameUtente.getText();
         String passUtente=passwordUtente.getText();
-        UserBean user = new UserBean(userUtente,passUtente);
+        Factory factory=new Factory();
+        BeanFactory user= factory.createBean(1);
+        user.setPassword(userUtente);
+        user.setPassword(passUtente);
 
         try{
             RegLoginControllerApp regLoginControllerApp=new RegLoginControllerApp(user);

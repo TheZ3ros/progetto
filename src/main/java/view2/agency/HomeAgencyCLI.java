@@ -2,15 +2,16 @@ package view2.agency;
 
 import com.example.progetto.bean.AgencyBean;
 import com.example.progetto.exception.NotValidCouponException;
+import com.example.progetto.pattern.Factory.BeanFactory;
 
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Scanner;
 
 public class HomeAgencyCLI {
-    private final AgencyBean currentAgency;
+    private final BeanFactory currentAgency;
 
-    public HomeAgencyCLI(AgencyBean currentAgency) {
+    public HomeAgencyCLI(BeanFactory currentAgency) {
         this.currentAgency = currentAgency;
     }
 

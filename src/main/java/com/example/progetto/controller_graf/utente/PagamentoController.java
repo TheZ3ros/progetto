@@ -11,6 +11,7 @@ import com.example.progetto.bean.TripBean;
 import com.example.progetto.bean.UserBean;
 import com.example.progetto.controller_app.BookTripController;
 import com.example.progetto.controller_app.PagamentoControllerApp;
+import com.example.progetto.pattern.Factory.BeanFactory;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -38,7 +39,7 @@ public class PagamentoController {
     private TextField buono;
     private Applicazione main;
     private TripBean currentTrip;
-    private UserBean currentUser;
+    private BeanFactory currentUser;
     private static final String ACTION ="Informazione";
     public void setMain(Applicazione main) {
 
@@ -56,7 +57,7 @@ public class PagamentoController {
         page.viewTrip(main, currentUser);
 
     }
-    public void setUser(UserBean utente){
+    public void setUser(BeanFactory utente){
 
         currentUser=utente;
     }

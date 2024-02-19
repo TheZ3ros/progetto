@@ -6,6 +6,7 @@ import com.example.progetto.bean.TripBean;
 import com.example.progetto.bean.TripStatusBean;
 import com.example.progetto.controller_app.GetTripStatusController;
 import com.example.progetto.exception.NotValidCouponException;
+import com.example.progetto.pattern.Factory.BeanFactory;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
@@ -15,7 +16,7 @@ import java.sql.SQLException;
 public class StatusVisualizerController {
 
     private Applicazione main;
-    private AgencyBean currentUser;
+    private BeanFactory currentUser;
     private TripStatusBean statusbean;
     private TripBean currentTrip;
     @FXML
@@ -33,7 +34,7 @@ public class StatusVisualizerController {
         this.currentTrip = currentTrip;
     }
 
-    public void setCurrentUser(AgencyBean currentUser){
+    public void setCurrentUser(BeanFactory currentUser){
         this.currentUser = currentUser;
     }
 

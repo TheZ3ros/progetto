@@ -4,6 +4,7 @@ import com.example.progetto.Applicazione;
 import com.example.progetto.bean.TripBean;
 import com.example.progetto.bean.UserBean;
 import com.example.progetto.controller_app.BookTripController;
+import com.example.progetto.pattern.Factory.BeanFactory;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -27,14 +28,14 @@ public class ViaggioController {
     private Text prezzo;
     private Applicazione main;
     private TripBean bean;
-    private UserBean user;
+    private BeanFactory user;
     @FXML
     public void setMain(Applicazione main){
 
         this.main = main;
     }
 
-    public void setUser(UserBean user){
+    public void setUser(BeanFactory user){
         this.user=user;
     }
 

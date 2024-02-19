@@ -1,11 +1,9 @@
 package view2.agency;
 
-import com.example.progetto.bean.AgencyBean;
 import com.example.progetto.bean.TripStatusBean;
 import com.example.progetto.controller_app.GetTripStatusController;
-import com.example.progetto.controller_graf.agenzia.TripStatusController;
 import com.example.progetto.exception.NotValidCouponException;
-import view2.agency.HomeAgencyCLI;
+import com.example.progetto.pattern.Factory.BeanFactory;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -13,9 +11,9 @@ import java.util.List;
 import java.util.Scanner;
 
 public class TripStatusCLI {
-    private final AgencyBean currentAgency;
+    private final BeanFactory currentAgency;
 
-    public TripStatusCLI(AgencyBean currentAgency){this.currentAgency=currentAgency;}
+    public TripStatusCLI(BeanFactory currentAgency){this.currentAgency=currentAgency;}
 
     public void start(HomeAgencyCLI home,int id) throws SQLException, IOException, NotValidCouponException {
 

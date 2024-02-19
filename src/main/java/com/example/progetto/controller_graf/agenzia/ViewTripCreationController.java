@@ -4,6 +4,7 @@ import com.example.progetto.Applicazione;
 import com.example.progetto.bean.AgencyBean;
 import com.example.progetto.bean.TripBean;
 import com.example.progetto.controller_app.CreateTripController;
+import com.example.progetto.pattern.Factory.BeanFactory;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -34,7 +35,7 @@ public class ViewTripCreationController {
     private Applicazione main;
     private String imagePath;
     private byte[] imageBytes;
-    private AgencyBean currentUser;
+    private BeanFactory currentUser;
     @FXML
     private Button agency;
     @FXML
@@ -56,7 +57,7 @@ public class ViewTripCreationController {
         this.main = main;
     }
 
-    public void setUser(AgencyBean utente){
+    public void setUser(BeanFactory utente){
 
         currentUser=utente;
     }

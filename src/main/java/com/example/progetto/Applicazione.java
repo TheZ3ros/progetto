@@ -7,6 +7,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import view2.ControllerHomeCLI;
+import javafx.scene.image.Image;
 
 import java.util.Scanner;
 
@@ -43,6 +44,7 @@ public class Applicazione extends Application {
                 //mi prendo il controller della schermata Home
                 HomeController homeController = homeLoader.getController();
                 homeController.setMain(this);
+                stage.getIcons().add(new Image(getClass().getResourceAsStream("css/immagini/infinito.png")));
 
                 stage.show();
                 break;

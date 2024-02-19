@@ -7,6 +7,7 @@ import com.example.progetto.controller_app.BookTripController;
 import com.example.progetto.exception.AlreadyPrenotedException;
 import com.example.progetto.exception.CardNotTrueException;
 import com.example.progetto.exception.PlacesTerminatedException;
+import com.example.progetto.pattern.Factory.BeanFactory;
 import view2.Printer;
 
 import java.io.IOException;
@@ -15,9 +16,9 @@ import java.util.List;
 import java.util.Scanner;
 
 public class TripViewCLI {
-    private final UserBean currentUser;
+    private final BeanFactory currentUser;
 
-    public TripViewCLI(UserBean user) {
+    public TripViewCLI(BeanFactory user) {
         this.currentUser=user;
 
     }

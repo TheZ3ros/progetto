@@ -5,6 +5,8 @@ import com.example.progetto.bean.UserBean;
 import com.example.progetto.controller_app.RegLoginControllerApp;
 import com.example.progetto.exception.CredentialErrorException;
 import com.example.progetto.exception.NotValidCouponException;
+import com.example.progetto.pattern.Factory.BeanFactory;
+import com.example.progetto.pattern.Factory.Factory;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -12,13 +14,16 @@ import java.util.Scanner;
 
 public class AgencyUserCLI {
 
-    public void login(){
+    public void login() throws Exception {
         Scanner scanner = new Scanner(System.in);
         System.out.println("inserire username");
         String username = scanner.nextLine();
         System.out.println("inserire password");
         String password= scanner.nextLine();
-        AgencyBean agencyBean=new AgencyBean(username, password);
+        Factory factory=new Factory();
+        BeanFactory agencyBean= factory.createBean(2);
+        agencyBean.setPassword(password);
+        agencyBean.setUsername(username);
 
         try{
             RegLoginControllerApp regLoginControllerApp=new RegLoginControllerApp(agencyBean);
@@ -30,9 +35,7 @@ public class AgencyUserCLI {
         }
         catch(CredentialErrorException e){
             System.out.println(e.getMessage());
-        } catch (SQLException | IOException e) {
-            throw new RuntimeException(e);
-        } catch (NotValidCouponException e) {
+        } catch (SQLException | IOException | NotValidCouponException e) {
             throw new RuntimeException(e);
         }
     }

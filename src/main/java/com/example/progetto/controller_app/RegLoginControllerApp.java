@@ -9,30 +9,23 @@ import com.example.progetto.exception.ExistsUserException;
 import com.example.progetto.exception.PasswordIllegalException;
 import com.example.progetto.model.User;
 import com.example.progetto.model.Agency;
+import com.example.progetto.pattern.Factory.BeanFactory;
 
 import java.io.IOException;
 import java.sql.SQLException;
 
 public class RegLoginControllerApp {
-    private UserBean utentebean;
-    private AgencyBean agencyBean;
+    private final BeanFactory currentUser;
 
-    public RegLoginControllerApp(UserBean user){
+    public RegLoginControllerApp(BeanFactory user){
 
-        utentebean=user;
-    }
-    public RegLoginControllerApp(AgencyBean agency){
-
-        agencyBean=agency;
+        currentUser=user;
     }
     public void loginUtente() throws SQLException, IOException, CredentialErrorException {
         UserDAO dao=new UserDAO();
         User utente;
-            utente= dao.execute(utentebean.getUsername());
-        if (utentebean.getPassword().equals(utente.getPassword())){
-            utentebean.setToken();
-        }
-        else{
+            utente= dao.execute(currentUser.getUsername());
+        if (!currentUser.getPassword().equals(utente.getPassword())){
             throw new CredentialErrorException("credenziali errate");
         }
 
@@ -41,13 +34,15 @@ public class RegLoginControllerApp {
     public void loginAgenzia() throws SQLException, IOException, CredentialErrorException {
         AgencyDAO dao = new AgencyDAO();
         Agency agenzia;
-            agenzia = dao.execute(agencyBean.getUsername());
-        if (!agencyBean.getPassword().equals(agenzia.getPassword()))
+            agenzia = dao.execute(currentUser.getUsername());
+        if (!currentUser.getPassword().equals(agenzia.getPassword()))
             throw new CredentialErrorException("credenziali errate");
         }
 public void registrazione() throws PasswordIllegalException, SQLException, IOException, ExistsUserException {
-        String username= this.utentebean.getUsername();
-        String password= this.utentebean.getPassword();
+        String username;
+        String password;
+        username=currentUser.getPassword();
+        password=currentUser.getUsername();
         if (password.length()<8){
             throw new PasswordIllegalException("password non valida, inserire almeno 8 caratteri");
         }

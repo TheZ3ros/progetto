@@ -10,7 +10,7 @@ import java.sql.SQLException;
 import java.util.Scanner;
 
 public class ControllerHomeCLI {
-public void start() throws PlacesTerminatedException, AlreadyPrenotedException, SQLException, IOException {
+public void start() throws Exception {
     System.out.println("Scegliere l'operazione da eseguire");
     System.out.println("1-Registrazione");
     System.out.println("2-Login come utente");

@@ -3,29 +3,24 @@ package view2.user;
 import com.example.progetto.bean.BookBean;
 import com.example.progetto.bean.BuonoBean;
 import com.example.progetto.bean.TripBean;
-import com.example.progetto.bean.UserBean;
 import com.example.progetto.controller_app.BookTripController;
 import com.example.progetto.controller_app.PagamentoControllerApp;
 import com.example.progetto.exception.AlreadyPrenotedException;
 import com.example.progetto.exception.CardNotTrueException;
 import com.example.progetto.exception.NotValidCouponException;
 import com.example.progetto.exception.PlacesTerminatedException;
+import com.example.progetto.pattern.Factory.BeanFactory;
 import view2.Printer;
 
 import java.io.IOException;
 import java.sql.SQLException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.time.Instant;
 import java.time.LocalDate;
-import java.time.ZoneId;
-import java.util.Date;
 import java.util.Scanner;
 
 public class PaymentCLI {
     private final TripBean trip;
-    private final UserBean user;
-    PaymentCLI(TripBean trip, UserBean user){
+    private final BeanFactory user;
+    PaymentCLI(TripBean trip, BeanFactory user){
         this.trip =trip;
         this.user=user;
     }

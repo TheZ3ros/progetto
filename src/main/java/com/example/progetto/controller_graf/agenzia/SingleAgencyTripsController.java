@@ -5,6 +5,7 @@ import com.example.progetto.exception.NotValidCouponException;
 import com.example.progetto.bean.AgencyBean;
 import com.example.progetto.bean.TripBean;
 import com.example.progetto.controller_app.BookTripController;
+import com.example.progetto.pattern.Factory.BeanFactory;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -28,7 +29,7 @@ public class SingleAgencyTripsController {
     @FXML
     private Text prezzo;
     private Applicazione main;
-    private AgencyBean user;
+    private BeanFactory user;
     private TripBean bean;
 
 
@@ -38,7 +39,7 @@ public class SingleAgencyTripsController {
         this.main = main;
     }
 
-    public void setUser(AgencyBean user){
+    public void setUser(BeanFactory user){
         this.user=user;
     }
 

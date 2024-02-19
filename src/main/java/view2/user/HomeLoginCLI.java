@@ -3,6 +3,7 @@ package view2.user;
 import com.example.progetto.bean.UserBean;
 import com.example.progetto.exception.AlreadyPrenotedException;
 import com.example.progetto.exception.PlacesTerminatedException;
+import com.example.progetto.pattern.Factory.BeanFactory;
 import view2.Printer;
 
 import java.io.IOException;
@@ -10,10 +11,10 @@ import java.sql.SQLException;
 import java.util.Scanner;
 
 public class HomeLoginCLI {
-    private final UserBean currentUser;
+    private final BeanFactory currentUser;
 
 
-    public HomeLoginCLI(UserBean currentUser) {
+    public HomeLoginCLI(BeanFactory currentUser) {
         this.currentUser = currentUser;
     }
     public void start() throws SQLException, IOException, PlacesTerminatedException, AlreadyPrenotedException {

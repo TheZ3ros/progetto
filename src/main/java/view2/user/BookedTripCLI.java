@@ -5,6 +5,8 @@ import com.example.progetto.bean.UserBean;
 import com.example.progetto.controller_app.BookTripController;
 import com.example.progetto.exception.AlreadyPrenotedException;
 import com.example.progetto.exception.PlacesTerminatedException;
+import com.example.progetto.pattern.Factory.BeanFactory;
+import com.example.progetto.pattern.Factory.Factory;
 import view2.Printer;
 
 import java.io.IOException;
@@ -12,9 +14,9 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class BookedTripCLI {
-    private final UserBean currentUser;
+    private final BeanFactory currentUser;
 
-    public BookedTripCLI(UserBean user) {
+    public BookedTripCLI(BeanFactory user) {
         currentUser=user;
     }
 

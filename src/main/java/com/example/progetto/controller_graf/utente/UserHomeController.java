@@ -1,12 +1,9 @@
 package com.example.progetto.controller_graf.utente;
 import com.example.progetto.Applicazione;
 import com.example.progetto.bean.UserBean;
+import com.example.progetto.pattern.Factory.BeanFactory;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -15,9 +12,9 @@ public class UserHomeController {
     @FXML
     private Button user;
     private Applicazione main;
-    private UserBean currentUser;
+    private BeanFactory currentUser;
 
-    public void setUser(UserBean utente){
+    public void setUser(BeanFactory utente){
 
         currentUser=utente;
     }
@@ -33,7 +30,7 @@ public class UserHomeController {
     }
 
     @FXML
-    private void vaiAHome(){
+    public void vaiAHome(){
 
         main.vaiAHome();
     }
