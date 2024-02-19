@@ -13,6 +13,7 @@ import java.util.Scanner;
 
 public class AgencyUserCLI {
 
+    
     public void login() throws Exception {
         Scanner scanner = new Scanner(System.in);
         Printer.printMessage("inserire username");
