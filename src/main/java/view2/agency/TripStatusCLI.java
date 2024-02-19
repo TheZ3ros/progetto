@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class TripStatusCLI {
-    private final BeanFactory currentAgency;
+    protected final BeanFactory currentAgency;
 
     public TripStatusCLI(BeanFactory currentAgency){this.currentAgency=currentAgency;}
 

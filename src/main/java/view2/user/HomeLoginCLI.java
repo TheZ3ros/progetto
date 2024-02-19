@@ -28,7 +28,7 @@ public class HomeLoginCLI {
             switch (n) {
                 case 1:
                     TripViewCLI tripViewCLI=new TripViewCLI(currentUser);
-                    tripViewCLI.start(this);
+                    tripViewCLI.viewtrip(this);
                     break;
                 case 2:
                     BookedTripCLI bookedTripCLI=new BookedTripCLI(currentUser);

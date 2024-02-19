@@ -16,7 +16,7 @@ import javafx.scene.image.Image;
 import view2.Printer;
 
 public class TripCreationCLI {
-    private final BeanFactory currentAgency;
+    protected final BeanFactory currentAgency;
 
     public TripCreationCLI(BeanFactory currentAgency) {
         this.currentAgency = currentAgency;
