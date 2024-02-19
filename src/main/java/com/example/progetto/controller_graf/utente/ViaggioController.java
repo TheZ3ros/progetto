@@ -17,6 +17,8 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class ViaggioController {
+    private TripBean tripBean;
+    private BeanFactory userFactory;
     @FXML
     private ImageView imagine;
     @FXML
@@ -26,20 +28,19 @@ public class ViaggioController {
     @FXML
     private Text prezzo;
     private Applicazione main;
-    private TripBean bean;
-    private BeanFactory user;
+
     @FXML
     public void setMain(Applicazione main){
 
         this.main = main;
     }
 
-    public void setUser(BeanFactory user){
-        this.user=user;
+    public void setUserFactory(BeanFactory userFactory){
+        this.userFactory = userFactory;
     }
 
     public void createbox(TripBean bean) {
-        this.bean=bean;
+        this.tripBean =bean;
         Image image= BookTripController.bytesToImage(bean.getImage());
         imagine.setImage(image);
             title.setText(bean.getCity());
@@ -53,8 +54,8 @@ public class ViaggioController {
             Scene paginaScene = new Scene(pageroot);
             PageTripController pagetrip = paginaLoader.getController();
             pagetrip.setMain(main);
-            pagetrip.setTrip(bean);
-            pagetrip.setCurrentUser(user);
+            pagetrip.setTrip(tripBean);
+            pagetrip.setCurrentUser(userFactory);
             Stage stage = main.getStage();
             stage.setScene(paginaScene);
             pagetrip.charge();

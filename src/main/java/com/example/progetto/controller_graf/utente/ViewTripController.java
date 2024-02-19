@@ -61,7 +61,7 @@ public class ViewTripController {
             VBox box = viaggioLoader.load();
             ViaggioController controller = viaggioLoader.getController();
             controller.setMain(main);
-            controller.setUser(currentUser);
+            controller.setUserFactory(currentUser);
             controller.createbox(viaggio);
             listaview.getItems().add(box);
         }
@@ -111,7 +111,7 @@ public class ViewTripController {
                 VBox box = viaggioLoader.load();
                 ViaggioController controller = viaggioLoader.getController();
                 controller.setMain(main);
-                controller.setUser(currentUser);
+                controller.setUserFactory(currentUser);
                 controller.createbox(viaggio);
                 listaview.getItems().add(box);
             }
