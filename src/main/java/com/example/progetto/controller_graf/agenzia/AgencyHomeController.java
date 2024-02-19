@@ -41,13 +41,18 @@ public class AgencyHomeController {
 
     @FXML
     private void viewTripCreation() throws IOException{
-        FXMLLoader viewtripcreationLoader = new FXMLLoader(Applicazione.class.getResource("view1/agenzia/view_trip_creation.fxml"));
-        Parent viewtripcreationroot = viewtripcreationLoader.load();
-        Scene tripcreationscene = new Scene(viewtripcreationroot);
-        ViewTripCreationController tripcreation = viewtripcreationLoader.getController();
+        FXMLLoader viewtripcreationLoader;
+        viewtripcreationLoader= new FXMLLoader(Applicazione.class.getResource("view1/agenzia/view_trip_creation.fxml"));
+        Parent viewtripcreationroot;
+        viewtripcreationroot= viewtripcreationLoader.load();
+        Scene tripcreationscene;
+        tripcreationscene= new Scene(viewtripcreationroot);
+        ViewTripCreationController tripcreation;
+        tripcreation= viewtripcreationLoader.getController();
         tripcreation.setMain(main);
         tripcreation.setUser(currentUser);
-        Stage stage = main.getStage();
+        Stage stage;
+        stage= main.getStage();
         stage.setScene(tripcreationscene);
         tripcreation.setButtonText();
         stage.setTitle("Crea itinerario");
@@ -55,7 +60,8 @@ public class AgencyHomeController {
 
     @FXML
     private void agencyTrips() throws IOException, SQLException {
-        AgencyTripsController mytrips = new AgencyTripsController();
+        AgencyTripsController mytrips;
+        mytrips= new AgencyTripsController();
         mytrips.agencyTrips(main,currentUser);
     }
 }
