@@ -12,12 +12,16 @@ import java.util.List;
 public class GetTripStatusController {
 
     public static List<TripStatusBean> showtripstatus(int id) throws SQLException, IOException {
-        TripStatusDAO statusDAO = new TripStatusDAO();
-        List <TripStatusBean> statusBeans = new ArrayList<>();
+        TripStatusDAO statusDAO;
+        statusDAO=new TripStatusDAO();
+        List <TripStatusBean> statusBeans;
+        statusBeans=new ArrayList<>();
 
-        List<TripStatus> statuses = statusDAO.execute(id);
+        List<TripStatus> statuses;
+        statuses=statusDAO.execute(id);
         for (TripStatus status : statuses) {
-            TripStatusBean tripstatus = new TripStatusBean(status.getUsername(), status.isStatus());
+            TripStatusBean tripstatus;
+            tripstatus=new TripStatusBean(status.getUsername(), status.isStatus());
             statusBeans.add(tripstatus);
         }
 
@@ -25,7 +29,8 @@ public class GetTripStatusController {
     }
 
     public boolean updatetripstatus(int id,String username) throws SQLException, IOException {
-        TripStatusDAO statusDAO = new TripStatusDAO();
+        TripStatusDAO statusDAO;
+        statusDAO= new TripStatusDAO();
         return statusDAO.update(id,username);
 
     }
