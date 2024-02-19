@@ -5,11 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="abd72b32-f6c1-4b42-a1d9-4297dd975b52" name="Changes" comment="code smell">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/agenzia/StatusVisualizerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/agenzia/StatusVisualizerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/dao/csv_dbms/BookingDAOdbms.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/dao/csv_dbms/BookingDAOdbms.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view2/agency/TripCreationCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view2/agency/TripCreationCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view2/agency/TripStatusCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view2/agency/TripStatusCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view2/user/PaymentCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view2/user/PaymentCLI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/exception/SQLStatementException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ef164cb4-3b91-4025-9266-42b4f81bb44a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/ef164cb4-3b91-4025-9266-42b4f81bb44a.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/agenzia/ViewTripCreationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/agenzia/ViewTripCreationController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

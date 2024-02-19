@@ -5,6 +5,7 @@ import com.example.progetto.bean.TripBean;
 import com.example.progetto.controller_app.CreateTripController;
 import com.example.progetto.exception.DateNotValidException;
 import com.example.progetto.exception.EmptystatementException;
+import com.example.progetto.exception.SQLStatementException;
 import com.example.progetto.pattern.factory.BeanFactory;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -119,7 +120,7 @@ public class ViewTripCreationController {
     }
 
     @FXML
-    private void submit(){
+    private void submit() throws SQLStatementException {
         try{
             String city = nomecitta.getText().trim();
             if (city.isEmpty() || imagePath.isEmpty()){
@@ -156,7 +157,7 @@ public class ViewTripCreationController {
             alert.setContentText(e.getMessage());
             alert.showAndWait();
         } catch (SQLException | IOException e) {
-            throw new RuntimeException(e);
+            throw new SQLStatementException("Statement non eseguito");
         }
 
 
