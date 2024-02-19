@@ -1,5 +1,7 @@
 package com.example.progetto.dao;
 
+import view2.Printer;
+
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -29,7 +31,7 @@ public class Connectivity {
                 try {
                     input.close();
                 } catch (IOException e) {
-                    System.err.println("Errore durante la chiusura del FileInputStream: " + e.getMessage());
+                    Printer.printMessage("Errore durante la chiusura del FileInputStream: " + e.getMessage());
                 }
             }
         }
