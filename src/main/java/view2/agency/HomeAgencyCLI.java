@@ -21,7 +21,8 @@ public class HomeAgencyCLI {
         Printer.printMessage("2-Controlla stato dei viaggi");
         Scanner reader = new Scanner(System.in);
         int n;
-        while (true) {
+        boolean continua = true;
+        while (continua) {
             n = reader.nextInt();
             switch (n) {
                 case 1:
@@ -35,6 +36,9 @@ public class HomeAgencyCLI {
                 default:
                     Printer.printMessage("inserire un'opzione valida");
             }
+            Printer.printMessage("Vuoi continuare? (S/N)");
+            String risposta = reader.next();
+            continua = risposta.equalsIgnoreCase("s");
         }
 
     }

@@ -1,5 +1,7 @@
-package com.example.progetto.dao;
+package com.example.progetto.dao.csv_dbms;
 
+import com.example.progetto.dao.Connectivity;
+import com.example.progetto.dao.csv_dbms.BookingDAO;
 import com.example.progetto.exception.AlreadyPrenotedException;
 import com.example.progetto.model.UserTrip;
 
@@ -25,7 +27,7 @@ public class BookingDAOdbms implements BookingDAO {
             throw new AlreadyPrenotedException(e.getMessage());
         }
 
-            try (CallableStatement cs = connection.conn.prepareCall("{call SetTrip(?,?)}")) {
+            try (CallableStatement cs = connection.getConn().prepareCall("{call SetTrip(?,?)}")) {
                 cs.setInt(1, idTrip);
                 cs.setString(2, username);
                 cs.executeUpdate();
@@ -35,7 +37,7 @@ public class BookingDAOdbms implements BookingDAO {
         }
 @Override
     public void alreadyExist(UserTrip booking) throws SQLException,AlreadyPrenotedException {
-        try (CallableStatement cs = connection.conn.prepareCall("{call CheckUserTrip(?,?,?)}")) {
+        try (CallableStatement cs = connection.getConn().prepareCall("{call CheckUserTrip(?,?,?)}")) {
             cs.setInt(1, booking.getIdTrip());
             cs.setString(2, booking.getUsername());
             cs.registerOutParameter(3, Types.INTEGER);

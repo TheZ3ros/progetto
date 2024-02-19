@@ -22,7 +22,8 @@ public class HomeLoginCLI {
         Printer.printMessage("2-Visualizza stato dei viaggi prenotati");
         Scanner reader = new Scanner(System.in);
         int n;
-        while (true) {
+        boolean continua = true;
+        while (continua) {
             n = reader.nextInt();
             switch (n) {
                 case 1:
@@ -36,6 +37,9 @@ public class HomeLoginCLI {
                 default:
                     Printer.printMessage("inserire un'opzione valida");
             }
+            Printer.printMessage("Vuoi continuare? (S/N)");
+            String risposta = reader.next();
+            continua = risposta.equalsIgnoreCase("s");
         }
     }
 }

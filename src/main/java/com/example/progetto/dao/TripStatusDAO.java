@@ -19,7 +19,7 @@ public class TripStatusDAO implements GenericDAO<List<TripStatus>> {
     public List<TripStatus> execute(Object... params) throws SQLException {
         List<TripStatus> tripStatuses = new ArrayList<>();
         int id=(int)params[0];
-        CallableStatement cs = connection.conn.prepareCall("{call GetTripStatus(?)}");
+        try(CallableStatement cs = connection.conn.prepareCall("{call GetTripStatus(?)}")){
         cs.setInt(1,id);
 
         ResultSet rs = cs.executeQuery();
@@ -30,16 +30,26 @@ public class TripStatusDAO implements GenericDAO<List<TripStatus>> {
             TripStatus tripStatus = new TripStatus(username,status);
             tripStatuses.add(tripStatus);
         }
+        }
+        catch(SQLException e){
+            throw new SQLException(e.getMessage());
+        }
         return tripStatuses;
     }
 
 
     public boolean update(int id,String username) throws SQLException {
 
-        CallableStatement cs = connection.conn.prepareCall("{call UpdateTripStatus(?,?)}");
-        cs.setInt(1,id);
-        cs.setString(2,username);
-        ResultSet rs = cs.executeQuery();
-        return rs != null;
+       try( CallableStatement cs = connection.conn.prepareCall("{call UpdateTripStatus(?,?)}")) {
+
+           cs.setInt(1, id);
+           cs.setString(2, username);
+           ResultSet rs = cs.executeQuery();
+           return rs != null;
+       }
+       catch(SQLException e){
+           throw new SQLException(e.getMessage());
+       }
+
     }
 }

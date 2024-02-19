@@ -13,7 +13,9 @@ public void start() throws Exception {
     Printer.printMessage("3-Login come azienda");
     Scanner reader = new Scanner(System.in);
     int n;
-    while (true) {
+    boolean continua = true;
+
+    while (continua) {
         n = reader.nextInt();
         switch (n) {
             case 1:
@@ -29,10 +31,16 @@ public void start() throws Exception {
                 loginAgencyCLI.login();
                 break;
             default:
-                Printer.printMessage("inserire un'opzione valida");
+                Printer.printMessage("Inserire un'opzione valida");
+                break;
         }
+
+        Printer.printMessage("Vuoi continuare? (S/N)");
+        String risposta = reader.next();
+        continua = risposta.equalsIgnoreCase("s");
+    }
         }
 
     }
-    }
+
 

@@ -20,6 +20,7 @@ import java.util.List;
 
 public class TripStatusController {
     private Applicazione main;
+    private BeanFactory thisUser;
     private TripBean currentTrip;
     @FXML
     private ListView<VBox> listaview;
@@ -27,7 +28,7 @@ public class TripStatusController {
     private ImageView imagine;
     @FXML
     private Button nome;
-    private BeanFactory currentUser;
+
 
     public void setMain(Applicazione main){
 
@@ -40,21 +41,21 @@ public class TripStatusController {
         main.vaiAHome();
     }
 
-    public void setCurrentUser(BeanFactory currentUser){
-        this.currentUser = currentUser;
+    public void setThisUser(BeanFactory thisUser){
+        this.thisUser = thisUser;
     }
     public void setTrip(TripBean trip){
         this.currentTrip =trip;
     }
     public void setButtonText() {
 
-        nome.setText(currentUser.getUsername());
+        nome.setText(thisUser.getUsername());
     }
 
     @FXML
     private void viewTrip() throws IOException, SQLException {
         AgencyTripsController viewTripController=new AgencyTripsController();
-        viewTripController.agencyTrips(main, currentUser);
+        viewTripController.agencyTrips(main, thisUser);
 
     }
 
@@ -69,7 +70,7 @@ public class TripStatusController {
             VBox box = statusvisualizerLoader.load();
             StatusVisualizerController controller = statusvisualizerLoader.getController();
             controller.setMain(main);
-            controller.setCurrentUser(currentUser);
+            controller.setCurrentUser(thisUser);
             controller.setTrip(currentTrip);
             controller.createbox(stato);
             listaview.getItems().add(box);

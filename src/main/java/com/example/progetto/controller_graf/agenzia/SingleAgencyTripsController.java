@@ -57,7 +57,7 @@ public class SingleAgencyTripsController {
         TripStatusController tripstatus = paginaLoader.getController();
         tripstatus.setMain(main);
         tripstatus.setTrip(bean);
-        tripstatus.setCurrentUser(user);
+        tripstatus.setThisUser(user);
         Stage stage = main.getStage();
         stage.setScene(paginaScene);
         tripstatus.charge();

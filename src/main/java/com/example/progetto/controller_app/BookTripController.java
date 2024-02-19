@@ -1,12 +1,14 @@
 package com.example.progetto.controller_app;
 
-import com.example.progetto.dao.BookingDAOcsv;
+import com.example.progetto.bean.SearchBean;
+import com.example.progetto.dao.csv_dbms.BookingDAOcsv;
 import com.example.progetto.exception.AlreadyPrenotedException;
+import com.example.progetto.exception.FailedSearchException;
 import com.example.progetto.exception.PlacesTerminatedException;
 import com.example.progetto.bean.BookBean;
 import com.example.progetto.dao.TripDAO;
 import com.example.progetto.dao.UserDAO;
-import com.example.progetto.dao.BookingDAOdbms;
+import com.example.progetto.dao.csv_dbms.BookingDAOdbms;
 import com.example.progetto.bean.TripBean;
 import com.example.progetto.model.Trip;
 import com.example.progetto.model.User;
@@ -84,7 +86,7 @@ public class BookTripController {
 
     public List<TripBean> getTripUser(BeanFactory utente) throws SQLException, IOException {
         TripDAO tripDAO = new TripDAO();
-        List<Trip> trip = tripDAO.tripUser(utente.getUsername());
+        List<Trip> trip = tripDAO.tripUser(utente);
         List<TripBean> tripBeanList = new ArrayList<>();
         for (Trip value : trip) {
 
@@ -92,6 +94,21 @@ public class BookTripController {
             tripBeanList.add(tripBean);
         }
         return tripBeanList;
+    }
+    public List<TripBean> searchByCity(SearchBean searchBean) throws SQLException, IOException, FailedSearchException {
+        TripDAO tripdao = new TripDAO();
+        List<TripBean> trips = new ArrayList<>();
+        List<Trip> viaggi;
+        viaggi=tripdao.searchTrip(searchBean);
+        if(viaggi.isEmpty()){
+            throw new FailedSearchException("Nessun itinerario disponibile per questa città");
+        }
+        for (Trip trip:viaggi) {
+
+            TripBean tripBean = new TripBean(trip.getAvailable(), trip.getCity(), trip.getDataAnd(), trip.getDataRit(), trip.getPrice(), trip.getImage(), trip.getId());
+            trips.add(tripBean);
+        }
+        return trips;
     }
 }
 
