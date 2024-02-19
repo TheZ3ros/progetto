@@ -1,10 +1,7 @@
 package view2.user;
 
-import com.example.progetto.bean.UserBean;
 import com.example.progetto.controller_app.RegLoginControllerApp;
-import com.example.progetto.exception.AlreadyPrenotedException;
 import com.example.progetto.exception.CredentialErrorException;
-import com.example.progetto.exception.PlacesTerminatedException;
 import com.example.progetto.pattern.Factory.BeanFactory;
 import com.example.progetto.pattern.Factory.Factory;
 import view2.Printer;

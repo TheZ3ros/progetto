@@ -2,8 +2,6 @@ package com.example.progetto.controller_graf;
 
 import com.example.progetto.Applicazione;
 import com.example.progetto.exception.CredentialErrorException;
-import com.example.progetto.bean.AgencyBean;
-import com.example.progetto.bean.UserBean;
 import com.example.progetto.controller_graf.agenzia.AgencyHomeController;
 import com.example.progetto.controller_graf.utente.UserHomeController;
 import com.example.progetto.pattern.Factory.BeanFactory;
@@ -19,7 +17,6 @@ import com.example.progetto.controller_app.RegLoginControllerApp;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.sql.SQLException;
 
 public class LoginController {
 

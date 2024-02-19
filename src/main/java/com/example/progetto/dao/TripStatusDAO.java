@@ -6,7 +6,6 @@ import java.io.IOException;
 import java.sql.CallableStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Types;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,9 +40,6 @@ public class TripStatusDAO implements GenericDAO<List<TripStatus>> {
         cs.setInt(1,id);
         cs.setString(2,username);
         ResultSet rs = cs.executeQuery();
-        if (rs != null){
-            return true;
-        }
-        return false;
+        return rs != null;
     }
 }

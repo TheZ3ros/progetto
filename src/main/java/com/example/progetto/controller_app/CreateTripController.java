@@ -13,7 +13,7 @@ import java.util.Objects;
 
 public class CreateTripController {
 
-    private Trip newTrip = null;
+    private final Trip newTrip;
 
     public CreateTripController(TripBean trip){
 
@@ -46,7 +46,6 @@ public class CreateTripController {
     }
 
     public boolean checkduplicate(Trip newtrip) throws SQLException, IOException {
-        boolean b = true;
         TripDAO tripdao = new TripDAO();
         Trip trip;
         List<TripBean> viaggi = new ArrayList<>();
@@ -54,12 +53,11 @@ public class CreateTripController {
         while ((trip = tripdao.execute(i)) != null) {
             i++;
             if(trip.getAvailable()== newtrip.getAvailable() && Objects.equals(trip.getCity(), newtrip.getCity()) && Objects.equals(trip.getDataAnd(),newtrip.getDataAnd()) && Objects.equals(trip.getDataRit(),newtrip.getDataRit()) && trip.getPrice()==newtrip.getPrice()){
-                b = false;
-                return b;
+                return false;
             }
             TripBean tripBean = new TripBean(trip.getAvailable(), trip.getCity(), trip.getDataAnd(), trip.getDataRit(), trip.getPrice(), trip.getImage(), trip.getId());
             viaggi.add(tripBean);
         }
-        return b;
+        return true;
     }
 }

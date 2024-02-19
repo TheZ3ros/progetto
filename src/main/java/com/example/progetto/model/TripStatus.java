@@ -1,8 +1,8 @@
 package com.example.progetto.model;
 
 public class TripStatus {
-    private boolean status;
-    private String username;
+    private final boolean status;
+    private final String username;
 
     public TripStatus(String username, boolean status){
         this.username = username;

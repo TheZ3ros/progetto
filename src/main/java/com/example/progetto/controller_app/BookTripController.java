@@ -8,7 +8,6 @@ import com.example.progetto.dao.TripDAO;
 import com.example.progetto.dao.UserDAO;
 import com.example.progetto.dao.BookingDAOdbms;
 import com.example.progetto.bean.TripBean;
-import com.example.progetto.bean.UserBean;
 import com.example.progetto.model.Trip;
 import com.example.progetto.model.User;
 import com.example.progetto.model.UserTrip;

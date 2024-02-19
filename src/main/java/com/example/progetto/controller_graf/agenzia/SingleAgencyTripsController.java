@@ -1,8 +1,6 @@
 package com.example.progetto.controller_graf.agenzia;
 
 import com.example.progetto.Applicazione;
-import com.example.progetto.exception.NotValidCouponException;
-import com.example.progetto.bean.AgencyBean;
 import com.example.progetto.bean.TripBean;
 import com.example.progetto.controller_app.BookTripController;
 import com.example.progetto.pattern.Factory.BeanFactory;
@@ -52,7 +50,7 @@ public class SingleAgencyTripsController {
         prezzo.setText((int)bean.getPrice()+"€");
     }
 
-    public void tripstatus() throws IOException, SQLException, NotValidCouponException {
+    public void tripstatus() throws IOException, SQLException {
         FXMLLoader paginaLoader = new FXMLLoader(Applicazione.class.getResource("view1/agenzia/tripstatus.fxml"));
         Parent pageroot = paginaLoader.load();
         Scene paginaScene = new Scene(pageroot);

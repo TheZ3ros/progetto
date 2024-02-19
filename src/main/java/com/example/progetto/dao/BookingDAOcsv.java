@@ -3,7 +3,6 @@ package com.example.progetto.dao;
 import com.example.progetto.exception.AlreadyPrenotedException;
 import com.example.progetto.model.UserTrip;
 
-import java.sql.SQLException;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -21,7 +20,7 @@ public class BookingDAOcsv implements BookingDAO{
     public BookingDAOcsv(){
         this.fd=new File(CSV_FILE_NAME);
     }
-    public void setTripBook(UserTrip book) throws SQLException, AlreadyPrenotedException, IOException {
+    public void setTripBook(UserTrip book) throws AlreadyPrenotedException, IOException {
         int idTrip = book.getIdTrip();
         String username = book.getUsername();
         String line = idTrip + "," + username;
@@ -41,7 +40,7 @@ public class BookingDAOcsv implements BookingDAO{
 
     }
     @Override
-    public void alreadyExist(UserTrip booking) throws SQLException, AlreadyPrenotedException, IOException {
+    public void alreadyExist(UserTrip booking) throws  AlreadyPrenotedException, IOException {
         String usernameToFind=booking.getUsername();
         int idToFind=booking.getIdTrip();
 

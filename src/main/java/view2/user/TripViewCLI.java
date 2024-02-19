@@ -1,8 +1,6 @@
 package view2.user;
 
-import com.example.progetto.bean.BookBean;
 import com.example.progetto.bean.TripBean;
-import com.example.progetto.bean.UserBean;
 import com.example.progetto.controller_app.BookTripController;
 import com.example.progetto.exception.AlreadyPrenotedException;
 import com.example.progetto.exception.CardNotTrueException;

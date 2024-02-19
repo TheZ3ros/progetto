@@ -2,12 +2,12 @@ package com.example.progetto.model;
 import java.sql.Date;
 
 public class Trip {
-    private int available;
-    private  String city;
-    private  Date dataAnd;
-    private  Date dataRit;
-    private  Float price;
-    private  byte[] image;
+    private final int available;
+    private final String city;
+    private final Date dataAnd;
+    private final Date dataRit;
+    private final Float price;
+    private final byte[] image;
     private boolean stato;
     private int id;
     public Trip(int n, String city, Date dataAnd, Date dataRit,Float price,byte[] image, boolean stato){

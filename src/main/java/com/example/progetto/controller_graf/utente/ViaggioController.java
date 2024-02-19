@@ -2,7 +2,6 @@ package com.example.progetto.controller_graf.utente;
 
 import com.example.progetto.Applicazione;
 import com.example.progetto.bean.TripBean;
-import com.example.progetto.bean.UserBean;
 import com.example.progetto.controller_app.BookTripController;
 import com.example.progetto.pattern.Factory.BeanFactory;
 import javafx.fxml.FXML;
