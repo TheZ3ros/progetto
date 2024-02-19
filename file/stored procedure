@@ -239,11 +239,14 @@ END
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 CREATE DEFINER=`root`@`localhost` PROCEDURE `SetUser`(
 IN username VARCHAR(45),
-IN in_password VARCHAR(45)
+IN in_password VARCHAR(45),
+IN in_nome VARCHAR(45),
+IN in_cognome VARCHAR(45),
+IN email VARCHAR(45)
 )
 BEGIN
-INSERT INTO user (Username,password)
-VALUES (username, in_password);
+INSERT INTO user (Username,password,nome,cognome,email)
+VALUES (username, in_password,in_nome,in_cognome,email);
 END
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 CREATE DEFINER=`root`@`localhost` PROCEDURE `UpdateTripStatus`(
@@ -252,4 +255,17 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `UpdateTripStatus`(
 )
 BEGIN
 	UPDATE user_has_trip SET state = true WHERE UsernameUser = username AND trip_tripid = id;
+END
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SearchUser`(
+IN usern VARCHAR(45),
+OUT outnome VARCHAR(45),
+OUT outcognome VARCHAR(45),
+OUT outemail VARCHAR(45)
+)
+BEGIN
+SELECT `nome`,`cognome`,`email`
+INTO outnome, outcognome, outemail
+FROM user
+WHERE Username=usern;
 END
