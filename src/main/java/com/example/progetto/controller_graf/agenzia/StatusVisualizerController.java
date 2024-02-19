@@ -14,8 +14,8 @@ import java.sql.SQLException;
 
 public class StatusVisualizerController {
 
-    private Applicazione main;
-    private BeanFactory currentUser;
+    public Applicazione main;
+    public BeanFactory currentUser;
     private TripStatusBean statusbean;
     private TripBean currentTrip;
     @FXML
