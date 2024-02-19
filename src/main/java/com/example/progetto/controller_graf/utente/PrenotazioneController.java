@@ -1,7 +1,6 @@
 package com.example.progetto.controller_graf.utente;
 
 import com.example.progetto.bean.TripBean;
-import com.example.progetto.controller_app.BookTripController;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;

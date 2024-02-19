@@ -14,9 +14,7 @@ import com.example.progetto.model.Trip;
 import com.example.progetto.model.User;
 import com.example.progetto.model.UserTrip;
 import com.example.progetto.pattern.factory.BeanFactory;
-import javafx.scene.image.Image;
 
-import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
