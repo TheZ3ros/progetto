@@ -10,7 +10,7 @@ import com.example.progetto.bean.BuonoBean;
 import com.example.progetto.bean.TripBean;
 import com.example.progetto.controller_app.BookTripController;
 import com.example.progetto.controller_app.PagamentoControllerApp;
-import com.example.progetto.pattern.Factory.BeanFactory;
+import com.example.progetto.pattern.factory.BeanFactory;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;

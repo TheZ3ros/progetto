@@ -3,7 +3,6 @@ package com.example.progetto.controller_app;
 
 import com.example.progetto.bean.TripStatusBean;
 import com.example.progetto.dao.TripStatusDAO;
-import com.example.progetto.exception.NotValidCouponException;
 import com.example.progetto.model.TripStatus;
 import java.io.IOException;
 import java.sql.SQLException;

@@ -29,7 +29,7 @@ public void start() throws Exception {
                 loginAgencyCLI.login();
                 break;
             default:
-                System.out.println("inserire un'opzione valida");
+                Printer.printMessage("inserire un'opzione valida");
         }
         }
 

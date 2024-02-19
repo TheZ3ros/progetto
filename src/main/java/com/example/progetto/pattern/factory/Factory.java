@@ -1,4 +1,4 @@
-package com.example.progetto.pattern.Factory;
+package com.example.progetto.pattern.factory;
 
 import com.example.progetto.bean.AgencyBean;
 import com.example.progetto.bean.UserBean;

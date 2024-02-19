@@ -11,7 +11,7 @@ import java.util.Scanner;
 
 import com.example.progetto.controller_graf.agenzia.ViewTripCreationController;
 import com.example.progetto.exception.NotValidCouponException;
-import com.example.progetto.pattern.Factory.BeanFactory;
+import com.example.progetto.pattern.factory.BeanFactory;
 import javafx.scene.image.Image;
 import view2.Printer;
 

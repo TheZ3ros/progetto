@@ -9,7 +9,7 @@ import com.example.progetto.exception.AlreadyPrenotedException;
 import com.example.progetto.exception.CardNotTrueException;
 import com.example.progetto.exception.NotValidCouponException;
 import com.example.progetto.exception.PlacesTerminatedException;
-import com.example.progetto.pattern.Factory.BeanFactory;
+import com.example.progetto.pattern.factory.BeanFactory;
 import view2.Printer;
 
 import java.io.IOException;
@@ -62,7 +62,7 @@ public class PaymentCLI {
             try {
                 pagamentoControllerApp.checkCard(numeroCarta, cvvCode, date);
             } catch (CardNotTrueException e) {
-                System.out.println(e.getMessage());
+                Printer.printMessage(e.getMessage());
             }
             BookTripController bookTripController = new BookTripController();
             BookBean bookBean = new BookBean(user.getUsername(), trip.getId());

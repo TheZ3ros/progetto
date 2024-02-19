@@ -1,7 +1,7 @@
 package view2.agency;
 
 import com.example.progetto.exception.NotValidCouponException;
-import com.example.progetto.pattern.Factory.BeanFactory;
+import com.example.progetto.pattern.factory.BeanFactory;
 import view2.Printer;
 
 import java.io.IOException;
@@ -27,9 +27,11 @@ public class HomeAgencyCLI {
                 case 1:
                     TripCreationCLI tripCreationCLI = new TripCreationCLI(currentAgency);
                     tripCreationCLI.start(this);
+                    break;
                 case 2:
                     AgencyTripsCLI agencyTripsCLI = new AgencyTripsCLI(currentAgency);
                     agencyTripsCLI.start(this);
+                    break;
                 default:
                     Printer.printMessage("inserire un'opzione valida");
             }

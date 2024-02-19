@@ -1,4 +1,4 @@
-package com.example.progetto.pattern.Factory;
+package com.example.progetto.pattern.factory;
 
 public interface BeanFactory {
     String getUsername();

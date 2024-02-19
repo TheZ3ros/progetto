@@ -2,8 +2,8 @@ package view2.user;
 
 import com.example.progetto.controller_app.RegLoginControllerApp;
 import com.example.progetto.exception.CredentialErrorException;
-import com.example.progetto.pattern.Factory.BeanFactory;
-import com.example.progetto.pattern.Factory.Factory;
+import com.example.progetto.pattern.factory.BeanFactory;
+import com.example.progetto.pattern.factory.Factory;
 import view2.Printer;
 
 import java.io.IOException;

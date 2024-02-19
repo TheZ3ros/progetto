@@ -7,7 +7,7 @@ import com.example.progetto.exception.ExistsUserException;
 import com.example.progetto.exception.PasswordIllegalException;
 import com.example.progetto.model.User;
 import com.example.progetto.model.Agency;
-import com.example.progetto.pattern.Factory.BeanFactory;
+import com.example.progetto.pattern.factory.BeanFactory;
 
 import java.io.IOException;
 import java.sql.SQLException;

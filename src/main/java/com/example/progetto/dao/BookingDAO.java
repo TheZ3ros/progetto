@@ -3,7 +3,6 @@ package com.example.progetto.dao;
 import com.example.progetto.exception.AlreadyPrenotedException;
 import com.example.progetto.model.UserTrip;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.sql.SQLException;
 

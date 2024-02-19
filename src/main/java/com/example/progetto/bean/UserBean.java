@@ -1,6 +1,6 @@
 package com.example.progetto.bean;
 
-import com.example.progetto.pattern.Factory.BeanFactory;
+import com.example.progetto.pattern.factory.BeanFactory;
 
 public class UserBean implements BeanFactory {
     private String username;

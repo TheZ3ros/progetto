@@ -2,7 +2,7 @@ package view2.user;
 
 import com.example.progetto.exception.AlreadyPrenotedException;
 import com.example.progetto.exception.PlacesTerminatedException;
-import com.example.progetto.pattern.Factory.BeanFactory;
+import com.example.progetto.pattern.factory.BeanFactory;
 import view2.Printer;
 
 import java.io.IOException;

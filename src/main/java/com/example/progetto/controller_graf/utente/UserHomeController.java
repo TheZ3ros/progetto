@@ -1,6 +1,6 @@
 package com.example.progetto.controller_graf.utente;
 import com.example.progetto.Applicazione;
-import com.example.progetto.pattern.Factory.BeanFactory;
+import com.example.progetto.pattern.factory.BeanFactory;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 

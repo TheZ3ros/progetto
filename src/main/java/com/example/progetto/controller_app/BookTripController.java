@@ -11,7 +11,7 @@ import com.example.progetto.bean.TripBean;
 import com.example.progetto.model.Trip;
 import com.example.progetto.model.User;
 import com.example.progetto.model.UserTrip;
-import com.example.progetto.pattern.Factory.BeanFactory;
+import com.example.progetto.pattern.factory.BeanFactory;
 import javafx.scene.image.Image;
 
 import java.io.ByteArrayInputStream;
@@ -21,7 +21,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BookTripController {
-    private final String writer="dbms";
+    private final static String writer="dbms";
     public List<TripBean> showTrip() throws SQLException, IOException {
         TripDAO tripdao = new TripDAO();
         Trip trip;
