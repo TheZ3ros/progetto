@@ -1,4 +1,5 @@
 package com.example.progetto.dao;
+import com.example.progetto.bean.SearchBean;
 import com.example.progetto.model.Trip;
 
 import java.io.IOException;
@@ -87,6 +88,30 @@ public class TripDAO implements GenericDAO<Trip> {
                     byte[] image=rs.getBytes(6);
                     boolean state=rs.getBoolean(7);
                     Trip trips =new Trip(available, citta, dataA,dataRit,prezzo,image,state);
+                    trip.add(trips);
+                }
+
+            }
+        }
+        catch (SQLException e) {
+            throw new SQLException("errore durante la lettura: " + e.getMessage());
+        }
+        return trip;
+    }
+    public List<Trip> searchTrip(SearchBean searchBean) throws SQLException {
+        List<Trip> trip=new ArrayList<>();
+        try (CallableStatement cs = connection.getConn().prepareCall("{call GetTripDetailsByCity(?)}")){
+            cs.setString(1, searchBean.getCitta());
+            boolean status = cs.execute();
+            if (status) {
+                ResultSet rs = cs.getResultSet();
+                while (rs.next()) {
+                    Float prezzo=rs.getFloat(1);
+                    Date dataA=rs.getDate(2);
+                    Date dataRit=rs.getDate(3);
+                    int available=rs.getInt(4);
+                    byte[] image=rs.getBytes(5);
+                    Trip trips =new Trip(available, searchBean.getCitta(), dataA,dataRit,prezzo,image);
                     trip.add(trips);
                 }
 
