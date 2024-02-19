@@ -21,6 +21,10 @@ public class PageTripController {
     private Applicazione main;
     private TripBean currentTrip;
     @FXML
+    private ImageView immagine;
+    @FXML
+    private Button utente;
+    @FXML
     private Text dove;
     @FXML
     private Text posti;
@@ -28,10 +32,6 @@ public class PageTripController {
     private Text data;
     @FXML
     private Text prezzo;
-    @FXML
-    private ImageView imagine;
-    @FXML
-    private Button nome;
     private BeanFactory currentUser;
 
 
@@ -53,7 +53,7 @@ public class PageTripController {
     }
     public void charge() {
         Image image= BookTripController.bytesToImage(currentTrip.getImage());
-        imagine.setImage(image);
+        immagine.setImage(image);
         dove.setText(currentTrip.getCity());
         data.setText(currentTrip.getDataAnd() +"/" + currentTrip.getDataRit());
         prezzo.setText((int) currentTrip.getPrice()+"€");
@@ -63,7 +63,7 @@ public class PageTripController {
         }
     public void setButtonText() {
 
-        nome.setText(currentUser.getUsername());
+        utente.setText(currentUser.getUsername());
     }
 
 

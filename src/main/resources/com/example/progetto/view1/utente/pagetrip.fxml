@@ -32,7 +32,7 @@
                     <Insets bottom="10.0" left="3.0" right="3.0" top="10.0" />
                 </HBox.margin>
             </Button>
-            <Button fx:id="nome" alignment="TOP_LEFT" mnemonicParsing="false" styleClass="sfondo_bottoni" HBox.hgrow="ALWAYS">
+            <Button fx:id="utente" alignment="TOP_LEFT" mnemonicParsing="false" styleClass="sfondo_bottoni" HBox.hgrow="ALWAYS">
                 <HBox.margin>
                     <Insets bottom="10.0" left="3.0" right="3.0" top="10.0" />
                 </HBox.margin>
@@ -51,7 +51,7 @@
     </bottom>
    <center>
        <Pane prefHeight="200.0" prefWidth="200.0" styleClass="background" BorderPane.alignment="CENTER">
-           <ImageView fx:id="imagine" fitHeight="369.0" fitWidth="450.0" layoutX="14.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true" />
+           <ImageView fx:id="immagine" fitHeight="369.0" fitWidth="450.0" layoutX="14.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true" />
            <Text layoutX="500.0" layoutY="197.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="schermata_viaggio" text="Dove?" />
            <Text layoutX="500.0" layoutY="251.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="schermata_viaggio" text="Quando?" />
            <Text layoutX="500.0" layoutY="309.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="schermata_viaggio" text="Disponibilità?" />
