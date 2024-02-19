@@ -28,7 +28,8 @@ public class Applicazione extends Application {
         Printer.printMessage("1-Interfaccia grafica");
         Printer.printMessage("2-Linea di comando");
         Scanner reader = new Scanner(System.in);
-        while (true) {
+        boolean isvalid = false;
+        while (!isvalid) {
             n = reader.nextInt();
             if(n==1){
                 this.stage = stage;
@@ -48,12 +49,12 @@ public class Applicazione extends Application {
                 stage.getIcons().add(new Image(getClass().getResourceAsStream("css/immagini/infinito.png")));
 
                 stage.show();
-                break;
+                isvalid = true;
             }
             else if(n==2){
                 ControllerHomeCLI controllerHomeCLI=new ControllerHomeCLI();
                 controllerHomeCLI.start();
-                break;
+                isvalid = true;
             }
             else{
                 Printer.printMessage("inserire un'opzione valida");
