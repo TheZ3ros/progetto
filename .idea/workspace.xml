@@ -5,7 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="abd72b32-f6c1-4b42-a1d9-4297dd975b52" name="Changes" comment="code smell">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_app/BookTripController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_app/BookTripController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/agenzia/StatusVisualizerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/agenzia/StatusVisualizerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/dao/csv_dbms/BookingDAOdbms.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/dao/csv_dbms/BookingDAOdbms.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view2/agency/TripCreationCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view2/agency/TripCreationCLI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view2/agency/TripStatusCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view2/agency/TripStatusCLI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view2/user/PaymentCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view2/user/PaymentCLI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -503,15 +507,7 @@
       <option name="project" value="LOCAL" />
       <updated>1708364275438</updated>
     </task>
-    <task id="LOCAL-00045" summary="code smell">
-      <option name="closed" value="true" />
-      <created>1708364674182</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1708364674183</updated>
-    </task>
-    <option name="localTasksCounter" value="46" />
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -567,7 +563,7 @@
         </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/utente/PrenotazioneController.java</url>
-          <line>36</line>
+          <line>32</line>
           <option name="timeStamp" value="31" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">

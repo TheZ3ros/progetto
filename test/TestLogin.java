@@ -1,11 +1,10 @@
 
-import com.example.progetto.bean.UserBean;
 import com.example.progetto.controller_app.RegLoginControllerApp;
 import com.example.progetto.exception.CredentialErrorException;
+import com.example.progetto.pattern.factory.BeanFactory;
+import com.example.progetto.pattern.factory.Factory;
 import org.junit.jupiter.api.Test;
 
-import java.io.IOException;
-import java.sql.SQLException;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 /**Author of the test:  Luca Lo Mastro
@@ -18,9 +17,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class TestLogin{
 
     @Test
-public void testLogin() throws IOException, SQLException {
-
-        UserBean userBean=new UserBean("aa","aa");
+public void testLogin() throws Exception {
+        Factory factory = new Factory();
+        BeanFactory userBean = factory.createBean(1);
+        userBean.setPassword("aa");
+        userBean.setUsername("aa");
 
         int flag = 1;
         RegLoginControllerApp regLoginControllerApp=new RegLoginControllerApp(userBean);
