@@ -1,5 +1,6 @@
 package com.example.progetto.dao;
 import com.example.progetto.exception.ExistsUserException;
+import com.example.progetto.exception.SQLStatementException;
 import com.example.progetto.model.User;
 
 import java.io.IOException;
@@ -28,7 +29,7 @@ public class UserDAO implements GenericDAO <User> {
 
         return utente;
     }
-    public void registrazione(User user) throws ExistsUserException, SQLException {
+    public void registrazione(User user) throws ExistsUserException, SQLException, SQLStatementException {
         checkUser(user);
         String username=user.getUsername();
         String password= user.getPassword();
@@ -37,7 +38,7 @@ public class UserDAO implements GenericDAO <User> {
             cs.setString(2, password);
             cs.executeQuery();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new SQLStatementException("Errore nell'esecuzione dello statement SQL");
         }
 
     }
