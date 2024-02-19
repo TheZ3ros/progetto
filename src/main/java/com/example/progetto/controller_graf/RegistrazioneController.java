@@ -1,11 +1,10 @@
 package com.example.progetto.controller_graf;
 
 import com.example.progetto.Applicazione;
+import com.example.progetto.bean.SignUpUserBean;
 import com.example.progetto.controller_app.RegLoginControllerApp;
 import com.example.progetto.exception.ExistsUserException;
 import com.example.progetto.exception.PasswordIllegalException;
-import com.example.progetto.pattern.factory.BeanFactory;
-import com.example.progetto.pattern.factory.Factory;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -23,6 +22,13 @@ private TextField usernameUtente;
 
     @FXML
     private PasswordField passwordUtente;
+    @FXML
+    private TextField nome;
+    @FXML
+    private TextField cognome;
+    @FXML
+    private TextField email;
+
 
 
     private Applicazione main;
@@ -42,15 +48,29 @@ private TextField usernameUtente;
 
     @FXML
     public void registrazioneutente() throws Exception {
-        String userUtente=usernameUtente.getText();
+
+        String userUtente =usernameUtente.getText();
         String passUtente=passwordUtente.getText();
-        Factory factory=new Factory();
-        BeanFactory user= factory.createBean(1);
-        user.setPassword(userUtente);
-        user.setPassword(passUtente);
+        String nomeUser=nome.getText();
+        String cognomeUser=cognome.getText();
+        String emailUser=email.getText();
+        if (userUtente.isEmpty() || passUtente.isEmpty() || nomeUser.isEmpty() || cognomeUser.isEmpty() || emailUser.isEmpty()) {
+            Alert alert=new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Registrazione");
+            alert.setHeaderText(null);
+            alert.setContentText("Completa tutti i campi");
+            alert.showAndWait();
+        }
+        SignUpUserBean signUpUserBean=new SignUpUserBean();
+        signUpUserBean.setCognome(cognomeUser);
+        signUpUserBean.setEmail(emailUser);
+        signUpUserBean.setNome(nomeUser);
+        signUpUserBean.setUsername(userUtente);
+        signUpUserBean.setPassword(passUtente);
+
 
         try{
-            RegLoginControllerApp regLoginControllerApp=new RegLoginControllerApp(user);
+            RegLoginControllerApp regLoginControllerApp=new RegLoginControllerApp(signUpUserBean);
             regLoginControllerApp.registrazione();
             Alert alert=new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Registrazione");

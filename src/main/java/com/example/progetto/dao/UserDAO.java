@@ -33,9 +33,16 @@ public class UserDAO implements GenericDAO <User> {
         checkUser(user);
         String username=user.getUsername();
         String password= user.getPassword();
-        try(CallableStatement cs = connection.conn.prepareCall("{call SetUser(?,?)}")) {
+        String nome=user.getNome();
+        String cognome=user.getCognome();
+        String email=user.getEmail();
+        try(CallableStatement cs = connection.conn.prepareCall("{call SetUser(?,?,?,?,?)}")) {
             cs.setString(1, username);
             cs.setString(2, password);
+            cs.setString(3, nome);
+            cs.setString(4, cognome);
+            cs.setString(5, email);
+
             cs.executeQuery();
         } catch (SQLException e) {
             throw new SQLStatementException("Errore nell'esecuzione dello statement SQL");

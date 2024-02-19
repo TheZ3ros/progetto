@@ -1,5 +1,6 @@
 package com.example.progetto.controller_app;
 
+import com.example.progetto.bean.SignUpUserBean;
 import com.example.progetto.exception.CredentialErrorException;
 import com.example.progetto.dao.AgencyDAO;
 import com.example.progetto.dao.UserDAO;
@@ -14,11 +15,15 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 public class RegLoginControllerApp {
-    private final BeanFactory currentUser;
+    private BeanFactory currentUser;
+    private SignUpUserBean user;
 
     public RegLoginControllerApp(BeanFactory user){
 
         currentUser=user;
+    }
+    public RegLoginControllerApp(SignUpUserBean user){
+        this.user=user;
     }
     public void loginUtente() throws SQLException, IOException, CredentialErrorException {
         UserDAO dao;
@@ -42,8 +47,15 @@ public class RegLoginControllerApp {
 public void registrazione() throws PasswordIllegalException, SQLException, IOException, ExistsUserException, SQLStatementException {
         String username;
         String password;
-        username=currentUser.getPassword();
-        password=currentUser.getUsername();
+        String nome;
+        String cognome;
+        String email;
+        username=user.getUsername();
+        password=user.getPassword();
+        nome=user.getNome();
+        cognome=user.getCognome();
+        email=user.getEmail();
+
         if (password.length()<8){
             throw new PasswordIllegalException("password non valida, inserire almeno 8 caratteri");
         }
@@ -53,6 +65,9 @@ public void registrazione() throws PasswordIllegalException, SQLException, IOExc
         userVero=new User();
         userVero.setUser(username);
         userVero.setPassword(password);
+        userVero.setNome(nome);
+        userVero.setEmail(email);
+        userVero.setCognome(cognome);
         userDAO.registrazione(userVero);
 
     }
