@@ -1,7 +1,5 @@
 package view2.agency;
 
-import com.example.progetto.bean.AgencyBean;
-import com.example.progetto.bean.UserBean;
 import com.example.progetto.controller_app.RegLoginControllerApp;
 import com.example.progetto.exception.CredentialErrorException;
 import com.example.progetto.exception.NotValidCouponException;

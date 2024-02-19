@@ -3,8 +3,6 @@ package com.example.progetto.controller_app;
 import com.example.progetto.exception.CredentialErrorException;
 import com.example.progetto.dao.AgencyDAO;
 import com.example.progetto.dao.UserDAO;
-import com.example.progetto.bean.AgencyBean;
-import com.example.progetto.bean.UserBean;
 import com.example.progetto.exception.ExistsUserException;
 import com.example.progetto.exception.PasswordIllegalException;
 import com.example.progetto.model.User;

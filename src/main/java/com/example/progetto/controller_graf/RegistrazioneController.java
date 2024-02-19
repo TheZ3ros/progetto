@@ -1,7 +1,6 @@
 package com.example.progetto.controller_graf;
 
 import com.example.progetto.Applicazione;
-import com.example.progetto.bean.UserBean;
 import com.example.progetto.controller_app.RegLoginControllerApp;
 import com.example.progetto.exception.ExistsUserException;
 import com.example.progetto.exception.PasswordIllegalException;
@@ -17,7 +16,6 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.sql.SQLException;
 
 public class RegistrazioneController {
     @FXML

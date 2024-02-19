@@ -1,7 +1,6 @@
 package com.example.progetto.controller_graf.agenzia;
 
 import com.example.progetto.Applicazione;
-import com.example.progetto.bean.AgencyBean;
 import com.example.progetto.pattern.Factory.BeanFactory;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -35,7 +34,7 @@ public class AgencyHomeController {
         this.main = main;
     }
     @FXML
-    private void vaiAHome(){
+    public void vaiAHome(){
 
         main.vaiAHome();
     }

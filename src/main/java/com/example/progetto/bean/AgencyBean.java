@@ -6,10 +6,6 @@ public class AgencyBean implements BeanFactory {
     private String username;
     private String password;
     @Override
-    public BeanFactory createLoginBean() {
-        return this;
-    }
-    @Override
     public String getUsername(){
 
         return username;

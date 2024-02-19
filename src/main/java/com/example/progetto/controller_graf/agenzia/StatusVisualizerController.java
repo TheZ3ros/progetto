@@ -1,7 +1,6 @@
 package com.example.progetto.controller_graf.agenzia;
 
 import com.example.progetto.Applicazione;
-import com.example.progetto.bean.AgencyBean;
 import com.example.progetto.bean.TripBean;
 import com.example.progetto.bean.TripStatusBean;
 import com.example.progetto.controller_app.GetTripStatusController;

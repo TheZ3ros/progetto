@@ -1,6 +1,5 @@
 package view2.agency;
 
-import com.example.progetto.bean.AgencyBean;
 import com.example.progetto.bean.TripBean;
 import com.example.progetto.controller_app.CreateTripController;
 
@@ -8,7 +7,6 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.Scanner;
 
 import com.example.progetto.controller_graf.agenzia.ViewTripCreationController;

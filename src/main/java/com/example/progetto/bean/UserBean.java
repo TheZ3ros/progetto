@@ -27,9 +27,6 @@ public class UserBean implements BeanFactory {
         this.username = username;
     }
 
-    @Override
-    public BeanFactory createLoginBean() {
-        return this;
-    }
+
 }
 

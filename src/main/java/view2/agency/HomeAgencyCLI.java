@@ -1,6 +1,5 @@
 package view2.agency;
 
-import com.example.progetto.bean.AgencyBean;
 import com.example.progetto.exception.NotValidCouponException;
 import com.example.progetto.pattern.Factory.BeanFactory;
 import view2.Printer;

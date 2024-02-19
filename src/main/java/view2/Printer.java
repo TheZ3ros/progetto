@@ -1,6 +1,5 @@
 package view2;
 
-import java.util.logging.Logger;
 
 public class Printer {
 

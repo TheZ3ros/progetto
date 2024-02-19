@@ -1,17 +1,14 @@
 package com.example.progetto.controller_graf.agenzia;
 
 import com.example.progetto.Applicazione;
-import com.example.progetto.bean.AgencyBean;
 import com.example.progetto.bean.TripBean;
 import com.example.progetto.bean.TripStatusBean;
 import com.example.progetto.controller_app.BookTripController;
 import com.example.progetto.controller_app.GetTripStatusController;
-import com.example.progetto.exception.NotValidCouponException;
 import com.example.progetto.pattern.Factory.BeanFactory;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -38,7 +35,7 @@ public class TripStatusController {
     }
 
     @FXML
-    private void vaiAHome() {
+    public void vaiAHome() {
 
         main.vaiAHome();
     }
@@ -61,7 +58,7 @@ public class TripStatusController {
 
     }
 
-    public void charge() throws SQLException, IOException, NotValidCouponException {
+    public void charge() throws SQLException, IOException {
         Image image= BookTripController.bytesToImage(currentTrip.getImage());
         imagine.setImage(image);
 
