@@ -1,14 +1,14 @@
 package com.example.progetto.controller_app;
 
 import com.example.progetto.bean.SearchBean;
-import com.example.progetto.dao.BookingDAOcsv;
+import com.example.progetto.dao.csv_dbms.BookingDAOcsv;
 import com.example.progetto.exception.AlreadyPrenotedException;
 import com.example.progetto.exception.FailedSearchException;
 import com.example.progetto.exception.PlacesTerminatedException;
 import com.example.progetto.bean.BookBean;
 import com.example.progetto.dao.TripDAO;
 import com.example.progetto.dao.UserDAO;
-import com.example.progetto.dao.BookingDAOdbms;
+import com.example.progetto.dao.csv_dbms.BookingDAOdbms;
 import com.example.progetto.bean.TripBean;
 import com.example.progetto.model.Trip;
 import com.example.progetto.model.User;
@@ -86,7 +86,7 @@ public class BookTripController {
 
     public List<TripBean> getTripUser(BeanFactory utente) throws SQLException, IOException {
         TripDAO tripDAO = new TripDAO();
-        List<Trip> trip = tripDAO.tripUser(utente.getUsername());
+        List<Trip> trip = tripDAO.tripUser(utente);
         List<TripBean> tripBeanList = new ArrayList<>();
         for (Trip value : trip) {
 

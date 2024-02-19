@@ -1,4 +1,4 @@
-package com.example.progetto.dao;
+package com.example.progetto.dao.csv_dbms;
 
 import com.example.progetto.exception.AlreadyPrenotedException;
 import com.example.progetto.model.UserTrip;

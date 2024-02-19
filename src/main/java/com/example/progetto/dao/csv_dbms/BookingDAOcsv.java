@@ -1,4 +1,4 @@
-package com.example.progetto.dao;
+package com.example.progetto.dao.csv_dbms;
 
 import com.example.progetto.exception.AlreadyPrenotedException;
 import com.example.progetto.model.UserTrip;
@@ -14,7 +14,7 @@ import com.opencsv.CSVReader;
 import com.opencsv.CSVWriter;
 import com.opencsv.exceptions.CsvValidationException;
 
-public class BookingDAOcsv implements BookingDAO{
+public class BookingDAOcsv implements BookingDAO {
     private static final String CSV_FILE_NAME = "file/booking.csv";
     private final File fd;
     public BookingDAOcsv(){
@@ -44,10 +44,7 @@ public class BookingDAOcsv implements BookingDAO{
         String usernameToFind=booking.getUsername();
         int idToFind=booking.getIdTrip();
 
-        try {
-
-            // Crea un oggetto CSVReader utilizzando il FileReader
-            CSVReader csvReader = new CSVReader(new BufferedReader(new FileReader(fd)));
+        try (CSVReader csvReader = new CSVReader(new BufferedReader(new FileReader(fd)))){
 
             String[] nextRecord;
             String check = idToFind + "," + usernameToFind;
@@ -59,8 +56,6 @@ public class BookingDAOcsv implements BookingDAO{
                     throw new AlreadyPrenotedException("Già prenotato");
                 }
             }
-            // Chiudi il CSVReader
-            csvReader.close();
 
         } catch (IOException e) {
             throw new IOException("errore lettura file");

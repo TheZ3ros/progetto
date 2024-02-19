@@ -1,6 +1,7 @@
 package com.example.progetto.dao;
 import com.example.progetto.bean.SearchBean;
 import com.example.progetto.model.Trip;
+import com.example.progetto.pattern.factory.BeanFactory;
 
 import java.io.IOException;
 import java.sql.*;
@@ -72,7 +73,9 @@ public class TripDAO implements GenericDAO<Trip> {
         }
     }
 
-    public List<Trip> tripUser(String username) throws SQLException {
+    public List<Trip> tripUser(BeanFactory utente) throws SQLException {
+            String username;
+            username=utente.getUsername();
         List<Trip> trip=new ArrayList<>();
         try (CallableStatement cs = connection.getConn().prepareCall("{call GetTripDetailsByUsername(?)}")){
             cs.setString(1,username);
