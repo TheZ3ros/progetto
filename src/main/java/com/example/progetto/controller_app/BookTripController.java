@@ -21,7 +21,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BookTripController {
-    private final static String writer="dbms";
+    private static final  String WRITER ="dbms";
     public List<TripBean> showTrip() throws SQLException, IOException {
         TripDAO tripdao = new TripDAO();
         Trip trip;
@@ -44,7 +44,7 @@ public class BookTripController {
         UserTrip usertrip = new UserTrip();
         usertrip.setIdTrip(trip.getId());
         usertrip.setUsername(utente.getUsername());
-        if(writer.equals("dbms")){
+        if(WRITER.equals("dbms")){
         BookingDAOdbms usertripdao = new BookingDAOdbms();
 
         try{
