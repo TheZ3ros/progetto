@@ -9,6 +9,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 
+import java.io.ByteArrayInputStream;
+
 
 public class PrenotazioneController {
     @FXML
@@ -22,7 +24,9 @@ public class PrenotazioneController {
 
 
     public void createbox(TripBean bean) {
-        Image image= BookTripController.bytesToImage(bean.getImage());
+        Image image;
+        ByteArrayInputStream inputStream = new ByteArrayInputStream(bean.getImage());
+        image=new Image(inputStream);
         imagine.setImage(image);
         title.setText(bean.getCity());
         data.setText(bean.getDataAnd() +"/" + bean.getDataRit());

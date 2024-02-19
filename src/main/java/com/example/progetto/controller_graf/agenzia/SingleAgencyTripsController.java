@@ -14,6 +14,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.sql.SQLException;
 
@@ -43,7 +44,9 @@ public class SingleAgencyTripsController {
 
     public void createbox(TripBean bean) {
         this.bean=bean;
-        Image image= BookTripController.bytesToImage(bean.getImage());
+        Image image;
+        ByteArrayInputStream inputStream = new ByteArrayInputStream(bean.getImage());
+        image=new Image(inputStream);
         imagine.setImage(image);
         title.setText(bean.getCity());
         data.setText(bean.getDataAnd() +"/" + bean.getDataRit());
