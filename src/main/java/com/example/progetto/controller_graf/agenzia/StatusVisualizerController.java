@@ -8,14 +8,15 @@ import com.example.progetto.exception.NotValidCouponException;
 import com.example.progetto.pattern.factory.BeanFactory;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import view2.Printer;
 
 import java.io.IOException;
 import java.sql.SQLException;
 
 public class StatusVisualizerController {
 
-    public Applicazione main;
-    public BeanFactory currentUser;
+    protected Applicazione main;
+    protected BeanFactory currentUser;
     private TripStatusBean statusbean;
     private TripBean currentTrip;
     @FXML
@@ -44,14 +45,14 @@ public class StatusVisualizerController {
 
     }
 
-    public void conferma() throws SQLException, IOException, NotValidCouponException {
+    public void conferma() throws SQLException, IOException {
         GetTripStatusController statusupdater = new GetTripStatusController();
         boolean b = statusupdater.updatetripstatus(currentTrip.getId(), statusbean.getUsername());
         if (b){
             state.setText("True");
         }
         else{
-            System.out.println("Query non eseguita");
+            Printer.printMessage("Query non eseguita");
         }
     }
 }
