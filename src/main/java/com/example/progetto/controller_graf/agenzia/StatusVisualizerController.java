@@ -4,7 +4,6 @@ import com.example.progetto.Applicazione;
 import com.example.progetto.bean.TripBean;
 import com.example.progetto.bean.TripStatusBean;
 import com.example.progetto.controller_app.GetTripStatusController;
-import com.example.progetto.exception.NotValidCouponException;
 import com.example.progetto.pattern.factory.BeanFactory;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;

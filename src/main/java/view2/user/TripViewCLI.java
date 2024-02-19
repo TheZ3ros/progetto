@@ -23,7 +23,7 @@ public class TripViewCLI {
 
     }
 
-    public void start(HomeLoginCLI login) throws SQLException, IOException, PlacesTerminatedException, AlreadyPrenotedException {
+    public void viewtrip(HomeLoginCLI login) throws SQLException, IOException, PlacesTerminatedException, AlreadyPrenotedException {
         BookTripController bookTripController = new BookTripController();
         List<TripBean> viaggi = bookTripController.showTrip();
         for (TripBean viaggio : viaggi) {
@@ -62,7 +62,7 @@ public class TripViewCLI {
                 } catch (FailedSearchException e) {
                     Printer.printMessage(e.getMessage());
                 }
-                start(login);
+                viewtrip(login);
 
             }
 

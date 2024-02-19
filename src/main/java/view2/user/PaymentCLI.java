@@ -24,7 +24,7 @@ public class PaymentCLI {
         this.trip =trip;
         this.user=user;
     }
-    public void start(HomeLoginCLI login) throws CardNotTrueException {
+    public void start(HomeLoginCLI login) throws CardNotTrueException, IOException {
         Scanner scanner = new Scanner(System.in);
         Printer.printMessage("Si vuole inserire un coupon?");
         Printer.printMessage("1- sì");
@@ -48,6 +48,9 @@ public class PaymentCLI {
             }
         Printer.printMessage("inserire nome");
             String nome = scanner.nextLine();
+            if (nome.isEmpty()){
+                throw new IOException();
+            }
         Printer.printMessage("inserire numero carta");
             String numeroCarta = scanner.nextLine();
         Printer.printMessage("inserire cvv");
