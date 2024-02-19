@@ -8,6 +8,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import view2.ControllerHomeCLI;
 import javafx.scene.image.Image;
+import view2.Printer;
 
 import java.util.Scanner;
 
@@ -22,10 +23,10 @@ public class Applicazione extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        System.out.println("Come si vuole avviare il programma?");
+        Printer.printMessage("Come si vuole avviare il programma?");
         int n;
-        System.out.println("1-Interfaccia grafica");
-        System.out.println("2-Linea di comando");
+        Printer.printMessage("1-Interfaccia grafica");
+        Printer.printMessage("2-Linea di comando");
         Scanner reader = new Scanner(System.in);
         while (true) {
             n = reader.nextInt();
@@ -55,7 +56,7 @@ public class Applicazione extends Application {
                 break;
             }
             else{
-                System.out.println("inserire un'opzione valida");
+                Printer.printMessage("inserire un'opzione valida");
             }
 
         }
