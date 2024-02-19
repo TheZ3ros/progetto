@@ -14,6 +14,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.sql.SQLException;
 
@@ -52,7 +53,9 @@ public class PageTripController {
         this.currentTrip =trip;
     }
     public void charge() {
-        Image image= BookTripController.bytesToImage(currentTrip.getImage());
+        Image image;
+        ByteArrayInputStream inputStream = new ByteArrayInputStream(currentTrip.getImage());
+        image=new Image(inputStream);
         immagine.setImage(image);
         dove.setText(currentTrip.getCity());
         data.setText(currentTrip.getDataAnd() +"/" + currentTrip.getDataRit());

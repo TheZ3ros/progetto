@@ -79,10 +79,7 @@ public class BookTripController {
 
     }
 
-    public static Image bytesToImage(byte[] bytes) {
-        ByteArrayInputStream inputStream = new ByteArrayInputStream(bytes);
-        return new Image(inputStream);
-    }
+
 
     public List<TripBean> getTripUser(BeanFactory utente) throws SQLException, IOException {
         TripDAO tripDAO = new TripDAO();

@@ -3,6 +3,8 @@ package com.example.progetto.controller_graf.agenzia;
 import com.example.progetto.Applicazione;
 import com.example.progetto.bean.TripBean;
 import com.example.progetto.controller_app.CreateTripController;
+import com.example.progetto.exception.DateNotValidException;
+import com.example.progetto.exception.EmptystatementException;
 import com.example.progetto.pattern.factory.BeanFactory;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -26,6 +28,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.File;
 import java.sql.Date;
+import java.sql.SQLException;
 import java.time.LocalDate;
 
 public class ViewTripCreationController {
@@ -66,7 +69,7 @@ public class ViewTripCreationController {
     }
 
     @FXML
-    private void vaiAHome(){
+    public void vaiAHome(){
 
         main.vaiAHome();
     }
@@ -102,7 +105,6 @@ public class ViewTripCreationController {
 
     }
 
-
     public byte[] imageToBytes(Image image) throws IOException {
         BufferedImage bufferedImage = SwingFXUtils.fromFXImage(image,null);
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
@@ -121,7 +123,7 @@ public class ViewTripCreationController {
         try{
             String city = nomecitta.getText().trim();
             if (city.isEmpty() || imagePath.isEmpty()){
-                throw new IllegalArgumentException("Stringhe vuote");
+                throw new EmptystatementException("Riempire tutti i campi");
             }
             int available = Integer.parseInt(disponibili.getText());
 
@@ -130,11 +132,11 @@ public class ViewTripCreationController {
 
             if (checkAndata.isBefore(LocalDate.now())){
                 dataAnd.setValue(null);
-                throw new IllegalArgumentException("Valore di andata non valido");
+                throw new DateNotValidException("Valore di andata non valido");
             }
             else if (checkRitorno.isBefore(checkAndata)){
                 dataRit.setValue(null);
-                throw new IllegalArgumentException("Valore di ritorno non valido");
+                throw new DateNotValidException("Valore di ritorno non valido");
             }
             Date andata = Date.valueOf(checkAndata);
             Date ritorno = Date.valueOf(checkRitorno);
@@ -142,16 +144,20 @@ public class ViewTripCreationController {
             TripBean trip = new TripBean(city,available,andata,ritorno,price,imageBytes);
             CreateTripController creation = new CreateTripController(trip);
             creation.uploadTrip();
-        } catch (Exception e){
-            Alert alert=new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Creazione fallita");
+            Alert alert=new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Creazione riuscita");
             alert.setHeaderText(null);
-            alert.setContentText("Ricontrollare i dati inseriti");
+            alert.setContentText("Viaggio creato con successo");
             alert.showAndWait();
+        } catch (DateNotValidException|EmptystatementException e){
+            Alert alert=new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Creazione riuscita");
+            alert.setHeaderText(null);
+            alert.setContentText(e.getMessage());
+            alert.showAndWait();
+        } catch (SQLException | IOException e) {
+            throw new RuntimeException(e);
         }
-
-
-
 
 
     }

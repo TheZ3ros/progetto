@@ -14,6 +14,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
@@ -60,7 +61,9 @@ public class TripStatusController {
     }
 
     public void charge() throws SQLException, IOException {
-        Image image= BookTripController.bytesToImage(currentTrip.getImage());
+        Image image;
+        ByteArrayInputStream inputStream = new ByteArrayInputStream(currentTrip.getImage());
+        image=new Image(inputStream);
         imagine.setImage(image);
 
         List<TripStatusBean> stati = GetTripStatusController.showtripstatus(currentTrip.getId());
