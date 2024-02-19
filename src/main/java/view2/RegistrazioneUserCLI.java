@@ -1,5 +1,6 @@
 package view2;
 
+import com.example.progetto.bean.SignUpUserBean;
 import com.example.progetto.controller_app.RegLoginControllerApp;
 import com.example.progetto.exception.AlreadyPrenotedException;
 import com.example.progetto.exception.ExistsUserException;
@@ -16,13 +17,21 @@ public class RegistrazioneUserCLI {
         Scanner scanner = new Scanner(System.in);
         Printer.printMessage("Inserire un nuovo username");
         String username = scanner.nextLine();
-       Printer.printMessage("Inserire una nuova password");
+       Printer.printMessage("Inserire nome");
+        String nome = scanner.nextLine();
+        Printer.printMessage("Inserire cognome");
+        String cognome = scanner.nextLine();
+        Printer.printMessage("Inserire email");
+        String email = scanner.nextLine();
+        Printer.printMessage("Inserire una nuova password");
         String password = scanner.nextLine();
-        Factory factory=new Factory();
-        BeanFactory newUser=factory.createBean(1);
-        newUser.setUsername(username);
-        newUser.setPassword(password);
-        RegLoginControllerApp regLoginControllerApp = new RegLoginControllerApp(newUser);
+        SignUpUserBean signUpUserBean=new SignUpUserBean();
+        signUpUserBean.setUsername(username);
+        signUpUserBean.setNome(nome);
+        signUpUserBean.setCognome(cognome);
+        signUpUserBean.setPassword(password);
+        signUpUserBean.setEmail(email);
+        RegLoginControllerApp regLoginControllerApp = new RegLoginControllerApp(signUpUserBean);
         try {
             regLoginControllerApp.registrazione();
             Printer.printMessage("La registrazione è avvenuta con successo");

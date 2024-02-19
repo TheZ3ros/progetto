@@ -1,7 +1,10 @@
 package com.example.progetto.dao;
+import com.example.progetto.bean.SignUpUserBean;
+import com.example.progetto.bean.UserBean;
 import com.example.progetto.exception.ExistsUserException;
 import com.example.progetto.exception.SQLStatementException;
 import com.example.progetto.model.User;
+import com.example.progetto.pattern.factory.BeanFactory;
 
 import java.io.IOException;
 import java.sql.CallableStatement;
@@ -60,6 +63,31 @@ public class UserDAO implements GenericDAO <User> {
             if (n == 1) {
                 throw new ExistsUserException("utente già esistente");
             }
+        }
+        catch (SQLException e){
+            throw new SQLException("errore username"+e.getMessage());
+        }
+
+
+    }
+    public SignUpUserBean info(BeanFactory user) throws ExistsUserException, SQLException {
+        try (CallableStatement cs = connection.conn.prepareCall("{call SearchUser(?,?,?,?)}")){
+
+            cs.setString(1, user.getUsername());
+            cs.registerOutParameter(2, Types.VARCHAR);
+            cs.registerOutParameter(3, Types.VARCHAR);
+            cs.registerOutParameter(4, Types.VARCHAR);
+
+            cs.executeQuery();
+            SignUpUserBean trueUser=new SignUpUserBean();
+            String nome = cs.getString(2);
+            String cognome = cs.getString(3);
+            String email = cs.getString(4);
+            trueUser.setUsername(user.getUsername());
+            trueUser.setEmail(email);
+            trueUser.setCognome(cognome);
+            trueUser.setNome(nome);
+            return trueUser;
         }
         catch (SQLException e){
             throw new SQLException("errore username"+e.getMessage());

@@ -3,6 +3,7 @@ package view2.user;
 import com.example.progetto.bean.TripBean;
 import com.example.progetto.controller_app.BookTripController;
 import com.example.progetto.exception.AlreadyPrenotedException;
+import com.example.progetto.exception.ExistsUserException;
 import com.example.progetto.exception.PlacesTerminatedException;
 import com.example.progetto.pattern.factory.BeanFactory;
 import view2.Printer;
@@ -18,7 +19,7 @@ public class BookedTripCLI {
         currentUser=user;
     }
 
-    public void start(HomeLoginCLI login) throws SQLException, IOException, PlacesTerminatedException, AlreadyPrenotedException {
+    public void start(HomeLoginCLI login) throws SQLException, IOException, PlacesTerminatedException, AlreadyPrenotedException, ExistsUserException {
         BookTripController bookTripController=new BookTripController();
         List<TripBean> viaggi= bookTripController.getTripUser(currentUser);
         for (TripBean viaggio:viaggi){

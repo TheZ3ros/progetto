@@ -3,6 +3,7 @@ package com.example.progetto.controller_graf.utente;
 import com.example.progetto.Applicazione;
 import com.example.progetto.bean.TripBean;
 import com.example.progetto.controller_app.BookTripController;
+import com.example.progetto.exception.ExistsUserException;
 import com.example.progetto.pattern.factory.BeanFactory;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -29,15 +30,18 @@ public class MyTripController {
 
         currentUser = utente;
     }
+
     public void ricerca() throws SQLException, IOException {
         listaview.getItems().clear();
         charge();
     }
+
     public void setButtonText() {
 
         user.setText(currentUser.getUsername());
     }
-    public void setMain(Applicazione main){
+
+    public void setMain(Applicazione main) {
 
         this.main = main;
     }
@@ -47,12 +51,13 @@ public class MyTripController {
 
         main.vaiAHome();
     }
+
     public void charge() throws SQLException, IOException {
-        BookTripController bookTripController =new BookTripController();
+        BookTripController bookTripController = new BookTripController();
         List<TripBean> viaggi = bookTripController.getTripUser(currentUser);
         for (TripBean viaggio : viaggi) {
             FXMLLoader prenotazioneLoader = new FXMLLoader(Applicazione.class.getResource("view1/utente/prenotazione.fxml"));
-            VBox box=prenotazioneLoader.load();
+            VBox box = prenotazioneLoader.load();
             PrenotazioneController controller = prenotazioneLoader.getController();
             setButtonText();
             controller.createbox(viaggio);
@@ -61,11 +66,13 @@ public class MyTripController {
 
 
     }
+
     @FXML
     private void viewTrip() throws IOException, SQLException {
         ViewTripController page = new ViewTripController();
         page.viewTrip(main, currentUser);
-        }
+    }
+
     public void myTrip(BeanFactory user, Applicazione main) throws SQLException, IOException {
         FXMLLoader myTripLoader = new FXMLLoader(Applicazione.class.getResource("view1/utente/myTrip.fxml"));
         Parent mytriproot = myTripLoader.load();
@@ -80,4 +87,18 @@ public class MyTripController {
 
     }
 
+    @FXML
+    public void info() throws IOException, SQLException, ExistsUserException {
+        FXMLLoader infoLoader = new FXMLLoader(Applicazione.class.getResource("view1/utente/info_user.fxml"));
+        Parent inforoot = infoLoader.load();
+        Scene myTripScene = new Scene(inforoot);
+        InfoUserController infoController = infoLoader.getController();
+        infoController.setMain(main);
+        infoController.setUser(currentUser);
+        infoController.setInfo();
+        Stage stage = main.getStage();
+        stage.setTitle("I miei viaggi");
+        stage.setScene(myTripScene);
+
+    }
 }

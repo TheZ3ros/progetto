@@ -71,6 +71,12 @@ public void registrazione() throws PasswordIllegalException, SQLException, IOExc
         userDAO.registrazione(userVero);
 
     }
+    public SignUpUserBean info() throws SQLException, IOException, ExistsUserException {
+        UserDAO userDAO=new UserDAO();
+        SignUpUserBean userr=userDAO.info(currentUser);
+        return userr;
+
+    }
     }
 
 

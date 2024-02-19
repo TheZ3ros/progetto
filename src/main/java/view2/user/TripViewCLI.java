@@ -3,10 +3,7 @@ package view2.user;
 import com.example.progetto.bean.SearchBean;
 import com.example.progetto.bean.TripBean;
 import com.example.progetto.controller_app.BookTripController;
-import com.example.progetto.exception.AlreadyPrenotedException;
-import com.example.progetto.exception.CardNotTrueException;
-import com.example.progetto.exception.FailedSearchException;
-import com.example.progetto.exception.PlacesTerminatedException;
+import com.example.progetto.exception.*;
 import com.example.progetto.pattern.factory.BeanFactory;
 import view2.Printer;
 
@@ -23,7 +20,7 @@ public class TripViewCLI {
 
     }
 
-    public void viewtrip(HomeLoginCLI login) throws SQLException, IOException, PlacesTerminatedException, AlreadyPrenotedException {
+    public void viewtrip(HomeLoginCLI login) throws SQLException, IOException, PlacesTerminatedException, AlreadyPrenotedException, ExistsUserException {
         BookTripController bookTripController = new BookTripController();
         List<TripBean> viaggi = bookTripController.showTrip();
         for (TripBean viaggio : viaggi) {

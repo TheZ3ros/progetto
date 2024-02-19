@@ -33,7 +33,7 @@
                <Insets bottom="10.0" left="3.0" right="3.0" top="10.0" />
             </HBox.margin>
          </Button>
-         <Button fx:id="user" alignment="TOP_LEFT" mnemonicParsing="false" styleClass="sfondo_bottoni" HBox.hgrow="ALWAYS">
+         <Button fx:id="user" alignment="TOP_LEFT" mnemonicParsing="false" onAction="#info" styleClass="sfondo_bottoni" HBox.hgrow="ALWAYS">
             <HBox.margin>
                <Insets bottom="10.0" left="3.0" right="3.0" top="10.0" />
             </HBox.margin>

@@ -1,6 +1,7 @@
 package view2.user;
 
 import com.example.progetto.exception.AlreadyPrenotedException;
+import com.example.progetto.exception.ExistsUserException;
 import com.example.progetto.exception.PlacesTerminatedException;
 import com.example.progetto.pattern.factory.BeanFactory;
 import view2.Printer;
@@ -16,10 +17,11 @@ public class HomeLoginCLI {
     public HomeLoginCLI(BeanFactory currentUser) {
         this.currentUser = currentUser;
     }
-    public void start() throws SQLException, IOException, PlacesTerminatedException, AlreadyPrenotedException {
+    public void start() throws SQLException, IOException, PlacesTerminatedException, AlreadyPrenotedException, ExistsUserException {
         Printer.printMessage("Scegliere l'operazione da eseguire");
         Printer.printMessage("1-Prenota un nuovo viaggio");
         Printer.printMessage("2-Visualizza stato dei viaggi prenotati");
+        Printer.printMessage("3-Visualizza informazioni account");
         Scanner reader = new Scanner(System.in);
         int n;
         boolean continua = true;
@@ -33,6 +35,10 @@ public class HomeLoginCLI {
                 case 2:
                     BookedTripCLI bookedTripCLI=new BookedTripCLI(currentUser);
                     bookedTripCLI.start(this);
+                    break;
+                case 3:
+                    InfoUserCLI infoUserCLI=new InfoUserCLI(currentUser);
+                    infoUserCLI.start(this);
                     break;
                 default:
                     Printer.printMessage("inserire un'opzione valida");

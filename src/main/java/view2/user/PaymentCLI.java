@@ -5,10 +5,7 @@ import com.example.progetto.bean.BuonoBean;
 import com.example.progetto.bean.TripBean;
 import com.example.progetto.controller_app.BookTripController;
 import com.example.progetto.controller_app.PagamentoControllerApp;
-import com.example.progetto.exception.AlreadyPrenotedException;
-import com.example.progetto.exception.CardNotTrueException;
-import com.example.progetto.exception.NotValidCouponException;
-import com.example.progetto.exception.PlacesTerminatedException;
+import com.example.progetto.exception.*;
 import com.example.progetto.pattern.factory.BeanFactory;
 import view2.Printer;
 
@@ -75,8 +72,10 @@ public class PaymentCLI {
                 login.start();
             } catch (SQLException | IOException | PlacesTerminatedException | AlreadyPrenotedException e) {
                 Printer.printMessage(e.getMessage());
+            } catch (ExistsUserException e) {
+                throw new RuntimeException(e);
             }
-        }
+    }
     }
 
 
