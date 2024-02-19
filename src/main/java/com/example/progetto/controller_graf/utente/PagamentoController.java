@@ -1,10 +1,7 @@
 package com.example.progetto.controller_graf.utente;
 
 import com.example.progetto.Applicazione;
-import com.example.progetto.exception.AlreadyPrenotedException;
-import com.example.progetto.exception.CardNotTrueException;
-import com.example.progetto.exception.NotValidCouponException;
-import com.example.progetto.exception.PlacesTerminatedException;
+import com.example.progetto.exception.*;
 import com.example.progetto.bean.BookBean;
 import com.example.progetto.bean.BuonoBean;
 import com.example.progetto.bean.TripBean;
@@ -12,11 +9,15 @@ import com.example.progetto.controller_app.BookTripController;
 import com.example.progetto.controller_app.PagamentoControllerApp;
 import com.example.progetto.pattern.factory.BeanFactory;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -131,7 +132,22 @@ public class PagamentoController {
             alert.setHeaderText(null);
             alert.setContentText("Coupon non valido");
             alert.showAndWait();
+            buono.setText(null);
         }
+
+    }
+    @FXML
+    public void info() throws IOException, SQLException, ExistsUserException {
+        FXMLLoader infoLoader = new FXMLLoader(Applicazione.class.getResource("view1/utente/info_user.fxml"));
+        Parent inforoot = infoLoader.load();
+        Scene myTripScene = new Scene(inforoot);
+        InfoUserController infoController = infoLoader.getController();
+        infoController.setMain(main);
+        infoController.setUser(currentUser);
+        infoController.setInfo();
+        Stage stage = main.getStage();
+        stage.setTitle("I miei viaggi");
+        stage.setScene(myTripScene);
 
     }
 }

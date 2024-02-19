@@ -95,7 +95,7 @@ public class ViewTripController {
     }
 
     @FXML
-    public void ricercaCitta() throws SQLException, IOException {
+    public void ricercaCitta() throws SQLException, IOException, FailedSearchException {
         String citta = cercaCitta.getText();
         SearchBean searchBean = new SearchBean();
         searchBean.setCitta(citta);
@@ -118,11 +118,12 @@ public class ViewTripController {
             }
 
         } catch (FailedSearchException e) {
-            Alert alert=new Alert(Alert.AlertType.ERROR);
+            Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Errore");
             alert.setHeaderText(null);
             alert.setContentText(e.getMessage());
             alert.showAndWait();
+            cercaCitta.setText(null);
         }
 
 
