@@ -14,9 +14,6 @@ import com.example.progetto.model.Trip;
 import com.example.progetto.model.User;
 import com.example.progetto.model.UserTrip;
 import com.example.progetto.pattern.factory.BeanFactory;
-import javafx.scene.image.Image;
-
-import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -32,18 +29,24 @@ public class BookTripController {
         while ((trip = tripdao.execute(i)) != null) {
             i++;
 
-            TripBean tripBean = new TripBean(trip.getAvailable(), trip.getCity(), trip.getDataAnd(), trip.getDataRit(), trip.getPrice(), trip.getImage(), trip.getId());
+            TripBean tripBean = new TripBean(trip.getAvailable(), trip.getCity(), trip.getDataAnd()
+                    , trip.getDataRit(), trip.getPrice(), trip.getImage(), trip.getId());
             viaggi.add(tripBean);
         }
         return viaggi;
     }
 
     public void bookTrip(BookBean booking) throws SQLException, IOException, PlacesTerminatedException, AlreadyPrenotedException {
-        TripDAO tripdao = new TripDAO();
-        UserDAO userdao = new UserDAO();
-        User utente = userdao.execute(booking.getUsername());
-        Trip trip = tripdao.execute(booking.getTripId());
-        UserTrip usertrip = new UserTrip();
+        TripDAO tripdao;
+        tripdao=new TripDAO();
+        UserDAO userdao;
+        userdao=new UserDAO();
+        User utente;
+        utente=userdao.execute(booking.getUsername());
+        Trip trip;
+        trip=tripdao.execute(booking.getTripId());
+        UserTrip usertrip;
+        usertrip=new UserTrip();
         usertrip.setIdTrip(trip.getId());
         usertrip.setUsername(utente.getUsername());
         if(WRITER.equals("dbms")){
@@ -82,19 +85,25 @@ public class BookTripController {
 
 
     public List<TripBean> getTripUser(BeanFactory utente) throws SQLException, IOException {
-        TripDAO tripDAO = new TripDAO();
-        List<Trip> trip = tripDAO.tripUser(utente);
-        List<TripBean> tripBeanList = new ArrayList<>();
+        TripDAO tripDAO;
+        tripDAO=new TripDAO();
+        List<Trip> trip;
+        trip=tripDAO.tripUser(utente);
+        List<TripBean> tripBeanList;
+        tripBeanList=new ArrayList<>();
         for (Trip value : trip) {
 
-            TripBean tripBean = new TripBean(value.getCity(), value.getAvailable(), value.getDataAnd(), value.getDataRit(), value.getPrice(), value.getImage(), value.isStato());
+            TripBean tripBean;
+            tripBean=new TripBean(value.getCity(), value.getAvailable(), value.getDataAnd(), value.getDataRit(), value.getPrice(), value.getImage(), value.isStato());
             tripBeanList.add(tripBean);
         }
         return tripBeanList;
     }
     public List<TripBean> searchByCity(SearchBean searchBean) throws SQLException, IOException, FailedSearchException {
-        TripDAO tripdao = new TripDAO();
-        List<TripBean> trips = new ArrayList<>();
+        TripDAO tripdao;
+        tripdao=new TripDAO();
+        List<TripBean> trips;
+        trips=new ArrayList<>();
         List<Trip> viaggi;
         viaggi=tripdao.searchTrip(searchBean);
         if(viaggi.isEmpty()){
@@ -102,7 +111,8 @@ public class BookTripController {
         }
         for (Trip trip:viaggi) {
 
-            TripBean tripBean = new TripBean(trip.getAvailable(), trip.getCity(), trip.getDataAnd(), trip.getDataRit(), trip.getPrice(), trip.getImage(), trip.getId());
+            TripBean tripBean;
+            tripBean=new TripBean(trip.getAvailable(), trip.getCity(), trip.getDataAnd(), trip.getDataRit(), trip.getPrice(), trip.getImage(), trip.getId());
             trips.add(tripBean);
         }
         return trips;

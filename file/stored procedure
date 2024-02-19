@@ -1,0 +1,255 @@
+CREATE DEFINER=`root`@`localhost` PROCEDURE `AddTrip`(
+    IN p_città VARCHAR(45),
+    IN p_disponibile INT,
+    IN p_andata DATE,
+    IN p_ritorno DATE,
+    IN p_prezzo INT,
+    IN p_immagine LONGBLOB
+)
+BEGIN
+    INSERT INTO trip (city,available,data_and,data_rit,price,image) VALUES (p_città,p_disponibile,p_andata,p_ritorno,p_prezzo,p_immagine);
+END
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+CREATE DEFINER=`root`@`localhost` PROCEDURE `CheckUser`(
+IN usernameInput VARCHAR(255),
+ OUT userExists INT
+ )
+BEGIN
+    DECLARE count INT;
+
+    SELECT COUNT(*) INTO count FROM user WHERE Username = usernameInput;
+
+    IF count > 0 THEN
+        SET userExists = 1;
+    ELSE
+        SET userExists = 0;
+    END IF;
+END
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+CREATE DEFINER=`root`@`localhost` PROCEDURE `CheckUserTrip`(
+    IN id INT, -- Input: l'username per il quale ottenere la password
+    IN username VARCHAR(255), -- Output: la password corrispondente
+    OUT righe INT
+)
+BEGIN
+SELECT COUNT(*) INTO righe
+FROM user_has_trip
+WHERE trip_tripid = id AND UsernameUser = username;
+SELECT righe;
+END
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+CREATE DEFINER=`root`@`localhost` PROCEDURE `decrementa`(
+IN id INT
+)
+BEGIN
+UPDATE trip
+SET available= available - 1
+WHERE tripid=id;
+END
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+CREATE DEFINER=`root`@`localhost` PROCEDURE `decrementa`(
+IN id INT
+)
+BEGIN
+UPDATE trip
+SET available= available - 1
+WHERE tripid=id;
+END
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+CREATE DEFINER=`root`@`localhost` PROCEDURE `GetBuono`(
+    IN in_codice VARCHAR(45),
+    OUT out_valore INT
+)
+BEGIN
+    SELECT valore
+    INTO out_valore
+    FROM buono
+    WHERE codice = in_codice;
+END
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+CREATE DEFINER=`root`@`localhost` PROCEDURE `GetPassword`(
+    IN in_username VARCHAR(255), -- Input: l'username per il quale ottenere la password
+    OUT out_password VARCHAR(255) -- Output: la password corrispondente
+)
+BEGIN
+    SELECT password
+    INTO out_password
+    FROM user
+    WHERE Username = in_username;
+END
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+CREATE DEFINER=`root`@`localhost` PROCEDURE `GetPasswordAgenzia`(
+    IN in_username VARCHAR(255), -- Input: l'username per il quale ottenere la password
+    OUT out_password VARCHAR(255) -- Output: la password corrispondente
+)
+BEGIN
+    SELECT password
+    INTO out_password
+    FROM credenziali_agenzia
+    WHERE nome_agenzia = in_username;
+END
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+CREATE DEFINER=`root`@`localhost` PROCEDURE `GetTripDetailsByCity`(
+    IN citta VARCHAR(255)
+)
+BEGIN
+DECLARE done INT DEFAULT FALSE;
+    DECLARE price_value float;
+    DECLARE date_and_value DATE;
+    DECLARE available_value INT;
+    DECLARE image_value LONGBLOB;
+    DECLARE data_rit_value DATE;
+    -- Seleziona gli attributi dalla tabella utilizzando l'id di input
+        DECLARE cur CURSOR FOR
+    SELECT `price`,`data_and`,`available`,`image`,`data_rit`
+    FROM trip
+    WHERE city=citta;
+        DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = TRUE;
+     DROP TEMPORARY TABLE IF EXISTS `Trips`;
+    CREATE TEMPORARY TABLE `Trips` (
+        `prezzo` FLOAT,
+        `data_and` DATE,
+        `data_rit`DATE,
+        `disp` INT,
+        `imagine` LONGBLOB
+    );
+    OPEN cur;
+    read_loop: LOOP
+        FETCH cur INTO price_value,date_and_value,available_value,image_value,data_rit_value;
+        IF done THEN
+            LEAVE read_loop;
+        END IF;
+                INSERT INTO `Trips` VALUES (price_value,date_and_value,data_rit_value,available_value,image_value);
+    END LOOP;
+    CLOSE cur;
+
+    SELECT * FROM `Trips`;
+
+    COMMIT;
+
+END
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+CREATE DEFINER=`root`@`localhost` PROCEDURE `GetTripDetailsById`(
+    IN trip_value INT,
+    OUT city_value VARCHAR(255),
+    OUT price_value float,
+    OUT date_and_value DATE,
+    OUT available_value INT,
+    OUT image_value LONGBLOB,
+    OUT data_rit_value DATE
+)
+BEGIN
+    -- Seleziona gli attributi dalla tabella utilizzando l'id di input
+    SELECT city, price, data_and, available, image, data_rit
+    INTO  city_value, price_value, date_and_value, available_value, image_value, data_rit_value
+    FROM trip
+    WHERE tripid = trip_value;
+
+END
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+CREATE DEFINER=`root`@`localhost` PROCEDURE `GetTripDetailsByUsername`(
+    IN username VARCHAR(255)
+)
+BEGIN
+DECLARE done INT DEFAULT FALSE;
+    DECLARE city_value VARCHAR(255);
+    DECLARE price_value float;
+    DECLARE date_and_value DATE;
+    DECLARE available_value INT;
+    DECLARE image_value LONGBLOB;
+    DECLARE data_rit_value DATE;
+    DECLARE stato BIT;
+    -- Seleziona gli attributi dalla tabella utilizzando l'id di input
+        DECLARE cur CURSOR FOR
+    SELECT `city`,`price`,`data_and`,`available`,`image`,`data_rit`,`state`
+    FROM user_has_trip left join trip on tripid=trip_tripid
+    WHERE UsernameUser=username;
+        DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = TRUE;
+     DROP TEMPORARY TABLE IF EXISTS `TripUser`;
+    CREATE TEMPORARY TABLE `TripUser` (
+        `citta` VARCHAR(255),
+        `prezzo` FLOAT,
+        `data_and` DATE,
+        `data_rit`DATE,
+        `disp` INT,
+        `imagine` LONGBLOB,
+        `stato` BIT
+    );
+    SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+    START TRANSACTION;
+    OPEN cur;
+    read_loop: LOOP
+        FETCH cur INTO city_value,price_value,date_and_value,available_value,image_value,data_rit_value,stato;
+        IF done THEN
+            LEAVE read_loop;
+        END IF;
+                INSERT INTO `TripUser` VALUES (city_value,price_value,date_and_value,data_rit_value,available_value,image_value,stato);
+    END LOOP;
+    CLOSE cur;
+
+    SELECT * FROM `TripUser`;
+
+    COMMIT;
+
+END
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+CREATE DEFINER=`root`@`localhost` PROCEDURE `GetTripStatus`(
+    IN id INT
+)
+BEGIN
+    DECLARE done INT DEFAULT FALSE;
+    DECLARE stato BIT;
+    DECLARE username VARCHAR(45);
+
+    DECLARE cur CURSOR FOR
+    SELECT `state`, `UsernameUser`
+    FROM user_has_trip
+    WHERE trip_tripid = id;
+
+    DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = TRUE;
+
+    DROP TEMPORARY TABLE IF EXISTS `userstate`;
+    CREATE TEMPORARY TABLE `userstate` (
+        `stato` BIT,
+        `username` VARCHAR(45)
+    );
+
+    OPEN cur;
+    read_loop: LOOP
+        FETCH cur INTO stato, username;
+        IF done THEN
+            LEAVE read_loop;
+        END IF;
+        INSERT INTO `userstate` VALUES (stato, username);
+    END LOOP;
+    CLOSE cur;
+
+
+    SELECT * FROM `userstate`;
+END
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SetTrip`(
+    IN id INT, -- Input: l'username per il quale ottenere la password
+    IN username VARCHAR(255) -- Output: la password corrispondente
+)
+BEGIN
+INSERT INTO user_has_trip (UsernameUser,trip_tripid,state)
+VALUES (username, id,0);
+END
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SetUser`(
+IN username VARCHAR(45),
+IN in_password VARCHAR(45)
+)
+BEGIN
+INSERT INTO user (Username,password)
+VALUES (username, in_password);
+END
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+CREATE DEFINER=`root`@`localhost` PROCEDURE `UpdateTripStatus`(
+	IN id INT,
+    IN username VARCHAR(255)
+)
+BEGIN
+	UPDATE user_has_trip SET state = true WHERE UsernameUser = username AND trip_tripid = id;
+END

@@ -12,7 +12,8 @@ import java.time.LocalDate;
 
 public class PagamentoControllerApp {
     public BuonoBean checkBuono(BuonoBean buonobean) throws SQLException, IOException, NotValidCouponException {
-        BuonoDAO buonoDAO=new BuonoDAO();
+        BuonoDAO buonoDAO;
+        buonoDAO=new BuonoDAO();
         Buono buono;
         try{
             buono=buonoDAO.execute(buonobean);

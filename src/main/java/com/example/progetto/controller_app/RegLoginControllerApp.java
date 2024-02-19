@@ -20,7 +20,8 @@ public class RegLoginControllerApp {
         currentUser=user;
     }
     public void loginUtente() throws SQLException, IOException, CredentialErrorException {
-        UserDAO dao=new UserDAO();
+        UserDAO dao;
+        dao=new UserDAO();
         User utente;
             utente= dao.execute(currentUser.getUsername());
         if (!currentUser.getPassword().equals(utente.getPassword())){
@@ -30,7 +31,8 @@ public class RegLoginControllerApp {
     }
 
     public void loginAgenzia() throws SQLException, IOException, CredentialErrorException {
-        AgencyDAO dao = new AgencyDAO();
+        AgencyDAO dao;
+        dao= new AgencyDAO();
         Agency agenzia;
             agenzia = dao.execute(currentUser.getUsername());
         if (!currentUser.getPassword().equals(agenzia.getPassword()))
@@ -44,8 +46,10 @@ public void registrazione() throws PasswordIllegalException, SQLException, IOExc
         if (password.length()<8){
             throw new PasswordIllegalException("password non valida, inserire almeno 8 caratteri");
         }
-        UserDAO userDAO=new UserDAO();
-        User userVero=new User();
+        UserDAO userDAO;
+        userDAO=new UserDAO();
+        User userVero;
+        userVero=new User();
         userVero.setUser(username);
         userVero.setPassword(password);
         userDAO.registrazione(userVero);
