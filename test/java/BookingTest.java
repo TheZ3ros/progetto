@@ -15,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  */
 
 /**
- Il seguente test verifica se le informazioni prese dal db tramite il meotodo showtrip esegue correttamente l'interrogazione
+ Il seguente test verifica che il metodo showtrip esegua correttamente l'interrogazione
  al database per le informazioni su un viaggio
  */
 public class BookingTest {

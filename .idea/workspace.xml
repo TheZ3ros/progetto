@@ -7,7 +7,8 @@
     <list default="true" id="abd72b32-f6c1-4b42-a1d9-4297dd975b52" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/utente/PagamentoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/utente/PagamentoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BookingTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/BookingTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/utente/ViewTripController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/utente/ViewTripController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/exception/FailedSearchException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/exception/FailedSearchException.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,10 +153,7 @@
       <workItem from="1708079122942" duration="11923000" />
       <workItem from="1708164428366" duration="15001000" />
       <workItem from="1708355889241" duration="728000" />
-      <workItem from="1708367983128" duration="10294000" />
-      <workItem from="1708422244373" duration="416000" />
-      <workItem from="1708422795853" duration="1157000" />
-      <workItem from="1708427769429" duration="1056000" />
+      <workItem from="1708367983128" duration="9584000" />
     </task>
     <task id="LOCAL-00001" summary="Prova">
       <option name="closed" value="true" />
@@ -533,15 +531,7 @@
       <option name="project" value="LOCAL" />
       <updated>1708374695124</updated>
     </task>
-    <task id="LOCAL-00048" summary="exception gestite">
-      <option name="closed" value="true" />
-      <created>1708377979143</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1708377979143</updated>
-    </task>
-    <option name="localTasksCounter" value="49" />
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -583,8 +573,7 @@
     <MESSAGE value="Ultime modifiche (implementata classe Printer e controlli vari)" />
     <MESSAGE value="code smell" />
     <MESSAGE value="registrtazione" />
-    <MESSAGE value="exception gestite" />
-    <option name="LAST_COMMIT_MESSAGE" value="exception gestite" />
+    <option name="LAST_COMMIT_MESSAGE" value="registrtazione" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
