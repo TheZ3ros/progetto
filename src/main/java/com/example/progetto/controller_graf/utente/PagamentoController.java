@@ -97,6 +97,7 @@ public class PagamentoController {
             alert.setHeaderText(null);
             alert.setContentText(e.getMessage());
             alert.showAndWait();
+            numero.setText(null);
         } catch (PlacesTerminatedException e) {
             Alert alert2=new Alert(Alert.AlertType.ERROR);
             alert2.setTitle(ACTION);
