@@ -11,6 +11,10 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class SearchTest {
+    /*
+    * Test author: Podda Alessandro
+    * MATRICOLA: 0316851
+    * */
 
     @Test
     public void searchtest() throws SQLException, FailedSearchException, IOException {
