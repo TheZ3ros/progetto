@@ -4,18 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="abd72b32-f6c1-4b42-a1d9-4297dd975b52" name="Changes" comment="code smell (con aggiunta di altre exception anche in commit precedenti)">
-      <change afterPath="$PROJECT_DIR$/src/test/java/SearchTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/StatusVisualizerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/TripCreationTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ef164cb4-3b91-4025-9266-42b4f81bb44a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/ef164cb4-3b91-4025-9266-42b4f81bb44a.xml" afterDir="false" />
+    <list default="true" id="abd72b32-f6c1-4b42-a1d9-4297dd975b52" name="Changes" comment="test">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BookingTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BookingTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/CouponTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CouponTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/TestLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestLogin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/BookingTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/java/BookingTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/CouponTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/java/CouponTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/SearchTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/java/SearchTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/StatusVisualizerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/java/StatusVisualizerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/java/TestLogin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TripCreationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/java/TripCreationTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,11 +84,11 @@
       <recent name="C:\Users\Proprietario\Desktop\java\progetto1\src\main\resources\com\example\progetto\css" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\AsD\IdeaProjects\ipsw" />
       <recent name="C:\Users\AsD\IdeaProjects\ipsw\src\test\java" />
       <recent name="C:\Users\AsD\IdeaProjects\ipsw\src" />
       <recent name="C:\Users\Proprietario\Desktop\java\progetto\src\main\resources\com\example\progetto\view1\utente" />
       <recent name="C:\Users\Proprietario\Desktop\java\progetto\src\main\resources\com\example\progetto\view1" />
-      <recent name="C:\Users\Proprietario\Desktop\java\progetto\src\main\resources\com\example\progetto\view1\agenzia" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Applicazione">
@@ -182,22 +178,6 @@
       <workItem from="1708079122942" duration="11923000" />
       <workItem from="1708164428366" duration="15001000" />
       <workItem from="1708355889241" duration="728000" />
-    </task>
-    <task id="LOCAL-00002" summary="Prova">
-      <option name="closed" value="true" />
-      <created>1704475434816</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1704475434816</updated>
-    </task>
-    <task id="LOCAL-00003" summary="sonar">
-      <option name="closed" value="true" />
-      <created>1704477027057</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1704477027057</updated>
     </task>
     <task id="LOCAL-00004" summary="home">
       <option name="closed" value="true" />
@@ -575,7 +555,23 @@
       <option name="project" value="LOCAL" />
       <updated>1708366682408</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="test">
+      <option name="closed" value="true" />
+      <created>1708437181247</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1708437181247</updated>
+    </task>
+    <task id="LOCAL-00052" summary="test">
+      <option name="closed" value="true" />
+      <created>1708437502559</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1708437502559</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -617,7 +613,8 @@
     <MESSAGE value="Ultime modifiche (implementata classe Printer e controlli vari)" />
     <MESSAGE value="code smell" />
     <MESSAGE value="code smell (con aggiunta di altre exception anche in commit precedenti)" />
-    <option name="LAST_COMMIT_MESSAGE" value="code smell (con aggiunta di altre exception anche in commit precedenti)" />
+    <MESSAGE value="test" />
+    <option name="LAST_COMMIT_MESSAGE" value="test" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
