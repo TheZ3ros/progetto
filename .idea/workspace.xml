@@ -4,11 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="abd72b32-f6c1-4b42-a1d9-4297dd975b52" name="Changes" comment="">
+    <list default="true" id="abd72b32-f6c1-4b42-a1d9-4297dd975b52" name="Changes" comment="code smell (con aggiunta di altre exception anche in commit precedenti)">
+      <change afterPath="$PROJECT_DIR$/src/test/java/SearchTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/StatusVisualizerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/TripCreationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ef164cb4-3b91-4025-9266-42b4f81bb44a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/ef164cb4-3b91-4025-9266-42b4f81bb44a.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/utente/PagamentoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/utente/PagamentoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/utente/ViewTripController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/utente/ViewTripController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/exception/FailedSearchException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto/exception/FailedSearchException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/BookingTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BookingTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/CouponTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CouponTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/TestLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestLogin.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,14 +88,14 @@
       <recent name="C:\Users\Proprietario\Desktop\java\progetto1\src\main\resources\com\example\progetto\css" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\AsD\IdeaProjects\ipsw\src\test\java" />
+      <recent name="C:\Users\AsD\IdeaProjects\ipsw\src" />
       <recent name="C:\Users\Proprietario\Desktop\java\progetto\src\main\resources\com\example\progetto\view1\utente" />
       <recent name="C:\Users\Proprietario\Desktop\java\progetto\src\main\resources\com\example\progetto\view1" />
       <recent name="C:\Users\Proprietario\Desktop\java\progetto\src\main\resources\com\example\progetto\view1\agenzia" />
-      <recent name="C:\Users\Proprietario\Desktop\java\progetto\src\main\resources\com\example\progetto\popup" />
-      <recent name="C:\Users\Proprietario\Desktop\java\progetto1\src\main\resources\com\example\progetto\css" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Applicazione">
     <configuration name="Applicazione" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.progetto.Applicazione" />
       <module name="progetto" />
@@ -102,9 +109,31 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="BookingTest.voh" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="progetto" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="BookingTest" />
+      <option name="METHOD_NAME" value="voh" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StatusVisualizerTest.statusvisualizertest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="progetto" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="StatusVisualizerTest" />
+      <option name="METHOD_NAME" value="statusvisualizertest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Applicazione" />
+        <item itemvalue="JUnit.StatusVisualizerTest.statusvisualizertest" />
+        <item itemvalue="JUnit.BookingTest.voh" />
       </list>
     </recent_temporary>
   </component>
@@ -153,15 +182,6 @@
       <workItem from="1708079122942" duration="11923000" />
       <workItem from="1708164428366" duration="15001000" />
       <workItem from="1708355889241" duration="728000" />
-      <workItem from="1708367983128" duration="9584000" />
-    </task>
-    <task id="LOCAL-00001" summary="Prova">
-      <option name="closed" value="true" />
-      <created>1704475404826</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1704475404826</updated>
     </task>
     <task id="LOCAL-00002" summary="Prova">
       <option name="closed" value="true" />
@@ -507,31 +527,55 @@
       <option name="project" value="LOCAL" />
       <updated>1708364275438</updated>
     </task>
-    <task id="LOCAL-00045" summary="registrtazione">
+    <task id="LOCAL-00045" summary="code smell">
       <option name="closed" value="true" />
-      <created>1708369697558</created>
+      <created>1708365940577</created>
       <option name="number" value="00045" />
       <option name="presentableId" value="LOCAL-00045" />
       <option name="project" value="LOCAL" />
-      <updated>1708369697558</updated>
+      <updated>1708365940577</updated>
     </task>
-    <task id="LOCAL-00046" summary="registrtazione">
+    <task id="LOCAL-00046" summary="code smell">
       <option name="closed" value="true" />
-      <created>1708374600531</created>
+      <created>1708366100749</created>
       <option name="number" value="00046" />
       <option name="presentableId" value="LOCAL-00046" />
       <option name="project" value="LOCAL" />
-      <updated>1708374600531</updated>
+      <updated>1708366100749</updated>
     </task>
-    <task id="LOCAL-00047" summary="registrtazione">
+    <task id="LOCAL-00047" summary="code smell (con aggiunta di altre exception anche in commit precedenti)">
       <option name="closed" value="true" />
-      <created>1708374695124</created>
+      <created>1708366348312</created>
       <option name="number" value="00047" />
       <option name="presentableId" value="LOCAL-00047" />
       <option name="project" value="LOCAL" />
-      <updated>1708374695124</updated>
+      <updated>1708366348312</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="code smell (con aggiunta di altre exception anche in commit precedenti)">
+      <option name="closed" value="true" />
+      <created>1708366447046</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1708366447046</updated>
+    </task>
+    <task id="LOCAL-00049" summary="code smell (con aggiunta di altre exception anche in commit precedenti)">
+      <option name="closed" value="true" />
+      <created>1708366522281</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1708366522281</updated>
+    </task>
+    <task id="LOCAL-00050" summary="code smell (con aggiunta di altre exception anche in commit precedenti)">
+      <option name="closed" value="true" />
+      <created>1708366682408</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1708366682408</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -572,8 +616,8 @@
     <MESSAGE value="aggiornamento prenotazioni lato agenzia con query funzionante" />
     <MESSAGE value="Ultime modifiche (implementata classe Printer e controlli vari)" />
     <MESSAGE value="code smell" />
-    <MESSAGE value="registrtazione" />
-    <option name="LAST_COMMIT_MESSAGE" value="registrtazione" />
+    <MESSAGE value="code smell (con aggiunta di altre exception anche in commit precedenti)" />
+    <option name="LAST_COMMIT_MESSAGE" value="code smell (con aggiunta di altre exception anche in commit precedenti)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -592,9 +636,9 @@
           <option name="timeStamp" value="31" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/progetto/dao/UserDAO.java</url>
-          <line>89</line>
-          <option name="timeStamp" value="51" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/progetto/dao/BuonoDAO.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="46" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
