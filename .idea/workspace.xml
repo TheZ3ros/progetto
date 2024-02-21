@@ -97,7 +97,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Applicazione">
+  <component name="RunManager" selected="JUnit.BookingTest.bookinTest">
     <configuration name="Applicazione" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.progetto.Applicazione" />
       <module name="progetto" />
@@ -171,8 +171,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Applicazione" />
         <item itemvalue="JUnit.BookingTest.bookinTest" />
+        <item itemvalue="Application.Applicazione" />
         <item itemvalue="JUnit.TripCreationTest.tripcreationtest" />
         <item itemvalue="JUnit.CouponTest.ViewTripTest" />
         <item itemvalue="JUnit.BookingTest.bookinTest (1)" />
