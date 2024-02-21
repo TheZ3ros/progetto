@@ -1,6 +1,8 @@
 package com.example.progetto.model;
 
-public class TripStatus {
+import com.example.progetto.pattern.decorator.UserTripInterface;
+
+public class TripStatus implements UserTripInterface {
     private final boolean status;
     private final String username;
 
