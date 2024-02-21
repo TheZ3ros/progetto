@@ -6,8 +6,6 @@ import com.example.progetto.exception.AlreadyPrenotedException;
 import com.example.progetto.exception.ExistsUserException;
 import com.example.progetto.exception.PasswordIllegalException;
 import com.example.progetto.exception.PlacesTerminatedException;
-import com.example.progetto.pattern.factory.BeanFactory;
-import com.example.progetto.pattern.factory.Factory;
 
 import java.util.Scanner;
 

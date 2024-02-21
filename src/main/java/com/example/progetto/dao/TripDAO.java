@@ -1,7 +1,8 @@
 package com.example.progetto.dao;
 import com.example.progetto.bean.SearchBean;
+import com.example.progetto.bean.UserBean;
 import com.example.progetto.model.Trip;
-import com.example.progetto.pattern.factory.BeanFactory;
+import com.example.progetto.pattern.factory.EntityFactory;
 
 import java.io.IOException;
 import java.sql.*;
@@ -73,9 +74,7 @@ public class TripDAO implements GenericDAO<Trip> {
         }
     }
 
-    public List<Trip> tripUser(BeanFactory utente) throws SQLException {
-            String username;
-            username=utente.getUsername();
+    public List<Trip> tripUser(String username) throws SQLException {
         List<Trip> trip=new ArrayList<>();
         try (CallableStatement cs = connection.getConn().prepareCall("{call GetTripDetailsByUsername(?)}")){
             cs.setString(1,username);
@@ -101,10 +100,10 @@ public class TripDAO implements GenericDAO<Trip> {
         }
         return trip;
     }
-    public List<Trip> searchTrip(SearchBean searchBean) throws SQLException {
+    public List<Trip> searchTrip(String search) throws SQLException {
         List<Trip> trip=new ArrayList<>();
         try (CallableStatement cs = connection.getConn().prepareCall("{call GetTripDetailsByCity(?)}")){
-            cs.setString(1, searchBean.getCitta());
+            cs.setString(1, search);
             boolean status = cs.execute();
             if (status) {
                 ResultSet rs = cs.getResultSet();
@@ -114,7 +113,7 @@ public class TripDAO implements GenericDAO<Trip> {
                     Date dataRit=rs.getDate(3);
                     int available=rs.getInt(4);
                     byte[] image=rs.getBytes(5);
-                    Trip trips =new Trip(available, searchBean.getCitta(), dataA,dataRit,prezzo,image);
+                    Trip trips =new Trip(available, search, dataA,dataRit,prezzo,image);
                     trip.add(trips);
                 }
 

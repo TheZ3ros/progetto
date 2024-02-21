@@ -1,9 +1,10 @@
 package view2.agency;
 
+import com.example.progetto.bean.AgencyBean;
 import com.example.progetto.bean.TripBean;
 import com.example.progetto.controller_app.BookTripController;
 import com.example.progetto.exception.NotValidCouponException;
-import com.example.progetto.pattern.factory.BeanFactory;
+import com.example.progetto.pattern.factory.EntityFactory;
 import view2.Printer;
 
 import java.io.IOException;
@@ -12,9 +13,9 @@ import java.util.List;
 import java.util.Scanner;
 
 public class AgencyTripsCLI {
-    private final BeanFactory currentAgency;
+    private final AgencyBean currentAgency;
 
-    public AgencyTripsCLI(BeanFactory currentAgency){this.currentAgency=currentAgency;}
+    public AgencyTripsCLI(AgencyBean currentAgency){this.currentAgency=currentAgency;}
 
     public void start(HomeAgencyCLI home) throws SQLException, IOException, NotValidCouponException {
         Scanner scanner = new Scanner(System.in);

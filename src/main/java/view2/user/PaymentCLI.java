@@ -3,10 +3,11 @@ package view2.user;
 import com.example.progetto.bean.BookBean;
 import com.example.progetto.bean.BuonoBean;
 import com.example.progetto.bean.TripBean;
+import com.example.progetto.bean.UserBean;
 import com.example.progetto.controller_app.BookTripController;
 import com.example.progetto.controller_app.PagamentoControllerApp;
 import com.example.progetto.exception.*;
-import com.example.progetto.pattern.factory.BeanFactory;
+import com.example.progetto.pattern.factory.EntityFactory;
 import view2.Printer;
 
 import java.io.IOException;
@@ -16,8 +17,8 @@ import java.util.Scanner;
 
 public class PaymentCLI {
     private final TripBean trip;
-    private final BeanFactory user;
-    PaymentCLI(TripBean trip, BeanFactory user){
+    private final UserBean user;
+    PaymentCLI(TripBean trip, UserBean user){
         this.trip =trip;
         this.user=user;
     }

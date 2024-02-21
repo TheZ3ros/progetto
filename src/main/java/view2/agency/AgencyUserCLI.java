@@ -1,10 +1,10 @@
 package view2.agency;
 
+import com.example.progetto.bean.AgencyBean;
 import com.example.progetto.controller_app.RegLoginControllerApp;
 import com.example.progetto.exception.CredentialErrorException;
 import com.example.progetto.exception.NotValidCouponException;
-import com.example.progetto.pattern.factory.BeanFactory;
-import com.example.progetto.pattern.factory.Factory;
+import com.example.progetto.pattern.factory.EntityFactory;
 import view2.Printer;
 
 import java.io.IOException;
@@ -20,8 +20,7 @@ public class AgencyUserCLI {
         String username = scanner.nextLine();
         Printer.printMessage("inserire password");
         String password= scanner.nextLine();
-        Factory factory=new Factory();
-        BeanFactory agencyBean= factory.createBean(2);
+        AgencyBean agencyBean=new AgencyBean();
         agencyBean.setPassword(password);
         agencyBean.setUsername(username);
 

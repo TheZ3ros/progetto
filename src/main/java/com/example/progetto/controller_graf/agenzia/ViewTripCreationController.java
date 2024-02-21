@@ -1,12 +1,13 @@
 package com.example.progetto.controller_graf.agenzia;
 
 import com.example.progetto.Applicazione;
+import com.example.progetto.bean.AgencyBean;
 import com.example.progetto.bean.TripBean;
 import com.example.progetto.controller_app.CreateTripController;
 import com.example.progetto.exception.DateNotValidException;
 import com.example.progetto.exception.EmptystatementException;
 import com.example.progetto.exception.SQLStatementException;
-import com.example.progetto.pattern.factory.BeanFactory;
+import com.example.progetto.pattern.factory.EntityFactory;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -38,7 +39,7 @@ public class ViewTripCreationController {
     private Applicazione main;
     private String imagePath;
     private byte[] imageBytes;
-    private BeanFactory currentUser;
+    private AgencyBean currentUser;
     @FXML
     private Button agency;
     @FXML
@@ -60,7 +61,7 @@ public class ViewTripCreationController {
         this.main = main;
     }
 
-    public void setUser(BeanFactory utente){
+    public void setUser(AgencyBean utente){
 
         currentUser=utente;
     }

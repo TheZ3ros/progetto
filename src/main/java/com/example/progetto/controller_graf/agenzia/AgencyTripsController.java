@@ -1,9 +1,10 @@
 package com.example.progetto.controller_graf.agenzia;
 
 import com.example.progetto.Applicazione;
+import com.example.progetto.bean.AgencyBean;
 import com.example.progetto.bean.TripBean;
 import com.example.progetto.controller_app.BookTripController;
-import com.example.progetto.pattern.factory.BeanFactory;
+import com.example.progetto.pattern.factory.EntityFactory;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -21,7 +22,7 @@ public class AgencyTripsController {
     @FXML
     private Button agency;
     private Applicazione main;
-    private BeanFactory currentUser;
+    private AgencyBean currentUser;
     @FXML
     private ListView<VBox> listaview;
 
@@ -35,7 +36,7 @@ public class AgencyTripsController {
         main.vaiAHome();
     }
 
-    public void setUser(BeanFactory utente){
+    public void setUser(AgencyBean utente){
 
         currentUser=utente;
     }
@@ -62,7 +63,7 @@ public class AgencyTripsController {
 
     }
 
-    public void agencyTrips(Applicazione main, BeanFactory currentUser) throws IOException, SQLException {
+    public void agencyTrips(Applicazione main, AgencyBean currentUser) throws IOException, SQLException {
         FXMLLoader agencytripsLoader = new FXMLLoader(Applicazione.class.getResource("view1/agenzia/agencytrips.fxml"));
         Parent agencytripsroot = agencytripsLoader.load();
         Scene agencytripscene = new Scene(agencytripsroot);

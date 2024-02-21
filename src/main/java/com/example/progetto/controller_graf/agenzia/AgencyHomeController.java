@@ -1,7 +1,8 @@
 package com.example.progetto.controller_graf.agenzia;
 
 import com.example.progetto.Applicazione;
-import com.example.progetto.pattern.factory.BeanFactory;
+import com.example.progetto.bean.AgencyBean;
+import com.example.progetto.pattern.factory.EntityFactory;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -16,10 +17,10 @@ public class AgencyHomeController {
     @FXML
     private Button agency;
     private Applicazione main;
-    private BeanFactory currentUser;
+    private AgencyBean currentUser;
 
 
-    public void setUser(BeanFactory utente){
+    public void setUser(AgencyBean utente){
 
         currentUser=utente;
     }

@@ -2,7 +2,8 @@ package com.example.progetto.controller_graf.utente;
 
 import com.example.progetto.Applicazione;
 import com.example.progetto.bean.TripBean;
-import com.example.progetto.pattern.factory.BeanFactory;
+import com.example.progetto.bean.UserBean;
+import com.example.progetto.pattern.factory.EntityFactory;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -18,7 +19,7 @@ import java.io.IOException;
 
 public class ViaggioController {
     private TripBean tripBean;
-    private BeanFactory userFactory;
+    private UserBean userFactory;
     @FXML
     private ImageView imagine;
     @FXML
@@ -35,8 +36,8 @@ public class ViaggioController {
         this.main = main;
     }
 
-    public void setUserFactory(BeanFactory userFactory){
-        this.userFactory = userFactory;
+    public void setUserFactory(UserBean user){
+        this.userFactory = user;
     }
 
     public void createbox(TripBean bean) {

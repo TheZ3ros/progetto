@@ -2,7 +2,8 @@ package com.example.progetto.controller_graf.utente;
 
 import com.example.progetto.Applicazione;
 import com.example.progetto.bean.TripBean;
-import com.example.progetto.pattern.factory.BeanFactory;
+import com.example.progetto.bean.UserBean;
+import com.example.progetto.pattern.factory.EntityFactory;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -32,7 +33,7 @@ public class PageTripController {
     private Text data;
     @FXML
     private Text prezzo;
-    private BeanFactory currentUser;
+    private UserBean currentUser;
 
 
     public void setMain(Applicazione main){
@@ -45,7 +46,7 @@ public class PageTripController {
 
         main.vaiAHome();
     }
-    public void setCurrentUser(BeanFactory currentUser){
+    public void setCurrentUser(UserBean currentUser){
         this.currentUser = currentUser;
     }
     public void setTrip(TripBean trip){

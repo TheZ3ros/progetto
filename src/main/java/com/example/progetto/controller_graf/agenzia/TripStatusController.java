@@ -1,10 +1,11 @@
 package com.example.progetto.controller_graf.agenzia;
 
 import com.example.progetto.Applicazione;
+import com.example.progetto.bean.AgencyBean;
 import com.example.progetto.bean.TripBean;
 import com.example.progetto.bean.TripStatusBean;
 import com.example.progetto.controller_app.GetTripStatusController;
-import com.example.progetto.pattern.factory.BeanFactory;
+import com.example.progetto.pattern.factory.EntityFactory;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
@@ -20,7 +21,7 @@ import java.util.List;
 
 public class TripStatusController {
     private Applicazione main;
-    private BeanFactory thisUser;
+    private AgencyBean thisUser;
     private TripBean currentTrip;
     @FXML
     private ListView<VBox> listaview;
@@ -41,7 +42,7 @@ public class TripStatusController {
         main.vaiAHome();
     }
 
-    public void setThisUser(BeanFactory thisUser){
+    public void setThisUser(AgencyBean thisUser){
         this.thisUser = thisUser;
     }
     public void setTrip(TripBean trip){

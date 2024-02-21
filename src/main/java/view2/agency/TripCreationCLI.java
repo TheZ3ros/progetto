@@ -1,5 +1,6 @@
 package view2.agency;
 
+import com.example.progetto.bean.AgencyBean;
 import com.example.progetto.bean.TripBean;
 import com.example.progetto.controller_app.CreateTripController;
 
@@ -11,14 +12,14 @@ import java.util.Scanner;
 
 import com.example.progetto.controller_graf.agenzia.ViewTripCreationController;
 import com.example.progetto.exception.NotValidCouponException;
-import com.example.progetto.pattern.factory.BeanFactory;
+import com.example.progetto.pattern.factory.EntityFactory;
 import javafx.scene.image.Image;
 import view2.Printer;
 
 public class TripCreationCLI {
-    protected final BeanFactory currentAgency;
+    protected final AgencyBean currentAgency;
 
-    public TripCreationCLI(BeanFactory currentAgency) {
+    public TripCreationCLI(AgencyBean currentAgency) {
         this.currentAgency = currentAgency;
     }
     public void start(HomeAgencyCLI home) throws SQLException, IOException, NotValidCouponException {

@@ -3,10 +3,11 @@ package com.example.progetto.controller_graf.utente;
 import com.example.progetto.Applicazione;
 import com.example.progetto.bean.SearchBean;
 import com.example.progetto.bean.TripBean;
+import com.example.progetto.bean.UserBean;
 import com.example.progetto.controller_app.BookTripController;
 import com.example.progetto.exception.ExistsUserException;
 import com.example.progetto.exception.FailedSearchException;
-import com.example.progetto.pattern.factory.BeanFactory;
+import com.example.progetto.pattern.factory.EntityFactory;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -27,11 +28,11 @@ public class ViewTripController {
     private Applicazione main;
     @FXML
     private ListView<VBox> listaview;
-    private BeanFactory currentUser;
+    private UserBean currentUser;
     @FXML
     private TextField cercaCitta;
 
-    public void setUser(BeanFactory utente) {
+    public void setUser(UserBean utente) {
 
         currentUser = utente;
     }
@@ -74,7 +75,7 @@ public class ViewTripController {
         charge();
     }
 
-    public void viewTrip(Applicazione main, BeanFactory currentUser) throws IOException, SQLException {
+    public void viewTrip(Applicazione main, UserBean currentUser) throws IOException, SQLException {
         FXMLLoader viewtriploader = new FXMLLoader(Applicazione.class.getResource("view1/utente/view_trip.fxml"));
         Parent viewtriproot = viewtriploader.load();
         Scene viewTripScene = new Scene(viewtriproot);

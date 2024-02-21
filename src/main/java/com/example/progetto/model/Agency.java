@@ -1,24 +1,26 @@
 package com.example.progetto.model;
 
-public class Agency {
+import com.example.progetto.pattern.factory.EntityFactory;
+
+public class Agency implements EntityFactory {
 
     private String username;
     private String password;
 
-    public Agency(){
 
-        username =null;
-        password=null;
-    }
-    public void setUser(String user){
+    @Override
+    public void setUsername(String user){
         username =user;
     }
+    @Override
     public void setPassword(String pass){
         password=pass;
     }
+    @Override
     public String getPassword(){
         return password;
     }
+    @Override
     public String getUsername(){
         return username;
     }
