@@ -14,19 +14,25 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.Scanner;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class PaymentCLI {
     private final TripBean trip;
+    private HomeLoginCLI login;
     private final UserBean user;
+    private Timer timer;
     PaymentCLI(TripBean trip, UserBean user){
         this.trip =trip;
         this.user=user;
     }
     public void start(HomeLoginCLI login) throws CardNotTrueException, IOException {
+        this.login=login;
         Scanner scanner = new Scanner(System.in);
         Printer.printMessage("Si vuole inserire un coupon?");
         Printer.printMessage("1- sì");
         Printer.printMessage("2- no");
+        startTimer();
         Scanner reader = new Scanner(System.in);
         int n;
         n = reader.nextInt();
@@ -77,6 +83,26 @@ public class PaymentCLI {
                 throw new RuntimeException(e);
             }
     }
+    private void startTimer() {
+        timer = new Timer();
+        Printer.printMessage("6 minuti per concludere il pagamento");
+        TimerTask task = new TimerTask() {
+            public void run() {
+                System.out.println("Il tempo è scaduto!");
+                try {
+                    login.start();
+                } catch (SQLException | IOException | PlacesTerminatedException | AlreadyPrenotedException |
+                         ExistsUserException e) {
+                    throw new RuntimeException(e);
+                }
+
+            }
+        };
+
+        long delay = 600000;
+        timer.schedule(task, delay);
     }
+}
+
 
 

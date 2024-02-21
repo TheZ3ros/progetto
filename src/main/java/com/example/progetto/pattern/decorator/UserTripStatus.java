@@ -1,4 +1,4 @@
-package com.example.progetto.model;
+package com.example.progetto.pattern.decorator;
 
 import com.example.progetto.pattern.decorator.UserTripInterface;
 

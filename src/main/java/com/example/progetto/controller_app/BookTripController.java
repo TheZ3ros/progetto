@@ -12,12 +12,9 @@ import com.example.progetto.dao.UserDAO;
 import com.example.progetto.dao.csv_dbms.BookingDAOdbms;
 import com.example.progetto.bean.TripBean;
 import com.example.progetto.model.Trip;
-import com.example.progetto.model.User;
 import com.example.progetto.model.UserTrip;
-import com.example.progetto.model.UserTripStatus;
-import com.example.progetto.pattern.decorator.UserTripInterface;
+import com.example.progetto.pattern.decorator.UserTripStatus;
 import com.example.progetto.pattern.factory.EntityFactory;
-import com.example.progetto.pattern.factory.Factory;
 
 import java.io.IOException;
 import java.sql.SQLException;
