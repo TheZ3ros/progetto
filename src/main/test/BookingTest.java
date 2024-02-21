@@ -35,7 +35,6 @@ public class BookingTest {
         assertEquals(giusto.getId(),trip.getId());
         assertEquals(giusto.getDataAnd(), trip.getDataAnd());
         assertEquals(giusto.getDataRit(), trip.getDataRit());
-
     }
 
 }
