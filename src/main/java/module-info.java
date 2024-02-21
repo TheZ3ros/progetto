@@ -12,7 +12,6 @@ module com.example.progetto {
 
     opens com.example.progetto to javafx.fxml;
     requires com.opencsv;
-    requires org.junit.jupiter.api;
     exports com.example.progetto;
     exports com.example.progetto.controller_graf;
     exports com.example.progetto.bean;

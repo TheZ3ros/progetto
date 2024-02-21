@@ -27,7 +27,6 @@ public class BookingTest {
         java.sql.Date sqlDateAnd = new java.sql.Date(dateand.getTime());
         java.sql.Date sqlDateRit = new java.sql.Date(daterit.getTime());
         TripBean trip = new TripBean(3,"Parigi", 0, sqlDateAnd, sqlDateRit, 700F);
-
         BookTripController bookTripController = new BookTripController();
         List<TripBean> trips = bookTripController.showTrip();
         TripBean giusto = trips.get(2);
@@ -36,7 +35,5 @@ public class BookingTest {
         assertEquals(giusto.getId(),trip.getId());
         assertEquals(giusto.getDataAnd(), trip.getDataAnd());
         assertEquals(giusto.getDataRit(), trip.getDataRit());
-
     }
-
 }

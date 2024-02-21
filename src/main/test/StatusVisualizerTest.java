@@ -13,6 +13,8 @@ public class StatusVisualizerTest {
     * Author of the test: Podda Alessandro
     * MATRICOLA: 0316851
     * */
+
+
     @Test
     public void statusvisualizertest() throws SQLException, IOException {
         int id =3;
