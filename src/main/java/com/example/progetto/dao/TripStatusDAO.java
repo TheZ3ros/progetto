@@ -1,6 +1,7 @@
 package com.example.progetto.dao;
 
 import com.example.progetto.model.TripStatus;
+import com.example.progetto.model.UserTripStatus;
 
 import java.io.IOException;
 import java.sql.CallableStatement;
@@ -27,7 +28,8 @@ public class TripStatusDAO implements GenericDAO<List<TripStatus>> {
         while (rs.next()){
             String username = rs.getString(2);
             boolean status = rs.getBoolean(1);
-            TripStatus tripStatus = new TripStatus(username,status);
+            UserTripStatus userTripStatus = new UserTripStatus(username);
+            TripStatus tripStatus = new TripStatus(userTripStatus,status);
             tripStatuses.add(tripStatus);
         }
         }

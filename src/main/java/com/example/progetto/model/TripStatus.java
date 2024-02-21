@@ -1,16 +1,25 @@
 package com.example.progetto.model;
 
+import com.example.progetto.pattern.decorator.UserTripDecorator;
 import com.example.progetto.pattern.decorator.UserTripInterface;
 
-public class TripStatus implements UserTripInterface {
+public class TripStatus extends UserTripDecorator {
     private final boolean status;
-    private final String username;
 
-    public TripStatus(String username, boolean status){
-        this.username = username;
+    public TripStatus(UserTripInterface userTrip, boolean status){
+        super(userTrip);
         this.status=status;
     }
 
-    public String getUsername(){return username;}
+    @Override
+    public String getUsername(){
+        return super.getUsername();
+    }
+
+    @Override
+    public void setUsername(String username){
+        super.setUsername(username);
+    }
+
     public boolean isStatus(){return status;}
 }

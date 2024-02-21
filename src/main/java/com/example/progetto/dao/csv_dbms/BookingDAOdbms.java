@@ -3,6 +3,7 @@ package com.example.progetto.dao.csv_dbms;
 import com.example.progetto.dao.Connectivity;
 import com.example.progetto.exception.AlreadyPrenotedException;
 import com.example.progetto.model.UserTrip;
+import com.example.progetto.pattern.decorator.UserTripInterface;
 
 import java.io.IOException;
 import java.sql.CallableStatement;

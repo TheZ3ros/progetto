@@ -1,21 +1,32 @@
 package com.example.progetto.model;
 
+import com.example.progetto.pattern.decorator.UserTripDecorator;
 import com.example.progetto.pattern.decorator.UserTripInterface;
 
-public class UserTrip implements UserTripInterface {
+public class UserTrip extends UserTripDecorator {
     private int idTrip;
-    private String username;
-    public void setUsername(String username){
-        this.username=username;
+
+    public UserTrip(UserTripInterface userTrip,int id) {
+        super(userTrip);
+        this.idTrip=id;
     }
-    public void setIdTrip(int idTrip){
-        this.idTrip=idTrip;
+
+    public void setIdTrip(int idTrip) {
+        this.idTrip = idTrip;
 
     }
-    public int getIdTrip(){
+
+    public int getIdTrip() {
         return idTrip;
     }
-    public String getUsername(){
-        return username;
+
+    @Override
+    public void setUsername(String username) {
+        super.setUsername(username);
+    }
+
+    @Override
+    public String getUsername() {
+        return super.getUsername();
     }
 }
