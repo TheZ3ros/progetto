@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="abd72b32-f6c1-4b42-a1d9-4297dd975b52" name="Changes" comment="test">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/BookingTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/java/BookingTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/CouponTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/java/CouponTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/SearchTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/java/SearchTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/StatusVisualizerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/java/StatusVisualizerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/java/TestLogin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TripCreationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/java/TripCreationTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="abd72b32-f6c1-4b42-a1d9-4297dd975b52" name="Changes" comment="test" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -178,14 +170,6 @@
       <workItem from="1708079122942" duration="11923000" />
       <workItem from="1708164428366" duration="15001000" />
       <workItem from="1708355889241" duration="728000" />
-    </task>
-    <task id="LOCAL-00004" summary="home">
-      <option name="closed" value="true" />
-      <created>1704567599335</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1704567599335</updated>
     </task>
     <task id="LOCAL-00005" summary="home">
       <option name="closed" value="true" />
@@ -571,7 +555,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708437502559</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="test">
+      <option name="closed" value="true" />
+      <created>1708437974272</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1708437974272</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
