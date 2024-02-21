@@ -1,13 +1,14 @@
 package com.example.progetto.controller_graf.utente;
 
 import com.example.progetto.Applicazione;
+import com.example.progetto.bean.UserBean;
 import com.example.progetto.exception.*;
 import com.example.progetto.bean.BookBean;
 import com.example.progetto.bean.BuonoBean;
 import com.example.progetto.bean.TripBean;
 import com.example.progetto.controller_app.BookTripController;
 import com.example.progetto.controller_app.PagamentoControllerApp;
-import com.example.progetto.pattern.factory.BeanFactory;
+import com.example.progetto.pattern.factory.EntityFactory;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -39,7 +40,7 @@ public class PagamentoController {
     private TextField buono;
     private Applicazione main;
     private TripBean currentTrip;
-    private BeanFactory currentUser;
+    private UserBean currentUser;
     private static final String ACTION ="Informazione";
     public void setMain(Applicazione main) {
 
@@ -57,7 +58,7 @@ public class PagamentoController {
         page.viewTrip(main, currentUser);
 
     }
-    public void setUser(BeanFactory utente){
+    public void setUser(UserBean utente){
 
         currentUser=utente;
     }
@@ -97,6 +98,7 @@ public class PagamentoController {
             alert.setHeaderText(null);
             alert.setContentText(e.getMessage());
             alert.showAndWait();
+            numero.setText(null);
         } catch (PlacesTerminatedException e) {
             Alert alert2=new Alert(Alert.AlertType.ERROR);
             alert2.setTitle(ACTION);

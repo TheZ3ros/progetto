@@ -1,7 +1,7 @@
 package com.example.progetto.controller_graf.utente;
 import com.example.progetto.Applicazione;
+import com.example.progetto.bean.UserBean;
 import com.example.progetto.exception.ExistsUserException;
-import com.example.progetto.pattern.factory.BeanFactory;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -16,9 +16,9 @@ public class UserHomeController {
     @FXML
     private Button user;
     private Applicazione main;
-    private BeanFactory currentUser;
+    private UserBean currentUser;
 
-    public void setUser(BeanFactory utente){
+    public void setUser(UserBean utente){
 
         currentUser=utente;
     }

@@ -1,10 +1,11 @@
 package com.example.progetto.controller_graf.agenzia;
 
 import com.example.progetto.Applicazione;
+import com.example.progetto.bean.AgencyBean;
 import com.example.progetto.bean.TripBean;
 import com.example.progetto.bean.TripStatusBean;
 import com.example.progetto.controller_app.GetTripStatusController;
-import com.example.progetto.pattern.factory.BeanFactory;
+import com.example.progetto.pattern.factory.EntityFactory;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import view2.Printer;
@@ -15,7 +16,7 @@ import java.sql.SQLException;
 public class StatusVisualizerController {
 
     protected Applicazione main;
-    protected BeanFactory currentUser;
+    protected AgencyBean currentUser;
     private TripStatusBean statusbean;
     private TripBean currentTrip;
     @FXML
@@ -33,7 +34,7 @@ public class StatusVisualizerController {
         this.currentTrip = currentTrip;
     }
 
-    public void setCurrentUser(BeanFactory currentUser){
+    public void setCurrentUser(AgencyBean currentUser){
         this.currentUser = currentUser;
     }
 

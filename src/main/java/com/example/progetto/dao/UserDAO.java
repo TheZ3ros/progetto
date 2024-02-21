@@ -4,14 +4,15 @@ import com.example.progetto.bean.UserBean;
 import com.example.progetto.exception.ExistsUserException;
 import com.example.progetto.exception.SQLStatementException;
 import com.example.progetto.model.User;
-import com.example.progetto.pattern.factory.BeanFactory;
+import com.example.progetto.pattern.factory.EntityFactory;
+import com.example.progetto.pattern.factory.Factory;
 
 import java.io.IOException;
 import java.sql.CallableStatement;
 import java.sql.SQLException;
 import java.sql.Types;
 
-public class UserDAO implements GenericDAO <User> {
+public class UserDAO implements GenericDAO <EntityFactory> {
     private final Connectivity connection;
     public UserDAO() throws SQLException, IOException {
         connection =Connectivity.getSingletonInstance();
@@ -19,15 +20,16 @@ public class UserDAO implements GenericDAO <User> {
     }
 
     @Override
-    public User execute(Object... params) throws SQLException {
+    public EntityFactory execute(Object... params) throws SQLException {
         String username = (String) params[0];
-        User utente=new User();
+        Factory factory=new Factory();
+        EntityFactory utente=factory.CreateEntity(1);
         try(CallableStatement cs = connection.conn.prepareCall("{call GetPassword(?,?)}")) {
             cs.setString(1, username);
             cs.registerOutParameter(2, Types.VARCHAR);
             cs.executeQuery();
             utente.setPassword(cs.getString(2));
-            utente.setUser((String) params[0]);
+            utente.setUsername((String) params[0]);
         }
 
         return utente;
@@ -70,10 +72,10 @@ public class UserDAO implements GenericDAO <User> {
 
 
     }
-    public SignUpUserBean info(BeanFactory user) throws ExistsUserException, SQLException {
+    public SignUpUserBean info(String username) throws ExistsUserException, SQLException {
         try (CallableStatement cs = connection.conn.prepareCall("{call SearchUser(?,?,?,?)}")){
 
-            cs.setString(1, user.getUsername());
+            cs.setString(1, username);
             cs.registerOutParameter(2, Types.VARCHAR);
             cs.registerOutParameter(3, Types.VARCHAR);
             cs.registerOutParameter(4, Types.VARCHAR);
@@ -83,7 +85,7 @@ public class UserDAO implements GenericDAO <User> {
             String nome = cs.getString(2);
             String cognome = cs.getString(3);
             String email = cs.getString(4);
-            trueUser.setUsername(user.getUsername());
+            trueUser.setUsername(username);
             trueUser.setEmail(email);
             trueUser.setCognome(cognome);
             trueUser.setNome(nome);

@@ -2,16 +2,13 @@ package com.example.progetto.controller_graf.utente;
 
 import com.example.progetto.Applicazione;
 import com.example.progetto.bean.SignUpUserBean;
+import com.example.progetto.bean.UserBean;
 import com.example.progetto.controller_app.RegLoginControllerApp;
 import com.example.progetto.exception.ExistsUserException;
-import com.example.progetto.pattern.factory.BeanFactory;
+import com.example.progetto.pattern.factory.EntityFactory;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.text.Text;
-import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -19,7 +16,7 @@ import java.sql.SQLException;
 public class InfoUserController {
     private Button user;
     private Applicazione main;
-    private BeanFactory currentUser;
+    private UserBean currentUser;
     @FXML
     private Text tnome;
     @FXML
@@ -30,7 +27,7 @@ public class InfoUserController {
     private Text tusername;
 
 
-    public void setUser(BeanFactory utente){
+    public void setUser(UserBean utente){
 
         currentUser=utente;
     }

@@ -1,7 +1,8 @@
 package view2.agency;
 
+import com.example.progetto.bean.AgencyBean;
 import com.example.progetto.exception.NotValidCouponException;
-import com.example.progetto.pattern.factory.BeanFactory;
+import com.example.progetto.pattern.factory.EntityFactory;
 import view2.Printer;
 
 import java.io.IOException;
@@ -9,9 +10,9 @@ import java.sql.SQLException;
 import java.util.Scanner;
 
 public class HomeAgencyCLI {
-    private final BeanFactory currentAgency;
+    private final AgencyBean currentAgency;
 
-    public HomeAgencyCLI(BeanFactory currentAgency) {
+    public HomeAgencyCLI(AgencyBean currentAgency) {
         this.currentAgency = currentAgency;
     }
 

@@ -1,11 +1,12 @@
 package com.example.progetto.controller_graf;
 
 import com.example.progetto.Applicazione;
+import com.example.progetto.bean.AgencyBean;
+import com.example.progetto.bean.UserBean;
 import com.example.progetto.exception.CredentialErrorException;
 import com.example.progetto.controller_graf.agenzia.AgencyHomeController;
 import com.example.progetto.controller_graf.utente.UserHomeController;
-import com.example.progetto.pattern.factory.BeanFactory;
-import com.example.progetto.pattern.factory.Factory;
+import com.example.progetto.pattern.factory.EntityFactory;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -51,8 +52,7 @@ public class LoginController {
     public void handlerloginutente() throws Exception {
         String userUtente=usernameUtente.getText();
         String passUtente=passwordUtente.getText();
-        Factory factory=new Factory();
-        BeanFactory user= factory.createBean(1);
+        UserBean user=new UserBean();
         user.setUsername(userUtente);
         user.setPassword(passUtente);
 
@@ -85,8 +85,7 @@ public class LoginController {
 
         String userAgenzia = usernameAgenzia.getText();
         String passAgenzia = passwordAgenzia.getText();
-        Factory factory=new Factory();
-        BeanFactory agency= factory.createBean(2);
+        AgencyBean agency=new AgencyBean();
         agency.setUsername(userAgenzia);
         agency.setPassword(passAgenzia);
         RegLoginControllerApp login = new RegLoginControllerApp(agency);

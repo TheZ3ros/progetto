@@ -1,8 +1,8 @@
 
+import com.example.progetto.bean.UserBean;
 import com.example.progetto.controller_app.RegLoginControllerApp;
 import com.example.progetto.exception.CredentialErrorException;
-import com.example.progetto.pattern.factory.BeanFactory;
-import com.example.progetto.pattern.factory.Factory;
+import com.example.progetto.pattern.factory.EntityFactory;
 import org.junit.jupiter.api.Test;
 
 
@@ -18,8 +18,7 @@ public class TestLogin{
 
     @Test
 public void testLogin() throws Exception {
-        Factory factory = new Factory();
-        BeanFactory userBean = factory.createBean(1);
+        UserBean userBean=new UserBean();
         userBean.setPassword("aa");
         userBean.setUsername("aa");
 

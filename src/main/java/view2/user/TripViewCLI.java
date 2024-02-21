@@ -2,9 +2,10 @@ package view2.user;
 
 import com.example.progetto.bean.SearchBean;
 import com.example.progetto.bean.TripBean;
+import com.example.progetto.bean.UserBean;
 import com.example.progetto.controller_app.BookTripController;
 import com.example.progetto.exception.*;
-import com.example.progetto.pattern.factory.BeanFactory;
+import com.example.progetto.pattern.factory.EntityFactory;
 import view2.Printer;
 
 import java.io.IOException;
@@ -13,9 +14,9 @@ import java.util.List;
 import java.util.Scanner;
 
 public class TripViewCLI {
-    private final BeanFactory currentUser;
+    private final UserBean currentUser;
 
-    public TripViewCLI(BeanFactory user) {
+    public TripViewCLI(UserBean user) {
         this.currentUser=user;
 
     }

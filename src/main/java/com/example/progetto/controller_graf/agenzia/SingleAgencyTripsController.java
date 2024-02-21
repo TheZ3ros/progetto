@@ -1,8 +1,9 @@
 package com.example.progetto.controller_graf.agenzia;
 
 import com.example.progetto.Applicazione;
+import com.example.progetto.bean.AgencyBean;
 import com.example.progetto.bean.TripBean;
-import com.example.progetto.pattern.factory.BeanFactory;
+import com.example.progetto.pattern.factory.EntityFactory;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -27,7 +28,7 @@ public class SingleAgencyTripsController {
     @FXML
     private Text prezzo;
     private Applicazione main;
-    private BeanFactory user;
+    private AgencyBean user;
     private TripBean bean;
 
 
@@ -37,7 +38,7 @@ public class SingleAgencyTripsController {
         this.main = main;
     }
 
-    public void setUser(BeanFactory user){
+    public void setUser(AgencyBean user){
         this.user=user;
     }
 

@@ -1,4 +1,5 @@
 package com.example.progetto.model;
+
 import java.sql.Date;
 
 public class Trip {
@@ -37,9 +38,11 @@ public class Trip {
         this.dataAnd=dataAnd;
         this.dataRit=dataRit;
     }
+
     public int getAvailable() {
         return available;
     }
+
 
     public int getId() {
         return id;

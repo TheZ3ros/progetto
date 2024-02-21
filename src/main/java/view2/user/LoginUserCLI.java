@@ -1,9 +1,9 @@
 package view2.user;
 
+import com.example.progetto.bean.UserBean;
 import com.example.progetto.controller_app.RegLoginControllerApp;
 import com.example.progetto.exception.CredentialErrorException;
-import com.example.progetto.pattern.factory.BeanFactory;
-import com.example.progetto.pattern.factory.Factory;
+import com.example.progetto.pattern.factory.EntityFactory;
 import view2.Printer;
 
 import java.io.IOException;
@@ -18,8 +18,7 @@ public class LoginUserCLI {
         String username = scanner.nextLine();
         Printer.printMessage("inserire password");
         String password= scanner.nextLine();
-        Factory factory=new Factory();
-        BeanFactory userBean=factory.createBean(1);
+        UserBean userBean=new UserBean();
         userBean.setPassword(password);
         userBean.setUsername(username);
 

@@ -16,7 +16,7 @@ public class PagamentoControllerApp {
         buonoDAO=new BuonoDAO();
         Buono buono;
         try{
-            buono=buonoDAO.execute(buonobean);
+            buono=buonoDAO.execute(buonobean.getCodice());
         }
         catch(NotValidCouponException e){
             throw new NotValidCouponException(e.getMessage());

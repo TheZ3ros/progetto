@@ -1,11 +1,12 @@
 package view2.user;
 
 import com.example.progetto.bean.TripBean;
+import com.example.progetto.bean.UserBean;
 import com.example.progetto.controller_app.BookTripController;
 import com.example.progetto.exception.AlreadyPrenotedException;
 import com.example.progetto.exception.ExistsUserException;
 import com.example.progetto.exception.PlacesTerminatedException;
-import com.example.progetto.pattern.factory.BeanFactory;
+import com.example.progetto.pattern.factory.EntityFactory;
 import view2.Printer;
 
 import java.io.IOException;
@@ -13,9 +14,9 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class BookedTripCLI {
-    private final BeanFactory currentUser;
+    private final UserBean currentUser;
 
-    public BookedTripCLI(BeanFactory user) {
+    public BookedTripCLI(UserBean user) {
         currentUser=user;
     }
 

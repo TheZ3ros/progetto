@@ -1,6 +1,6 @@
 package com.example.progetto.pattern.factory;
 
-public interface BeanFactory {
+public interface EntityFactory {
     String getUsername();
     String getPassword();
     void setPassword(String password);
