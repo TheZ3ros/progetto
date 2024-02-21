@@ -20,7 +20,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  */
 public class BookingTest {
     @Test
-
     public void bookinTest() throws ParseException, SQLException, IOException {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         Date dateand = dateFormat.parse("2024-03-11");

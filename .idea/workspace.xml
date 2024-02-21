@@ -4,18 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="abd72b32-f6c1-4b42-a1d9-4297dd975b52" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/java/BookingTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/BookingTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/java/CouponTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/CouponTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/java/SearchTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/SearchTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/java/StatusVisualizerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/StatusVisualizerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/java/TestLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/TestLogin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/java/TripCreationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/TripCreationTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="abd72b32-f6c1-4b42-a1d9-4297dd975b52" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -604,7 +593,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708374695124</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="registrtazione">
+      <option name="closed" value="true" />
+      <created>1708513635438</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1708513635438</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
