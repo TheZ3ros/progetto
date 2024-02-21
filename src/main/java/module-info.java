@@ -10,11 +10,8 @@ module com.example.progetto {
     requires java.rmi;
 
 
-
     opens com.example.progetto to javafx.fxml;
     requires com.opencsv;
-    requires org.junit.jupiter.api;
-    requires org.junit.platform.commons;
     exports com.example.progetto;
     exports com.example.progetto.controller_graf;
     exports com.example.progetto.bean;
@@ -27,5 +24,4 @@ module com.example.progetto {
     opens view2.agency to javafx.fxml;
     exports com.example.progetto.pattern.factory;
     exports com.example.progetto.controller_app;
-
 }
