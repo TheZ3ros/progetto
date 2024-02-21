@@ -14,6 +14,8 @@ import com.example.progetto.bean.TripBean;
 import com.example.progetto.model.Trip;
 import com.example.progetto.model.User;
 import com.example.progetto.model.UserTrip;
+import com.example.progetto.model.UserTripStatus;
+import com.example.progetto.pattern.decorator.UserTripInterface;
 import com.example.progetto.pattern.factory.EntityFactory;
 import com.example.progetto.pattern.factory.Factory;
 
@@ -48,10 +50,9 @@ public class BookTripController {
         utente=userdao.execute(booking.getUsername());
         Trip trip;
         trip=tripdao.execute(booking.getTripId());
-        UserTrip usertrip;
-        usertrip=new UserTrip();
-        usertrip.setIdTrip(trip.getId());
-        usertrip.setUsername(utente.getUsername());
+        UserTripStatus userTripStatus = new UserTripStatus(utente.getUsername());
+        UserTrip usertrip = new UserTrip(userTripStatus,trip.getId());
+
         if(WRITER.equals("dbms")){
         BookingDAOdbms usertripdao = new BookingDAOdbms();
 
