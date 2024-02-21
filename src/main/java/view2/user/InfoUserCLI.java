@@ -1,12 +1,11 @@
 package view2.user;
 
-import com.example.progetto.bean.SignUpUserBean;
-import com.example.progetto.bean.UserBean;
-import com.example.progetto.controller_app.RegLoginControllerApp;
-import com.example.progetto.exception.AlreadyPrenotedException;
-import com.example.progetto.exception.ExistsUserException;
-import com.example.progetto.exception.PlacesTerminatedException;
-import com.example.progetto.pattern.factory.EntityFactory;
+import com.ispw.progetto.bean.SignUpUserBean;
+import com.ispw.progetto.bean.UserBean;
+import com.ispw.progetto.controller_app.RegLoginControllerApp;
+import com.ispw.progetto.exception.AlreadyPrenotedException;
+import com.ispw.progetto.exception.ExistsUserException;
+import com.ispw.progetto.exception.PlacesTerminatedException;
 import view2.Printer;
 
 import java.io.IOException;

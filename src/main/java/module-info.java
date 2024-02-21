@@ -10,18 +10,19 @@ module com.example.progetto {
     requires java.rmi;
 
 
-    opens com.example.progetto to javafx.fxml;
+    opens com.ispw.progetto to javafx.fxml;
     requires com.opencsv;
-    exports com.example.progetto;
-    exports com.example.progetto.controller_graf;
-    exports com.example.progetto.bean;
-    opens com.example.progetto.controller_graf to javafx.fxml;
-    exports com.example.progetto.controller_graf.agenzia;
-    opens com.example.progetto.controller_graf.agenzia to javafx.fxml;
-    exports com.example.progetto.controller_graf.utente;
-    opens com.example.progetto.controller_graf.utente to javafx.fxml;
+    exports com.ispw.progetto;
+    exports com.ispw.progetto.controller_graf;
+    exports com.ispw.progetto.bean;
+    opens com.ispw.progetto.controller_graf to javafx.fxml;
+    exports com.ispw.progetto.controller_graf.agenzia;
+    opens com.ispw.progetto.controller_graf.agenzia to javafx.fxml;
+    exports com.ispw.progetto.controller_graf.utente;
+    opens com.ispw.progetto.controller_graf.utente to javafx.fxml;
     exports view2.agency;
     opens view2.agency to javafx.fxml;
-    exports com.example.progetto.pattern.factory;
-    exports com.example.progetto.controller_app;
+    exports com.ispw.progetto.pattern.factory;
+    exports com.ispw.progetto.controller_app;
+    exports com.ispw.progetto.exception;
 }

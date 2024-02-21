@@ -107,7 +107,7 @@
             <id>default-cli</id>
             <configuration>
               <sonarJavaHome>C:/Program Files/Java/jdk-21</sonarJavaHome> <!-- Imposta il percorso per Java 17 -->
-              <mainClass>com.example.progetto/com.example.progetto.Applicazione</mainClass>
+              <mainClass>com.example.progetto/com.ispw.progetto.Applicazione</mainClass>
               <launcher>app</launcher>
               <jlinkZipName>app</jlinkZipName>
               <artifactId>sonar-maven-plugin</artifactId>

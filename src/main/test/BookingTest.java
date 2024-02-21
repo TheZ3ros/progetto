@@ -1,5 +1,5 @@
-import com.example.progetto.bean.TripBean;
-import com.example.progetto.controller_app.BookTripController;
+import com.ispw.progetto.bean.TripBean;
+import com.ispw.progetto.controller_app.BookTripController;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;

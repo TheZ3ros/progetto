@@ -1,11 +1,10 @@
 package view2.user;
 
-import com.example.progetto.bean.SearchBean;
-import com.example.progetto.bean.TripBean;
-import com.example.progetto.bean.UserBean;
-import com.example.progetto.controller_app.BookTripController;
-import com.example.progetto.exception.*;
-import com.example.progetto.pattern.factory.EntityFactory;
+import com.ispw.progetto.bean.SearchBean;
+import com.ispw.progetto.bean.TripBean;
+import com.ispw.progetto.bean.UserBean;
+import com.ispw.progetto.controller_app.BookTripController;
+import com.ispw.progetto.exception.*;
 import view2.Printer;
 
 import java.io.IOException;

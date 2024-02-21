@@ -1,7 +1,7 @@
-import com.example.progetto.bean.SearchBean;
-import com.example.progetto.bean.TripBean;
-import com.example.progetto.controller_app.BookTripController;
-import com.example.progetto.exception.FailedSearchException;
+import com.ispw.progetto.bean.SearchBean;
+import com.ispw.progetto.bean.TripBean;
+import com.ispw.progetto.controller_app.BookTripController;
+import com.ispw.progetto.exception.FailedSearchException;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;

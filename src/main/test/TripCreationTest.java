@@ -1,7 +1,7 @@
-import com.example.progetto.bean.TripBean;
-import com.example.progetto.controller_app.BookTripController;
-import com.example.progetto.controller_app.CreateTripController;
-import com.example.progetto.controller_graf.agenzia.ViewTripCreationController;
+import com.ispw.progetto.bean.TripBean;
+import com.ispw.progetto.controller_app.BookTripController;
+import com.ispw.progetto.controller_app.CreateTripController;
+import com.ispw.progetto.controller_graf.agenzia.ViewTripCreationController;
 import javafx.scene.image.Image;
 import org.junit.jupiter.api.Test;
 

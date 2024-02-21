@@ -1,11 +1,11 @@
 package view2;
 
-import com.example.progetto.bean.SignUpUserBean;
-import com.example.progetto.controller_app.RegLoginControllerApp;
-import com.example.progetto.exception.AlreadyPrenotedException;
-import com.example.progetto.exception.ExistsUserException;
-import com.example.progetto.exception.PasswordIllegalException;
-import com.example.progetto.exception.PlacesTerminatedException;
+import com.ispw.progetto.bean.SignUpUserBean;
+import com.ispw.progetto.controller_app.RegLoginControllerApp;
+import com.ispw.progetto.exception.AlreadyPrenotedException;
+import com.ispw.progetto.exception.ExistsUserException;
+import com.ispw.progetto.exception.PasswordIllegalException;
+import com.ispw.progetto.exception.PlacesTerminatedException;
 
 import java.util.Scanner;
 

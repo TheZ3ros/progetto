@@ -1,6 +1,6 @@
-import com.example.progetto.bean.BuonoBean;
-import com.example.progetto.controller_app.PagamentoControllerApp;
-import com.example.progetto.exception.NotValidCouponException;
+import com.ispw.progetto.bean.BuonoBean;
+import com.ispw.progetto.controller_app.PagamentoControllerApp;
+import com.ispw.progetto.exception.NotValidCouponException;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;

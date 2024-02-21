@@ -1,13 +1,12 @@
 package view2.user;
 
-import com.example.progetto.bean.BookBean;
-import com.example.progetto.bean.BuonoBean;
-import com.example.progetto.bean.TripBean;
-import com.example.progetto.bean.UserBean;
-import com.example.progetto.controller_app.BookTripController;
-import com.example.progetto.controller_app.PagamentoControllerApp;
-import com.example.progetto.exception.*;
-import com.example.progetto.pattern.factory.EntityFactory;
+import com.ispw.progetto.bean.BookBean;
+import com.ispw.progetto.bean.BuonoBean;
+import com.ispw.progetto.bean.TripBean;
+import com.ispw.progetto.bean.UserBean;
+import com.ispw.progetto.controller_app.BookTripController;
+import com.ispw.progetto.controller_app.PagamentoControllerApp;
+import com.ispw.progetto.exception.*;
 import view2.Printer;
 
 import java.io.IOException;
@@ -21,7 +20,7 @@ public class PaymentCLI {
     private final TripBean trip;
     private HomeLoginCLI login;
     private final UserBean user;
-    private Timer timer;
+
     PaymentCLI(TripBean trip, UserBean user){
         this.trip =trip;
         this.user=user;
@@ -84,7 +83,7 @@ public class PaymentCLI {
             }
     }
     private void startTimer() {
-        timer = new Timer();
+        Timer timer = new Timer();
         Printer.printMessage("6 minuti per concludere il pagamento");
         TimerTask task = new TimerTask() {
             public void run() {

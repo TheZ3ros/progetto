@@ -1,10 +1,9 @@
 package view2.agency;
 
-import com.example.progetto.bean.AgencyBean;
-import com.example.progetto.bean.TripBean;
-import com.example.progetto.controller_app.BookTripController;
-import com.example.progetto.exception.NotValidCouponException;
-import com.example.progetto.pattern.factory.EntityFactory;
+import com.ispw.progetto.bean.AgencyBean;
+import com.ispw.progetto.bean.TripBean;
+import com.ispw.progetto.controller_app.BookTripController;
+import com.ispw.progetto.exception.NotValidCouponException;
 import view2.Printer;
 
 import java.io.IOException;

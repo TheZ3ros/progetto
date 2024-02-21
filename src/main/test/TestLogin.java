@@ -1,7 +1,6 @@
-import com.example.progetto.bean.UserBean;
-import com.example.progetto.controller_app.RegLoginControllerApp;
-import com.example.progetto.exception.CredentialErrorException;
-import com.example.progetto.pattern.factory.EntityFactory;
+import com.ispw.progetto.bean.UserBean;
+import com.ispw.progetto.controller_app.RegLoginControllerApp;
+import com.ispw.progetto.exception.CredentialErrorException;
 import org.junit.jupiter.api.Test;
 
 

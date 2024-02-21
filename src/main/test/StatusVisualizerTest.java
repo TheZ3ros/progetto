@@ -1,5 +1,5 @@
-import com.example.progetto.bean.TripStatusBean;
-import com.example.progetto.controller_app.GetTripStatusController;
+import com.ispw.progetto.bean.TripStatusBean;
+import com.ispw.progetto.controller_app.GetTripStatusController;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
