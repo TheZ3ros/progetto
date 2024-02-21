@@ -8,9 +8,13 @@ import com.example.progetto.bean.BuonoBean;
 import com.example.progetto.bean.TripBean;
 import com.example.progetto.controller_app.BookTripController;
 import com.example.progetto.controller_app.PagamentoControllerApp;
-import com.example.progetto.pattern.factory.EntityFactory;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
+import javafx.application.Platform;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -19,12 +23,16 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 import java.io.IOException;
+import java.net.URL;
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.util.Timer;
+import java.util.TimerTask;
 
-public class PagamentoController {
+public class PagamentoController{
 
     @FXML
     private Button agency;
@@ -32,6 +40,8 @@ public class PagamentoController {
     private TextField numero;
     @FXML
     private TextField cvv;
+    @FXML
+    private Text timer;
     @FXML
     private Text price;
     @FXML
@@ -41,7 +51,49 @@ public class PagamentoController {
     private Applicazione main;
     private TripBean currentTrip;
     private UserBean currentUser;
+    private int tempoRimanente=600;
     private static final String ACTION ="Informazione";
+
+    @FXML
+    public void initialize() {
+        // Aggiorna il TextField del timer all'avvio
+        updateTimerTextField();
+
+        // Crea una Timeline che si aggiorna ogni secondo
+        Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(1), this::updateTimer));
+        timeline.setCycleCount(Timeline.INDEFINITE); // Ripeti all'infinito
+        timeline.play();
+
+        Timer timer = new Timer();
+        int tempoInMillisecondi = 600000; // 5 secondi
+
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                Platform.runLater(() -> {
+                    try {
+                        ViewTripController page = new ViewTripController();
+                        page.viewTrip(main, currentUser);
+                    } catch (IOException | SQLException e) {
+                        e.printStackTrace(); // Gestisci l'eccezione in modo appropriato
+                    }
+                });
+            }
+        }, tempoInMillisecondi);
+    }
+
+    // Metodo chiamato ogni secondo per aggiornare il timer
+    private void updateTimer(ActionEvent event) {
+        tempoRimanente--;
+        if (tempoRimanente >= 0) {
+            updateTimerTextField();
+        }
+    }
+
+    // Metodo per aggiornare il testo nel TextField del timer
+    private void updateTimerTextField() {
+        timer.setText("Tempo rimanente: " + tempoRimanente + " secondi");
+    }
     public void setMain(Applicazione main) {
 
         this.main = main;
@@ -152,4 +204,5 @@ public class PagamentoController {
         stage.setScene(myTripScene);
 
     }
+
 }
