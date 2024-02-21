@@ -1,6 +1,8 @@
 package com.example.progetto.model;
 
-public class UserTrip {
+import com.example.progetto.pattern.decorator.UserTripInterface;
+
+public class UserTrip implements UserTripInterface {
     private int idTrip;
     private String username;
     public void setUsername(String username){
