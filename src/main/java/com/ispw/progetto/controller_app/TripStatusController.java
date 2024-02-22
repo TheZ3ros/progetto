@@ -9,7 +9,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GetTripStatusController {
+public class TripStatusController {
 
     public static List<TripStatusBean> showtripstatus(int id) throws SQLException, IOException {
         TripStatusDAO statusDAO;

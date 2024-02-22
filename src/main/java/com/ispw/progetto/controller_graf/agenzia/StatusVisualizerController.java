@@ -4,7 +4,7 @@ import com.ispw.progetto.Applicazione;
 import com.ispw.progetto.bean.AgencyBean;
 import com.ispw.progetto.bean.TripBean;
 import com.ispw.progetto.bean.TripStatusBean;
-import com.ispw.progetto.controller_app.GetTripStatusController;
+import com.ispw.progetto.controller_app.TripStatusController;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import view2.Printer;
@@ -45,7 +45,7 @@ public class StatusVisualizerController {
     }
 
     public void conferma() throws SQLException, IOException {
-        GetTripStatusController statusupdater = new GetTripStatusController();
+        TripStatusController statusupdater = new TripStatusController();
         boolean b = statusupdater.updatetripstatus(currentTrip.getId(), statusbean.getUsername());
         if (b){
             state.setText("True");

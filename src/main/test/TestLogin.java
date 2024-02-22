@@ -17,8 +17,8 @@ public class TestLogin{
     @Test
 public void testLogin() throws Exception {
         UserBean userBean=new UserBean();
-        userBean.setPassword("aa");
-        userBean.setUsername("aa");
+        userBean.setPassword("12345678");
+        userBean.setUsername("lucaaaa02");
 
         int flag = 1;
         RegLoginControllerApp regLoginControllerApp=new RegLoginControllerApp(userBean);

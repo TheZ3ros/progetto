@@ -3,6 +3,6 @@ package com.ispw.progetto.pattern.factory;
 import com.ispw.progetto.model.Buono;
 
 public interface FactoryInterface {
-     EntityFactory CreateEntity(int type);
-     Buono CreateBuono(String codice, int valore);
+     EntityFactory createEntity(int type);
+     Buono createBuono(String codice, int valore);
 }

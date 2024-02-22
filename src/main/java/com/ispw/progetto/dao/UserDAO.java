@@ -22,7 +22,7 @@ public class UserDAO implements GenericDAO <EntityFactory> {
     public EntityFactory execute(Object... params) throws SQLException {
         String username = (String) params[0];
         Factory factory=new Factory();
-        EntityFactory utente=factory.CreateEntity(1);
+        EntityFactory utente=factory.createEntity(1);
         try(CallableStatement cs = connection.conn.prepareCall("{call GetPassword(?,?)}")) {
             cs.setString(1, username);
             cs.registerOutParameter(2, Types.VARCHAR);

@@ -2,7 +2,7 @@ package view2.agency;
 
 import com.ispw.progetto.bean.AgencyBean;
 import com.ispw.progetto.bean.TripStatusBean;
-import com.ispw.progetto.controller_app.GetTripStatusController;
+import com.ispw.progetto.controller_app.TripStatusController;
 import com.ispw.progetto.exception.NotValidCouponException;
 import view2.Printer;
 
@@ -21,7 +21,7 @@ public class TripStatusCLI {
         String username;
         boolean state;
 
-        List<TripStatusBean> stati = GetTripStatusController.showtripstatus(id);
+        List<TripStatusBean> stati = TripStatusController.showtripstatus(id);
         for (TripStatusBean stato : stati){
             username = stato.getUsername();
             state = stato.isStatus();
@@ -37,7 +37,7 @@ public class TripStatusCLI {
             home.start();
         } //verificare se sia meglio sostituire questo if con un ciclo while
         else{
-            GetTripStatusController statusupdater = new GetTripStatusController();
+            TripStatusController statusupdater = new TripStatusController();
             boolean b = statusupdater.updatetripstatus(id,user);
             if (b){
                 Printer.printMessage("Stato aggiornato");

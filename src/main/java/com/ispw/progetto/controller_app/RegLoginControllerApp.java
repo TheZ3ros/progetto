@@ -47,7 +47,7 @@ public class RegLoginControllerApp {
         dao= new AgencyDAO();
         Factory factory=new Factory();
         EntityFactory agenzia;
-        agenzia=factory.CreateEntity(2);
+        agenzia=factory.createEntity(2);
             agenzia = dao.execute(agency.getUsername());
         if (!agency.getPassword().equals(agenzia.getPassword()))
             throw new CredentialErrorException("credenziali errate");

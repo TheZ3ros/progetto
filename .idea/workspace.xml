@@ -4,114 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="abd72b32-f6c1-4b42-a1d9-4297dd975b52" name="Changes" comment="sistemazione controlli">
+    <list default="true" id="abd72b32-f6c1-4b42-a1d9-4297dd975b52" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/Applicazione.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/Applicazione.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/bean/AgencyBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/bean/AgencyBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/bean/BookBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/bean/BookBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/bean/BuonoBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/bean/BuonoBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/bean/SearchBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/bean/SearchBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/bean/SignUpUserBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/bean/SignUpUserBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/bean/TripBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/bean/TripBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/bean/TripStatusBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/bean/TripStatusBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/bean/UserBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/bean/UserBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_app/BookTripController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_app/BookTripController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_app/CreateTripController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_app/CreateTripController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_app/GetTripStatusController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_app/GetTripStatusController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_app/PagamentoControllerApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_app/PagamentoControllerApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_app/RegLoginControllerApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_app/RegLoginControllerApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/RegistrazioneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/RegistrazioneController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/agenzia/AgencyHomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/agenzia/AgencyHomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/agenzia/AgencyTripsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/agenzia/AgencyTripsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/agenzia/SingleAgencyTripsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/agenzia/SingleAgencyTripsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/agenzia/StatusVisualizerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/agenzia/StatusVisualizerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/agenzia/TripStatusController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/agenzia/TripStatusController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/agenzia/ViewTripCreationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/agenzia/ViewTripCreationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/utente/InfoUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/InfoUserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/utente/MyTripController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/MyTripController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/utente/PagamentoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/PagamentoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/utente/PageTripController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/PageTripController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/utente/PrenotazioneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/PrenotazioneController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/utente/UserHomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/UserHomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/utente/ViaggioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/ViaggioController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/controller_graf/utente/ViewTripController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/ViewTripController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/dao/AgencyDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/dao/AgencyDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/dao/BuonoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/dao/BuonoDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/dao/Connectivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/dao/Connectivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/dao/GenericDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/dao/GenericDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/dao/TripDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/dao/TripDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/dao/TripStatusDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/dao/TripStatusDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/dao/UserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/dao/csv_dbms/BookingDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/dao/csv_dbms/BookingDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/dao/csv_dbms/BookingDAOcsv.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/dao/csv_dbms/BookingDAOcsv.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/dao/csv_dbms/BookingDAOdbms.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/dao/csv_dbms/BookingDAOdbms.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/exception/AlreadyPrenotedException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/exception/AlreadyPrenotedException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/exception/CSVInteractionException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/exception/CSVInteractionException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/exception/CardNotTrueException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/exception/CardNotTrueException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/exception/CredentialErrorException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/exception/CredentialErrorException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/exception/DateNotValidException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/exception/DateNotValidException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/exception/EmptystatementException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/exception/EmptystatementException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/exception/ExistsUserException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/exception/ExistsUserException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/exception/FailedSearchException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/exception/FailedSearchException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/exception/NotValidCouponException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/exception/NotValidCouponException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/exception/PasswordIllegalException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/exception/PasswordIllegalException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/exception/PlacesTerminatedException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/exception/PlacesTerminatedException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/exception/SQLStatementException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/exception/SQLStatementException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/model/Agency.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/model/Agency.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/model/Buono.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/model/Buono.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/model/Trip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/model/Trip.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/model/TripStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/model/TripStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/model/UserTrip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/model/UserTrip.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/pattern/decorator/UserTripDecorator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/pattern/decorator/UserTripDecorator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/pattern/decorator/UserTripInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/pattern/decorator/UserTripInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/pattern/decorator/UserTripStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/pattern/decorator/UserTripStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/pattern/factory/EntityFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/pattern/factory/EntityFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/pattern/factory/Factory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/pattern/factory/Factory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto/pattern/factory/FactoryInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/pattern/factory/FactoryInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view2/RegistrazioneUserCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view2/RegistrazioneUserCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view2/agency/AgencyTripsCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view2/agency/AgencyTripsCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view2/agency/AgencyUserCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view2/agency/AgencyUserCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view2/agency/HomeAgencyCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view2/agency/HomeAgencyCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view2/agency/LoginAgencyCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view2/agency/LoginAgencyCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view2/agency/TripCreationCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view2/agency/TripCreationCLI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_app/BookTripController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_app/BookTripController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_app/GetTripStatusController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_app/TripStatusController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_app/RegLoginControllerApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_app/RegLoginControllerApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/agenzia/StatusVisualizerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/agenzia/StatusVisualizerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/agenzia/TripStatusController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/agenzia/TripStatusController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/dao/AgencyDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/dao/AgencyDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/dao/BuonoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/dao/BuonoDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/dao/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/pattern/factory/Factory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/pattern/factory/Factory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/pattern/factory/FactoryInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/pattern/factory/FactoryInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view2/agency/TripStatusCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view2/agency/TripStatusCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view2/user/BookedTripCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view2/user/BookedTripCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view2/user/HomeLoginCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view2/user/HomeLoginCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view2/user/InfoUserCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view2/user/InfoUserCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view2/user/LoginUserCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view2/user/LoginUserCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view2/user/PaymentCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view2/user/PaymentCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view2/user/TripViewCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view2/user/TripViewCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/progetto/css/JustMeAgainDownHere-Regular.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/ispw/progetto/css/JustMeAgainDownHere-Regular.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/progetto/css/immagini/frame.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/ispw/progetto/css/immagini/frame.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/progetto/css/immagini/infinito.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/ispw/progetto/css/immagini/infinito.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/progetto/css/immagini/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/ispw/progetto/css/immagini/logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/progetto/css/immagini/planisfero.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/ispw/progetto/css/immagini/planisfero.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/progetto/css/sheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/ispw/progetto/css/sheet.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/progetto/view1/agenzia/agency_home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/ispw/progetto/view1/agenzia/agency_home.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/progetto/view1/agenzia/agencytrips.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/ispw/progetto/view1/agenzia/agencytrips.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/progetto/view1/agenzia/singleagencytrip.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/ispw/progetto/view1/agenzia/singleagencytrip.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/progetto/view1/agenzia/statusvisualizer.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/ispw/progetto/view1/agenzia/statusvisualizer.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/progetto/view1/agenzia/tripstatus.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/ispw/progetto/view1/agenzia/tripstatus.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/progetto/view1/agenzia/view_trip_creation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/ispw/progetto/view1/agenzia/view_trip_creation.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/progetto/view1/home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/ispw/progetto/view1/home.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/progetto/view1/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/ispw/progetto/view1/login.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/progetto/view1/registrazione.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/ispw/progetto/view1/registrazione.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/progetto/view1/utente/home_login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/ispw/progetto/view1/utente/home_login.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/progetto/view1/utente/info_user.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/ispw/progetto/view1/utente/info_user.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/progetto/view1/utente/myTrip.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/ispw/progetto/view1/utente/myTrip.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/progetto/view1/utente/pagamento.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/ispw/progetto/view1/utente/pagamento.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/progetto/view1/utente/pagetrip.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/ispw/progetto/view1/utente/pagetrip.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/progetto/view1/utente/prenotazione.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/ispw/progetto/view1/utente/prenotazione.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/progetto/view1/utente/viaggio.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/ispw/progetto/view1/utente/viaggio.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/progetto/view1/utente/view_trip.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/ispw/progetto/view1/utente/view_trip.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/test/BookingTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/BookingTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/test/CouponTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/CouponTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/test/SearchTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/SearchTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/ispw/progetto/view1/agenzia/agency_home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/ispw/progetto/view1/agenzia/agency_home.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/ispw/progetto/view1/agenzia/view_trip_creation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/ispw/progetto/view1/agenzia/view_trip_creation.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/test/StatusVisualizerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/StatusVisualizerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/test/TestLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/TestLogin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/test/TripCreationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/TripCreationTest.java" afterDir="false" />
@@ -151,36 +58,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Proprietario/Desktop/sessione/ISPW/slide deangelis/lezione30/decoratorSalaryExample&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.51135135&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/Proprietario/Desktop/sessione/ISPW/slide deangelis/lezione30/decoratorSalaryExample",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.51135135",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;ChangesTree.GroupingKeys&quot;: [
+  "keyToStringList": {
+    "ChangesTree.GroupingKeys": [
     ],
-    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
-      &quot;CSS&quot;
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "CSS"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Proprietario\Desktop\java\progetto1\src\main\resources\com\example\progetto" />
@@ -211,38 +118,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BookingTest.bookinTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="progetto" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value=".*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="BookingTest" />
-      <option name="METHOD_NAME" value="bookinTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CouponTest.ViewTripTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="progetto" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value=".*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="CouponTest" />
-      <option name="METHOD_NAME" value="ViewTripTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="SearchTest.searchtest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="progetto" />
       <option name="PACKAGE_NAME" value="" />
@@ -263,6 +138,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TestLogin.testLogin" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="progetto" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestLogin" />
+      <option name="METHOD_NAME" value="testLogin" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TripCreationTest.tripcreationtest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="progetto" />
       <option name="PACKAGE_NAME" value="" />
@@ -277,9 +162,9 @@
       <list>
         <item itemvalue="Application.Applicazione" />
         <item itemvalue="JUnit.TripCreationTest.tripcreationtest" />
+        <item itemvalue="JUnit.TestLogin.testLogin" />
         <item itemvalue="JUnit.StatusVisualizerTest.statusvisualizertest" />
         <item itemvalue="JUnit.SearchTest.searchtest" />
-        <item itemvalue="JUnit.CouponTest.ViewTripTest" />
       </list>
     </recent_temporary>
   </component>
@@ -333,15 +218,8 @@
       <workItem from="1708472542447" duration="6562000" />
       <workItem from="1708511302241" duration="1817000" />
       <workItem from="1708532545710" duration="2269000" />
-      <workItem from="1708551383941" duration="2132000" />
-    </task>
-    <task id="LOCAL-00007" summary="Aggiunta della schermata di login e del suo controller. Implementata la possibilità di andare dalla schermata di Home a quella di Login e viceversa">
-      <option name="closed" value="true" />
-      <created>1705609101384</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1705609101384</updated>
+      <workItem from="1708551383941" duration="2415000" />
+      <workItem from="1708597575654" duration="17291000" />
     </task>
     <task id="LOCAL-00008" summary="Aggiunta della schermata di login e del suo controller. Implementata la possibilità di andare dalla schermata di Home a quella di Login e viceversa">
       <option name="closed" value="true" />
@@ -727,7 +605,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708541191224</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="sistemazione controlli">
+      <option name="closed" value="true" />
+      <created>1708557158287</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1708557158288</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -745,7 +631,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="sonar" />
     <MESSAGE value="home" />
     <MESSAGE value="login" />
     <MESSAGE value="Aggiunta della schermata di login e del suo controller. Implementata la possibilità di andare dalla schermata di Home a quella di Login e viceversa" />
@@ -770,7 +655,8 @@
     <MESSAGE value="registrtazione" />
     <MESSAGE value="prova" />
     <MESSAGE value="timer CLI" />
-    <option name="LAST_COMMIT_MESSAGE" value="timer CLI" />
+    <MESSAGE value="sistemazione controlli" />
+    <option name="LAST_COMMIT_MESSAGE" value="sistemazione controlli" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

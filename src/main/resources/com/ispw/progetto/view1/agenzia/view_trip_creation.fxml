@@ -46,7 +46,7 @@
         <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
             <Pane prefHeight="432.0" prefWidth="1000.0" styleClass="mondo" VBox.vgrow="ALWAYS">
             <children>
-               <Label layoutX="337.0" layoutY="-13.0" prefHeight="50.0" prefWidth="327.0" text="Creazione itinerario" textFill="#9700ae">
+               <Label layoutX="263.0" layoutY="-14.0" prefHeight="69.0" prefWidth="450.0" text="Creazione itinerario" textFill="#9700ae">
                   <font>
                      <Font name="Allura" size="47.0" />
                   </font>

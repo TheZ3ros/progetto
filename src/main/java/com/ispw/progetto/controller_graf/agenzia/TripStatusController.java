@@ -4,7 +4,6 @@ import com.ispw.progetto.Applicazione;
 import com.ispw.progetto.bean.AgencyBean;
 import com.ispw.progetto.bean.TripBean;
 import com.ispw.progetto.bean.TripStatusBean;
-import com.ispw.progetto.controller_app.GetTripStatusController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
@@ -65,7 +64,7 @@ public class TripStatusController {
         image=new Image(inputStream);
         imagine.setImage(image);
 
-        List<TripStatusBean> stati = GetTripStatusController.showtripstatus(currentTrip.getId());
+        List<TripStatusBean> stati = com.ispw.progetto.controller_app.TripStatusController.showtripstatus(currentTrip.getId());
 
         for(TripStatusBean stato : stati){
             FXMLLoader statusvisualizerLoader = new FXMLLoader(Applicazione.class.getResource("view1/agenzia/statusvisualizer.fxml"));

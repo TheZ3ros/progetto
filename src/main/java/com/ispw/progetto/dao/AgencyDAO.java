@@ -25,7 +25,7 @@ public EntityFactory execute(Object... params) throws SQLException {
         cs.executeQuery();
         Factory factory=new Factory();
 
-        utente=factory.CreateEntity(2);
+        utente=factory.createEntity(2);
         utente.setPassword(cs.getString(2));
         utente.setUsername((String) params[0]);
     } // Il CallableStatement verrà chiuso automaticamente qui

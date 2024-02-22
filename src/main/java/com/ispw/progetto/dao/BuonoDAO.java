@@ -26,7 +26,7 @@ public class BuonoDAO implements GenericDAO <Buono> {
             cs.registerOutParameter(2, Types.INTEGER);
             cs.executeQuery();
             int n = cs.getInt(2);
-            buono=factory.CreateBuono(codice,n);
+            buono=factory.createBuono(codice,n);
             if (n == 0) {
                 throw new NotValidCouponException("buono non trovato");
             }

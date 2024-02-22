@@ -9,7 +9,7 @@ public class Factory implements  FactoryInterface{
 
 
     @Override
-    public EntityFactory CreateEntity(int type) {
+    public EntityFactory createEntity(int type) {
         return switch (type) {
             case 1 -> new User();
             case 2 -> new Agency();
@@ -24,7 +24,7 @@ public class Factory implements  FactoryInterface{
     }
 
     @Override
-    public Buono CreateBuono(String codice, int valore) {
+    public Buono createBuono(String codice, int valore) {
         return new Buono(codice,valore);
     }
 
