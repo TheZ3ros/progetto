@@ -144,3 +144,7 @@
     -fx-pref-height: 10px;
     -fx-font-weight: bold;
 }
+.colortexttimer {
+    -fx-font-size: 25px;
+    -fx-fill: linear-gradient(to right, #da0000, #7b0bea, #0022a4);
+}

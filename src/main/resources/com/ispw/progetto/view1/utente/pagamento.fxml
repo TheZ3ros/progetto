@@ -66,9 +66,9 @@
                   <Font name="Just Me Again Down Here" size="29.0" />
                </font></Text>
             <Button layoutX="601.0" layoutY="280.0" mnemonicParsing="false" onAction="#checkBuono" prefHeight="85.0" prefWidth="268.0" styleClass="bottoni_coupon" text="Verifica coupon" />
-            <Text fx:id="timer" layoutX="136.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0">
+            <Text fx:id="timer" layoutX="136.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="colortexttimer">
                <font>
-                  <Font size="19.0" />
+                  <Font name="Just Me Again Down Here" size="12.0" />
                </font>
             </Text>
             </Pane>
