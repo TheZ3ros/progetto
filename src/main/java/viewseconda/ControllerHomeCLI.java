@@ -1,7 +1,7 @@
-package view2;
+package viewseconda;
 
-import view2.agency.LoginAgencyCLI;
-import view2.user.LoginUserCLI;
+import viewseconda.agency.LoginAgencyCLI;
+import viewseconda.user.LoginUserCLI;
 
 import java.util.Scanner;
 

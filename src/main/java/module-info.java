@@ -20,8 +20,8 @@ module com.example.progetto {
     opens com.ispw.progetto.controller_graf.agenzia to javafx.fxml;
     exports com.ispw.progetto.controller_graf.utente;
     opens com.ispw.progetto.controller_graf.utente to javafx.fxml;
-    exports view2.agency;
-    opens view2.agency to javafx.fxml;
+    exports viewseconda.agency;
+    opens viewseconda.agency to javafx.fxml;
     exports com.ispw.progetto.pattern.factory;
     exports com.ispw.progetto.controller_app;
     exports com.ispw.progetto.exception;

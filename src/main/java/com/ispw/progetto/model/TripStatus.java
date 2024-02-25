@@ -11,15 +11,6 @@ public class TripStatus extends UserTripDecorator {
         this.status=status;
     }
 
-    @Override
-    public String getUsername(){
-        return super.getUsername();
-    }
-
-    @Override
-    public void setUsername(String username){
-        super.setUsername(username);
-    }
 
     public boolean isStatus(){return status;}
 }

@@ -6,9 +6,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import view2.ControllerHomeCLI;
+import viewseconda.ControllerHomeCLI;
 import javafx.scene.image.Image;
-import view2.Printer;
+import viewseconda.Printer;
 
 import java.util.Scanner;
 

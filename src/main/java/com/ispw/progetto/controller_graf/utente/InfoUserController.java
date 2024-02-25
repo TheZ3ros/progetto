@@ -63,11 +63,11 @@ public class InfoUserController {
     public void setInfo() throws IOException, SQLException, ExistsUserException {
 
         RegLoginControllerApp regLoginControllerApp=new RegLoginControllerApp(currentUser);
-        SignUpUserBean user=regLoginControllerApp.info();
-        tnome.setText(user.getNome());
-        tcognom.setText(user.getCognome());
-        temail.setText(user.getEmail());
-        tusername.setText(user.getUsername());
+        SignUpUserBean userr=regLoginControllerApp.info();
+        tnome.setText(userr.getNome());
+        tcognom.setText(userr.getCognome());
+        temail.setText(userr.getEmail());
+        tusername.setText(userr.getUsername());
 
     }
 

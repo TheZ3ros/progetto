@@ -38,7 +38,7 @@ public class BookTripController {
         return viaggi;
     }
 
-    public void bookTrip(BookBean booking) throws SQLException, IOException, PlacesTerminatedException, AlreadyPrenotedException {
+    public void bookTrip(BookBean booking) throws SQLException, IOException,  AlreadyPrenotedException {
         TripDAO tripdao;
         tripdao=new TripDAO();
         UserDAO userdao;

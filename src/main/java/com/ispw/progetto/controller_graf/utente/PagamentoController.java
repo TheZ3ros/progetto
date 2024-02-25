@@ -59,13 +59,13 @@ public class PagamentoController{
 
         // Crea una Timeline che si aggiorna ogni secondo
         Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(1), this::updateTimer));
-        timeline.setCycleCount(Timeline.INDEFINITE); // Ripeti all'infinito
+        timeline.setCycleCount(Timeline.INDEFINITE);
         timeline.play();
 
-        Timer timer = new Timer();
+        Timer timerr = new Timer();
         int tempoInMillisecondi = 600000; // 5 secondi
 
-        timer.schedule(new TimerTask() {
+        timerr.schedule(new TimerTask() {
             @Override
             public void run() {
                 Platform.runLater(() -> {
@@ -76,7 +76,11 @@ public class PagamentoController{
                         try {
                             throw new IOException(e.getMessage());
                         } catch (IOException ex) {
-                            throw new RuntimeException(ex);
+                            try {
+                                throw new IOException(ex);
+                            } catch (IOException exc) {
+                                throw new RuntimeException(exc);
+                            }
                         }
                     }
                 });
@@ -153,12 +157,6 @@ public class PagamentoController{
             alert.setContentText(e.getMessage());
             alert.showAndWait();
             numero.setText(null);
-        } catch (PlacesTerminatedException e) {
-            Alert alert2=new Alert(Alert.AlertType.ERROR);
-            alert2.setTitle(ACTION);
-            alert2.setHeaderText(null);
-            alert2.setContentText(e.getMessage());
-            alert2.showAndWait();
         } catch (AlreadyPrenotedException e) {
             Alert alert3=new Alert(Alert.AlertType.WARNING);
             alert3.setTitle(ACTION);

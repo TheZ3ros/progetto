@@ -5,6 +5,7 @@ import com.ispw.progetto.bean.SignUpUserBean;
 import com.ispw.progetto.controller_app.RegLoginControllerApp;
 import com.ispw.progetto.exception.ExistsUserException;
 import com.ispw.progetto.exception.PasswordIllegalException;
+import com.ispw.progetto.exception.SQLStatementException;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -15,6 +16,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 public class RegistrazioneController {
     @FXML
@@ -47,7 +49,7 @@ private TextField usernameUtente;
     }
 
     @FXML
-    public void registrazioneutente() throws Exception {
+    public void registrazioneutente() throws SQLException, SQLStatementException, IOException {
 
         String userUtente =usernameUtente.getText();
         String passUtente=passwordUtente.getText();

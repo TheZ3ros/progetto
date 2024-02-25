@@ -1,8 +1,8 @@
-package view2.agency;
+package viewseconda.agency;
 
 import com.ispw.progetto.bean.AgencyBean;
 import com.ispw.progetto.exception.NotValidCouponException;
-import view2.Printer;
+import viewseconda.Printer;
 
 import java.io.IOException;
 import java.sql.SQLException;

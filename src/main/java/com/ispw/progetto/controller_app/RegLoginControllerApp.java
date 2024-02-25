@@ -11,7 +11,6 @@ import com.ispw.progetto.exception.PasswordIllegalException;
 import com.ispw.progetto.exception.SQLStatementException;
 import com.ispw.progetto.model.User;
 import com.ispw.progetto.pattern.factory.EntityFactory;
-import com.ispw.progetto.pattern.factory.Factory;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -45,9 +44,7 @@ public class RegLoginControllerApp {
     public void loginAgenzia() throws SQLException, IOException, CredentialErrorException {
         AgencyDAO dao;
         dao= new AgencyDAO();
-        Factory factory=new Factory();
         EntityFactory agenzia;
-        agenzia=factory.createEntity(2);
             agenzia = dao.execute(agency.getUsername());
         if (!agency.getPassword().equals(agenzia.getPassword()))
             throw new CredentialErrorException("credenziali errate");
@@ -81,8 +78,7 @@ public void registrazione() throws PasswordIllegalException, SQLException, IOExc
     }
     public SignUpUserBean info() throws SQLException, IOException, ExistsUserException {
         UserDAO userDAO=new UserDAO();
-        SignUpUserBean userr=userDAO.info(currentUser.getUsername());
-        return userr;
+        return userDAO.info(currentUser.getUsername());
 
     }
     }

@@ -7,7 +7,7 @@ import com.ispw.progetto.bean.TripStatusBean;
 import com.ispw.progetto.controller_app.TripStatusController;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
-import view2.Printer;
+import viewseconda.Printer;
 
 import java.io.IOException;
 import java.sql.SQLException;

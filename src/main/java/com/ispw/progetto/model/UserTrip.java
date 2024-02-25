@@ -20,13 +20,4 @@ public class UserTrip extends UserTripDecorator {
         return idTrip;
     }
 
-    @Override
-    public void setUsername(String username) {
-        super.setUsername(username);
-    }
-
-    @Override
-    public String getUsername() {
-        return super.getUsername();
-    }
 }

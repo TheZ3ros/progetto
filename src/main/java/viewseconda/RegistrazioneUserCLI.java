@@ -1,4 +1,4 @@
-package view2;
+package viewseconda;
 
 import com.ispw.progetto.bean.SignUpUserBean;
 import com.ispw.progetto.controller_app.RegLoginControllerApp;

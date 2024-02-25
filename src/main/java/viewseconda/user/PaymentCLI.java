@@ -1,4 +1,4 @@
-package view2.user;
+package viewseconda.user;
 
 import com.ispw.progetto.bean.BookBean;
 import com.ispw.progetto.bean.BuonoBean;
@@ -7,7 +7,7 @@ import com.ispw.progetto.bean.UserBean;
 import com.ispw.progetto.controller_app.BookTripController;
 import com.ispw.progetto.controller_app.PagamentoControllerApp;
 import com.ispw.progetto.exception.*;
-import view2.Printer;
+import viewseconda.Printer;
 
 import java.io.IOException;
 import java.sql.SQLException;

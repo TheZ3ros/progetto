@@ -1,4 +1,4 @@
-package view2.agency;
+package viewseconda.agency;
 
 import com.ispw.progetto.bean.AgencyBean;
 import com.ispw.progetto.bean.TripBean;
@@ -13,7 +13,7 @@ import java.util.Scanner;
 import com.ispw.progetto.controller_graf.agenzia.ViewTripCreationController;
 import com.ispw.progetto.exception.NotValidCouponException;
 import javafx.scene.image.Image;
-import view2.Printer;
+import viewseconda.Printer;
 
 public class TripCreationCLI {
     protected final AgencyBean currentAgency;

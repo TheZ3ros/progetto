@@ -1,4 +1,4 @@
-package view2;
+package viewseconda;
 
 
 public class Printer {

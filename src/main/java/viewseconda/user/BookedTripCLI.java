@@ -1,4 +1,4 @@
-package view2.user;
+package viewseconda.user;
 
 import com.ispw.progetto.bean.TripBean;
 import com.ispw.progetto.bean.UserBean;
@@ -6,7 +6,7 @@ import com.ispw.progetto.controller_app.BookTripController;
 import com.ispw.progetto.exception.AlreadyPrenotedException;
 import com.ispw.progetto.exception.ExistsUserException;
 import com.ispw.progetto.exception.PlacesTerminatedException;
-import view2.Printer;
+import viewseconda.Printer;
 
 import java.io.IOException;
 import java.sql.SQLException;

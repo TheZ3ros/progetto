@@ -1,6 +1,6 @@
 package com.ispw.progetto.dao;
 
-import view2.Printer;
+import viewseconda.Printer;
 
 import java.io.FileInputStream;
 import java.io.IOException;

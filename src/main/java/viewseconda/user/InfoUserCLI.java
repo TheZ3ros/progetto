@@ -1,4 +1,4 @@
-package view2.user;
+package viewseconda.user;
 
 import com.ispw.progetto.bean.SignUpUserBean;
 import com.ispw.progetto.bean.UserBean;
@@ -6,7 +6,7 @@ import com.ispw.progetto.controller_app.RegLoginControllerApp;
 import com.ispw.progetto.exception.AlreadyPrenotedException;
 import com.ispw.progetto.exception.ExistsUserException;
 import com.ispw.progetto.exception.PlacesTerminatedException;
-import view2.Printer;
+import viewseconda.Printer;
 
 import java.io.IOException;
 import java.sql.SQLException;

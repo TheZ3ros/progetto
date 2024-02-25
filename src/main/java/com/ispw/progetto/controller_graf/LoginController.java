@@ -17,6 +17,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 public class LoginController {
 
@@ -48,7 +49,7 @@ public class LoginController {
     }
 
     @FXML
-    public void handlerloginutente() throws Exception {
+    public void handlerloginutente() throws IOException, SQLException {
         String userUtente=usernameUtente.getText();
         String passUtente=passwordUtente.getText();
         UserBean user=new UserBean();
@@ -80,7 +81,7 @@ public class LoginController {
     }
 
     @FXML
-    private void handlerloginagenzia() throws Exception {
+    private void handlerloginagenzia()  {
 
         String userAgenzia = usernameAgenzia.getText();
         String passAgenzia = passwordAgenzia.getText();
@@ -101,7 +102,7 @@ public class LoginController {
             agencyhome.setButtonText();
             stage.setTitle("Home Agenzia");
         }
-        catch(CredentialErrorException e){
+        catch(CredentialErrorException | SQLException | IOException e){
 
             Alert alert=new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Login fallito");
