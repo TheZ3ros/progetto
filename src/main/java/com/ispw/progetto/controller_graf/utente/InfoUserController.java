@@ -66,8 +66,8 @@ public class InfoUserController {
         SignUpUserBean userr=regLoginControllerApp.info();
         tnome.setText(userr.getNome());
         tcognom.setText(userr.getCognome());
-        temail.setText(userr.getEmail());
-        tusername.setText(userr.getUsername());
+        temail.setText(userr.getUsername());
+        tusername.setText(userr.getEmail());
 
     }
 
