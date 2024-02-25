@@ -52,6 +52,7 @@ public class TripCreationTest {
         assertEquals(giusto.getAvailable(),trip.getAvailable());
         assertEquals(giusto.getDataAnd(), trip.getDataAnd());
         assertEquals(giusto.getDataRit(), trip.getDataRit());
+
     }
 
 

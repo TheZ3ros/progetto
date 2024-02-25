@@ -5,45 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="abd72b32-f6c1-4b42-a1d9-4297dd975b52" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/ef164cb4-3b91-4025-9266-42b4f81bb44a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/ef164cb4-3b91-4025-9266-42b4f81bb44a.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_02_2024_17_27__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_02_2024_17_54__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_02_2024_21_20__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_02_2024_12_05__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_02_2024_15_03__Changes_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_02_2024_21_58_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_02_2024_21_58__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_18_02_2024_15_09_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_18_02_2024_15_09__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_02_2024_17_27_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_02_2024_17_54_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_02_2024_21_20_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_02_2024_12_05_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_02_2024_15_03_[Changes]1/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_18_02_2024_19_39_[Changes]1/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_18_02_2024_19_39__Changes_1.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/Applicazione.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/Applicazione.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_app/BookTripController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_app/BookTripController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_app/RegLoginControllerApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_app/RegLoginControllerApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/RegistrazioneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/RegistrazioneController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/agenzia/StatusVisualizerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/agenzia/StatusVisualizerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/InfoUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/InfoUserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/PagamentoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/PagamentoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/dao/Connectivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/dao/Connectivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/exception/FailedSearchException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/exception/FailedSearchException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/model/TripStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/model/TripStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/model/UserTrip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/model/UserTrip.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view2/ControllerHomeCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/viewseconda/ControllerHomeCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view2/Printer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/viewseconda/Printer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view2/RegistrazioneUserCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/viewseconda/RegistrazioneUserCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view2/agency/AgencyTripsCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/viewseconda/agency/AgencyTripsCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view2/agency/AgencyUserCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/viewseconda/agency/AgencyUserCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view2/agency/HomeAgencyCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/viewseconda/agency/HomeAgencyCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view2/agency/LoginAgencyCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/viewseconda/agency/LoginAgencyCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view2/agency/TripCreationCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/viewseconda/agency/TripCreationCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view2/agency/TripStatusCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/viewseconda/agency/TripStatusCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view2/user/BookedTripCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/viewseconda/user/BookedTripCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view2/user/HomeLoginCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/viewseconda/user/HomeLoginCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view2/user/InfoUserCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/viewseconda/user/InfoUserCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view2/user/LoginUserCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/viewseconda/user/LoginUserCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view2/user/PaymentCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/viewseconda/user/PaymentCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view2/user/TripViewCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/viewseconda/user/TripViewCLI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/test/TripCreationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/TripCreationTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -243,8 +215,6 @@
       <workItem from="1708532545710" duration="2269000" />
       <workItem from="1708551383941" duration="2415000" />
       <workItem from="1708597575654" duration="17291000" />
-      <workItem from="1708704363402" duration="155000" />
-      <workItem from="1708880107300" duration="1230000" />
     </task>
     <task id="LOCAL-00008" summary="Aggiunta della schermata di login e del suo controller. Implementata la possibilità di andare dalla schermata di Home a quella di Login e viceversa">
       <option name="closed" value="true" />
@@ -700,7 +670,7 @@
           <option name="timeStamp" value="51" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/viewseconda/agency/LoginAgencyCLI.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/view2/agency/LoginAgencyCLI.java</url>
           <line>24</line>
           <option name="timeStamp" value="53" />
         </line-breakpoint>
@@ -711,5 +681,10 @@
         <watch expression="e" />
       </configuration>
     </watches-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/ipsw$Applicazione.ic" NAME="Applicazione Coverage Results" MODIFIED="1708689987244" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.example.progetto.*</FILTER>
+    </SUITE>
   </component>
 </project>

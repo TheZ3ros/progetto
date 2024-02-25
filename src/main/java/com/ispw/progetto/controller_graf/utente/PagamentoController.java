@@ -23,6 +23,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import javafx.animation.Animation;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -59,7 +60,7 @@ public class PagamentoController{
 
         // Crea una Timeline che si aggiorna ogni secondo
         Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(1), this::updateTimer));
-        timeline.setCycleCount(Timeline.INDEFINITE);
+        timeline.setCycleCount(Animation.INDEFINITE);
         timeline.play();
 
         Timer timerr = new Timer();
@@ -79,7 +80,7 @@ public class PagamentoController{
                             try {
                                 throw new IOException(ex);
                             } catch (IOException exc) {
-                                throw new RuntimeException(exc);
+                                throw new IllegalArgumentException(exc);
                             }
                         }
                     }
