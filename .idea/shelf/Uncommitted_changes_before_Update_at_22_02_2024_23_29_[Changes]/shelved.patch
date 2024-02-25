@@ -1,0 +1,144 @@
+Index: src/main/java/com/example/progetto/controller_graf/agenzia/ViewTripCreationController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.progetto.controller_graf.agenzia;\r\n\r\nimport com.example.progetto.Applicazione;\r\nimport com.example.progetto.bean.AgencyBean;\r\nimport com.example.progetto.bean.TripBean;\r\nimport com.example.progetto.controller_app.CreateTripController;\r\nimport com.example.progetto.exception.DateNotValidException;\r\nimport com.example.progetto.exception.EmptystatementException;\r\nimport com.example.progetto.exception.SQLStatementException;\r\nimport com.example.progetto.pattern.factory.EntityFactory;\r\nimport javafx.fxml.FXML;\r\nimport javafx.fxml.FXMLLoader;\r\nimport javafx.scene.Parent;\r\nimport javafx.scene.Scene;\r\nimport javafx.scene.control.Alert;\r\nimport javafx.scene.control.Button;\r\nimport javafx.scene.control.DatePicker;\r\nimport javafx.scene.control.TextField;\r\nimport javafx.scene.image.Image;\r\nimport javafx.scene.image.ImageView;\r\nimport javafx.stage.FileChooser;\r\nimport javafx.stage.Stage;\r\n\r\nimport javafx.embed.swing.SwingFXUtils;\r\n\r\nimport java.awt.image.BufferedImage;\r\nimport javax.imageio.ImageIO;\r\nimport java.io.ByteArrayInputStream;\r\nimport java.io.ByteArrayOutputStream;\r\nimport java.io.IOException;\r\nimport java.io.File;\r\nimport java.sql.Date;\r\nimport java.sql.SQLException;\r\nimport java.time.LocalDate;\r\n\r\npublic class ViewTripCreationController {\r\n\r\n\r\n    private Applicazione main;\r\n    private String imagePath;\r\n    private byte[] imageBytes;\r\n    private AgencyBean currentUser;\r\n    @FXML\r\n    private Button agency;\r\n    @FXML\r\n    private ImageView imageViewer;\r\n    @FXML\r\n    private TextField nomecitta;\r\n    @FXML\r\n    private TextField disponibili;\r\n    @FXML\r\n    private DatePicker dataAnd;\r\n    @FXML\r\n    private DatePicker dataRit;\r\n    @FXML\r\n    private TextField prezzo;\r\n\r\n\r\n    public void setMain(Applicazione main) {\r\n\r\n        this.main = main;\r\n    }\r\n\r\n    public void setUser(AgencyBean utente){\r\n\r\n        currentUser=utente;\r\n    }\r\n    public void setButtonText() {\r\n\r\n        agency.setText(currentUser.getUsername());\r\n    }\r\n\r\n    @FXML\r\n    public void vaiAHome(){\r\n\r\n        main.vaiAHome();\r\n    }\r\n\r\n    @FXML\r\n    private void vaiAAgencyHome() throws IOException {\r\n        FXMLLoader agencyhomeloader = new FXMLLoader(Applicazione.class.getResource(\"view1/agenzia/agency_home.fxml\"));\r\n        Parent agencyhomeroot = agencyhomeloader.load();\r\n        Scene tripcreationscene = new Scene(agencyhomeroot);\r\n        AgencyHomeController agencyhome = agencyhomeloader.getController();\r\n        agencyhome.setMain(main);\r\n        agencyhome.setUser(currentUser);\r\n        Stage stage = main.getStage();\r\n        stage.setScene(tripcreationscene);\r\n        agencyhome.setButtonText();\r\n        stage.setTitle(\"Home Agenzia\");\r\n    }\r\n\r\n    @FXML\r\n    private void insertImage() throws IOException {\r\n        FileChooser imageUploader = new FileChooser();\r\n        imageUploader.setTitle(\"Seleziona l'immagine\");\r\n        imageUploader.getExtensionFilters().addAll(new FileChooser.ExtensionFilter(\"File immagine\",\"*.png\",\"*.jpg\",\"*.jpeg\",\"*.gif\"));\r\n        File selectedFile = imageUploader.showOpenDialog(new Stage());\r\n        if(selectedFile!=null){\r\n\r\n            imagePath = selectedFile.getAbsolutePath();\r\n            Image image = new Image(selectedFile.toURI().toString());\r\n            imageBytes = imageToBytes(image);\r\n            Image recreatedImage = bytesToImage(imageBytes);\r\n            imageViewer.setImage(recreatedImage);\r\n        }\r\n\r\n    }\r\n\r\n    public byte[] imageToBytes(Image image) throws IOException {\r\n        BufferedImage bufferedImage = SwingFXUtils.fromFXImage(image,null);\r\n        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();\r\n        ImageIO.write(bufferedImage,\"png\",outputStream);\r\n\r\n        return outputStream.toByteArray();\r\n    }\r\n\r\n    private Image bytesToImage(byte[] bytes) {\r\n        ByteArrayInputStream inputStream = new ByteArrayInputStream(bytes);\r\n        return new Image(inputStream);\r\n    }\r\n\r\n    @FXML\r\n    private void submit() throws SQLStatementException {\r\n        try{\r\n            String city = nomecitta.getText().trim();\r\n            if (city.isEmpty() || imagePath.isEmpty()){\r\n                throw new EmptystatementException(\"Riempire tutti i campi\");\r\n            }\r\n            int available = Integer.parseInt(disponibili.getText());\r\n\r\n            LocalDate checkAndata = dataAnd.getValue();\r\n            LocalDate checkRitorno = dataRit.getValue();\r\n\r\n            if (checkAndata.isBefore(LocalDate.now())){\r\n                dataAnd.setValue(null);\r\n                throw new DateNotValidException(\"Valore di andata non valido\");\r\n            }\r\n            else if (checkRitorno.isBefore(checkAndata)){\r\n                dataRit.setValue(null);\r\n                throw new DateNotValidException(\"Valore di ritorno non valido\");\r\n            }\r\n            Date andata = Date.valueOf(checkAndata);\r\n            Date ritorno = Date.valueOf(checkRitorno);\r\n            float price = Float.parseFloat(prezzo.getText());\r\n            TripBean trip = new TripBean(city,available,andata,ritorno,price,imageBytes);\r\n            CreateTripController creation = new CreateTripController(trip);\r\n            creation.uploadTrip();\r\n            Alert alert=new Alert(Alert.AlertType.INFORMATION);\r\n            alert.setTitle(\"Creazione riuscita\");\r\n            alert.setHeaderText(null);\r\n            alert.setContentText(\"Viaggio creato con successo\");\r\n            alert.showAndWait();\r\n        } catch (DateNotValidException|EmptystatementException e){\r\n            Alert alert=new Alert(Alert.AlertType.ERROR);\r\n            alert.setTitle(\"Creazione riuscita\");\r\n            alert.setHeaderText(null);\r\n            alert.setContentText(e.getMessage());\r\n            alert.showAndWait();\r\n        } catch (SQLException | IOException e) {\r\n            throw new SQLStatementException(\"Statement non eseguito\");\r\n        }\r\n\r\n\r\n    }\r\n}\r\n
+===================================================================
+diff --git a/src/main/java/com/example/progetto/controller_graf/agenzia/ViewTripCreationController.java b/src/main/java/com/example/progetto/controller_graf/agenzia/ViewTripCreationController.java
+--- a/src/main/java/com/example/progetto/controller_graf/agenzia/ViewTripCreationController.java	
++++ b/src/main/java/com/example/progetto/controller_graf/agenzia/ViewTripCreationController.java	
+@@ -5,9 +5,8 @@
+ import com.example.progetto.bean.TripBean;
+ import com.example.progetto.controller_app.CreateTripController;
+ import com.example.progetto.exception.DateNotValidException;
+-import com.example.progetto.exception.EmptystatementException;
++import com.example.progetto.exception.EmptyStatementException;
+ import com.example.progetto.exception.SQLStatementException;
+-import com.example.progetto.pattern.factory.EntityFactory;
+ import javafx.fxml.FXML;
+ import javafx.fxml.FXMLLoader;
+ import javafx.scene.Parent;
+@@ -125,7 +124,7 @@
+         try{
+             String city = nomecitta.getText().trim();
+             if (city.isEmpty() || imagePath.isEmpty()){
+-                throw new EmptystatementException("Riempire tutti i campi");
++                throw new EmptyStatementException("Riempire tutti i campi");
+             }
+             int available = Integer.parseInt(disponibili.getText());
+ 
+@@ -143,15 +142,18 @@
+             Date andata = Date.valueOf(checkAndata);
+             Date ritorno = Date.valueOf(checkRitorno);
+             float price = Float.parseFloat(prezzo.getText());
++
+             TripBean trip = new TripBean(city,available,andata,ritorno,price,imageBytes);
++
+             CreateTripController creation = new CreateTripController(trip);
+             creation.uploadTrip();
++
+             Alert alert=new Alert(Alert.AlertType.INFORMATION);
+             alert.setTitle("Creazione riuscita");
+             alert.setHeaderText(null);
+             alert.setContentText("Viaggio creato con successo");
+             alert.showAndWait();
+-        } catch (DateNotValidException|EmptystatementException e){
++        } catch (DateNotValidException | EmptyStatementException e){
+             Alert alert=new Alert(Alert.AlertType.ERROR);
+             alert.setTitle("Creazione riuscita");
+             alert.setHeaderText(null);
+Index: src/main/java/com/example/progetto/controller_app/CreateTripController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.progetto.controller_app;\r\n\r\nimport com.example.progetto.dao.TripDAO;\r\nimport com.example.progetto.bean.TripBean;\r\nimport com.example.progetto.model.Trip;\r\nimport javafx.scene.control.Alert;\r\n\r\nimport java.io.IOException;\r\nimport java.sql.SQLException;\r\nimport java.util.ArrayList;\r\nimport java.util.List;\r\nimport java.util.Objects;\r\n\r\npublic class CreateTripController {\r\n\r\n    private final Trip newTrip;\r\n\r\n    public CreateTripController(TripBean trip){\r\n\r\n        String citta;\r\n        citta=trip.getCity();\r\n        int n;\r\n        n=trip.getAvailable();\r\n        java.sql.Date dataA=(trip.getDataAnd());\r\n        java.sql.Date dataR=trip.getDataRit();\r\n        Float prezzo;\r\n        prezzo=trip.getPrice();\r\n        byte[] image;\r\n        image=(trip.getImage());\r\n        newTrip=new Trip(n,citta, dataA,dataR,prezzo,image);\r\n    }\r\n\r\n    public void uploadTrip() throws SQLException, IOException {\r\n        TripDAO dao = new TripDAO();\r\n\r\n        try {\r\n            boolean result;\r\n            result=checkduplicate(newTrip);\r\n            if (!result){\r\n                throw new IllegalArgumentException();\r\n            }\r\n            dao.addTrip(newTrip.getCity(), newTrip.getAvailable(), newTrip.getDataAnd(),\r\n                        newTrip.getDataRit(), newTrip.getPrice(), newTrip.getImage());\r\n        } catch (SQLException e) {\r\n            Alert alert=new Alert(Alert.AlertType.ERROR);\r\n            alert.setTitle(\"Creazione fallita\");\r\n            alert.setHeaderText(null);\r\n            alert.setContentText(\"Impossibile aggiungere il nuovo itinerario al DB\");\r\n            alert.showAndWait();\r\n        }\r\n\r\n    }\r\n\r\n    public boolean checkduplicate(Trip newtrip) throws SQLException, IOException {\r\n        TripDAO tripdao;\r\n        tripdao= new TripDAO();\r\n        Trip trip;\r\n        List<TripBean> viaggi;\r\n        viaggi= new ArrayList<>();\r\n        int i;\r\n        i= 1;\r\n        while ((trip = tripdao.execute(i)) != null) {\r\n            i++;\r\n            if(trip.getAvailable()== newtrip.getAvailable() && Objects.equals(trip.getCity(),\r\n                    newtrip.getCity()) && Objects.equals(trip.getDataAnd(),newtrip.getDataAnd())\r\n                    && Objects.equals(trip.getDataRit(),newtrip.getDataRit()) && trip.getPrice()==newtrip.getPrice()) {\r\n                return false;\r\n            }\r\n            TripBean tripBean = new TripBean(trip.getAvailable(), trip.getCity(), trip.getDataAnd(),\r\n                    trip.getDataRit(), trip.getPrice(), trip.getImage(), trip.getId());\r\n            viaggi.add(tripBean);\r\n        }\r\n        return true;\r\n    }\r\n}\r\n
+===================================================================
+diff --git a/src/main/java/com/example/progetto/controller_app/CreateTripController.java b/src/main/java/com/example/progetto/controller_app/CreateTripController.java
+--- a/src/main/java/com/example/progetto/controller_app/CreateTripController.java	
++++ b/src/main/java/com/example/progetto/controller_app/CreateTripController.java	
+@@ -15,22 +15,25 @@
+ 
+     private final Trip newTrip;
+ 
+-    public CreateTripController(TripBean trip){
++    public CreateTripController(TripBean tripBean){
+ 
+         String citta;
+-        citta=trip.getCity();
++        citta=tripBean.getCity();
+         int n;
+-        n=trip.getAvailable();
+-        java.sql.Date dataA=(trip.getDataAnd());
+-        java.sql.Date dataR=trip.getDataRit();
++        n=tripBean.getAvailable();
++        java.sql.Date dataA=(tripBean.getDataAnd());
++        java.sql.Date dataR=tripBean.getDataRit();
+         Float prezzo;
+-        prezzo=trip.getPrice();
++        prezzo=tripBean.getPrice();
+         byte[] image;
+-        image=(trip.getImage());
++        image=(tripBean.getImage());
+         newTrip=new Trip(n,citta, dataA,dataR,prezzo,image);
+     }
+ 
+     public void uploadTrip() throws SQLException, IOException {
++        /*Spostare controlli della trip da ViewTripCreationController a CreateTripController, tanto già gli passo tripBean
++Cambiare scritta stato prenotazione in “non cofermata”/”Confermata”
++*/
+         TripDAO dao = new TripDAO();
+ 
+         try {
+Index: src/main/java/com/example/progetto/exception/EmptystatementException.java
+===================================================================
+diff --git a/src/main/java/com/example/progetto/exception/EmptystatementException.java b/src/main/java/com/example/progetto/exception/EmptyStatementException.java
+rename from src/main/java/com/example/progetto/exception/EmptystatementException.java
+rename to src/main/java/com/example/progetto/exception/EmptyStatementException.java
+--- a/src/main/java/com/example/progetto/exception/EmptystatementException.java	
++++ b/src/main/java/com/example/progetto/exception/EmptyStatementException.java	
+@@ -1,7 +1,7 @@
+ package com.example.progetto.exception;
+ 
+-public class EmptystatementException extends Exception{
+-    public  EmptystatementException(String message){
++public class EmptyStatementException extends Exception{
++    public EmptyStatementException(String message){
+         super(message);
+     }
+ }
+\ No newline at end of file
+Index: src/main/java/com/example/progetto/bean/TripBean.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.progetto.bean;\r\n\r\nimport java.sql.Date;\r\n\r\npublic class TripBean {\r\n    private final int available;\r\n    private final String city;\r\n    private final Date dataAnd;\r\n    private final Date dataRit;\r\n    private final Float price;\r\n    private byte[] image;\r\n    private int id;\r\n    private boolean stato;\r\n\r\n    public TripBean(String city, int available, Date dataAnd, Date dataRit, Float price, byte[] image,boolean stato){\r\n        this.available=available;\r\n        this.city=city;\r\n        this.dataAnd = dataAnd;\r\n        this.dataRit = dataRit;\r\n        this.price=price;\r\n        this.image=image;\r\n        this.stato=stato;\r\n    }\r\n    public TripBean(int places, String city, Date dataAnd, Date dataRit, Float price, byte[] image, int id){\r\n        this.available=places;\r\n        this.city=city;\r\n        this.dataAnd =dataAnd;\r\n        this.dataRit =dataRit;\r\n        this.price=price;\r\n        this.image=image;\r\n        this.id=id;\r\n    }\r\n    public TripBean(String city, int available, Date dataAnd, Date dataRit, Float price, byte[] image){\r\n        this.available=available;\r\n        this.city=city;\r\n        this.dataAnd = dataAnd;\r\n        this.dataRit = dataRit;\r\n        this.price=price;\r\n        this.image=image;\r\n    }\r\n    public TripBean(int id,String city, int available, Date dataAnd, Date dataRit, Float price){\r\n        this.id=id;\r\n        this.available=available;\r\n        this.city=city;\r\n        this.dataAnd = dataAnd;\r\n        this.dataRit = dataRit;\r\n        this.price=price;\r\n    }\r\n    public int getAvailable(){\r\n        return available;\r\n    }\r\n    public String getCity(){\r\n        return city;\r\n    }\r\n    public byte[] getImage(){\r\n        return image;\r\n    }\r\n    public Date getDataAnd(){\r\n        return dataAnd;\r\n    }\r\n    public Date getDataRit(){\r\n        return dataRit;\r\n    }\r\n    public float getPrice(){\r\n        return price;\r\n    }\r\n    public int getId(){\r\n        return id;\r\n    }\r\n\r\n    public boolean isStato() {\r\n        return stato;\r\n    }\r\n\r\n    public void setImage(byte[] image) {\r\n        this.image = image;\r\n    }\r\n}\r\n
+===================================================================
+diff --git a/src/main/java/com/example/progetto/bean/TripBean.java b/src/main/java/com/example/progetto/bean/TripBean.java
+--- a/src/main/java/com/example/progetto/bean/TripBean.java	
++++ b/src/main/java/com/example/progetto/bean/TripBean.java	
+@@ -21,8 +21,8 @@
+         this.image=image;
+         this.stato=stato;
+     }
+-    public TripBean(int places, String city, Date dataAnd, Date dataRit, Float price, byte[] image, int id){
+-        this.available=places;
++    public TripBean(int available, String city, Date dataAnd, Date dataRit, Float price, byte[] image, int id){
++        this.available=available;
+         this.city=city;
+         this.dataAnd =dataAnd;
+         this.dataRit =dataRit;
+Index: src/main/java/com/example/progetto/dao/TripDAO.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.progetto.dao;\r\nimport com.example.progetto.bean.SearchBean;\r\nimport com.example.progetto.bean.UserBean;\r\nimport com.example.progetto.model.Trip;\r\nimport com.example.progetto.pattern.factory.EntityFactory;\r\n\r\nimport java.io.IOException;\r\nimport java.sql.*;\r\nimport java.util.ArrayList;\r\nimport java.util.List;\r\n\r\npublic class TripDAO implements GenericDAO<Trip> {\r\n        private final Connectivity connection;\r\n        public TripDAO() throws SQLException, IOException {\r\n            connection = Connectivity.getSingletonInstance();\r\n        }\r\n\r\n    @Override\r\n    public Trip execute(Object... params) throws SQLException {\r\n        Trip trip;\r\n        int id=(int)params[0];\r\n        try(CallableStatement cs = connection.conn.prepareCall(\"{call GetTripDetailsById(?,?,?,?,?,?,?)}\")){\r\n        cs.setInt(1, id);\r\n        cs.registerOutParameter(2, Types.VARCHAR);\r\n            cs.registerOutParameter(3, Types.FLOAT);\r\n        cs.registerOutParameter(4, Types.DATE);\r\n        cs.registerOutParameter(5, Types.INTEGER);\r\n        cs.registerOutParameter(6, Types.BLOB);\r\n        cs.registerOutParameter(7, Types.DATE);\r\n\r\n        cs.executeQuery();\r\n        if (cs.getString(2) != null) {\r\n\r\n            String citta=(cs.getString(2));\r\n            Float prezzo=(cs.getFloat(3));\r\n            Date dataA=(cs.getDate(4));\r\n            int available=(cs.getInt(5));\r\n            byte[] image=(cs.getBytes(6));\r\n            Date dataRit=(cs.getDate(7));\r\n\r\n            trip =new Trip(available, citta, dataA,dataRit,prezzo,image,id);\r\n\r\n            return trip;\r\n        }\r\n        else {\r\n            return null;\r\n            }\r\n        }\r\n    }\r\n    public void refreshAvailable(int id) throws SQLException {\r\n\r\n\r\n            try(CallableStatement cs = connection.conn.prepareCall(\"{call decrementa(?)}\")) {\r\n                cs.setInt(1, id);\r\n                cs.executeQuery();\r\n            }catch(SQLException e){\r\n                throw new SQLException(e.getMessage());\r\n            }\r\n        }\r\n\r\n    public void addTrip(String city, int available, Date dataAnd, Date dataRit, float price, byte[] image) throws SQLException {\r\n        try (CallableStatement cs = connection.conn.prepareCall(\"{call AddTrip(?,?,?,?,?,?)}\")){\r\n\r\n            cs.setString(1, city);\r\n            cs.setInt(2, available);\r\n            cs.setDate(3, dataAnd);\r\n            cs.setDate(4, dataRit);\r\n            cs.setFloat(5, price);\r\n            cs.setBytes(6, image);\r\n            cs.executeQuery();\r\n        }\r\n        catch(SQLException e){\r\n            throw new SQLException(\"errore aggiunta trip\",e.getMessage());\r\n        }\r\n    }\r\n\r\n    public List<Trip> tripUser(String username) throws SQLException {\r\n        List<Trip> trip=new ArrayList<>();\r\n        try (CallableStatement cs = connection.getConn().prepareCall(\"{call GetTripDetailsByUsername(?)}\")){\r\n            cs.setString(1,username);\r\n            boolean status = cs.execute();\r\n            if (status) {\r\n                ResultSet rs = cs.getResultSet();\r\n                while (rs.next()) {\r\n                    String citta=rs.getString(1);\r\n                    Float prezzo=rs.getFloat(2);\r\n                    Date dataA=rs.getDate(3);\r\n                    Date dataRit=rs.getDate(4);\r\n                    int available=rs.getInt(5);\r\n                    byte[] image=rs.getBytes(6);\r\n                    boolean state=rs.getBoolean(7);\r\n                    Trip trips =new Trip(available, citta, dataA,dataRit,prezzo,image,state);\r\n                    trip.add(trips);\r\n                }\r\n\r\n            }\r\n        }\r\n        catch (SQLException e) {\r\n            throw new SQLException(\"errore durante la lettura: \" + e.getMessage());\r\n        }\r\n        return trip;\r\n    }\r\n    public List<Trip> searchTrip(String search) throws SQLException {\r\n        List<Trip> trip=new ArrayList<>();\r\n        try (CallableStatement cs = connection.getConn().prepareCall(\"{call GetTripDetailsByCity(?)}\")){\r\n            cs.setString(1, search);\r\n            boolean status = cs.execute();\r\n            if (status) {\r\n                ResultSet rs = cs.getResultSet();\r\n                while (rs.next()) {\r\n                    Float prezzo=rs.getFloat(1);\r\n                    Date dataA=rs.getDate(2);\r\n                    Date dataRit=rs.getDate(3);\r\n                    int available=rs.getInt(4);\r\n                    byte[] image=rs.getBytes(5);\r\n                    Trip trips =new Trip(available, search, dataA,dataRit,prezzo,image);\r\n                    trip.add(trips);\r\n                }\r\n\r\n            }\r\n        }\r\n        catch (SQLException e) {\r\n            throw new SQLException(\"errore durante la lettura: \" + e.getMessage());\r\n        }\r\n        return trip;\r\n    }\r\n    }\r\n\r\n\r\n\r\n
+===================================================================
+diff --git a/src/main/java/com/example/progetto/dao/TripDAO.java b/src/main/java/com/example/progetto/dao/TripDAO.java
+--- a/src/main/java/com/example/progetto/dao/TripDAO.java	
++++ b/src/main/java/com/example/progetto/dao/TripDAO.java	
+@@ -1,8 +1,6 @@
+ package com.example.progetto.dao;
+-import com.example.progetto.bean.SearchBean;
+-import com.example.progetto.bean.UserBean;
++
+ import com.example.progetto.model.Trip;
+-import com.example.progetto.pattern.factory.EntityFactory;
+ 
+ import java.io.IOException;
+ import java.sql.*;
