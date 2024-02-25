@@ -29,10 +29,8 @@ public class LoginAgencyCLI {
             homeAgency.start();
 
         }
-        catch(CredentialErrorException e){
+        catch(CredentialErrorException | SQLException | IOException | NotValidCouponException e){
             Printer.printMessage(e.getMessage());
-        } catch (SQLException | IOException | NotValidCouponException ignored) {
-
         }
     }
 }

@@ -13,7 +13,7 @@ import java.util.Scanner;
 public class AgencyUserCLI {
 
 
-    public void login() throws Exception {
+    public void login() throws CredentialErrorException {
         Scanner scanner = new Scanner(System.in);
         Printer.printMessage("inserire username");
         String username = scanner.nextLine();
@@ -34,7 +34,7 @@ public class AgencyUserCLI {
         catch(CredentialErrorException e){
             Printer.printMessage(e.getMessage());
         } catch (SQLException | IOException | NotValidCouponException e) {
-            throw new RuntimeException(e);
+            throw new IllegalArgumentException(e);
         }
     }
 }

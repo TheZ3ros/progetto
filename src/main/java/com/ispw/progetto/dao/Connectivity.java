@@ -13,9 +13,7 @@ public class Connectivity {
     private static Connectivity singletonClass =null;
 
     protected Connectivity() throws SQLException, IOException {
-        InputStream input = null;
-        try {
-            input = new FileInputStream("src/main/resources/db.properties");
+        try (InputStream input = new FileInputStream("src/main/resources/db.properties")) {
             Properties properties = new Properties();
             properties.load(input);
             String connectionUrl = properties.getProperty("CONNECTION_URL");
@@ -26,16 +24,9 @@ public class Connectivity {
             throw new IOException("Errore durante il recupero delle credenziali del database: " + e.getMessage());
         } catch (SQLException e) {
             throw new SQLException("Errore durante l'apertura della connessione: " + e.getMessage());
-        } finally {
-            if (input != null) {
-                try {
-                    input.close();
-                } catch (IOException e) {
-                    Printer.printMessage("Errore durante la chiusura del FileInputStream: " + e.getMessage());
-                }
-            }
         }
     }
+
 
 
 

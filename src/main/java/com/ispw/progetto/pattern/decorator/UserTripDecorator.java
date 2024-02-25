@@ -3,7 +3,7 @@ package com.ispw.progetto.pattern.decorator;
 public abstract class UserTripDecorator implements  UserTripInterface{
 
     protected UserTripInterface userTrip;
-    public UserTripDecorator(UserTripInterface userTrip){
+    protected UserTripDecorator(UserTripInterface userTrip){
         this.userTrip=userTrip;
     }
     @Override
