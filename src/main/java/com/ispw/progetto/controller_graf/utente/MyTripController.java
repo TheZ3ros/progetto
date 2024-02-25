@@ -4,7 +4,6 @@ import com.ispw.progetto.Applicazione;
 import com.ispw.progetto.bean.TripBean;
 import com.ispw.progetto.bean.UserBean;
 import com.ispw.progetto.controller_app.BookTripController;
-import com.ispw.progetto.exception.ExistsUserException;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -88,7 +87,7 @@ public class MyTripController {
     }
 
     @FXML
-    public void info() throws IOException, SQLException, ExistsUserException {
+    public void info() throws IOException, SQLException {
         FXMLLoader infoLoader = new FXMLLoader(Applicazione.class.getResource("view1/utente/info_user.fxml"));
         Parent inforoot = infoLoader.load();
         Scene myTripScene = new Scene(inforoot);

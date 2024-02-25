@@ -192,7 +192,7 @@ public class PagamentoController{
 
     }
     @FXML
-    public void info() throws IOException, SQLException, ExistsUserException {
+    public void info() throws IOException, SQLException {
         FXMLLoader infoLoader = new FXMLLoader(Applicazione.class.getResource("view1/utente/info_user.fxml"));
         Parent inforoot = infoLoader.load();
         Scene myTripScene = new Scene(inforoot);

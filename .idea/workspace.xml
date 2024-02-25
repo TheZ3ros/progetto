@@ -5,13 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="abd72b32-f6c1-4b42-a1d9-4297dd975b52" name="Changes" comment="code smell">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/dao/Connectivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/dao/Connectivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/dao/UserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/exception/FailedSearchException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/exception/FailedSearchException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/pattern/decorator/UserTripDecorator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/pattern/decorator/UserTripDecorator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/viewseconda/RegistrazioneUserCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/viewseconda/RegistrazioneUserCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/viewseconda/agency/AgencyUserCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/viewseconda/agency/AgencyUserCLI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/InfoUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/InfoUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/MyTripController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/MyTripController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -210,22 +205,6 @@
       <workItem from="1708532545710" duration="2269000" />
       <workItem from="1708551383941" duration="2415000" />
       <workItem from="1708597575654" duration="17291000" />
-    </task>
-    <task id="LOCAL-00009" summary="Bottoni schermata Accedi">
-      <option name="closed" value="true" />
-      <created>1705935530160</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1705935530160</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Bottoni schermata Accedi">
-      <option name="closed" value="true" />
-      <created>1706096730347</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1706096730347</updated>
     </task>
     <task id="LOCAL-00011" summary="Bottoni schermata Accedi">
       <option name="closed" value="true" />
@@ -603,7 +582,23 @@
       <option name="project" value="LOCAL" />
       <updated>1708889974641</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="code smell">
+      <option name="closed" value="true" />
+      <created>1708891109896</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1708891109896</updated>
+    </task>
+    <task id="LOCAL-00059" summary="code smell">
+      <option name="closed" value="true" />
+      <created>1708891241161</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1708891241161</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

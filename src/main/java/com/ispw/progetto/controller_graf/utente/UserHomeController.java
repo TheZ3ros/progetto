@@ -1,7 +1,6 @@
 package com.ispw.progetto.controller_graf.utente;
 import com.ispw.progetto.Applicazione;
 import com.ispw.progetto.bean.UserBean;
-import com.ispw.progetto.exception.ExistsUserException;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -50,7 +49,7 @@ public class UserHomeController {
         MyTripController myTripController=new MyTripController();
         myTripController.myTrip(currentUser,main);
     }
-    public void info() throws IOException, SQLException, ExistsUserException {
+    public void info() throws IOException, SQLException {
         FXMLLoader infoLoader = new FXMLLoader(Applicazione.class.getResource("view1/utente/info_user.fxml"));
         Parent inforoot = infoLoader.load();
         Scene myTripScene = new Scene(inforoot);

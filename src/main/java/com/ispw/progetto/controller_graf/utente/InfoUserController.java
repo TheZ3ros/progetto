@@ -4,7 +4,6 @@ import com.ispw.progetto.Applicazione;
 import com.ispw.progetto.bean.SignUpUserBean;
 import com.ispw.progetto.bean.UserBean;
 import com.ispw.progetto.controller_app.RegLoginControllerApp;
-import com.ispw.progetto.exception.ExistsUserException;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.text.Text;
