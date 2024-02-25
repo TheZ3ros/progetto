@@ -11,7 +11,7 @@ import java.sql.SQLException;
 import java.util.Scanner;
 
 public class LoginAgencyCLI {
-    public void login() throws Exception {
+    public void login()  {
         Scanner scanner = new Scanner(System.in);
         Printer.printMessage("inserire username");
         String username = scanner.nextLine();
@@ -31,8 +31,8 @@ public class LoginAgencyCLI {
         }
         catch(CredentialErrorException e){
             Printer.printMessage(e.getMessage());
-        } catch (SQLException | IOException | NotValidCouponException e) {
-            throw new RuntimeException(e);
+        } catch (SQLException | IOException | NotValidCouponException ignored) {
+
         }
     }
 }
