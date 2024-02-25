@@ -20,6 +20,19 @@ public class TripViewCLI {
 
     }
 
+    private void displayTrips(List<TripBean> trips) {
+        for (TripBean trip : trips) {
+            Printer.printMessage("ID:" + trip.getId());
+            Printer.printMessage("Città:" + trip.getCity());
+            Printer.printMessage("Prezzo:" + trip.getPrice());
+            Printer.printMessage("Data di partenza:" + trip.getDataAnd());
+            Printer.printMessage("Data di ritorno:" + trip.getDataRit());
+            Printer.printMessage("Posti disponibili:" + trip.getAvailable());
+            Printer.printMessage("---------------------------------");
+        }
+    }
+
+
     public void viewtrip(HomeLoginCLI login) throws SQLException, IOException, PlacesTerminatedException, AlreadyPrenotedException, ExistsUserException {
         BookTripController bookTripController = new BookTripController();
         List<TripBean> viaggi = bookTripController.showTrip();
@@ -32,7 +45,7 @@ public class TripViewCLI {
             Printer.printMessage("Posti disponibili:" + viaggio.getAvailable());
             Printer.printMessage("---------------------------------");
         }
-        Printer.printMessage("Inserire l'ID del viaggio che si vuole prenotare, 0 per tornare alla pagina precedente, 10 se si vuole flirtare per città");
+        Printer.printMessage("Inserire l'ID del viaggio che si vuole prenotare, 0 per tornare alla pagina precedente, 10 se si vuole filtrare per città");
         Scanner reader = new Scanner(System.in);
         int n;
         while (true) {
@@ -48,14 +61,7 @@ public class TripViewCLI {
                 try {
                     viaggi = bookTripController.searchByCity(searchBean);
 
-                for (TripBean viaggio : viaggi) {
-                        Printer.printMessage("Città:" + viaggio.getCity());
-                        Printer.printMessage("Prezzo:" + viaggio.getPrice());
-                        Printer.printMessage("Data di partenza:" + viaggio.getDataAnd());
-                        Printer.printMessage("Data di ritorno:" + viaggio.getDataRit());
-                        Printer.printMessage("Posti disponibili:" + viaggio.getAvailable());
-                        Printer.printMessage("---------------------------------");
-                    }
+                displayTrips(viaggi);
                 } catch (FailedSearchException e) {
                     Printer.printMessage(e.getMessage());
                 }
