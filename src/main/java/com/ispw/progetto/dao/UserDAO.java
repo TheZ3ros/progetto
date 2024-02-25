@@ -71,7 +71,7 @@ public class UserDAO implements GenericDAO <EntityFactory> {
 
 
     }
-    public SignUpUserBean info(String username) throws ExistsUserException, SQLException {
+    public SignUpUserBean info(String username) throws SQLException {
         try (CallableStatement cs = connection.conn.prepareCall("{call SearchUser(?,?,?,?)}")){
 
             cs.setString(1, username);

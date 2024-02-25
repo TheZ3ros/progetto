@@ -79,7 +79,7 @@ public class PaymentCLI {
             } catch (SQLException | IOException | PlacesTerminatedException | AlreadyPrenotedException e) {
                 Printer.printMessage(e.getMessage());
             } catch (ExistsUserException e) {
-                throw new RuntimeException(e);
+                throw new IllegalArgumentException(e);
             }
     }
     private void startTimer() {
@@ -87,12 +87,12 @@ public class PaymentCLI {
         Printer.printMessage("6 minuti per concludere il pagamento");
         TimerTask task = new TimerTask() {
             public void run() {
-                System.out.println("Il tempo è scaduto!");
+                Printer.printMessage("Il tempo è scaduto!");
                 try {
                     login.start();
                 } catch (SQLException | IOException | PlacesTerminatedException | AlreadyPrenotedException |
                          ExistsUserException e) {
-                    throw new RuntimeException(e);
+                    throw new IllegalArgumentException(e);
                 }
 
             }

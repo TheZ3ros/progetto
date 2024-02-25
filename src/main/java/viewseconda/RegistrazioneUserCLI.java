@@ -40,7 +40,7 @@ public class RegistrazioneUserCLI {
         } catch (ExistsUserException e) {
             Printer.printMessage(e.getMessage());
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            throw new IllegalArgumentException(e);
         }
     }
 
