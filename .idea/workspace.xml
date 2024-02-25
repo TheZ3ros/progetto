@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="abd72b32-f6c1-4b42-a1d9-4297dd975b52" name="Changes" comment="" />
+    <list default="true" id="abd72b32-f6c1-4b42-a1d9-4297dd975b52" name="Changes" comment="code smell">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/InfoUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/InfoUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/MyTripController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/MyTripController.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -202,16 +205,6 @@
       <workItem from="1708532545710" duration="2269000" />
       <workItem from="1708551383941" duration="2415000" />
       <workItem from="1708597575654" duration="17291000" />
-      <workItem from="1708704363402" duration="155000" />
-      <workItem from="1708880107300" duration="1230000" />
-    </task>
-    <task id="LOCAL-00010" summary="Bottoni schermata Accedi">
-      <option name="closed" value="true" />
-      <created>1706096730347</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1706096730347</updated>
     </task>
     <task id="LOCAL-00011" summary="Bottoni schermata Accedi">
       <option name="closed" value="true" />
@@ -581,23 +574,31 @@
       <option name="project" value="LOCAL" />
       <updated>1708557158288</updated>
     </task>
-    <task id="LOCAL-00057" summary="sistemazione controlli">
+    <task id="LOCAL-00057" summary="code smell">
       <option name="closed" value="true" />
-      <created>1708890733677</created>
+      <created>1708889974641</created>
       <option name="number" value="00057" />
       <option name="presentableId" value="LOCAL-00057" />
       <option name="project" value="LOCAL" />
-      <updated>1708890733677</updated>
+      <updated>1708889974641</updated>
     </task>
-    <task id="LOCAL-00058" summary="sistemazione controlli">
+    <task id="LOCAL-00058" summary="code smell">
       <option name="closed" value="true" />
-      <created>1708890764609</created>
+      <created>1708891109896</created>
       <option name="number" value="00058" />
       <option name="presentableId" value="LOCAL-00058" />
       <option name="project" value="LOCAL" />
-      <updated>1708890764609</updated>
+      <updated>1708891109896</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="code smell">
+      <option name="closed" value="true" />
+      <created>1708891241161</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1708891241161</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -635,12 +636,12 @@
     <MESSAGE value="pagina pagamento e fix cartelle" />
     <MESSAGE value="aggiornamento prenotazioni lato agenzia con query funzionante" />
     <MESSAGE value="Ultime modifiche (implementata classe Printer e controlli vari)" />
-    <MESSAGE value="code smell" />
     <MESSAGE value="registrtazione" />
     <MESSAGE value="prova" />
     <MESSAGE value="timer CLI" />
     <MESSAGE value="sistemazione controlli" />
-    <option name="LAST_COMMIT_MESSAGE" value="sistemazione controlli" />
+    <MESSAGE value="code smell" />
+    <option name="LAST_COMMIT_MESSAGE" value="code smell" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -654,12 +655,7 @@
           <option name="timeStamp" value="3" />
         </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/ispw/progetto/dao/UserDAO.java</url>
-          <line>91</line>
-          <option name="timeStamp" value="51" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/viewseconda/agency/LoginAgencyCLI.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/view2/agency/LoginAgencyCLI.java</url>
           <line>24</line>
           <option name="timeStamp" value="53" />
         </line-breakpoint>
@@ -670,5 +666,10 @@
         <watch expression="e" />
       </configuration>
     </watches-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/ipsw$Applicazione.ic" NAME="Applicazione Coverage Results" MODIFIED="1708689987244" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.example.progetto.*</FILTER>
+    </SUITE>
   </component>
 </project>

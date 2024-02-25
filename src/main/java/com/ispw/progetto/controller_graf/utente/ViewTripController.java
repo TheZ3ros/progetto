@@ -5,7 +5,6 @@ import com.ispw.progetto.bean.SearchBean;
 import com.ispw.progetto.bean.TripBean;
 import com.ispw.progetto.bean.UserBean;
 import com.ispw.progetto.controller_app.BookTripController;
-import com.ispw.progetto.exception.ExistsUserException;
 import com.ispw.progetto.exception.FailedSearchException;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -95,7 +94,7 @@ public class ViewTripController {
     }
 
     @FXML
-    public void ricercaCitta() throws SQLException, IOException, FailedSearchException {
+    public void ricercaCitta() throws SQLException, IOException {
         String citta = cercaCitta.getText();
         SearchBean searchBean = new SearchBean();
         searchBean.setCitta(citta);
@@ -129,7 +128,7 @@ public class ViewTripController {
 
     }
     @FXML
-    public void info() throws IOException, SQLException, ExistsUserException {
+    public void info() throws IOException, SQLException {
         FXMLLoader infoLoader = new FXMLLoader(Applicazione.class.getResource("view1/utente/info_user.fxml"));
         Parent inforoot = infoLoader.load();
         Scene myTripScene = new Scene(inforoot);
