@@ -60,7 +60,7 @@ public class InfoUserController {
 
     }
 
-    public void setInfo() throws IOException, SQLException, ExistsUserException {
+    public void setInfo() throws IOException, SQLException {
 
         RegLoginControllerApp regLoginControllerApp=new RegLoginControllerApp(currentUser);
         SignUpUserBean userr=regLoginControllerApp.info();
