@@ -55,6 +55,7 @@ public class Applicazione extends Application {
                 ControllerHomeCLI controllerHomeCLI=new ControllerHomeCLI();
                 controllerHomeCLI.start();
                 isvalid = true;
+                return;
             }
             else{
                 Printer.printMessage("inserire un'opzione valida");
