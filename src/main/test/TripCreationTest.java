@@ -17,7 +17,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TripCreationTest {
     /*
-    Authore of the test: Podda Alessandro
+    Author of the test: Podda Alessandro
     MATRICOLA: 0316851
 
      */
