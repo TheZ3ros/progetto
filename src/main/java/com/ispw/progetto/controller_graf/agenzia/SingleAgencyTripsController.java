@@ -1,6 +1,5 @@
 package com.ispw.progetto.controller_graf.agenzia;
 
-import com.ispw.progetto.Applicazione;
 import com.ispw.progetto.bean.AgencyBean;
 import com.ispw.progetto.bean.TripBean;
 import javafx.fxml.FXML;
@@ -26,41 +25,41 @@ public class SingleAgencyTripsController {
     private Text data;
     @FXML
     private Text prezzo;
-    private Applicazione main;
+
+    private Stage stage;           // Nuovo campo stage
     private AgencyBean user;
     private TripBean bean;
 
-
-    @FXML
-    public void setMain(Applicazione main){
-
-        this.main = main;
+    public void setStage(Stage stage){
+        this.stage = stage;
     }
 
     public void setUser(AgencyBean user){
-        this.user=user;
+        this.user = user;
     }
 
     public void createbox(TripBean bean) {
-        this.bean=bean;
+        this.bean = bean;
         Image image;
         ByteArrayInputStream inputStream = new ByteArrayInputStream(bean.getImage());
-        image=new Image(inputStream);
+        image = new Image(inputStream);
         imagine.setImage(image);
         title.setText(bean.getCity());
-        data.setText(bean.getDataAnd() +"/" + bean.getDataRit());
-        prezzo.setText((int)bean.getPrice()+"€");
+        data.setText(bean.getDataAnd() + "/" + bean.getDataRit());
+        prezzo.setText((int)bean.getPrice() + "€");
     }
 
     public void tripstatus() throws IOException, SQLException {
-        FXMLLoader paginaLoader = new FXMLLoader(Applicazione.class.getResource("view1/agenzia/tripstatus.fxml"));
+        FXMLLoader paginaLoader = new FXMLLoader(com.ispw.progetto.Applicazione.class.getResource("view1/agenzia/tripstatus.fxml"));
         Parent pageroot = paginaLoader.load();
         Scene paginaScene = new Scene(pageroot);
         TripStatusController tripstatus = paginaLoader.getController();
-        tripstatus.setMain(main);
+
+        // Se TripStatusController ha setStage(Stage), la puoi chiamare qui:
+        tripstatus.setStage(stage);
+
         tripstatus.setTrip(bean);
         tripstatus.setThisUser(user);
-        Stage stage = main.getStage();
         stage.setScene(paginaScene);
         tripstatus.charge();
         tripstatus.setButtonText();

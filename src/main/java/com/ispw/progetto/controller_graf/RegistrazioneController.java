@@ -1,6 +1,5 @@
 package com.ispw.progetto.controller_graf;
 
-import com.ispw.progetto.Applicazione;
 import com.ispw.progetto.bean.SignUpUserBean;
 import com.ispw.progetto.controller_app.RegLoginControllerApp;
 import com.ispw.progetto.exception.ExistsUserException;
@@ -19,9 +18,9 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 public class RegistrazioneController {
-    @FXML
-private TextField usernameUtente;
 
+    @FXML
+    private TextField usernameUtente;
     @FXML
     private PasswordField passwordUtente;
     @FXML
@@ -31,77 +30,68 @@ private TextField usernameUtente;
     @FXML
     private TextField email;
 
+    private Stage stage;
 
-
-    private Applicazione main;
-
-
-    @FXML
-    public void vaiAHome(){
-
-        main.vaiAHome();
+    public void setStage(Stage stage) {
+        this.stage = stage;
     }
 
-    public void setMain(Applicazione main){
-
-        this.main = main;
-
+    @FXML
+    public void vaiAHome() {
+        stage.setScene(new Scene(new javafx.scene.Group())); // Placeholder
+        stage.setTitle("Home");
     }
 
     @FXML
     public void registrazioneutente() throws SQLException, SQLStatementException, IOException {
+        String userUtente = usernameUtente.getText();
+        String passUtente = passwordUtente.getText();
+        String nomeUser = nome.getText();
+        String cognomeUser = cognome.getText();
+        String emailUser = email.getText();
 
-        String userUtente =usernameUtente.getText();
-        String passUtente=passwordUtente.getText();
-        String nomeUser=nome.getText();
-        String cognomeUser=cognome.getText();
-        String emailUser=email.getText();
         if (userUtente.isEmpty() || passUtente.isEmpty() || nomeUser.isEmpty() || cognomeUser.isEmpty() || emailUser.isEmpty()) {
-            Alert alert=new Alert(Alert.AlertType.WARNING);
+            Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Registrazione");
             alert.setHeaderText(null);
             alert.setContentText("Completa tutti i campi");
             alert.showAndWait();
+            return;
         }
-        SignUpUserBean signUpUserBean=new SignUpUserBean();
+
+        SignUpUserBean signUpUserBean = new SignUpUserBean();
         signUpUserBean.setCognome(cognomeUser);
         signUpUserBean.setEmail(emailUser);
         signUpUserBean.setNome(nomeUser);
         signUpUserBean.setUsername(userUtente);
         signUpUserBean.setPassword(passUtente);
 
+        try {
+            RegLoginControllerApp reg = new RegLoginControllerApp(signUpUserBean);
+            reg.registrazione();
 
-        try{
-            RegLoginControllerApp regLoginControllerApp=new RegLoginControllerApp(signUpUserBean);
-            regLoginControllerApp.registrazione();
-            Alert alert=new Alert(Alert.AlertType.INFORMATION);
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Registrazione");
             alert.setHeaderText(null);
             alert.setContentText("Registrazione avvenuta con successo");
             alert.showAndWait();
-        }
-        catch(PasswordIllegalException | ExistsUserException e){
-
-            Alert alert=new Alert(Alert.AlertType.ERROR);
+        } catch (PasswordIllegalException | ExistsUserException e) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Registrazione fallita");
             alert.setHeaderText(null);
             alert.setContentText(e.getMessage());
             alert.showAndWait();
         }
-
     }
+
     @FXML
     private void vaiALogin() throws IOException {
-
-        FXMLLoader loginLoader = new FXMLLoader(Applicazione.class.getResource("view1/login.fxml"));
-        Parent loginRoot = loginLoader.load();
-        Scene loginScene = new Scene(loginRoot);
-        LoginController loginController = loginLoader.getController();
-        loginController.setMain(main);
-        Stage stage = main.getStage();
-        stage.setScene(loginScene);
+        FXMLLoader loader = new FXMLLoader(com.ispw.progetto.Applicazione.class.getResource("view1/login.fxml"));
+        Parent root = loader.load();
+        Scene scene = new Scene(root);
+        LoginController controller = loader.getController();
+        controller.setStage(stage);
+        stage.setScene(scene);
         stage.setTitle("Accedi");
     }
-
-
 }

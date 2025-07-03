@@ -1,6 +1,5 @@
 package com.ispw.progetto.controller_graf.utente;
 
-import com.ispw.progetto.Applicazione;
 import com.ispw.progetto.bean.UserBean;
 import com.ispw.progetto.exception.*;
 import com.ispw.progetto.bean.BookBean;
@@ -8,6 +7,7 @@ import com.ispw.progetto.bean.BuonoBean;
 import com.ispw.progetto.bean.TripBean;
 import com.ispw.progetto.controller_app.BookTripController;
 import com.ispw.progetto.controller_app.PagamentoControllerApp;
+import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Platform;
@@ -23,7 +23,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-import javafx.animation.Animation;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -31,65 +30,77 @@ import java.time.LocalDate;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class PagamentoController{
+public class PagamentoController {
 
     @FXML
     private Button agency;
+
     @FXML
     private TextField numero;
+
     @FXML
     private TextField cvv;
+
     @FXML
     private Text timer;
+
     @FXML
     private Text price;
+
     @FXML
     private DatePicker scadenza;
+
     @FXML
     private TextField buono;
-    private Applicazione main;
+
+    private Stage stage;
     private TripBean currentTrip;
     private UserBean currentUser;
-    private int tempoRimanente=600;
-    private static final String ACTION ="Informazione";
+
+    private int tempoRimanente = 600; // in secondi
+    private static final String ACTION = "Informazione";
+
+    public void setStage(Stage stage) {
+        this.stage = stage;
+    }
+
+    public void setUser(UserBean utente) {
+        this.currentUser = utente;
+    }
+
+    public void setTrip(TripBean trip) {
+        this.currentTrip = trip;
+    }
+
+    public void setButtonText() {
+        agency.setText(currentUser.getUsername());
+        price.setText("Totale " + (int) currentTrip.getPrice() + "€");
+    }
 
     @FXML
     public void initialize() {
-        // Aggiorna il TextField del timer all'avvio
         updateTimerTextField();
 
-        // Crea una Timeline che si aggiorna ogni secondo
         Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(1), this::updateTimer));
         timeline.setCycleCount(Animation.INDEFINITE);
         timeline.play();
 
         Timer timerr = new Timer();
-        int tempoInMillisecondi = 600000; // 5 secondi
-
         timerr.schedule(new TimerTask() {
             @Override
             public void run() {
                 Platform.runLater(() -> {
                     try {
                         ViewTripController page = new ViewTripController();
-                        page.viewTrip(main, currentUser);
+                        page.viewTrip(stage, currentUser);
                     } catch (IOException | SQLException e) {
-                        try {
-                            throw new IOException(e.getMessage());
-                        } catch (IOException ex) {
-                            try {
-                                throw new IOException(ex);
-                            } catch (IOException exc) {
-                                throw new IllegalArgumentException(exc);
-                            }
-                        }
+                        showError("Errore", "Si è verificato un errore durante il ritorno alla schermata dei viaggi.");
                     }
                 });
             }
-        }, tempoInMillisecondi);
+        }, 600_000); // 10 minuti
     }
 
-    // Metodo chiamato ogni secondo per aggiornare il timer
     private void updateTimer(ActionEvent event) {
         tempoRimanente--;
         if (tempoRimanente >= 0) {
@@ -97,113 +108,93 @@ public class PagamentoController{
         }
     }
 
-    // Metodo per aggiornare il testo nel TextField del timer
     private void updateTimerTextField() {
         timer.setText("Tempo rimanente: " + tempoRimanente + " secondi");
     }
-    public void setMain(Applicazione main) {
 
-        this.main = main;
-    }
     @FXML
     public void vaiAHome() {
-
-        main.vaiAHome();
+        stage.setScene(new Scene(new javafx.scene.Group())); // placeholder
+        stage.setTitle("Home");
     }
 
     @FXML
     private void viewTrip() throws IOException, SQLException {
-        ViewTripController page=new ViewTripController();
-        page.viewTrip(main, currentUser);
-
-    }
-    public void setUser(UserBean utente){
-
-        currentUser=utente;
-    }
-    public void setTrip(TripBean trip){
-        this.currentTrip=trip;
-    }
-    public void setButtonText() {
-
-        agency.setText(currentUser.getUsername());
-        price.setText("Totale "+ (int) currentTrip.getPrice()+"€");
-
+        ViewTripController page = new ViewTripController();
+        page.viewTrip(stage, currentUser);
     }
 
     @FXML
     private void submit() throws SQLException, IOException {
-        String numeroCarta=numero.getText();
-        String cvvCode=cvv.getText();
-        LocalDate data=scadenza.getValue();
+        String numeroCarta = numero.getText();
+        String cvvCode = cvv.getText();
+        LocalDate data = scadenza.getValue();
 
         try {
+            PagamentoControllerApp pagamentoControllerApp = new PagamentoControllerApp();
+            pagamentoControllerApp.checkCard(numeroCarta, cvvCode, data);
 
-            PagamentoControllerApp pagamentoControllerApp=new PagamentoControllerApp();
-            pagamentoControllerApp.checkCard(numeroCarta,cvvCode,data);
-            BookBean book=new BookBean(currentUser.getUsername(),currentTrip.getId());
-            BookTripController bookTripController=new BookTripController();
+            BookBean book = new BookBean(currentUser.getUsername(), currentTrip.getId());
+            BookTripController bookTripController = new BookTripController();
             bookTripController.bookTrip(book);
 
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Prenotato");
-            alert.setHeaderText(null);
-            alert.setContentText("prenotazione effettuata correttamente");
-            alert.showAndWait();
-        }
-        catch(CardNotTrueException e){
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Errore");
-            alert.setHeaderText(null);
-            alert.setContentText(e.getMessage());
-            alert.showAndWait();
+            showInfo("Prenotato", "Prenotazione effettuata correttamente");
+        } catch (CardNotTrueException e) {
+            showError("Errore", e.getMessage());
             numero.setText(null);
         } catch (AlreadyPrenotedException e) {
-            Alert alert3=new Alert(Alert.AlertType.WARNING);
-            alert3.setTitle(ACTION);
-            alert3.setHeaderText(null);
-            alert3.setContentText(e.getMessage());
-            alert3.showAndWait();
+            showWarning(ACTION, e.getMessage());
         }
-
-
     }
 
     @FXML
     private void checkBuono() throws SQLException, IOException {
-        String buonoSpesa = buono.getText();
-        BuonoBean buonoBean=new BuonoBean();
-        buonoBean.setCodice(buonoSpesa);
-        PagamentoControllerApp pagamento=new PagamentoControllerApp();
-        try{
-            buonoBean=pagamento.checkBuono(buonoBean);
-            int totale=((int)currentTrip.getPrice()-buonoBean.getValore());
-            price.setText("Totale "+totale+"€");
+        String codice = buono.getText();
+        BuonoBean buonoBean = new BuonoBean();
+        buonoBean.setCodice(codice);
+        PagamentoControllerApp pagamento = new PagamentoControllerApp();
 
-        }
-        catch(NotValidCouponException e){
-            Alert alert=new Alert(Alert.AlertType.ERROR);
-            alert.setTitle(ACTION);
-            alert.setHeaderText(null);
-            alert.setContentText("Coupon non valido");
-            alert.showAndWait();
+        try {
+            buonoBean = pagamento.checkBuono(buonoBean);
+            int totale = (int) currentTrip.getPrice() - buonoBean.getValore();
+            price.setText("Totale " + totale + "€");
+        } catch (NotValidCouponException e) {
+            showError(ACTION, "Coupon non valido");
             buono.setText(null);
         }
-
     }
+
     @FXML
     public void info() throws IOException, SQLException {
-        FXMLLoader infoLoader = new FXMLLoader(Applicazione.class.getResource("view1/utente/info_user.fxml"));
-        Parent inforoot = infoLoader.load();
-        Scene myTripScene = new Scene(inforoot);
-        InfoUserController infoController = infoLoader.getController();
-        infoController.setMain(main);
-        infoController.setUser(currentUser);
-        infoController.setInfo();
-        Stage stage = main.getStage();
+        FXMLLoader loader = new FXMLLoader(com.ispw.progetto.Applicazione.class.getResource("view1/utente/info_user.fxml"));
+        Parent root = loader.load();
+        Scene scene = new Scene(root);
+        InfoUserController controller = loader.getController();
+        controller.setStage(stage);
+        controller.setUser(currentUser);
+        controller.setInfo();
+        stage.setScene(scene);
         stage.setTitle("I miei viaggi");
-        stage.setScene(myTripScene);
-
     }
 
+    // Utility alert
+    private void showError(String title, String message) {
+        showAlert(Alert.AlertType.ERROR, title, message);
+    }
+
+    private void showWarning(String title, String message) {
+        showAlert(Alert.AlertType.WARNING, title, message);
+    }
+
+    private void showInfo(String title, String message) {
+        showAlert(Alert.AlertType.INFORMATION, title, message);
+    }
+
+    private void showAlert(Alert.AlertType type, String title, String content) {
+        Alert alert = new Alert(type);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(content);
+        alert.showAndWait();
+    }
 }

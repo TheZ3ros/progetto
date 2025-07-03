@@ -1,6 +1,5 @@
 package com.ispw.progetto.controller_graf.utente;
 
-import com.ispw.progetto.Applicazione;
 import com.ispw.progetto.bean.SearchBean;
 import com.ispw.progetto.bean.TripBean;
 import com.ispw.progetto.bean.UserBean;
@@ -20,52 +19,53 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
+
 public class ViewTripController {
+
     @FXML
     private Button user;
-    private Applicazione main;
+
     @FXML
     private ListView<VBox> listaview;
-    private UserBean currentUser;
+
     @FXML
     private TextField cercaCitta;
 
-    public void setUser(UserBean utente) {
+    private Stage stage;
+    private UserBean currentUser;
 
+    // Setter
+    public void setStage(Stage stage) {
+        this.stage = stage;
+    }
+
+    public void setUser(UserBean utente) {
         currentUser = utente;
     }
 
     public void setButtonText() {
-
         user.setText(currentUser.getUsername());
-    }
-
-    public void setMain(Applicazione main) {
-
-        this.main = main;
     }
 
     @FXML
     public void vaiAHome() {
-
-        main.vaiAHome();
+        stage.setTitle("Home");
+        stage.setScene(new Scene(new javafx.scene.Group())); // Placeholder
     }
 
     public void charge() throws SQLException, IOException {
         BookTripController bookTripController = new BookTripController();
         List<TripBean> viaggi = bookTripController.showTrip();
 
-        // Crea un VBox per ciascun elemento nella lista e aggiungilo alla ListView
         for (TripBean viaggio : viaggi) {
-            FXMLLoader viaggioLoader = new FXMLLoader(Applicazione.class.getResource("view1/utente/viaggio.fxml"));
-            VBox box = viaggioLoader.load();
-            ViaggioController controller = viaggioLoader.getController();
-            controller.setMain(main);
+            FXMLLoader loader = new FXMLLoader(com.ispw.progetto.Applicazione.class.getResource("view1/utente/viaggio.fxml"));
+            VBox box = loader.load();
+            ViaggioController controller = loader.getController();
+            controller.setStage(stage);
             controller.setUserFactory(currentUser);
             controller.createbox(viaggio);
             listaview.getItems().add(box);
         }
-
     }
 
     public void ricerca() throws SQLException, IOException {
@@ -73,24 +73,25 @@ public class ViewTripController {
         charge();
     }
 
-    public void viewTrip(Applicazione main, UserBean currentUser) throws IOException, SQLException {
-        FXMLLoader viewtriploader = new FXMLLoader(Applicazione.class.getResource("view1/utente/view_trip.fxml"));
-        Parent viewtriproot = viewtriploader.load();
-        Scene viewTripScene = new Scene(viewtriproot);
-        ViewTripController viewtrip = viewtriploader.getController();
-        viewtrip.setMain(main);
-        viewtrip.setUser(currentUser);
-        Stage stage = main.getStage();
-        stage.setScene(viewTripScene);
-        viewtrip.setButtonText();
-        viewtrip.charge();
+    public void viewTrip(Stage stage, UserBean user) throws IOException, SQLException {
+        FXMLLoader loader = new FXMLLoader(com.ispw.progetto.Applicazione.class.getResource("view1/utente/view_trip.fxml"));
+        Parent root = loader.load();
+        Scene scene = new Scene(root);
+
+        ViewTripController controller = loader.getController();
+        controller.setStage(stage);
+        controller.setUser(user);
+        controller.setButtonText();
+        controller.charge();
+
+        stage.setScene(scene);
         stage.setTitle("Ricerca");
     }
 
     @FXML
     public void myTrip() throws SQLException, IOException {
         MyTripController myTripController = new MyTripController();
-        myTripController.myTrip(currentUser, main);
+        myTripController.myTrip(currentUser, stage);
     }
 
     @FXML
@@ -98,19 +99,18 @@ public class ViewTripController {
         String citta = cercaCitta.getText();
         SearchBean searchBean = new SearchBean();
         searchBean.setCitta(citta);
+
         BookTripController bookTripController = new BookTripController();
-        List<TripBean> viaggi;
+
         try {
-            viaggi = bookTripController.searchByCity(searchBean);
+            List<TripBean> viaggi = bookTripController.searchByCity(searchBean);
             listaview.getItems().clear();
 
-
-            // Crea un VBox per ciascun elemento nella lista e aggiungilo alla ListView
             for (TripBean viaggio : viaggi) {
-                FXMLLoader viaggioLoader = new FXMLLoader(Applicazione.class.getResource("view1/utente/viaggio.fxml"));
-                VBox box = viaggioLoader.load();
-                ViaggioController controller = viaggioLoader.getController();
-                controller.setMain(main);
+                FXMLLoader loader = new FXMLLoader(com.ispw.progetto.Applicazione.class.getResource("view1/utente/viaggio.fxml"));
+                VBox box = loader.load();
+                ViaggioController controller = loader.getController();
+                controller.setStage(stage);
                 controller.setUserFactory(currentUser);
                 controller.createbox(viaggio);
                 listaview.getItems().add(box);
@@ -124,21 +124,18 @@ public class ViewTripController {
             alert.showAndWait();
             cercaCitta.setText(null);
         }
-
-
     }
+
     @FXML
     public void info() throws IOException, SQLException {
-        FXMLLoader infoLoader = new FXMLLoader(Applicazione.class.getResource("view1/utente/info_user.fxml"));
-        Parent inforoot = infoLoader.load();
-        Scene myTripScene = new Scene(inforoot);
-        InfoUserController infoController = infoLoader.getController();
-        infoController.setMain(main);
-        infoController.setUser(currentUser);
-        infoController.setInfo();
-        Stage stage = main.getStage();
+        FXMLLoader loader = new FXMLLoader(com.ispw.progetto.Applicazione.class.getResource("view1/utente/info_user.fxml"));
+        Parent root = loader.load();
+        Scene scene = new Scene(root);
+        InfoUserController controller = loader.getController();
+        controller.setStage(stage);
+        controller.setUser(currentUser);
+        controller.setInfo();
+        stage.setScene(scene);
         stage.setTitle("I miei viaggi");
-        stage.setScene(myTripScene);
-
     }
 }

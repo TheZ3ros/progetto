@@ -1,6 +1,5 @@
 package com.ispw.progetto.controller_graf.utente;
 
-import com.ispw.progetto.Applicazione;
 import com.ispw.progetto.bean.TripBean;
 import com.ispw.progetto.bean.UserBean;
 import com.ispw.progetto.controller_app.BookTripController;
@@ -20,14 +19,19 @@ import java.util.List;
 public class MyTripController {
     @FXML
     private Button user;
-    private Applicazione main;
+
     @FXML
     private ListView<VBox> listaview;
+
     private UserBean currentUser;
+    private Stage stage;
 
     public void setUser(UserBean utente) {
-
         currentUser = utente;
+    }
+
+    public void setStage(Stage stage) {
+        this.stage = stage;
     }
 
     public void ricerca() throws SQLException, IOException {
@@ -36,68 +40,56 @@ public class MyTripController {
     }
 
     public void setButtonText() {
-
         user.setText(currentUser.getUsername());
-    }
-
-    public void setMain(Applicazione main) {
-
-        this.main = main;
     }
 
     @FXML
     public void vaiAHome() {
-
-        main.vaiAHome();
+        stage.setTitle("Home");
+        stage.setScene(new Scene(new javafx.scene.Group())); // placeholder, cambia se hai una vera Home
     }
 
     public void charge() throws SQLException, IOException {
         BookTripController bookTripController = new BookTripController();
         List<TripBean> viaggi = bookTripController.getTripUser(currentUser);
+
         for (TripBean viaggio : viaggi) {
-            FXMLLoader prenotazioneLoader = new FXMLLoader(Applicazione.class.getResource("view1/utente/prenotazione.fxml"));
-            VBox box = prenotazioneLoader.load();
-            PrenotazioneController controller = prenotazioneLoader.getController();
-            setButtonText();
+            FXMLLoader loader = new FXMLLoader(com.ispw.progetto.Applicazione.class.getResource("view1/utente/prenotazione.fxml"));
+            VBox box = loader.load();
+            PrenotazioneController controller = loader.getController();
             controller.createbox(viaggio);
             listaview.getItems().add(box);
         }
-
-
     }
 
     @FXML
     private void viewTrip() throws IOException, SQLException {
         ViewTripController page = new ViewTripController();
-        page.viewTrip(main, currentUser);
+        page.viewTrip(stage, currentUser);
     }
 
-    public void myTrip(UserBean user, Applicazione main) throws SQLException, IOException {
-        FXMLLoader myTripLoader = new FXMLLoader(Applicazione.class.getResource("view1/utente/myTrip.fxml"));
-        Parent mytriproot = myTripLoader.load();
-        Scene myTripScene = new Scene(mytriproot);
-        MyTripController myTripController = myTripLoader.getController();
-        myTripController.setMain(main);
-        myTripController.setUser(user);
-        Stage stage = main.getStage();
+    public void myTrip(UserBean user, Stage stage) throws SQLException, IOException {
+        FXMLLoader loader = new FXMLLoader(com.ispw.progetto.Applicazione.class.getResource("view1/utente/myTrip.fxml"));
+        Parent root = loader.load();
+        Scene scene = new Scene(root);
+        MyTripController controller = loader.getController();
+        controller.setStage(stage);
+        controller.setUser(user);
         stage.setTitle("I miei viaggi");
-        stage.setScene(myTripScene);
-        myTripController.charge();
-
+        stage.setScene(scene);
+        controller.charge();
     }
 
     @FXML
     public void info() throws IOException, SQLException {
-        FXMLLoader infoLoader = new FXMLLoader(Applicazione.class.getResource("view1/utente/info_user.fxml"));
-        Parent inforoot = infoLoader.load();
-        Scene myTripScene = new Scene(inforoot);
-        InfoUserController infoController = infoLoader.getController();
-        infoController.setMain(main);
-        infoController.setUser(currentUser);
-        infoController.setInfo();
-        Stage stage = main.getStage();
+        FXMLLoader loader = new FXMLLoader(com.ispw.progetto.Applicazione.class.getResource("view1/utente/info_user.fxml"));
+        Parent root = loader.load();
+        Scene scene = new Scene(root);
+        InfoUserController controller = loader.getController();
+        controller.setStage(stage);
+        controller.setUser(currentUser);
+        controller.setInfo();
         stage.setTitle("I miei viaggi");
-        stage.setScene(myTripScene);
-
+        stage.setScene(scene);
     }
 }

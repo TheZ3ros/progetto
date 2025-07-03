@@ -1,12 +1,12 @@
 package com.ispw.progetto.controller_graf.agenzia;
 
-import com.ispw.progetto.Applicazione;
 import com.ispw.progetto.bean.AgencyBean;
 import com.ispw.progetto.bean.TripBean;
 import com.ispw.progetto.bean.TripStatusBean;
 import com.ispw.progetto.controller_app.TripStatusController;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.stage.Stage;
 import viewseconda.Printer;
 
 import java.io.IOException;
@@ -14,19 +14,19 @@ import java.sql.SQLException;
 
 public class StatusVisualizerController {
 
-    protected Applicazione main;
-    protected AgencyBean currentUser;
+    private Stage stage;               // nuovo campo stage
+    private AgencyBean currentUser;
     private TripStatusBean statusbean;
     private TripBean currentTrip;
+
     @FXML
     private Label usernameuser;
+
     @FXML
     private Label state;
 
-    @FXML
-    public void setMain(Applicazione main){
-
-        this.main = main;
+    public void setStage(Stage stage){
+        this.stage = stage;
     }
 
     public void setTrip(TripBean currentTrip){
@@ -38,19 +38,17 @@ public class StatusVisualizerController {
     }
 
     public void createbox(TripStatusBean statusbean){
-        this.statusbean =statusbean;
-        usernameuser.setText(statusbean.getUsername()+": ");
+        this.statusbean = statusbean;
+        usernameuser.setText(statusbean.getUsername() + ": ");
         state.setText(String.valueOf(statusbean.isStatus()));
-
     }
 
     public void conferma() throws SQLException, IOException {
         TripStatusController statusupdater = new TripStatusController();
         boolean b = statusupdater.updatetripstatus(currentTrip.getId(), statusbean.getUsername());
-        if (b){
+        if (b) {
             state.setText("True");
-        }
-        else{
+        } else {
             Printer.printMessage("Query non eseguita");
         }
     }

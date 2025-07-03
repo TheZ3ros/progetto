@@ -1,6 +1,5 @@
 package com.ispw.progetto.controller_graf.utente;
 
-import com.ispw.progetto.Applicazione;
 import com.ispw.progetto.bean.TripBean;
 import com.ispw.progetto.bean.UserBean;
 import com.ispw.progetto.controller_app.BookTripController;
@@ -22,101 +21,93 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 public class PageTripController {
-    private Applicazione main;
+
+    private Stage stage;
     private TripBean currentTrip;
-    @FXML
-    private ImageView immagine;
-    @FXML
-    private Button utente;
-    @FXML
-    private Text dove;
-    @FXML
-    private Text posti;
-    @FXML
-    private Text data;
-    @FXML
-    private Text prezzo;
     private UserBean currentUser;
 
+    @FXML
+    private ImageView immagine;
 
-    public void setMain(Applicazione main){
+    @FXML
+    private Button utente;
 
-        this.main = main;
+    @FXML
+    private Text dove;
+
+    @FXML
+    private Text posti;
+
+    @FXML
+    private Text data;
+
+    @FXML
+    private Text prezzo;
+
+    // Setters
+    public void setStage(Stage stage) {
+        this.stage = stage;
+    }
+
+    public void setCurrentUser(UserBean currentUser) {
+        this.currentUser = currentUser;
+    }
+
+    public void setTrip(TripBean trip) {
+        this.currentTrip = trip;
+    }
+
+    public void charge() {
+        Image image;
+        ByteArrayInputStream inputStream = new ByteArrayInputStream(currentTrip.getImage());
+        image = new Image(inputStream);
+        immagine.setImage(image);
+        dove.setText(currentTrip.getCity());
+        data.setText(currentTrip.getDataAnd() + "/" + currentTrip.getDataRit());
+        prezzo.setText((int) currentTrip.getPrice() + "€");
+        posti.setText(currentTrip.getAvailable() + " rimanenti");
+    }
+
+    public void setButtonText() {
+        utente.setText(currentUser.getUsername());
     }
 
     @FXML
     public void vaiAHome() {
-
-        main.vaiAHome();
+        stage.setScene(new Scene(new javafx.scene.Group())); // placeholder
+        stage.setTitle("Home");
     }
-    public void setCurrentUser(UserBean currentUser){
-        this.currentUser = currentUser;
-    }
-    public void setTrip(TripBean trip){
-        this.currentTrip =trip;
-    }
-    public void charge() {
-        Image image;
-        ByteArrayInputStream inputStream = new ByteArrayInputStream(currentTrip.getImage());
-        image=new Image(inputStream);
-        immagine.setImage(image);
-        dove.setText(currentTrip.getCity());
-        data.setText(currentTrip.getDataAnd() +"/" + currentTrip.getDataRit());
-        prezzo.setText((int) currentTrip.getPrice()+"€");
-        posti.setText(currentTrip.getAvailable()+" rimanenti");
-
-
-        }
-    public void setButtonText() {
-
-        utente.setText(currentUser.getUsername());
-    }
-
 
     @FXML
- private void viewTrip() throws IOException, SQLException {
-        ViewTripController viewTripController=new ViewTripController();
-        viewTripController.viewTrip(main, currentUser);
-
+    private void viewTrip() throws IOException, SQLException {
+        ViewTripController viewTripController = new ViewTripController();
+        viewTripController.viewTrip(stage, currentUser);
     }
+
     @FXML
     private void pagamento() throws IOException, SQLException {
-        BookTripController bookTripController=new BookTripController();
+        BookTripController bookTripController = new BookTripController();
         try {
-            bookTripController.checkAlready(currentTrip,currentUser);
+            bookTripController.checkAlready(currentTrip, currentUser);
 
-        FXMLLoader pagamentoLoader = new FXMLLoader(Applicazione.class.getResource("view1/utente/pagamento.fxml"));
-        Parent pagamentoroot = pagamentoLoader.load();
-        Scene pagamentoScene = new Scene(pagamentoroot);
-        PagamentoController pagamento = pagamentoLoader.getController();
-        pagamento.setMain(main);
-        pagamento.setTrip(currentTrip);
-        pagamento.setUser(currentUser);
-        Stage stage = main.getStage();
-        stage.setScene(pagamentoScene);
-        pagamento.setButtonText();
+            FXMLLoader loader = new FXMLLoader(com.ispw.progetto.Applicazione.class.getResource("view1/utente/pagamento.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+
+            PagamentoController pagamento = loader.getController();
+            pagamento.setStage(stage);
+            pagamento.setTrip(currentTrip);
+            pagamento.setUser(currentUser);
+            pagamento.setButtonText();
+
+            stage.setScene(scene);
+            stage.setTitle("Pagamento");
+        } catch (AlreadyPrenotedException | PlacesTerminatedException e) {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Errore prenotazione");
+            alert.setHeaderText(null);
+            alert.setContentText(e.getMessage());
+            alert.showAndWait();
         }
-        catch (AlreadyPrenotedException e)
-        {
-
-            Alert alert3=new Alert(Alert.AlertType.WARNING);
-            alert3.setTitle("errore");
-            alert3.setHeaderText(null);
-            alert3.setContentText(e.getMessage());
-            alert3.showAndWait();
-        } catch (PlacesTerminatedException e) {
-            Alert alert3=new Alert(Alert.AlertType.WARNING);
-            alert3.setTitle("errore prenotazione");
-            alert3.setHeaderText(null);
-            alert3.setContentText(e.getMessage());
-            alert3.showAndWait();
-        }
-
     }
-
-
-
-
-
 }
-

@@ -5,9 +5,9 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import viewseconda.ControllerHomeCLI;
-import javafx.scene.image.Image;
 import viewseconda.Printer;
 
 import java.util.Scanner;
@@ -16,25 +16,24 @@ public class Applicazione extends Application {
 
     private Stage stage;
     private Scene homeScene;
-    public static void main(String[] args) {
 
+    public static void main(String[] args) {
         launch(args);
     }
 
     @Override
     public void start(Stage stage) throws Exception {
         Printer.printMessage("Come si vuole avviare il programma?");
-        int n;
         Printer.printMessage("1-Interfaccia grafica");
         Printer.printMessage("2-Linea di comando");
         Scanner reader = new Scanner(System.in);
         boolean isvalid = false;
+
         while (!isvalid) {
-            n = reader.nextInt();
-            if(n==1){
+            int n = reader.nextInt();
+            if (n == 1) {
                 this.stage = stage;
 
-                //carico la home
                 FXMLLoader homeLoader = new FXMLLoader(Applicazione.class.getResource("view1/home.fxml"));
                 Parent homeRoot = homeLoader.load();
                 homeScene = new Scene(homeRoot);
@@ -43,35 +42,31 @@ public class Applicazione extends Application {
                 stage.setScene(homeScene);
                 stage.setTitle("Home!");
 
-                //mi prendo il controller della schermata Home
+                // Ottengo il controller e gli passo SOLO lo stage
                 HomeController homeController = homeLoader.getController();
-                homeController.setMain(this);
+                homeController.setStage(stage);
+
                 stage.getIcons().add(new Image(getClass().getResourceAsStream("css/immagini/infinito.png")));
 
                 stage.show();
                 isvalid = true;
-            }
-            else if(n==2){
-                ControllerHomeCLI controllerHomeCLI=new ControllerHomeCLI();
+            } else if (n == 2) {
+                ControllerHomeCLI controllerHomeCLI = new ControllerHomeCLI();
                 controllerHomeCLI.start();
                 isvalid = true;
                 return;
-            }
-            else{
+            } else {
                 Printer.printMessage("inserire un'opzione valida");
             }
-
         }
-
     }
 
-    public void vaiAHome(){
+    public void vaiAHome() {
         stage.setScene(homeScene);
         stage.setTitle("Home");
     }
 
-    public Stage getStage(){
-
+    public Stage getStage() {
         return stage;
     }
 }
