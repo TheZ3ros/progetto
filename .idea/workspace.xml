@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="abd72b32-f6c1-4b42-a1d9-4297dd975b52" name="Changes" comment="cambiamenti vari">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="abd72b32-f6c1-4b42-a1d9-4297dd975b52" name="Changes" comment="cambiamenti vari" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -251,15 +249,7 @@
       <workItem from="1739971800996" duration="3477000" />
       <workItem from="1751467798189" duration="5443000" />
       <workItem from="1751556211297" duration="1222000" />
-      <workItem from="1751557449939" duration="5192000" />
-    </task>
-    <task id="LOCAL-00014" summary="aggiunta schermata userlogin">
-      <option name="closed" value="true" />
-      <created>1706271110952</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1706271110952</updated>
+      <workItem from="1751557449939" duration="5537000" />
     </task>
     <task id="LOCAL-00015" summary="fix caricamento pagine">
       <option name="closed" value="true" />
@@ -645,7 +635,15 @@
       <option name="project" value="LOCAL" />
       <updated>1751561075812</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="cambiamenti vari">
+      <option name="closed" value="true" />
+      <created>1751563183757</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1751563183757</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
