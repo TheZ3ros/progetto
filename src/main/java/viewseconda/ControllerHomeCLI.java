@@ -37,8 +37,10 @@ public void start() throws Exception {
 
         Printer.printMessage("Vuoi continuare? (S/N)");
         String risposta = reader.next();
-        continua = risposta.equalsIgnoreCase("s");
-    }
+        if(!risposta.equalsIgnoreCase("s")) {
+            continua = false;
+                }
+            }
         }
 
     }

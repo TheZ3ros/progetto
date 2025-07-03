@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="viaggi@localhost">
   <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.52">
-    <root id="1"/>
+    <root id="1">
+      <DefaultEngine>InnoDB</DefaultEngine>
+      <DefaultTmpEngine>InnoDB</DefaultTmpEngine>
+      <ServerVersion>9.0.1</ServerVersion>
+    </root>
     <collation id="2" parent="1" name="armscii8_general_ci">
       <Charset>armscii8</Charset>
       <DefaultForCharset>1</DefaultForCharset>
@@ -915,7 +919,7 @@
     </schema>
     <schema id="292" parent="1" name="viaggi">
       <Current>1</Current>
-      <LastIntrospectionLocalTimestamp>2024-02-15.16:33:52</LastIntrospectionLocalTimestamp>
+      <LastIntrospectionLocalTimestamp>2025-07-02.10:45:41</LastIntrospectionLocalTimestamp>
       <CollationName>utf8mb3_general_ci</CollationName>
     </schema>
     <user id="293" parent="1" name="mysql.infoschema">
@@ -945,296 +949,435 @@
     <routine id="298" parent="292" name="CheckUserTrip">
       <Definer>root@localhost</Definer>
       <RoutineKind>procedure</RoutineKind>
-      <SourceTextLength>98</SourceTextLength>
+      <SourceTextLength>108</SourceTextLength>
     </routine>
-    <routine id="299" parent="292" name="GetPassword">
+    <routine id="299" parent="292" name="GetBuono">
+      <Definer>root@localhost</Definer>
+      <RoutineKind>procedure</RoutineKind>
+      <SourceTextLength>92</SourceTextLength>
+    </routine>
+    <routine id="300" parent="292" name="GetPassword">
       <Definer>root@localhost</Definer>
       <RoutineKind>procedure</RoutineKind>
       <SourceTextLength>99</SourceTextLength>
     </routine>
-    <routine id="300" parent="292" name="GetPasswordAgenzia">
+    <routine id="301" parent="292" name="GetPasswordAgenzia">
       <Definer>root@localhost</Definer>
       <RoutineKind>procedure</RoutineKind>
       <SourceTextLength>118</SourceTextLength>
     </routine>
-    <routine id="301" parent="292" name="GetTrip2">
+    <routine id="302" parent="292" name="GetTrip2">
       <Definer>root@localhost</Definer>
       <RoutineKind>procedure</RoutineKind>
       <SourceTextLength>79</SourceTextLength>
     </routine>
-    <routine id="302" parent="292" name="GetTripDetailsById">
+    <routine id="303" parent="292" name="GetTripDetailsByCity">
+      <Definer>root@localhost</Definer>
+      <RoutineKind>procedure</RoutineKind>
+      <SourceTextLength>1058</SourceTextLength>
+    </routine>
+    <routine id="304" parent="292" name="GetTripDetailsById">
       <Definer>root@localhost</Definer>
       <RoutineKind>procedure</RoutineKind>
       <SourceTextLength>283</SourceTextLength>
     </routine>
-    <routine id="303" parent="292" name="GetTripDetailsByUsername">
+    <routine id="305" parent="292" name="GetTripDetailsByUsername">
       <Definer>root@localhost</Definer>
       <RoutineKind>procedure</RoutineKind>
-      <SourceTextLength>1284</SourceTextLength>
+      <SourceTextLength>1325</SourceTextLength>
     </routine>
-    <routine id="304" parent="292" name="SetTrip">
+    <routine id="306" parent="292" name="GetTripStatus">
       <Definer>root@localhost</Definer>
       <RoutineKind>procedure</RoutineKind>
-      <SourceTextLength>85</SourceTextLength>
+      <SourceTextLength>694</SourceTextLength>
     </routine>
-    <routine id="305" parent="292" name="decrementa">
+    <routine id="307" parent="292" name="SearchUser">
+      <Definer>root@localhost</Definer>
+      <RoutineKind>procedure</RoutineKind>
+      <SourceTextLength>102</SourceTextLength>
+    </routine>
+    <routine id="308" parent="292" name="SetTrip">
+      <Definer>root@localhost</Definer>
+      <RoutineKind>procedure</RoutineKind>
+      <SourceTextLength>151</SourceTextLength>
+    </routine>
+    <routine id="309" parent="292" name="SetUser">
+      <Definer>root@localhost</Definer>
+      <RoutineKind>procedure</RoutineKind>
+      <SourceTextLength>122</SourceTextLength>
+    </routine>
+    <routine id="310" parent="292" name="UpdateTripStatus">
+      <Definer>root@localhost</Definer>
+      <RoutineKind>procedure</RoutineKind>
+      <SourceTextLength>100</SourceTextLength>
+    </routine>
+    <routine id="311" parent="292" name="decrementa">
       <Definer>root@localhost</Definer>
       <RoutineKind>procedure</RoutineKind>
       <SourceTextLength>67</SourceTextLength>
     </routine>
-    <table id="306" parent="292" name="credenziali_agenzia">
+    <table id="312" parent="292" name="buono">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb3_general_ci</CollationName>
     </table>
-    <table id="307" parent="292" name="trip">
+    <table id="313" parent="292" name="credenziali_agenzia">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb3_general_ci</CollationName>
     </table>
-    <table id="308" parent="292" name="user">
+    <table id="314" parent="292" name="trip">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb3_general_ci</CollationName>
     </table>
-    <table id="309" parent="292" name="user_has_trip">
+    <table id="315" parent="292" name="user">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb3_general_ci</CollationName>
     </table>
-    <argument id="310" parent="297" name="p_città">
+    <table id="316" parent="292" name="user_has_trip">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb3_general_ci</CollationName>
+    </table>
+    <argument id="317" parent="297" name="p_città">
       <DasType>varchar(45)|0s</DasType>
       <Position>1</Position>
     </argument>
-    <argument id="311" parent="297" name="p_disponibile">
+    <argument id="318" parent="297" name="p_disponibile">
       <DasType>int|0s</DasType>
       <Position>2</Position>
     </argument>
-    <argument id="312" parent="297" name="p_andata">
+    <argument id="319" parent="297" name="p_andata">
       <DasType>date|0s</DasType>
       <Position>3</Position>
     </argument>
-    <argument id="313" parent="297" name="p_ritorno">
+    <argument id="320" parent="297" name="p_ritorno">
       <DasType>date|0s</DasType>
       <Position>4</Position>
     </argument>
-    <argument id="314" parent="297" name="p_prezzo">
+    <argument id="321" parent="297" name="p_prezzo">
       <DasType>int|0s</DasType>
       <Position>5</Position>
     </argument>
-    <argument id="315" parent="297" name="p_immagine">
+    <argument id="322" parent="297" name="p_immagine">
       <DasType>longblob|0s</DasType>
       <Position>6</Position>
     </argument>
-    <argument id="316" parent="298" name="id">
+    <argument id="323" parent="298" name="id">
       <DasType>int|0s</DasType>
       <Position>1</Position>
     </argument>
-    <argument id="317" parent="298" name="username">
+    <argument id="324" parent="298" name="username">
       <DasType>varchar(255)|0s</DasType>
       <Position>2</Position>
     </argument>
-    <argument id="318" parent="299" name="in_username">
+    <argument id="325" parent="298" name="righe">
+      <ArgumentDirection>O</ArgumentDirection>
+      <DasType>int|0s</DasType>
+      <Position>3</Position>
+    </argument>
+    <argument id="326" parent="299" name="in_codice">
+      <DasType>varchar(45)|0s</DasType>
+      <Position>1</Position>
+    </argument>
+    <argument id="327" parent="299" name="out_valore">
+      <ArgumentDirection>O</ArgumentDirection>
+      <DasType>int|0s</DasType>
+      <Position>2</Position>
+    </argument>
+    <argument id="328" parent="300" name="in_username">
       <DasType>varchar(255)|0s</DasType>
       <Position>1</Position>
     </argument>
-    <argument id="319" parent="299" name="out_password">
+    <argument id="329" parent="300" name="out_password">
       <ArgumentDirection>O</ArgumentDirection>
       <DasType>varchar(255)|0s</DasType>
       <Position>2</Position>
     </argument>
-    <argument id="320" parent="300" name="in_username">
+    <argument id="330" parent="301" name="in_username">
       <DasType>varchar(255)|0s</DasType>
       <Position>1</Position>
     </argument>
-    <argument id="321" parent="300" name="out_password">
+    <argument id="331" parent="301" name="out_password">
       <ArgumentDirection>O</ArgumentDirection>
       <DasType>varchar(255)|0s</DasType>
       <Position>2</Position>
     </argument>
-    <argument id="322" parent="302" name="trip_value">
+    <argument id="332" parent="303" name="citta">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>1</Position>
+    </argument>
+    <argument id="333" parent="304" name="trip_value">
       <DasType>int|0s</DasType>
       <Position>1</Position>
     </argument>
-    <argument id="323" parent="302" name="city_value">
+    <argument id="334" parent="304" name="city_value">
       <ArgumentDirection>O</ArgumentDirection>
       <DasType>varchar(255)|0s</DasType>
       <Position>2</Position>
     </argument>
-    <argument id="324" parent="302" name="price_value">
+    <argument id="335" parent="304" name="price_value">
       <ArgumentDirection>O</ArgumentDirection>
       <DasType>float|0s</DasType>
       <Position>3</Position>
     </argument>
-    <argument id="325" parent="302" name="date_and_value">
+    <argument id="336" parent="304" name="date_and_value">
       <ArgumentDirection>O</ArgumentDirection>
       <DasType>date|0s</DasType>
       <Position>4</Position>
     </argument>
-    <argument id="326" parent="302" name="available_value">
+    <argument id="337" parent="304" name="available_value">
       <ArgumentDirection>O</ArgumentDirection>
       <DasType>int|0s</DasType>
       <Position>5</Position>
     </argument>
-    <argument id="327" parent="302" name="image_value">
+    <argument id="338" parent="304" name="image_value">
       <ArgumentDirection>O</ArgumentDirection>
       <DasType>longblob|0s</DasType>
       <Position>6</Position>
     </argument>
-    <argument id="328" parent="302" name="data_rit_value">
+    <argument id="339" parent="304" name="data_rit_value">
       <ArgumentDirection>O</ArgumentDirection>
       <DasType>date|0s</DasType>
       <Position>7</Position>
     </argument>
-    <argument id="329" parent="303" name="username">
+    <argument id="340" parent="305" name="username">
       <DasType>varchar(255)|0s</DasType>
       <Position>1</Position>
     </argument>
-    <argument id="330" parent="304" name="id">
+    <argument id="341" parent="306" name="id">
       <DasType>int|0s</DasType>
       <Position>1</Position>
     </argument>
-    <argument id="331" parent="304" name="username">
+    <argument id="342" parent="307" name="usern">
+      <DasType>varchar(45)|0s</DasType>
+      <Position>1</Position>
+    </argument>
+    <argument id="343" parent="307" name="outnome">
+      <ArgumentDirection>O</ArgumentDirection>
+      <DasType>varchar(45)|0s</DasType>
+      <Position>2</Position>
+    </argument>
+    <argument id="344" parent="307" name="outcognome">
+      <ArgumentDirection>O</ArgumentDirection>
+      <DasType>varchar(45)|0s</DasType>
+      <Position>3</Position>
+    </argument>
+    <argument id="345" parent="307" name="outemail">
+      <ArgumentDirection>O</ArgumentDirection>
+      <DasType>varchar(45)|0s</DasType>
+      <Position>4</Position>
+    </argument>
+    <argument id="346" parent="308" name="id">
+      <DasType>int|0s</DasType>
+      <Position>1</Position>
+    </argument>
+    <argument id="347" parent="308" name="username">
       <DasType>varchar(255)|0s</DasType>
       <Position>2</Position>
     </argument>
-    <argument id="332" parent="305" name="id">
+    <argument id="348" parent="309" name="username">
+      <DasType>varchar(45)|0s</DasType>
+      <Position>1</Position>
+    </argument>
+    <argument id="349" parent="309" name="in_password">
+      <DasType>varchar(45)|0s</DasType>
+      <Position>2</Position>
+    </argument>
+    <argument id="350" parent="309" name="in_nome">
+      <DasType>varchar(45)|0s</DasType>
+      <Position>3</Position>
+    </argument>
+    <argument id="351" parent="309" name="in_cognome">
+      <DasType>varchar(45)|0s</DasType>
+      <Position>4</Position>
+    </argument>
+    <argument id="352" parent="309" name="email">
+      <DasType>varchar(45)|0s</DasType>
+      <Position>5</Position>
+    </argument>
+    <argument id="353" parent="310" name="id">
       <DasType>int|0s</DasType>
       <Position>1</Position>
     </argument>
-    <column id="333" parent="306" name="IDagenzia">
+    <argument id="354" parent="310" name="username">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>2</Position>
+    </argument>
+    <argument id="355" parent="311" name="id">
+      <DasType>int|0s</DasType>
+      <Position>1</Position>
+    </argument>
+    <column id="356" parent="312" name="codice">
       <DasType>varchar(45)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="334" parent="306" name="nome_agenzia">
+    <column id="357" parent="312" name="valore">
+      <DasType>int|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <index id="358" parent="312" name="PRIMARY">
+      <ColNames>codice</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="359" parent="312" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="360" parent="313" name="IDagenzia">
+      <DasType>varchar(45)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="361" parent="313" name="nome_agenzia">
       <DasType>varchar(45)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="335" parent="306" name="password">
+    <column id="362" parent="313" name="password">
       <DasType>varchar(45)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <index id="336" parent="306" name="PRIMARY">
+    <index id="363" parent="313" name="PRIMARY">
       <ColNames>IDagenzia</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="337" parent="306" name="nome_agenzia_UNIQUE">
+    <index id="364" parent="313" name="nome_agenzia_UNIQUE">
       <ColNames>nome_agenzia</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="338" parent="306" name="PRIMARY">
+    <key id="365" parent="313" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <key id="339" parent="306" name="nome_agenzia_UNIQUE">
+    <key id="366" parent="313" name="nome_agenzia_UNIQUE">
       <UnderlyingIndexName>nome_agenzia_UNIQUE</UnderlyingIndexName>
     </key>
-    <column id="340" parent="307" name="tripid">
-      <AutoIncrement>4</AutoIncrement>
+    <column id="367" parent="314" name="tripid">
+      <AutoIncrement>11</AutoIncrement>
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="341" parent="307" name="city">
+    <column id="368" parent="314" name="city">
       <DasType>varchar(45)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="342" parent="307" name="available">
+    <column id="369" parent="314" name="available">
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="343" parent="307" name="data_and">
+    <column id="370" parent="314" name="data_and">
       <DasType>date|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="344" parent="307" name="data_rit">
+    <column id="371" parent="314" name="data_rit">
       <DasType>date|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <column id="345" parent="307" name="price">
+    <column id="372" parent="314" name="price">
       <DasType>float|0s</DasType>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
-    <column id="346" parent="307" name="image">
+    <column id="373" parent="314" name="image">
       <DasType>longblob|0s</DasType>
       <NotNull>1</NotNull>
       <Position>7</Position>
     </column>
-    <index id="347" parent="307" name="PRIMARY">
+    <index id="374" parent="314" name="PRIMARY">
       <ColNames>tripid</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="348" parent="307" name="PRIMARY">
+    <key id="375" parent="314" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="349" parent="308" name="idUser">
+    <column id="376" parent="315" name="idUser">
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="350" parent="308" name="Username">
+    <column id="377" parent="315" name="Username">
       <DasType>varchar(45)|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="351" parent="308" name="password">
+    <column id="378" parent="315" name="password">
       <DasType>varchar(45)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <index id="352" parent="308" name="PRIMARY">
+    <column id="379" parent="315" name="nome">
+      <DasType>varchar(45)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+    </column>
+    <column id="380" parent="315" name="cognome">
+      <DasType>varchar(45)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+    </column>
+    <column id="381" parent="315" name="email">
+      <DasType>varchar(45)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>6</Position>
+    </column>
+    <index id="382" parent="315" name="PRIMARY">
       <ColNames>idUser</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="353" parent="308" name="Username_UNIQUE">
+    <index id="383" parent="315" name="Username_UNIQUE">
       <ColNames>Username</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="354" parent="308" name="PRIMARY">
+    <key id="384" parent="315" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <key id="355" parent="308" name="Username_UNIQUE">
+    <key id="385" parent="315" name="Username_UNIQUE">
       <UnderlyingIndexName>Username_UNIQUE</UnderlyingIndexName>
     </key>
-    <column id="356" parent="309" name="UsernameUser">
+    <column id="386" parent="316" name="UsernameUser">
       <DasType>varchar(45)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="357" parent="309" name="trip_tripid">
+    <column id="387" parent="316" name="trip_tripid">
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="358" parent="309" name="state">
-      <DasType>bit(1)|0s</DasType>
+    <column id="388" parent="316" name="state">
+      <DasType>varchar(20)|0s</DasType>
+      <DefaultExpression>&apos;in_attesa&apos;</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <index id="359" parent="309" name="PRIMARY">
+    <index id="389" parent="316" name="PRIMARY">
       <ColNames>trip_tripid
 UsernameUser</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="360" parent="309" name="fk_User_has_trip_User_idx">
+    <index id="390" parent="316" name="fk_User_has_trip_User_idx">
       <ColNames>UsernameUser</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="361" parent="309" name="PRIMARY">
+    <key id="391" parent="316" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
