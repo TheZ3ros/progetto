@@ -249,15 +249,7 @@
       <workItem from="1739971800996" duration="3477000" />
       <workItem from="1751467798189" duration="5443000" />
       <workItem from="1751556211297" duration="1222000" />
-      <workItem from="1751557449939" duration="5537000" />
-    </task>
-    <task id="LOCAL-00015" summary="fix caricamento pagine">
-      <option name="closed" value="true" />
-      <created>1706287371044</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1706287371044</updated>
+      <workItem from="1751557449939" duration="5854000" />
     </task>
     <task id="LOCAL-00016" summary="caricamento viaggio(non funziona)">
       <option name="closed" value="true" />
@@ -643,7 +635,15 @@
       <option name="project" value="LOCAL" />
       <updated>1751563183757</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="cambiamenti vari">
+      <option name="closed" value="true" />
+      <created>1751563441177</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1751563441177</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
