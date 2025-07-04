@@ -3,7 +3,10 @@ package com.ispw.progetto.controller_graf.utente;
 import com.ispw.progetto.bean.SignUpUserBean;
 import com.ispw.progetto.bean.UserBean;
 import com.ispw.progetto.controller_app.RegLoginControllerApp;
+import com.ispw.progetto.controller_graf.HomeController;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.text.Text;
@@ -43,9 +46,14 @@ public class InfoUserController {
     }
 
     @FXML
-    public void vaiAHome() {
+    public void vaiAHome() throws IOException {
+        FXMLLoader homeLoader = new FXMLLoader(getClass().getResource("/com/ispw/progetto/view1/home.fxml"));
+        Parent homeRoot = homeLoader.load();
+        Scene homeScene = new Scene(homeRoot);
+        HomeController homeController = homeLoader.getController();
+        homeController.setStage(stage);  // importante: passare lo stage!
+        stage.setScene(homeScene);
         stage.setTitle("Home");
-        stage.setScene(new Scene(new javafx.scene.Group())); // puoi caricare la scena vera della home se disponibile
     }
 
     @FXML

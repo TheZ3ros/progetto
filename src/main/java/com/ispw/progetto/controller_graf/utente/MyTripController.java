@@ -3,6 +3,7 @@ package com.ispw.progetto.controller_graf.utente;
 import com.ispw.progetto.bean.TripBean;
 import com.ispw.progetto.bean.UserBean;
 import com.ispw.progetto.controller_app.BookTripController;
+import com.ispw.progetto.controller_graf.HomeController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -44,9 +45,14 @@ public class MyTripController {
     }
 
     @FXML
-    public void vaiAHome() {
+    public void vaiAHome() throws IOException {
+        FXMLLoader homeLoader = new FXMLLoader(getClass().getResource("/com/ispw/progetto/view1/home.fxml"));
+        Parent homeRoot = homeLoader.load();
+        Scene homeScene = new Scene(homeRoot);
+        HomeController homeController = homeLoader.getController();
+        homeController.setStage(stage);  // importante: passare lo stage!
+        stage.setScene(homeScene);
         stage.setTitle("Home");
-        stage.setScene(new Scene(new javafx.scene.Group())); // placeholder, cambia se hai una vera Home
     }
 
     public void charge() throws SQLException, IOException {

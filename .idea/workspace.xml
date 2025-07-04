@@ -4,12 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="abd72b32-f6c1-4b42-a1d9-4297dd975b52" name="Changes" comment="Eliminata dipendenza da Applicazione in tutti i controller grafici. Bisogna reimplementare la logica di cambio delle schermate, al momento funziona solo in &quot;avanti&quot;, tranne per LoginController che può tornare alla home">
-      <change afterPath="$PROJECT_DIR$/struttura.txt" afterDir="false" />
+    <list default="true" id="abd72b32-f6c1-4b42-a1d9-4297dd975b52" name="Changes" comment="Prova dipendenze cicliche su login e registrazione controller">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/RegistrazioneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/RegistrazioneController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/InfoUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/InfoUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/MyTripController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/MyTripController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/PagamentoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/PagamentoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/PageTripController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/PageTripController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/UserHomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/UserHomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/ViewTripController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/ViewTripController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -257,15 +259,7 @@
       <workItem from="1751556211297" duration="1222000" />
       <workItem from="1751557449939" duration="7014000" />
       <workItem from="1751564944130" duration="11535000" />
-      <workItem from="1751620533021" duration="2170000" />
-    </task>
-    <task id="LOCAL-00018" summary="caricamento viaggio(quasi funziona)">
-      <option name="closed" value="true" />
-      <created>1706480147492</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1706480147492</updated>
+      <workItem from="1751620533021" duration="2849000" />
     </task>
     <task id="LOCAL-00019" summary="Controllo valori inseriti per la creazione della trip">
       <option name="closed" value="true" />
@@ -651,7 +645,15 @@
       <option name="project" value="LOCAL" />
       <updated>1751583249261</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="Prova dipendenze cicliche su login e registrazione controller">
+      <option name="closed" value="true" />
+      <created>1751623584963</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1751623584963</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -670,7 +672,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Bottoni schermata Accedi" />
     <MESSAGE value="aggiunta schermata userlogin" />
     <MESSAGE value="fix caricamento pagine" />
     <MESSAGE value="caricamento viaggio(non funziona)" />
@@ -695,7 +696,8 @@
     <MESSAGE value="funzionante" />
     <MESSAGE value="cambiamenti vari" />
     <MESSAGE value="Eliminata dipendenza da Applicazione in tutti i controller grafici. Bisogna reimplementare la logica di cambio delle schermate, al momento funziona solo in &quot;avanti&quot;, tranne per LoginController che può tornare alla home" />
-    <option name="LAST_COMMIT_MESSAGE" value="Eliminata dipendenza da Applicazione in tutti i controller grafici. Bisogna reimplementare la logica di cambio delle schermate, al momento funziona solo in &quot;avanti&quot;, tranne per LoginController che può tornare alla home" />
+    <MESSAGE value="Prova dipendenze cicliche su login e registrazione controller" />
+    <option name="LAST_COMMIT_MESSAGE" value="Prova dipendenze cicliche su login e registrazione controller" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
