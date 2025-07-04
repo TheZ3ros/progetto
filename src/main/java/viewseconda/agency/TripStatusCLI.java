@@ -14,42 +14,45 @@ import java.util.Scanner;
 public class TripStatusCLI {
     protected final AgencyBean currentAgency;
 
-    public TripStatusCLI(AgencyBean currentAgency){this.currentAgency=currentAgency;}
+    public TripStatusCLI(AgencyBean currentAgency) {
+        this.currentAgency = currentAgency;
+    }
 
-    public void start(HomeAgencyCLI home,int id) throws SQLException, IOException, NotValidCouponException {
-
-        String username;
-        boolean state;
-
-        List<TripStatusBean> stati = TripStatusController.showtripstatus(id);
-        for (TripStatusBean stato : stati){
-            username = stato.getUsername();
-            state = stato.isStatus();
-            Printer.printMessage("_________________________");
-            Printer.printMessage("Username: "+username);
-            Printer.printMessage("Stato: "+state);
-        }
-
+    public void start(int id) throws SQLException, IOException, NotValidCouponException {
         Scanner scanner = new Scanner(System.in);
-        Printer.printMessage("Inserire lo username di cui confermare la prenotazione (non scrivere nulla se non si desidera fare nulla): ");
-        String user = scanner.nextLine();
-        if(user.isEmpty()){
-            home.start();
-        } //verificare se sia meglio sostituire questo if con un ciclo while
-        else{
-            TripStatusController statusupdater = new TripStatusController();
-            boolean b = statusupdater.updatetripstatus(id,user);
-            if (b){
-                Printer.printMessage("Stato aggiornato");
-                start(home,id);
+        boolean continua = true;
+
+        while (continua) {
+            List<TripStatusBean> stati = TripStatusController.showtripstatus(id);
+
+            if (stati.isEmpty()) {
+                Printer.printMessage("Nessuna prenotazione trovata per questo viaggio.");
+                return;
             }
-            else{
-                Printer.printMessage("Query non eseguita");
-                home.start();
+
+            for (TripStatusBean stato : stati) {
+                Printer.printMessage("_________________________");
+                Printer.printMessage("Username: " + stato.getUsername());
+                Printer.printMessage("Stato: " + stato.isStatus());
+            }
+
+            Printer.printMessage("Inserisci lo username da confermare (invio per uscire): ");
+            String user = scanner.nextLine().trim();
+
+            if (user.isEmpty()) {
+                continua = false;
+            } else {
+                TripStatusController statusUpdater = new TripStatusController();
+                boolean updated = statusUpdater.updatetripstatus(id, user);
+
+                if (updated) {
+                    Printer.printMessage("Stato aggiornato con successo.");
+                } else {
+                    Printer.printMessage("Errore durante l'aggiornamento.");
+                }
+
+                // Ri-stampa la lista aggiornata e continua il ciclo
             }
         }
-
-
-
     }
 }

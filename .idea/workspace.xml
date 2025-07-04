@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="abd72b32-f6c1-4b42-a1d9-4297dd975b52" name="Changes" comment="Rimozioni dipendenze cicliche">
+    <list default="true" id="abd72b32-f6c1-4b42-a1d9-4297dd975b52" name="Changes" comment="Rimozione dipendenze cicliche CLI">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/viewseconda/ControllerHomeCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/viewseconda/ControllerHomeCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/viewseconda/RegistrazioneUserCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/viewseconda/RegistrazioneUserCLI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/viewseconda/agency/HomeAgencyCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/viewseconda/agency/HomeAgencyCLI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/viewseconda/agency/TripCreationCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/viewseconda/agency/TripCreationCLI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -255,15 +255,7 @@
       <workItem from="1751556211297" duration="1222000" />
       <workItem from="1751557449939" duration="7014000" />
       <workItem from="1751564944130" duration="11535000" />
-      <workItem from="1751620533021" duration="15044000" />
-    </task>
-    <task id="LOCAL-00026" summary="fix code smell">
-      <option name="closed" value="true" />
-      <created>1707243117711</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1707243117711</updated>
+      <workItem from="1751620533021" duration="15544000" />
     </task>
     <task id="LOCAL-00027" summary="fix code smell">
       <option name="closed" value="true" />
@@ -649,7 +641,15 @@
       <option name="project" value="LOCAL" />
       <updated>1751641982388</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="Rimozione dipendenze cicliche CLI">
+      <option name="closed" value="true" />
+      <created>1751642542470</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1751642542470</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -668,7 +668,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Implementato il BLOB sia per la conversione dell'immagine che per il suo caricamento nel DB. Al momento gestisce solo immagini di piccola taglia" />
     <MESSAGE value="1" />
     <MESSAGE value="fix code smell" />
     <MESSAGE value="fix secondari" />
@@ -693,7 +692,8 @@
     <MESSAGE value="Implementato SceneNavigate in alcuni controller grafici lato agenzia (AgencyHomeController e ViewTripCreationController" />
     <MESSAGE value="SceneNavigate in AgencyTripsController e TripStatusController" />
     <MESSAGE value="Rimozioni dipendenze cicliche" />
-    <option name="LAST_COMMIT_MESSAGE" value="Rimozioni dipendenze cicliche" />
+    <MESSAGE value="Rimozione dipendenze cicliche CLI" />
+    <option name="LAST_COMMIT_MESSAGE" value="Rimozione dipendenze cicliche CLI" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
