@@ -3,6 +3,8 @@ package com.ispw.progetto.controller_graf.agenzia;
 import com.ispw.progetto.bean.AgencyBean;
 import com.ispw.progetto.bean.TripBean;
 import com.ispw.progetto.controller_app.BookTripController;
+import com.ispw.progetto.utils.SceneNavigator;
+import com.ispw.progetto.utils.StageAware;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -16,7 +18,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
-public class AgencyTripsController {
+public class AgencyTripsController implements StageAware {
 
     @FXML
     private Button agency;
@@ -41,14 +43,7 @@ public class AgencyTripsController {
     public void vaiAHome() {
         // Qui puoi caricare la home agency passando stage e user
         try {
-            FXMLLoader loader = new FXMLLoader(com.ispw.progetto.Applicazione.class.getResource("view1/agenzia/agency_home.fxml"));
-            Parent root = loader.load();
-            AgencyHomeController controller = loader.getController();
-            controller.setUser(currentUser);
-            controller.setButtonText();
-            controller.setStage(stage);  // passa lo stage
-            stage.setScene(new Scene(root));
-            stage.setTitle("Home Agenzia");
+            SceneNavigator.switchTo(stage, "/com/ispw/progetto/view1/home.fxml", this);
         } catch (IOException e) {
             e.printStackTrace();
             // gestisci errore

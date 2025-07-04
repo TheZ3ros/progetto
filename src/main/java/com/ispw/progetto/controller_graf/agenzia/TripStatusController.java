@@ -3,6 +3,9 @@ package com.ispw.progetto.controller_graf.agenzia;
 import com.ispw.progetto.bean.AgencyBean;
 import com.ispw.progetto.bean.TripBean;
 import com.ispw.progetto.bean.TripStatusBean;
+import com.ispw.progetto.utils.SceneNavigator;
+import com.ispw.progetto.utils.StageAware;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
@@ -17,7 +20,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
-public class TripStatusController {
+public class TripStatusController implements StageAware {
     private Stage stage;
     private AgencyBean thisUser;
     private TripBean currentTrip;
@@ -49,8 +52,8 @@ public class TripStatusController {
 
     @FXML
     private void viewTrip() throws IOException, SQLException {
-        AgencyTripsController viewTripController = new AgencyTripsController();
-        viewTripController.agencyTrips(stage, thisUser);  // ora passo lo stage, non Applicazione
+//        AgencyTripsController viewTripController = new AgencyTripsController();
+//        viewTripController.agencyTrips(stage, thisUser);  // ora passo lo stage, non Applicazione
     }
 
     public void charge() throws SQLException, IOException {
@@ -70,6 +73,17 @@ public class TripStatusController {
             controller.setTrip(currentTrip);
             controller.createbox(stato);
             listaview.getItems().add(box);
+        }
+    }
+
+    @FXML
+    public void vaiAHome() {
+        // Qui puoi caricare la home agency passando stage e user
+        try {
+            SceneNavigator.switchTo(stage, "/com/ispw/progetto/view1/home.fxml", this);
+        } catch (IOException e) {
+            e.printStackTrace();
+            // gestisci errore
         }
     }
 }
