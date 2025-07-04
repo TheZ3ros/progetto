@@ -2,10 +2,7 @@ package viewseconda.user;
 
 import com.ispw.progetto.bean.UserBean;
 import com.ispw.progetto.controller_app.RegLoginControllerApp;
-import com.ispw.progetto.exception.AlreadyPrenotedException;
 import com.ispw.progetto.exception.CredentialErrorException;
-import com.ispw.progetto.exception.ExistsUserException;
-import com.ispw.progetto.exception.PlacesTerminatedException;
 import viewseconda.Printer;
 
 import java.io.IOException;
@@ -34,7 +31,7 @@ public class LoginUserCLI {
         }
         catch(CredentialErrorException e){
             Printer.printMessage(e.getMessage());
-        } catch (SQLException | IOException | PlacesTerminatedException | AlreadyPrenotedException | ExistsUserException e) {
+        } catch (SQLException | IOException e) {
             throw new IllegalArgumentException(e);
         }
     }
