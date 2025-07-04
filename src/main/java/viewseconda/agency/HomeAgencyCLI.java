@@ -1,7 +1,6 @@
 package viewseconda.agency;
 
 import com.ispw.progetto.bean.AgencyBean;
-import com.ispw.progetto.exception.NotValidCouponException;
 import viewseconda.Printer;
 
 import java.io.IOException;
@@ -15,7 +14,7 @@ public class HomeAgencyCLI {
         this.currentAgency = currentAgency;
     }
 
-    public void start() throws SQLException, IOException, NotValidCouponException {
+    public void start() throws SQLException, IOException {
         Scanner reader = new Scanner(System.in);
         boolean continua = true;
 
