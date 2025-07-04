@@ -1,13 +1,9 @@
 package com.ispw.progetto.controller_graf.utente;
 
 import com.ispw.progetto.bean.UserBean;
-import com.ispw.progetto.controller_graf.HomeController;
 import com.ispw.progetto.utils.SceneNavigator;
 import com.ispw.progetto.utils.StageAware;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 

@@ -10,6 +10,7 @@ import javafx.stage.Stage;
 import viewseconda.ControllerHomeCLI;
 import viewseconda.Printer;
 
+import java.util.Objects;
 import java.util.Scanner;
 
 public class Applicazione extends Application {
@@ -46,14 +47,13 @@ public class Applicazione extends Application {
                 HomeController homeController = homeLoader.getController();
                 homeController.setStage(stage);
 
-                stage.getIcons().add(new Image(getClass().getResourceAsStream("css/immagini/infinito.png")));
+                stage.getIcons().add(new Image(Objects.requireNonNull(getClass().getResourceAsStream("css/immagini/infinito.png"))));
 
                 stage.show();
                 isvalid = true;
             } else if (n == 2) {
                 ControllerHomeCLI controllerHomeCLI = new ControllerHomeCLI();
                 controllerHomeCLI.start();
-                isvalid = true;
                 return;
             } else {
                 Printer.printMessage("inserire un'opzione valida");

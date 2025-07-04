@@ -5,7 +5,6 @@ import com.ispw.progetto.bean.TripBean;
 import com.ispw.progetto.bean.TripStatusBean;
 import com.ispw.progetto.utils.SceneNavigator;
 import com.ispw.progetto.utils.StageAware;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
@@ -51,9 +50,7 @@ public class TripStatusController implements StageAware {
     }
 
     @FXML
-    private void viewTrip() throws IOException, SQLException {
-//        AgencyTripsController viewTripController = new AgencyTripsController();
-//        viewTripController.agencyTrips(stage, thisUser);  // ora passo lo stage, non Applicazione
+    private void viewTrip() {
     }
 
     public void charge() throws SQLException, IOException {
@@ -68,8 +65,8 @@ public class TripStatusController implements StageAware {
             FXMLLoader statusvisualizerLoader = new FXMLLoader(com.ispw.progetto.Applicazione.class.getResource("view1/agenzia/statusvisualizer.fxml"));
             VBox box = statusvisualizerLoader.load();
             StatusVisualizerController controller = statusvisualizerLoader.getController();
-            controller.setStage(stage);
-            controller.setCurrentUser(thisUser);
+            controller.setStage();
+            controller.setCurrentUser();
             controller.setTrip(currentTrip);
             controller.createbox(stato);
             listaview.getItems().add(box);

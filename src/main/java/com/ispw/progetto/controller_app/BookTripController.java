@@ -2,7 +2,6 @@ package com.ispw.progetto.controller_app;
 
 import com.ispw.progetto.bean.SearchBean;
 import com.ispw.progetto.bean.UserBean;
-import com.ispw.progetto.dao.csv_dbms.BookingDAOcsv;
 import com.ispw.progetto.exception.AlreadyPrenotedException;
 import com.ispw.progetto.exception.FailedSearchException;
 import com.ispw.progetto.exception.PlacesTerminatedException;
@@ -22,7 +21,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BookTripController {
-    private static final  String WRITER ="dbms";
     public List<TripBean> showTrip() throws SQLException, IOException {
         TripDAO tripdao = new TripDAO();
         Trip trip;
@@ -50,7 +48,6 @@ public class BookTripController {
         UserTripStatus userTripStatus = new UserTripStatus(utente.getUsername());
         UserTrip usertrip = new UserTrip(userTripStatus,trip.getId());
 
-        if(WRITER.equals("dbms")){
         BookingDAOdbms usertripdao = new BookingDAOdbms();
 
         try{
@@ -59,19 +56,9 @@ public class BookTripController {
         catch(AlreadyPrenotedException e){
             throw new AlreadyPrenotedException(e.getMessage());
         }
-        }
-        else{
-            BookingDAOcsv bookingDAOcsv=new BookingDAOcsv();
-            try{
-                bookingDAOcsv.setTripBook(usertrip);
-            }
-            catch(AlreadyPrenotedException e){
-                throw new AlreadyPrenotedException(e.getMessage());
-            }
-        }
 
 
-            tripdao.refreshAvailable(trip.getId());
+        tripdao.refreshAvailable(trip.getId());
 
 
 

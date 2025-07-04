@@ -33,7 +33,7 @@ public class TripCreationCLI {
 
         Printer.printMessage("Inserisci data di partenza in formato aaaa/mm/gg: ");
         String inputAnd = scanner.nextLine();
-        java.sql.Date dataAnd = null;
+        java.sql.Date dataAnd;
         try {
             dataAnd = new java.sql.Date(new SimpleDateFormat("yyyy/MM/dd").parse(inputAnd).getTime());
             Printer.printMessage("Data inserita: " + dataAnd);
@@ -44,7 +44,7 @@ public class TripCreationCLI {
 
         Printer.printMessage("Inserisci data di ritorno in formato aaaa/mm/gg: ");
         String inputRit = scanner.nextLine();
-        java.sql.Date dataRit = null;
+        java.sql.Date dataRit;
         try {
             dataRit = new java.sql.Date(new SimpleDateFormat("yyyy/MM/dd").parse(inputRit).getTime());
             Printer.printMessage("Data inserita: " + dataRit);

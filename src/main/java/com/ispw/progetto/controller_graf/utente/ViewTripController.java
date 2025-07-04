@@ -4,7 +4,6 @@ import com.ispw.progetto.bean.SearchBean;
 import com.ispw.progetto.bean.TripBean;
 import com.ispw.progetto.bean.UserBean;
 import com.ispw.progetto.controller_app.BookTripController;
-import com.ispw.progetto.controller_graf.HomeController;
 import com.ispw.progetto.exception.FailedSearchException;
 import com.ispw.progetto.utils.SceneNavigator;
 import com.ispw.progetto.utils.StageAware;

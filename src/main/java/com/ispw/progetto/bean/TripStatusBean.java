@@ -1,8 +1,8 @@
 package com.ispw.progetto.bean;
 
 public class TripStatusBean {
-    private boolean status;
-    private String username;
+    private final boolean status;
+    private final String username;
 
     public TripStatusBean(String username, boolean status){
         this.username = username;

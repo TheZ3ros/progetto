@@ -1,12 +1,10 @@
 package com.ispw.progetto.controller_graf.agenzia;
 
-import com.ispw.progetto.bean.AgencyBean;
 import com.ispw.progetto.bean.TripBean;
 import com.ispw.progetto.bean.TripStatusBean;
 import com.ispw.progetto.controller_app.TripStatusController;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
-import javafx.stage.Stage;
 import viewseconda.Printer;
 
 import java.io.IOException;
@@ -14,8 +12,6 @@ import java.sql.SQLException;
 
 public class StatusVisualizerController {
 
-    private Stage stage;               // nuovo campo stage
-    private AgencyBean currentUser;
     private TripStatusBean statusbean;
     private TripBean currentTrip;
 
@@ -25,16 +21,15 @@ public class StatusVisualizerController {
     @FXML
     private Label state;
 
-    public void setStage(Stage stage){
-        this.stage = stage;
+    public void setStage(){
+        // nuovo campo stage
     }
 
     public void setTrip(TripBean currentTrip){
         this.currentTrip = currentTrip;
     }
 
-    public void setCurrentUser(AgencyBean currentUser){
-        this.currentUser = currentUser;
+    public void setCurrentUser(){
     }
 
     public void createbox(TripStatusBean statusbean){

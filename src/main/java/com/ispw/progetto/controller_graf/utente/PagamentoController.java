@@ -1,7 +1,6 @@
 package com.ispw.progetto.controller_graf.utente;
 
 import com.ispw.progetto.bean.UserBean;
-import com.ispw.progetto.controller_graf.HomeController;
 import com.ispw.progetto.exception.*;
 import com.ispw.progetto.bean.BookBean;
 import com.ispw.progetto.bean.BuonoBean;
@@ -120,9 +119,7 @@ public class PagamentoController implements StageAware {
     }
 
     @FXML
-    private void viewTrip() throws IOException, SQLException {
-//        ViewTripController page = new ViewTripController();
-//        page.viewTrip(stage, currentUser);
+    private void viewTrip() {
     }
 
     @FXML
@@ -139,12 +136,12 @@ public class PagamentoController implements StageAware {
             BookTripController bookTripController = new BookTripController();
             bookTripController.bookTrip(book);
 
-            showInfo("Prenotato", "Prenotazione effettuata correttamente");
+            showInfo();
         } catch (CardNotTrueException e) {
             showError("Errore", e.getMessage());
             numero.setText(null);
         } catch (AlreadyPrenotedException e) {
-            showWarning(ACTION, e.getMessage());
+            showWarning(e.getMessage());
         }
     }
 
@@ -183,12 +180,12 @@ public class PagamentoController implements StageAware {
         showAlert(Alert.AlertType.ERROR, title, message);
     }
 
-    private void showWarning(String title, String message) {
-        showAlert(Alert.AlertType.WARNING, title, message);
+    private void showWarning(String message) {
+        showAlert(Alert.AlertType.WARNING, PagamentoController.ACTION, message);
     }
 
-    private void showInfo(String title, String message) {
-        showAlert(Alert.AlertType.INFORMATION, title, message);
+    private void showInfo() {
+        showAlert(Alert.AlertType.INFORMATION, "Prenotato", "Prenotazione effettuata correttamente");
     }
 
     private void showAlert(Alert.AlertType type, String title, String content) {

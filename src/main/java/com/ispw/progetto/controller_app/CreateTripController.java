@@ -23,7 +23,7 @@ public class CreateTripController {
         n=trip.getAvailable();
         java.sql.Date dataA=(trip.getDataAnd());
         java.sql.Date dataR=trip.getDataRit();
-        Float prezzo;
+        float prezzo;
         prezzo=trip.getPrice();
         byte[] image;
         image=(trip.getImage());

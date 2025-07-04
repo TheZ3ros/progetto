@@ -5,14 +5,11 @@ import com.ispw.progetto.bean.TripBean;
 import com.ispw.progetto.controller_app.CreateTripController;
 import com.ispw.progetto.exception.DateNotValidException;
 import com.ispw.progetto.exception.EmptystatementException;
-import com.ispw.progetto.exception.SQLStatementException;
+
 import com.ispw.progetto.utils.SceneNavigator;
 import com.ispw.progetto.utils.StageAware;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -29,7 +26,6 @@ import java.time.LocalDate;
 
 public class ViewTripCreationController implements StageAware {
 
-    private String imagePath;
     private byte[] imageBytes;
     private AgencyBean currentUser;
     private Stage stage;  // <-- campo Stage
@@ -94,7 +90,6 @@ public class ViewTripCreationController implements StageAware {
         File selectedFile = chooser.showOpenDialog(window);
         if (selectedFile != null) {
             try {
-                imagePath = selectedFile.getAbsolutePath();
                 Image image = new Image(selectedFile.toURI().toString());
                 imageBytes = imageToBytes(image);
                 imageViewer.setImage(image);
@@ -144,7 +139,7 @@ public class ViewTripCreationController implements StageAware {
             CreateTripController creation = new CreateTripController(trip);
             creation.uploadTrip();
 
-            showInfoAlert("Viaggio creato con successo");
+            showInfoAlert();
 
         } catch (NumberFormatException e) {
             showErrorAlert("Inserire un numero valido per i posti disponibili e il prezzo");
@@ -163,11 +158,11 @@ public class ViewTripCreationController implements StageAware {
         alert.showAndWait();
     }
 
-    private void showInfoAlert(String message) {
+    private void showInfoAlert() {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Informazione");
         alert.setHeaderText(null);
-        alert.setContentText(message);
+        alert.setContentText("Viaggio creato con successo");
         alert.showAndWait();
     }
 

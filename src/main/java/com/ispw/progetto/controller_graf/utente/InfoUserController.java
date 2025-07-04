@@ -3,13 +3,9 @@ package com.ispw.progetto.controller_graf.utente;
 import com.ispw.progetto.bean.SignUpUserBean;
 import com.ispw.progetto.bean.UserBean;
 import com.ispw.progetto.controller_app.RegLoginControllerApp;
-import com.ispw.progetto.controller_graf.HomeController;
 import com.ispw.progetto.utils.SceneNavigator;
 import com.ispw.progetto.utils.StageAware;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -59,9 +55,7 @@ public class InfoUserController implements StageAware{
     }
 
     @FXML
-    private void viewTrip() throws IOException, SQLException {
-//        ViewTripController page = new ViewTripController();
-//        page.viewTrip(stage, currentUser);
+    private void viewTrip() {
     }
 
     public void setInfo() throws IOException, SQLException {

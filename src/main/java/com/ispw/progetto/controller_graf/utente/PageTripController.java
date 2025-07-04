@@ -3,7 +3,6 @@ package com.ispw.progetto.controller_graf.utente;
 import com.ispw.progetto.bean.TripBean;
 import com.ispw.progetto.bean.UserBean;
 import com.ispw.progetto.controller_app.BookTripController;
-import com.ispw.progetto.controller_graf.HomeController;
 import com.ispw.progetto.exception.AlreadyPrenotedException;
 import com.ispw.progetto.exception.PlacesTerminatedException;
 import com.ispw.progetto.utils.SceneNavigator;
@@ -81,9 +80,7 @@ public class PageTripController implements StageAware {
     }
 
     @FXML
-    private void viewTrip() throws IOException, SQLException {
-//        ViewTripController viewTripController = new ViewTripController();
-//        viewTripController.viewTrip(stage, currentUser);
+    private void viewTrip() {
     }
 
     @FXML

@@ -8,10 +8,6 @@ public class Buono {
         this.codice=codice;
     }
 
-    public String getCodice() {
-        return codice;
-    }
-
     public int getCifra() {
         return cifra;
     }

@@ -10,7 +10,6 @@ import com.ispw.progetto.exception.*;
 import viewseconda.Printer;
 
 import java.io.IOException;
-import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.Scanner;
 import java.util.Timer;
