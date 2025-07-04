@@ -3,7 +3,6 @@ package viewseconda.agency;
 import com.ispw.progetto.bean.AgencyBean;
 import com.ispw.progetto.controller_app.RegLoginControllerApp;
 import com.ispw.progetto.exception.CredentialErrorException;
-import com.ispw.progetto.exception.NotValidCouponException;
 import viewseconda.Printer;
 
 import java.io.IOException;
@@ -29,7 +28,7 @@ public class LoginAgencyCLI {
             homeAgency.start();
 
         }
-        catch(CredentialErrorException | SQLException | IOException | NotValidCouponException e){
+        catch(CredentialErrorException | SQLException | IOException e){
             Printer.printMessage(e.getMessage());
         }
     }
