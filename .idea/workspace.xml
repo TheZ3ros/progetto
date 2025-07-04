@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="abd72b32-f6c1-4b42-a1d9-4297dd975b52" name="Changes" comment="Rimozione dipendenze cicliche CLI">
-      <change afterPath="$PROJECT_DIR$/src/main/java/viewseconda/user/UserHomeNavigator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="abd72b32-f6c1-4b42-a1d9-4297dd975b52" name="Changes" comment="Rimozione dipendenze cicliche CLI e aggiunta di UserHomeNavigator" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -254,15 +251,7 @@
       <workItem from="1751556211297" duration="1222000" />
       <workItem from="1751557449939" duration="7014000" />
       <workItem from="1751564944130" duration="11535000" />
-      <workItem from="1751620533021" duration="16272000" />
-    </task>
-    <task id="LOCAL-00028" summary="fix code smell">
-      <option name="closed" value="true" />
-      <created>1707243794409</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1707243794409</updated>
+      <workItem from="1751620533021" duration="16619000" />
     </task>
     <task id="LOCAL-00029" summary="fix code smell">
       <option name="closed" value="true" />
@@ -648,7 +637,15 @@
       <option name="project" value="LOCAL" />
       <updated>1751644281642</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="Rimozione dipendenze cicliche CLI e aggiunta di UserHomeNavigator">
+      <option name="closed" value="true" />
+      <created>1751645008130</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1751645008130</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -667,7 +664,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="1" />
     <MESSAGE value="fix code smell" />
     <MESSAGE value="fix secondari" />
     <MESSAGE value="c'è speranza" />
@@ -692,7 +688,8 @@
     <MESSAGE value="SceneNavigate in AgencyTripsController e TripStatusController" />
     <MESSAGE value="Rimozioni dipendenze cicliche" />
     <MESSAGE value="Rimozione dipendenze cicliche CLI" />
-    <option name="LAST_COMMIT_MESSAGE" value="Rimozione dipendenze cicliche CLI" />
+    <MESSAGE value="Rimozione dipendenze cicliche CLI e aggiunta di UserHomeNavigator" />
+    <option name="LAST_COMMIT_MESSAGE" value="Rimozione dipendenze cicliche CLI e aggiunta di UserHomeNavigator" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

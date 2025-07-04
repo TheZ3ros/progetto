@@ -18,7 +18,6 @@ import java.util.TimerTask;
 
 public class PaymentCLI {
     private final TripBean trip;
-    private HomeLoginCLI login;
     private final UserBean user;
 
     PaymentCLI(TripBean trip, UserBean user){
@@ -80,26 +79,6 @@ public class PaymentCLI {
                 navigator.goToHome();
             }
         }, 600000);
-    }
-
-    private void startTimer() {
-        Timer timer = new Timer();
-        Printer.printMessage("6 minuti per concludere il pagamento");
-        TimerTask task = new TimerTask() {
-            public void run() {
-                Printer.printMessage("Il tempo è scaduto!");
-                try {
-                    login.start();
-                } catch (SQLException | IOException | PlacesTerminatedException | AlreadyPrenotedException |
-                         ExistsUserException e) {
-                    throw new IllegalArgumentException(e);
-                }
-
-            }
-        };
-
-        long delay = 600000;
-        timer.schedule(task, delay);
     }
 }
 
