@@ -10,42 +10,42 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Scanner;
 
-public class HomeLoginCLI {
+public class HomeLoginCLI implements UserHomeNavigator {
     private final UserBean currentUser;
-
 
     public HomeLoginCLI(UserBean currentUser) {
         this.currentUser = currentUser;
     }
+
     public void start() throws SQLException, IOException, PlacesTerminatedException, AlreadyPrenotedException, ExistsUserException {
-        Printer.printMessage("Scegliere l'operazione da eseguire");
-        Printer.printMessage("1-Prenota un nuovo viaggio");
-        Printer.printMessage("2-Visualizza stato dei viaggi prenotati");
-        Printer.printMessage("3-Visualizza informazioni account");
         Scanner reader = new Scanner(System.in);
-        int n;
         boolean continua = true;
         while (continua) {
-            n = reader.nextInt();
+            Printer.printMessage("Scegliere l'operazione da eseguire");
+            Printer.printMessage("1-Prenota un nuovo viaggio");
+            Printer.printMessage("2-Visualizza stato dei viaggi prenotati");
+            Printer.printMessage("3-Visualizza informazioni account");
+
+            int n = reader.nextInt();
             switch (n) {
-                case 1:
-                    TripViewCLI tripViewCLI=new TripViewCLI(currentUser);
-                    tripViewCLI.viewtrip(this);
-                    break;
-                case 2:
-                    BookedTripCLI bookedTripCLI=new BookedTripCLI(currentUser);
-                    bookedTripCLI.start(this);
-                    break;
-                case 3:
-                    InfoUserCLI infoUserCLI=new InfoUserCLI(currentUser);
-                    infoUserCLI.start(this);
-                    break;
-                default:
-                    Printer.printMessage("inserire un'opzione valida");
+                case 1 -> new TripViewCLI(currentUser).viewtrip(this);
+                case 2 -> new BookedTripCLI(currentUser).start(this);
+                case 3 -> new InfoUserCLI(currentUser).start(this);
+                default -> Printer.printMessage("inserire un'opzione valida");
             }
+
             Printer.printMessage("Vuoi continuare? (S/N)");
             String risposta = reader.next();
             continua = risposta.equalsIgnoreCase("s");
+        }
+    }
+
+    @Override
+    public void goToHome() {
+        try {
+            start();
+        } catch (Exception e) {
+            Printer.printMessage("Errore nel tornare alla home: " + e.getMessage());
         }
     }
 }

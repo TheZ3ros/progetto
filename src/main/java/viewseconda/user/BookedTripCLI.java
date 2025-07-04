@@ -19,17 +19,17 @@ public class BookedTripCLI {
         currentUser=user;
     }
 
-    public void start(HomeLoginCLI login) throws SQLException, IOException, PlacesTerminatedException, AlreadyPrenotedException, ExistsUserException {
-        BookTripController bookTripController=new BookTripController();
-        List<TripBean> viaggi= bookTripController.getTripUser(currentUser);
-        for (TripBean viaggio:viaggi){
-            Printer.printMessage("Città:"+viaggio.getCity());
-            Printer.printMessage("Data di partenza:"+viaggio.getDataAnd());
-            Printer.printMessage("Data di ritorno:"+viaggio.getDataRit());
-            Printer.printMessage("Stato prenotazione:"+viaggio.isStato());
+    public void start(UserHomeNavigator navigator) throws SQLException, IOException, PlacesTerminatedException, AlreadyPrenotedException, ExistsUserException {
+        BookTripController bookTripController = new BookTripController();
+        List<TripBean> viaggi = bookTripController.getTripUser(currentUser);
+        for (TripBean viaggio : viaggi) {
+            Printer.printMessage("Città:" + viaggio.getCity());
+            Printer.printMessage("Data di partenza:" + viaggio.getDataAnd());
+            Printer.printMessage("Data di ritorno:" + viaggio.getDataRit());
+            Printer.printMessage("Stato prenotazione:" + viaggio.isStato());
             Printer.printMessage("---------------------------------");
         }
-        login.start();
-
+        navigator.goToHome();
     }
+
 }

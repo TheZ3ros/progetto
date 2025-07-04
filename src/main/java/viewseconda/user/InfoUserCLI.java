@@ -19,14 +19,14 @@ public class InfoUserCLI {
         this.currentUser = currentUser;
     }
 
-    public void start(HomeLoginCLI homeLoginCLI) throws SQLException, ExistsUserException, IOException, PlacesTerminatedException, AlreadyPrenotedException {
-        RegLoginControllerApp regLoginControllerApp=new RegLoginControllerApp(currentUser);
-        SignUpUserBean user=regLoginControllerApp.info();
-        Printer.printMessage("Nome: "+user.getNome());
-        Printer.printMessage("Cognome: "+user.getCognome());
-        Printer.printMessage("Username: "+user.getUsername());
-        Printer.printMessage("Email: "+user.getEmail());
-        homeLoginCLI.start();
-
+    public void start(UserHomeNavigator homeNavigator) throws SQLException, ExistsUserException, IOException, PlacesTerminatedException, AlreadyPrenotedException {
+        RegLoginControllerApp regLoginControllerApp = new RegLoginControllerApp(currentUser);
+        SignUpUserBean user = regLoginControllerApp.info();
+        Printer.printMessage("Nome: " + user.getNome());
+        Printer.printMessage("Cognome: " + user.getCognome());
+        Printer.printMessage("Username: " + user.getUsername());
+        Printer.printMessage("Email: " + user.getEmail());
+        homeNavigator.goToHome();
     }
+
 }

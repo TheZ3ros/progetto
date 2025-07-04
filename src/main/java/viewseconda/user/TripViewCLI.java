@@ -33,62 +33,45 @@ public class TripViewCLI {
     }
 
 
-    public void viewtrip(HomeLoginCLI login) throws SQLException, IOException, PlacesTerminatedException, AlreadyPrenotedException, ExistsUserException {
+    public void viewtrip(UserHomeNavigator navigator) throws SQLException, IOException, PlacesTerminatedException, AlreadyPrenotedException, ExistsUserException {
         BookTripController bookTripController = new BookTripController();
         List<TripBean> viaggi = bookTripController.showTrip();
-        for (TripBean viaggio : viaggi) {
-            Printer.printMessage("ID:" + viaggio.getId());
-            Printer.printMessage("Città:" + viaggio.getCity());
-            Printer.printMessage("Prezzo:" + viaggio.getPrice());
-            Printer.printMessage("Data di partenza:" + viaggio.getDataAnd());
-            Printer.printMessage("Data di ritorno:" + viaggio.getDataRit());
-            Printer.printMessage("Posti disponibili:" + viaggio.getAvailable());
-            Printer.printMessage("---------------------------------");
-        }
-        Printer.printMessage("Inserire l'ID del viaggio che si vuole prenotare, 0 per tornare alla pagina precedente, 10 se si vuole filtrare per città");
+
+        displayTrips(viaggi);
+
         Scanner reader = new Scanner(System.in);
-        int n;
         while (true) {
-            n = reader.nextInt();
-            if(n==10) {
+            Printer.printMessage("Inserire l'ID del viaggio (0 per tornare, 10 per filtrare):");
+            int n = reader.nextInt();
+
+            if (n == 10) {
                 Scanner scanner = new Scanner(System.in);
-                Printer.printMessage("Inserire nome città");
-                String citta;
-                citta = scanner.nextLine();
+                Printer.printMessage("Inserire nome città:");
+                String citta = scanner.nextLine();
                 SearchBean searchBean = new SearchBean();
                 searchBean.setCitta(citta);
-                viaggi.clear();
                 try {
                     viaggi = bookTripController.searchByCity(searchBean);
-
-                displayTrips(viaggi);
+                    displayTrips(viaggi);
                 } catch (FailedSearchException e) {
                     Printer.printMessage(e.getMessage());
                 }
-                viewtrip(login);
-
-            }
-
-            else if (n > viaggi.size()) {
-                Printer.printMessage("inserire un numero valido");
-            }
-            else if(n==0){
-                login.start();
-            }
-            else{
+            } else if (n == 0) {
+                navigator.goToHome();
+                return;
+            } else if (n > viaggi.size()) {
+                Printer.printMessage("ID non valido");
+            } else {
                 try {
-                    PaymentCLI paymentCLI=new PaymentCLI(viaggi.get(n-1),currentUser);
-                    paymentCLI.start(login);
+                    new PaymentCLI(viaggi.get(n - 1), currentUser).start(navigator);
                     break;
                 } catch (CardNotTrueException e) {
                     Printer.printMessage(e.getMessage());
-                    login.start();
+                    navigator.goToHome();
                 }
             }
-
-
-
         }
     }
+
     }
 

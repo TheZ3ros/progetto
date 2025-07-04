@@ -25,63 +25,63 @@ public class PaymentCLI {
         this.trip =trip;
         this.user=user;
     }
-    public void start(HomeLoginCLI login) throws CardNotTrueException, IOException {
-        this.login=login;
+    public void start(UserHomeNavigator navigator) throws CardNotTrueException, IOException {
         Scanner scanner = new Scanner(System.in);
         Printer.printMessage("Si vuole inserire un coupon?");
-        Printer.printMessage("1- sì");
-        Printer.printMessage("2- no");
-        startTimer();
-        Scanner reader = new Scanner(System.in);
-        int n;
-        n = reader.nextInt();
-            if (n==1) {
-                Printer.printMessage("inserire coupon");
-                String coupon = scanner.nextLine();
-                BuonoBean buonoBean = new BuonoBean();
-                buonoBean.setCodice(coupon);
-                PagamentoControllerApp pagamentoControllerApp = new PagamentoControllerApp();
-                try {
-                    buonoBean = pagamentoControllerApp.checkBuono(buonoBean);
-                } catch (SQLException | IOException | NotValidCouponException e) {
-                    Printer.printMessage(e.getMessage());
-                }
-                int prezzo = (int) trip.getPrice() - buonoBean.getValore();
-                Printer.printMessage("Nuovo prezzo:" + prezzo);
-            }
-        Printer.printMessage("inserire nome");
-            String nome = scanner.nextLine();
-            if (nome.isEmpty()){
-                throw new IOException();
-            }
-        Printer.printMessage("inserire numero carta");
-            String numeroCarta = scanner.nextLine();
-        Printer.printMessage("inserire cvv");
-            String cvvCode = scanner.nextLine();
-        Printer.printMessage("inserire data");
-        Printer.printMessage("Inserisci una data (formato: YYYY-MM-DD):");
-        String input = scanner.nextLine();
+        Printer.printMessage("1- sì\n2- no");
+        startTimer(navigator);
 
-        // Converte la stringa in un oggetto LocalDate
-        LocalDate date = LocalDate.parse(input);
-            PagamentoControllerApp pagamentoControllerApp = new PagamentoControllerApp();
+        int n = scanner.nextInt();
+        scanner.nextLine(); // Consuma newline
+
+        if (n == 1) {
+            Printer.printMessage("Inserire coupon:");
+            String coupon = scanner.nextLine();
+            BuonoBean buonoBean = new BuonoBean();
+            buonoBean.setCodice(coupon);
             try {
-                pagamentoControllerApp.checkCard(numeroCarta, cvvCode, date);
-            } catch (CardNotTrueException e) {
+                buonoBean = new PagamentoControllerApp().checkBuono(buonoBean);
+                int prezzo = (int) trip.getPrice() - buonoBean.getValore();
+                Printer.printMessage("Nuovo prezzo: " + prezzo);
+            } catch (Exception e) {
                 Printer.printMessage(e.getMessage());
             }
-            BookTripController bookTripController = new BookTripController();
+        }
+
+        Printer.printMessage("Inserire nome:");
+        String nome = scanner.nextLine();
+        if (nome.isEmpty()) throw new IOException();
+
+        Printer.printMessage("Inserire numero carta:");
+        String numeroCarta = scanner.nextLine();
+        Printer.printMessage("Inserire cvv:");
+        String cvvCode = scanner.nextLine();
+        Printer.printMessage("Inserisci data (YYYY-MM-DD):");
+        LocalDate date = LocalDate.parse(scanner.nextLine());
+
+        try {
+            new PagamentoControllerApp().checkCard(numeroCarta, cvvCode, date);
             BookBean bookBean = new BookBean(user.getUsername(), trip.getId());
-            try {
-                bookTripController.bookTrip(bookBean);
-                Printer.printMessage("Prenotazione avvenuta con successo");
-                login.start();
-            } catch (SQLException | IOException | PlacesTerminatedException | AlreadyPrenotedException e) {
-                Printer.printMessage(e.getMessage());
-            } catch (ExistsUserException e) {
-                throw new IllegalArgumentException(e);
-            }
+            new BookTripController().bookTrip(bookBean);
+            Printer.printMessage("Prenotazione avvenuta con successo");
+            navigator.goToHome();
+        } catch (Exception e) {
+            Printer.printMessage(e.getMessage());
+            navigator.goToHome();
+        }
     }
+
+    private void startTimer(UserHomeNavigator navigator) {
+        Timer timer = new Timer();
+        Printer.printMessage("6 minuti per concludere il pagamento");
+        timer.schedule(new TimerTask() {
+            public void run() {
+                Printer.printMessage("Il tempo è scaduto!");
+                navigator.goToHome();
+            }
+        }, 600000);
+    }
+
     private void startTimer() {
         Timer timer = new Timer();
         Printer.printMessage("6 minuti per concludere il pagamento");
