@@ -19,7 +19,7 @@ public class HomeController {
 
    @FXML
    private void vaiALogin() throws IOException {
-      FXMLLoader loginLoader = new FXMLLoader(com.ispw.progetto.Applicazione.class.getResource("view1/login.fxml"));
+      FXMLLoader loginLoader = new FXMLLoader(getClass().getResource("/com/ispw/progetto/view1/login.fxml"));
       Parent loginRoot = loginLoader.load();
       Scene loginScene = new Scene(loginRoot);
       LoginController loginController = loginLoader.getController();
@@ -30,7 +30,7 @@ public class HomeController {
 
    @FXML
    public void registrati() throws IOException {
-      FXMLLoader regLoader = new FXMLLoader(com.ispw.progetto.Applicazione.class.getResource("view1/registrazione.fxml"));
+      FXMLLoader regLoader = new FXMLLoader(getClass().getResource("/com/ispw/progetto/view1/registrazione.fxml"));
       Parent regRoot = regLoader.load();
       Scene regScene = new Scene(regRoot);
       RegistrazioneController regController = regLoader.getController();

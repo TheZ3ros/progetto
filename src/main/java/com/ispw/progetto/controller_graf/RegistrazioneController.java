@@ -37,8 +37,13 @@ public class RegistrazioneController {
     }
 
     @FXML
-    public void vaiAHome() {
-        stage.setScene(new Scene(new javafx.scene.Group())); // Placeholder
+    public void vaiAHome() throws IOException {
+        FXMLLoader homeLoader = new FXMLLoader(getClass().getResource("/com/ispw/progetto/view1/home.fxml"));
+        Parent homeRoot = homeLoader.load();
+        Scene homeScene = new Scene(homeRoot);
+        HomeController homeController = homeLoader.getController();
+        homeController.setStage(stage);  // importante: passare lo stage!
+        stage.setScene(homeScene);
         stage.setTitle("Home");
     }
 
@@ -86,7 +91,7 @@ public class RegistrazioneController {
 
     @FXML
     private void vaiALogin() throws IOException {
-        FXMLLoader loader = new FXMLLoader(com.ispw.progetto.Applicazione.class.getResource("view1/login.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/ispw/progetto/view1/login.fxml"));
         Parent root = loader.load();
         Scene scene = new Scene(root);
         LoginController controller = loader.getController();

@@ -40,7 +40,7 @@ public class LoginController {
 
     @FXML
     public void vaiAHome() throws IOException {
-        FXMLLoader homeLoader = new FXMLLoader(com.ispw.progetto.Applicazione.class.getResource("view1/home.fxml"));
+        FXMLLoader homeLoader = new FXMLLoader(getClass().getResource("/com/ispw/progetto/view1/home.fxml"));
         Parent homeRoot = homeLoader.load();
         Scene homeScene = new Scene(homeRoot);
         HomeController homeController = homeLoader.getController();
@@ -61,7 +61,7 @@ public class LoginController {
         RegLoginControllerApp login = new RegLoginControllerApp(user);
         try {
             login.loginUtente();
-            FXMLLoader loader = new FXMLLoader(com.ispw.progetto.Applicazione.class.getResource("view1/utente/home_login.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/ispw/progetto/view1/utente/home_login.fxml"));
             Parent root = loader.load();
             Scene scene = new Scene(root);
             UserHomeController controller = loader.getController();
@@ -89,7 +89,7 @@ public class LoginController {
         RegLoginControllerApp login = new RegLoginControllerApp(agency);
         try {
             login.loginAgenzia();
-            FXMLLoader loader = new FXMLLoader(com.ispw.progetto.Applicazione.class.getResource("view1/agenzia/agency_home.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/ispw/progetto/view1/agenzia/agency_home.fxml"));
             Parent root = loader.load();
             Scene scene = new Scene(root);
             AgencyHomeController controller = loader.getController();
@@ -109,7 +109,7 @@ public class LoginController {
 
     @FXML
     private void registrati() throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("view1/registrazione.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/ispw/progetto/view1/registrazione.fxml"));
         Parent root = loader.load();
         Scene scene = new Scene(root);
         RegistrazioneController controller = loader.getController();
