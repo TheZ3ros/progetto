@@ -66,8 +66,8 @@ public class MyTripController implements StageAware {
 
     @FXML
     private void viewTrip() throws IOException, SQLException {
-        ViewTripController page = new ViewTripController();
-        page.viewTrip(stage, currentUser);
+//        ViewTripController page = new ViewTripController();
+//        page.viewTrip(stage, currentUser);
     }
 
     public void myTrip(UserBean user, Stage stage) throws SQLException, IOException {

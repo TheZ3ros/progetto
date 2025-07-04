@@ -60,8 +60,8 @@ public class InfoUserController implements StageAware{
 
     @FXML
     private void viewTrip() throws IOException, SQLException {
-        ViewTripController page = new ViewTripController();
-        page.viewTrip(stage, currentUser);
+//        ViewTripController page = new ViewTripController();
+//        page.viewTrip(stage, currentUser);
     }
 
     public void setInfo() throws IOException, SQLException {

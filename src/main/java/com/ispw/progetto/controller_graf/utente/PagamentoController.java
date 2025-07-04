@@ -94,10 +94,9 @@ public class PagamentoController implements StageAware {
             public void run() {
                 Platform.runLater(() -> {
                     try {
-                        ViewTripController page = new ViewTripController();
-                        page.viewTrip(stage, currentUser);
-                    } catch (IOException | SQLException e) {
-                        showError("Errore", "Si è verificato un errore durante il ritorno alla schermata dei viaggi.");
+                        SceneNavigator.switchTo(stage, "/com/ispw/progetto/view1/home.fxml", this);
+                    } catch (IOException e) {
+                        showError("Errore", "Si è verificato un errore durante il ritorno alla schermata home");
                     }
                 });
             }
@@ -122,8 +121,8 @@ public class PagamentoController implements StageAware {
 
     @FXML
     private void viewTrip() throws IOException, SQLException {
-        ViewTripController page = new ViewTripController();
-        page.viewTrip(stage, currentUser);
+//        ViewTripController page = new ViewTripController();
+//        page.viewTrip(stage, currentUser);
     }
 
     @FXML

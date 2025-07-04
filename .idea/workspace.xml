@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="abd72b32-f6c1-4b42-a1d9-4297dd975b52" name="Changes" comment="Implementato SceneNavigate in alcuni controller grafici lato agenzia (AgencyHomeController e ViewTripCreationController">
+    <list default="true" id="abd72b32-f6c1-4b42-a1d9-4297dd975b52" name="Changes" comment="SceneNavigate in AgencyTripsController e TripStatusController">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/agenzia/AgencyTripsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/agenzia/AgencyTripsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/agenzia/TripStatusController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/agenzia/TripStatusController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/PagamentoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/PagamentoController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -255,15 +254,7 @@
       <workItem from="1751556211297" duration="1222000" />
       <workItem from="1751557449939" duration="7014000" />
       <workItem from="1751564944130" duration="11535000" />
-      <workItem from="1751620533021" duration="9642000" />
-    </task>
-    <task id="LOCAL-00023" summary="fix code smell">
-      <option name="closed" value="true" />
-      <created>1707241827153</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1707241827153</updated>
+      <workItem from="1751620533021" duration="13540000" />
     </task>
     <task id="LOCAL-00024" summary="fix code smell">
       <option name="closed" value="true" />
@@ -649,7 +640,15 @@
       <option name="project" value="LOCAL" />
       <updated>1751631286273</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="SceneNavigate in AgencyTripsController e TripStatusController">
+      <option name="closed" value="true" />
+      <created>1751632689543</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1751632689543</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -668,7 +667,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Eliminazione classi inutili" />
     <MESSAGE value="Controllo valori inseriti per la creazione della trip" />
     <MESSAGE value="Implementato il BLOB sia per la conversione dell'immagine che per il suo caricamento nel DB. Al momento gestisce solo immagini di piccola taglia" />
     <MESSAGE value="1" />
@@ -693,7 +691,8 @@
     <MESSAGE value="implementazione di SceneNavigator e StageAware per il nuovo sistema di navigazione. Al momento implementato su LoginController e RegistrazioneController" />
     <MESSAGE value="Implementato SceneNavigate nelle varie vaiAHome dei controller grafici lato utente" />
     <MESSAGE value="Implementato SceneNavigate in alcuni controller grafici lato agenzia (AgencyHomeController e ViewTripCreationController" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implementato SceneNavigate in alcuni controller grafici lato agenzia (AgencyHomeController e ViewTripCreationController" />
+    <MESSAGE value="SceneNavigate in AgencyTripsController e TripStatusController" />
+    <option name="LAST_COMMIT_MESSAGE" value="SceneNavigate in AgencyTripsController e TripStatusController" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
