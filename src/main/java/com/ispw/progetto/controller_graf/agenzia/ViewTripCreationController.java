@@ -6,6 +6,8 @@ import com.ispw.progetto.controller_app.CreateTripController;
 import com.ispw.progetto.exception.DateNotValidException;
 import com.ispw.progetto.exception.EmptystatementException;
 import com.ispw.progetto.exception.SQLStatementException;
+import com.ispw.progetto.utils.SceneNavigator;
+import com.ispw.progetto.utils.StageAware;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -25,7 +27,7 @@ import java.sql.Date;
 import java.sql.SQLException;
 import java.time.LocalDate;
 
-public class ViewTripCreationController {
+public class ViewTripCreationController implements StageAware {
 
     private String imagePath;
     private byte[] imageBytes;
@@ -70,14 +72,7 @@ public class ViewTripCreationController {
     public void vaiAHome() {
         // Per tornare alla home, usa lo stage già settato
         try {
-            FXMLLoader loader = new FXMLLoader(com.ispw.progetto.Applicazione.class.getResource("view1/agenzia/agency_home.fxml"));
-            Parent root = loader.load();
-            AgencyHomeController controller = loader.getController();
-            controller.setUser(currentUser);
-            controller.setButtonText();
-            controller.setStage(stage);  // importante passare lo stage al controller nuovo
-            stage.setScene(new Scene(root));
-            stage.setTitle("Home Agenzia");
+            SceneNavigator.switchTo(stage, "/com/ispw/progetto/view1/home.fxml", this);
         } catch (IOException e) {
             showErrorAlert("Errore caricamento schermata Home Agenzia");
         }

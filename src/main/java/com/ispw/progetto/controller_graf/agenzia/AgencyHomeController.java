@@ -1,6 +1,8 @@
 package com.ispw.progetto.controller_graf.agenzia;
 
 import com.ispw.progetto.bean.AgencyBean;
+import com.ispw.progetto.utils.SceneNavigator;
+import com.ispw.progetto.utils.StageAware;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -11,7 +13,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.sql.SQLException;
 
-public class AgencyHomeController {
+public class AgencyHomeController implements StageAware {
     @FXML
     private Button agency;
 
@@ -31,22 +33,13 @@ public class AgencyHomeController {
     }
 
     @FXML
-    public void vaiAHome() {
-        stage.setTitle("Home");
-        stage.setScene(new Scene(new javafx.scene.Group())); // placeholder
+    public void vaiAHome() throws IOException {
+        SceneNavigator.switchTo(stage, "/com/ispw/progetto/view1/home.fxml", this);
     }
 
     @FXML
     private void viewTripCreation() throws IOException {
-        FXMLLoader loader = new FXMLLoader(com.ispw.progetto.Applicazione.class.getResource("view1/agenzia/view_trip_creation.fxml"));
-        Parent root = loader.load();
-        Scene scene = new Scene(root);
-        ViewTripCreationController controller = loader.getController();
-        controller.setStage(stage);
-        controller.setUser(currentUser);
-        controller.setButtonText();
-        stage.setScene(scene);
-        stage.setTitle("Crea itinerario");
+        SceneNavigator.switchTo(stage, "/com/ispw/progetto/view1/agenzia/view_trip_creation.fxml", this);
     }
 
     @FXML

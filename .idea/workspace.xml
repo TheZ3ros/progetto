@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="abd72b32-f6c1-4b42-a1d9-4297dd975b52" name="Changes" comment="implementazione di SceneNavigator e StageAware per il nuovo sistema di navigazione. Al momento implementato su LoginController e RegistrazioneController">
+    <list default="true" id="abd72b32-f6c1-4b42-a1d9-4297dd975b52" name="Changes" comment="Implementato SceneNavigate nelle varie vaiAHome dei controller grafici lato utente">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/InfoUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/InfoUserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/MyTripController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/MyTripController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/UserHomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/UserHomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/ViewTripController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/ViewTripController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/agenzia/AgencyHomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/agenzia/AgencyHomeController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -258,15 +254,7 @@
       <workItem from="1751556211297" duration="1222000" />
       <workItem from="1751557449939" duration="7014000" />
       <workItem from="1751564944130" duration="11535000" />
-      <workItem from="1751620533021" duration="7339000" />
-    </task>
-    <task id="LOCAL-00021" summary="1">
-      <option name="closed" value="true" />
-      <created>1707241535895</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1707241535895</updated>
+      <workItem from="1751620533021" duration="8083000" />
     </task>
     <task id="LOCAL-00022" summary="fix code smell">
       <option name="closed" value="true" />
@@ -652,7 +640,15 @@
       <option name="project" value="LOCAL" />
       <updated>1751625719789</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <task id="LOCAL-00070" summary="Implementato SceneNavigate nelle varie vaiAHome dei controller grafici lato utente">
+      <option name="closed" value="true" />
+      <created>1751630612952</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1751630612952</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -671,7 +667,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="caricamento viaggio(non funziona)" />
     <MESSAGE value="caricamento viaggio(quasi funziona)" />
     <MESSAGE value="Eliminazione classi inutili" />
     <MESSAGE value="Controllo valori inseriti per la creazione della trip" />
@@ -696,7 +691,8 @@
     <MESSAGE value="Prova dipendenze cicliche su login e registrazione controller" />
     <MESSAGE value="Prova dipendenze cicliche sui controller dell'utente" />
     <MESSAGE value="implementazione di SceneNavigator e StageAware per il nuovo sistema di navigazione. Al momento implementato su LoginController e RegistrazioneController" />
-    <option name="LAST_COMMIT_MESSAGE" value="implementazione di SceneNavigator e StageAware per il nuovo sistema di navigazione. Al momento implementato su LoginController e RegistrazioneController" />
+    <MESSAGE value="Implementato SceneNavigate nelle varie vaiAHome dei controller grafici lato utente" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implementato SceneNavigate nelle varie vaiAHome dei controller grafici lato utente" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
