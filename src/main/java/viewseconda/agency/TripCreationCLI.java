@@ -4,7 +4,6 @@ import com.ispw.progetto.bean.AgencyBean;
 import com.ispw.progetto.bean.TripBean;
 import com.ispw.progetto.controller_app.CreateTripController;
 import com.ispw.progetto.controller_graf.agenzia.ViewTripCreationController;
-import com.ispw.progetto.exception.NotValidCouponException;
 import javafx.scene.image.Image;
 import viewseconda.Printer;
 
@@ -21,7 +20,7 @@ public class TripCreationCLI {
         this.currentAgency = currentAgency;
     }
 
-    public boolean start() throws SQLException, IOException, NotValidCouponException {
+    public boolean start() throws SQLException, IOException {
         Scanner scanner = new Scanner(System.in);
 
         Printer.printMessage("Inserisci il nome della città: ");

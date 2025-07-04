@@ -3,9 +3,6 @@ package viewseconda.user;
 import com.ispw.progetto.bean.TripBean;
 import com.ispw.progetto.bean.UserBean;
 import com.ispw.progetto.controller_app.BookTripController;
-import com.ispw.progetto.exception.AlreadyPrenotedException;
-import com.ispw.progetto.exception.ExistsUserException;
-import com.ispw.progetto.exception.PlacesTerminatedException;
 import viewseconda.Printer;
 
 import java.io.IOException;
@@ -19,7 +16,7 @@ public class BookedTripCLI {
         currentUser=user;
     }
 
-    public void start(UserHomeNavigator navigator) throws SQLException, IOException, PlacesTerminatedException, AlreadyPrenotedException, ExistsUserException {
+    public void start(UserHomeNavigator navigator) throws SQLException, IOException {
         BookTripController bookTripController = new BookTripController();
         List<TripBean> viaggi = bookTripController.getTripUser(currentUser);
         for (TripBean viaggio : viaggi) {

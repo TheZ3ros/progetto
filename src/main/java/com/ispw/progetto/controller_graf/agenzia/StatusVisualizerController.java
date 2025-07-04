@@ -30,6 +30,7 @@ public class StatusVisualizerController {
     }
 
     public void setCurrentUser(){
+        //temporaneamente vuoto in attesa di aggiornamento sulla View
     }
 
     public void createbox(TripStatusBean statusbean){

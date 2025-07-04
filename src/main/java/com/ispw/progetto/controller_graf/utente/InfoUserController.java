@@ -56,6 +56,7 @@ public class InfoUserController implements StageAware{
 
     @FXML
     private void viewTrip() {
+        //temporaneamente vuoto in attesa di aggiornamento sulla View
     }
 
     public void setInfo() throws IOException, SQLException {

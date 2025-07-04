@@ -3,7 +3,6 @@ package com.ispw.progetto.controller_graf.utente;
 import com.ispw.progetto.bean.TripBean;
 import com.ispw.progetto.bean.UserBean;
 import com.ispw.progetto.controller_app.BookTripController;
-import com.ispw.progetto.controller_graf.HomeController;
 import com.ispw.progetto.utils.SceneNavigator;
 import com.ispw.progetto.utils.StageAware;
 import javafx.fxml.FXML;
@@ -65,9 +64,8 @@ public class MyTripController implements StageAware {
     }
 
     @FXML
-    private void viewTrip() throws IOException, SQLException {
-//        ViewTripController page = new ViewTripController();
-//        page.viewTrip(stage, currentUser);
+    private void viewTrip() {
+        //temporaneamente vuoto in attesa di aggiornamento sulla View
     }
 
     public void myTrip(UserBean user, Stage stage) throws SQLException, IOException {
@@ -83,16 +81,7 @@ public class MyTripController implements StageAware {
     }
 
     @FXML
-    public void info() throws IOException, SQLException {
+    public void info() throws IOException {
         SceneNavigator.switchTo(stage, "/com/ispw/progetto/view1/utente/info_user.fxml", this);
-//        FXMLLoader loader = new FXMLLoader(com.ispw.progetto.Applicazione.class.getResource("view1/utente/info_user.fxml"));
-//        Parent root = loader.load();
-//        Scene scene = new Scene(root);
-//        InfoUserController controller = loader.getController();
-//        controller.setStage(stage);
-//        controller.setUser(currentUser);
-//        controller.setInfo();
-//        stage.setTitle("I miei viaggi");
-//        stage.setScene(scene);
     }
 }

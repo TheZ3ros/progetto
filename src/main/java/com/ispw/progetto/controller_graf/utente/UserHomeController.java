@@ -46,18 +46,7 @@ public class UserHomeController implements StageAware {
         myTripController.myTrip(currentUser, stage);
     }
 
-    public void info() throws IOException, SQLException {
+    public void info() throws IOException {
         SceneNavigator.switchTo(stage, "/com/ispw/progetto/view1/utente/info_user.fxml", this);
-//        FXMLLoader infoLoader = new FXMLLoader(com.ispw.progetto.Applicazione.class.getResource("view1/utente/info_user.fxml"));
-//        Parent infoRoot = infoLoader.load();
-//        Scene infoScene = new Scene(infoRoot);
-//
-//        InfoUserController infoController = infoLoader.getController();
-//        infoController.setStage(stage);
-//        infoController.setUser(currentUser);
-//        infoController.setInfo();
-//
-//        stage.setScene(infoScene);
-//        stage.setTitle("I miei viaggi");
     }
 }

@@ -3,9 +3,6 @@ package viewseconda.user;
 import com.ispw.progetto.bean.SignUpUserBean;
 import com.ispw.progetto.bean.UserBean;
 import com.ispw.progetto.controller_app.RegLoginControllerApp;
-import com.ispw.progetto.exception.AlreadyPrenotedException;
-import com.ispw.progetto.exception.ExistsUserException;
-import com.ispw.progetto.exception.PlacesTerminatedException;
 import viewseconda.Printer;
 
 import java.io.IOException;
@@ -19,7 +16,7 @@ public class InfoUserCLI {
         this.currentUser = currentUser;
     }
 
-    public void start(UserHomeNavigator homeNavigator) throws SQLException, ExistsUserException, IOException, PlacesTerminatedException, AlreadyPrenotedException {
+    public void start(UserHomeNavigator homeNavigator) throws SQLException, IOException {
         RegLoginControllerApp regLoginControllerApp = new RegLoginControllerApp(currentUser);
         SignUpUserBean user = regLoginControllerApp.info();
         Printer.printMessage("Nome: " + user.getNome());

@@ -4,23 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="abd72b32-f6c1-4b42-a1d9-4297dd975b52" name="Changes" comment="aggiustato PaymentCLI">
+    <list default="true" id="abd72b32-f6c1-4b42-a1d9-4297dd975b52" name="Changes" comment="rimozione warning">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/Applicazione.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/Applicazione.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_app/BookTripController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_app/BookTripController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_app/CreateTripController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_app/CreateTripController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/agenzia/AgencyHomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/agenzia/AgencyHomeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/agenzia/StatusVisualizerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/agenzia/StatusVisualizerController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/agenzia/TripStatusController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/agenzia/TripStatusController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/agenzia/ViewTripCreationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/agenzia/ViewTripCreationController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/InfoUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/InfoUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/MyTripController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/MyTripController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/PagamentoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/PagamentoController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/PageTripController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/PageTripController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/UserHomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/UserHomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/ViewTripController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/ViewTripController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/model/Buono.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/model/Buono.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/model/UserTrip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/model/UserTrip.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/utils/SceneNavigator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/utils/SceneNavigator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,8 +24,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="FxmlFile" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -76,40 +69,40 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Application.Applicazione.executor": "Run",
-    "Downloaded.Files.Path.Enabled": "false",
-    "JUnit.TripCreationTest.tripcreationtest.executor": "Run",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/aless/OneDrive/Documents/Università/ISPW/mysql-connector-java-8.0.25/mysql-connector-java-8.0.25.jar",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.51135135",
-    "settings.editor.selected.configurable": "terminal",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Application.Applicazione.executor&quot;: &quot;Run&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;JUnit.TripCreationTest.tripcreationtest.executor&quot;: &quot;Run&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/aless/OneDrive/Documents/Università/ISPW/mysql-connector-java-8.0.25/mysql-connector-java-8.0.25.jar&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.51135135&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;terminal&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "ChangesTree.GroupingKeys": [],
-    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
-      "CSS"
+  &quot;keyToStringList&quot;: {
+    &quot;ChangesTree.GroupingKeys&quot;: [],
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;CSS&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Proprietario\Desktop\java\progetto1\src\main\resources\com\example\progetto" />
@@ -268,15 +261,8 @@
       <workItem from="1751556211297" duration="1222000" />
       <workItem from="1751557449939" duration="7014000" />
       <workItem from="1751564944130" duration="11535000" />
-      <workItem from="1751620533021" duration="17413000" />
-    </task>
-    <task id="LOCAL-00030" summary="fix code smell">
-      <option name="closed" value="true" />
-      <created>1707244096785</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1707244096785</updated>
+      <workItem from="1751620533021" duration="18150000" />
+      <workItem from="1751670886443" duration="1536000" />
     </task>
     <task id="LOCAL-00031" summary="fix code smell">
       <option name="closed" value="true" />
@@ -662,7 +648,15 @@
       <option name="project" value="LOCAL" />
       <updated>1751645244197</updated>
     </task>
-    <option name="localTasksCounter" value="79" />
+    <task id="LOCAL-00079" summary="rimozione warning">
+      <option name="closed" value="true" />
+      <created>1751646128010</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1751646128010</updated>
+    </task>
+    <option name="localTasksCounter" value="80" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -681,7 +675,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="fix secondari" />
     <MESSAGE value="c'è speranza" />
     <MESSAGE value="i miei viaggi" />
     <MESSAGE value="qualche eccezione" />
@@ -706,7 +699,8 @@
     <MESSAGE value="Rimozione dipendenze cicliche CLI" />
     <MESSAGE value="Rimozione dipendenze cicliche CLI e aggiunta di UserHomeNavigator" />
     <MESSAGE value="aggiustato PaymentCLI" />
-    <option name="LAST_COMMIT_MESSAGE" value="aggiustato PaymentCLI" />
+    <MESSAGE value="rimozione warning" />
+    <option name="LAST_COMMIT_MESSAGE" value="rimozione warning" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -745,7 +739,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/MyTripController.java</url>
-          <line>85</line>
+          <line>83</line>
           <properties class="com.ispw.progetto.controller_graf.utente.MyTripController" method="info">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />

@@ -33,7 +33,7 @@ public class TripViewCLI {
     }
 
 
-    public void viewtrip(UserHomeNavigator navigator) throws SQLException, IOException, PlacesTerminatedException, AlreadyPrenotedException, ExistsUserException {
+    public void viewtrip(UserHomeNavigator navigator) throws SQLException, IOException {
         BookTripController bookTripController = new BookTripController();
         List<TripBean> viaggi = bookTripController.showTrip();
 

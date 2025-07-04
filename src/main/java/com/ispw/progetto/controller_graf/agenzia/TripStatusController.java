@@ -51,6 +51,7 @@ public class TripStatusController implements StageAware {
 
     @FXML
     private void viewTrip() {
+        //temporaneamente vuoto in attesa di aggiornamento sulla View
     }
 
     public void charge() throws SQLException, IOException {
