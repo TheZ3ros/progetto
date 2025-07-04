@@ -5,10 +5,9 @@ import com.ispw.progetto.controller_app.RegLoginControllerApp;
 import com.ispw.progetto.exception.ExistsUserException;
 import com.ispw.progetto.exception.PasswordIllegalException;
 import com.ispw.progetto.exception.SQLStatementException;
+import com.ispw.progetto.utils.SceneNavigator;
+import com.ispw.progetto.utils.StageAware;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -17,7 +16,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.sql.SQLException;
 
-public class RegistrazioneController {
+public class RegistrazioneController implements StageAware {
 
     @FXML
     private TextField usernameUtente;
@@ -32,19 +31,19 @@ public class RegistrazioneController {
 
     private Stage stage;
 
+    @Override
     public void setStage(Stage stage) {
         this.stage = stage;
     }
 
     @FXML
     public void vaiAHome() throws IOException {
-        FXMLLoader homeLoader = new FXMLLoader(getClass().getResource("/com/ispw/progetto/view1/home.fxml"));
-        Parent homeRoot = homeLoader.load();
-        Scene homeScene = new Scene(homeRoot);
-        HomeController homeController = homeLoader.getController();
-        homeController.setStage(stage);  // importante: passare lo stage!
-        stage.setScene(homeScene);
-        stage.setTitle("Home");
+        SceneNavigator.switchTo(stage, "/com/ispw/progetto/view1/home.fxml", this);
+    }
+
+    @FXML
+    private void vaiALogin() throws IOException {
+        SceneNavigator.switchTo(stage, "/com/ispw/progetto/view1/login.fxml", this);
     }
 
     @FXML
@@ -55,7 +54,8 @@ public class RegistrazioneController {
         String cognomeUser = cognome.getText();
         String emailUser = email.getText();
 
-        if (userUtente.isEmpty() || passUtente.isEmpty() || nomeUser.isEmpty() || cognomeUser.isEmpty() || emailUser.isEmpty()) {
+        if (userUtente.isEmpty() || passUtente.isEmpty() || nomeUser.isEmpty()
+                || cognomeUser.isEmpty() || emailUser.isEmpty()) {
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Registrazione");
             alert.setHeaderText(null);
@@ -87,16 +87,5 @@ public class RegistrazioneController {
             alert.setContentText(e.getMessage());
             alert.showAndWait();
         }
-    }
-
-    @FXML
-    private void vaiALogin() throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/ispw/progetto/view1/login.fxml"));
-        Parent root = loader.load();
-        Scene scene = new Scene(root);
-        LoginController controller = loader.getController();
-        controller.setStage(stage);
-        stage.setScene(scene);
-        stage.setTitle("Accedi");
     }
 }

@@ -4,14 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="abd72b32-f6c1-4b42-a1d9-4297dd975b52" name="Changes" comment="Prova dipendenze cicliche su login e registrazione controller">
+    <list default="true" id="abd72b32-f6c1-4b42-a1d9-4297dd975b52" name="Changes" comment="Prova dipendenze cicliche sui controller dell'utente">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/utils/SceneNavigator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/utils/StageAware.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/InfoUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/InfoUserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/MyTripController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/MyTripController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/PagamentoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/PagamentoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/PageTripController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/PageTripController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/UserHomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/UserHomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/ViewTripController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/ViewTripController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/LoginController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,8 +19,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="FxmlFile" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -259,15 +256,7 @@
       <workItem from="1751556211297" duration="1222000" />
       <workItem from="1751557449939" duration="7014000" />
       <workItem from="1751564944130" duration="11535000" />
-      <workItem from="1751620533021" duration="2849000" />
-    </task>
-    <task id="LOCAL-00019" summary="Controllo valori inseriti per la creazione della trip">
-      <option name="closed" value="true" />
-      <created>1706891617274</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1706891617274</updated>
+      <workItem from="1751620533021" duration="4328000" />
     </task>
     <task id="LOCAL-00020" summary="Implementato il BLOB sia per la conversione dell'immagine che per il suo caricamento nel DB. Al momento gestisce solo immagini di piccola taglia">
       <option name="closed" value="true" />
@@ -653,7 +642,15 @@
       <option name="project" value="LOCAL" />
       <updated>1751623584963</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="Prova dipendenze cicliche sui controller dell'utente">
+      <option name="closed" value="true" />
+      <created>1751623987087</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1751623987087</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -672,7 +669,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="aggiunta schermata userlogin" />
     <MESSAGE value="fix caricamento pagine" />
     <MESSAGE value="caricamento viaggio(non funziona)" />
     <MESSAGE value="caricamento viaggio(quasi funziona)" />
@@ -697,7 +693,8 @@
     <MESSAGE value="cambiamenti vari" />
     <MESSAGE value="Eliminata dipendenza da Applicazione in tutti i controller grafici. Bisogna reimplementare la logica di cambio delle schermate, al momento funziona solo in &quot;avanti&quot;, tranne per LoginController che può tornare alla home" />
     <MESSAGE value="Prova dipendenze cicliche su login e registrazione controller" />
-    <option name="LAST_COMMIT_MESSAGE" value="Prova dipendenze cicliche su login e registrazione controller" />
+    <MESSAGE value="Prova dipendenze cicliche sui controller dell'utente" />
+    <option name="LAST_COMMIT_MESSAGE" value="Prova dipendenze cicliche sui controller dell'utente" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
