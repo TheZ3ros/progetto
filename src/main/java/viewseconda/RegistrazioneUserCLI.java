@@ -2,7 +2,6 @@ package viewseconda;
 
 import com.ispw.progetto.bean.SignUpUserBean;
 import com.ispw.progetto.controller_app.RegLoginControllerApp;
-import com.ispw.progetto.exception.CredentialErrorException;
 import com.ispw.progetto.exception.ExistsUserException;
 import com.ispw.progetto.exception.PasswordIllegalException;
 
@@ -10,7 +9,7 @@ import java.util.Scanner;
 
 
 public class RegistrazioneUserCLI {
-    public boolean start() throws CredentialErrorException {
+    public boolean start() {
         Scanner scanner = new Scanner(System.in);
         Printer.printMessage("Inserire un nuovo username");
         String username = scanner.nextLine();

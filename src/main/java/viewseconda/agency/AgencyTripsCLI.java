@@ -3,7 +3,6 @@ package viewseconda.agency;
 import com.ispw.progetto.bean.AgencyBean;
 import com.ispw.progetto.bean.TripBean;
 import com.ispw.progetto.controller_app.BookTripController;
-import com.ispw.progetto.exception.NotValidCouponException;
 import viewseconda.Printer;
 
 import java.io.IOException;
@@ -18,7 +17,7 @@ public class AgencyTripsCLI {
         this.currentAgency = currentAgency;
     }
 
-    public void start() throws SQLException, IOException, NotValidCouponException {
+    public void start() throws SQLException, IOException {
         Scanner scanner = new Scanner(System.in);
         BookTripController bookTripController = new BookTripController();
 

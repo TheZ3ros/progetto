@@ -1,9 +1,6 @@
 package viewseconda.user;
 
 import com.ispw.progetto.bean.UserBean;
-import com.ispw.progetto.exception.AlreadyPrenotedException;
-import com.ispw.progetto.exception.ExistsUserException;
-import com.ispw.progetto.exception.PlacesTerminatedException;
 import viewseconda.Printer;
 
 import java.io.IOException;
@@ -17,7 +14,7 @@ public class HomeLoginCLI implements UserHomeNavigator {
         this.currentUser = currentUser;
     }
 
-    public void start() throws SQLException, IOException, PlacesTerminatedException, AlreadyPrenotedException, ExistsUserException {
+    public void start() throws SQLException, IOException {
         Scanner reader = new Scanner(System.in);
         boolean continua = true;
         while (continua) {
