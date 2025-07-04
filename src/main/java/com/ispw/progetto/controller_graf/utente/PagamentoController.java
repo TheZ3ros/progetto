@@ -8,6 +8,8 @@ import com.ispw.progetto.bean.BuonoBean;
 import com.ispw.progetto.bean.TripBean;
 import com.ispw.progetto.controller_app.BookTripController;
 import com.ispw.progetto.controller_app.PagamentoControllerApp;
+import com.ispw.progetto.utils.SceneNavigator;
+import com.ispw.progetto.utils.StageAware;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -31,7 +33,7 @@ import java.time.LocalDate;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class PagamentoController {
+public class PagamentoController implements StageAware {
 
     @FXML
     private Button agency;
@@ -115,13 +117,7 @@ public class PagamentoController {
 
     @FXML
     public void vaiAHome() throws IOException {
-        FXMLLoader homeLoader = new FXMLLoader(getClass().getResource("/com/ispw/progetto/view1/home.fxml"));
-        Parent homeRoot = homeLoader.load();
-        Scene homeScene = new Scene(homeRoot);
-        HomeController homeController = homeLoader.getController();
-        homeController.setStage(stage);  // importante: passare lo stage!
-        stage.setScene(homeScene);
-        stage.setTitle("Home");
+        SceneNavigator.switchTo(stage, "/com/ispw/progetto/view1/home.fxml", this);
     }
 
     @FXML

@@ -6,6 +6,8 @@ import com.ispw.progetto.controller_app.BookTripController;
 import com.ispw.progetto.controller_graf.HomeController;
 import com.ispw.progetto.exception.AlreadyPrenotedException;
 import com.ispw.progetto.exception.PlacesTerminatedException;
+import com.ispw.progetto.utils.SceneNavigator;
+import com.ispw.progetto.utils.StageAware;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -21,7 +23,7 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.sql.SQLException;
 
-public class PageTripController {
+public class PageTripController implements StageAware {
 
     private Stage stage;
     private TripBean currentTrip;
@@ -75,13 +77,7 @@ public class PageTripController {
 
     @FXML
     public void vaiAHome() throws IOException {
-        FXMLLoader homeLoader = new FXMLLoader(getClass().getResource("/com/ispw/progetto/view1/home.fxml"));
-        Parent homeRoot = homeLoader.load();
-        Scene homeScene = new Scene(homeRoot);
-        HomeController homeController = homeLoader.getController();
-        homeController.setStage(stage);  // importante: passare lo stage!
-        stage.setScene(homeScene);
-        stage.setTitle("Home");
+        SceneNavigator.switchTo(stage, "/com/ispw/progetto/view1/home.fxml", this);
     }
 
     @FXML

@@ -1,5 +1,7 @@
 package com.ispw.progetto.controller_graf;
 
+import com.ispw.progetto.utils.SceneNavigator;
+import com.ispw.progetto.utils.StageAware;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -8,7 +10,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class HomeController {
+public class HomeController implements StageAware {
 
    private Stage stage;
 
@@ -19,23 +21,11 @@ public class HomeController {
 
    @FXML
    private void vaiALogin() throws IOException {
-      FXMLLoader loginLoader = new FXMLLoader(getClass().getResource("/com/ispw/progetto/view1/login.fxml"));
-      Parent loginRoot = loginLoader.load();
-      Scene loginScene = new Scene(loginRoot);
-      LoginController loginController = loginLoader.getController();
-      loginController.setStage(stage);  // passa lo stage anche al LoginController
-      stage.setScene(loginScene);
-      stage.setTitle("Accedi");
+      SceneNavigator.switchTo(stage, "/com/ispw/progetto/view1/login.fxml", this);
    }
 
    @FXML
    public void registrati() throws IOException {
-      FXMLLoader regLoader = new FXMLLoader(getClass().getResource("/com/ispw/progetto/view1/registrazione.fxml"));
-      Parent regRoot = regLoader.load();
-      Scene regScene = new Scene(regRoot);
-      RegistrazioneController regController = regLoader.getController();
-      regController.setStage(stage);  // passa lo stage anche al RegistrazioneController
-      stage.setScene(regScene);
-      stage.setTitle("Registrazione");
+      SceneNavigator.switchTo(stage, "/com/ispw/progetto/view1/registrazione.fxml", this);
    }
 }

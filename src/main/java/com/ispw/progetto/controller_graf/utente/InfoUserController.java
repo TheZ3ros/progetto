@@ -4,6 +4,8 @@ import com.ispw.progetto.bean.SignUpUserBean;
 import com.ispw.progetto.bean.UserBean;
 import com.ispw.progetto.controller_app.RegLoginControllerApp;
 import com.ispw.progetto.controller_graf.HomeController;
+import com.ispw.progetto.utils.SceneNavigator;
+import com.ispw.progetto.utils.StageAware;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -15,7 +17,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.sql.SQLException;
 
-public class InfoUserController {
+public class InfoUserController implements StageAware{
 
     @FXML
     private Button user;
@@ -47,13 +49,7 @@ public class InfoUserController {
 
     @FXML
     public void vaiAHome() throws IOException {
-        FXMLLoader homeLoader = new FXMLLoader(getClass().getResource("/com/ispw/progetto/view1/home.fxml"));
-        Parent homeRoot = homeLoader.load();
-        Scene homeScene = new Scene(homeRoot);
-        HomeController homeController = homeLoader.getController();
-        homeController.setStage(stage);  // importante: passare lo stage!
-        stage.setScene(homeScene);
-        stage.setTitle("Home");
+        SceneNavigator.switchTo(stage, "/com/ispw/progetto/view1/home.fxml", this);
     }
 
     @FXML

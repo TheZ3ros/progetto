@@ -2,6 +2,8 @@ package com.ispw.progetto.controller_graf.utente;
 
 import com.ispw.progetto.bean.UserBean;
 import com.ispw.progetto.controller_graf.HomeController;
+import com.ispw.progetto.utils.SceneNavigator;
+import com.ispw.progetto.utils.StageAware;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -12,7 +14,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.sql.SQLException;
 
-public class UserHomeController {
+public class UserHomeController implements StageAware {
     @FXML
     private Button user;
 
@@ -33,13 +35,7 @@ public class UserHomeController {
 
     @FXML
     public void vaiAHome() throws IOException {
-        FXMLLoader homeLoader = new FXMLLoader(getClass().getResource("/com/ispw/progetto/view1/home.fxml"));
-        Parent homeRoot = homeLoader.load();
-        Scene homeScene = new Scene(homeRoot);
-        HomeController homeController = homeLoader.getController();
-        homeController.setStage(stage);  // importante: passare lo stage!
-        stage.setScene(homeScene);
-        stage.setTitle("Home");
+        SceneNavigator.switchTo(stage, "/com/ispw/progetto/view1/home.fxml", this);
     }
 
     @FXML
@@ -55,16 +51,17 @@ public class UserHomeController {
     }
 
     public void info() throws IOException, SQLException {
-        FXMLLoader infoLoader = new FXMLLoader(com.ispw.progetto.Applicazione.class.getResource("view1/utente/info_user.fxml"));
-        Parent infoRoot = infoLoader.load();
-        Scene infoScene = new Scene(infoRoot);
-
-        InfoUserController infoController = infoLoader.getController();
-        infoController.setStage(stage);
-        infoController.setUser(currentUser);
-        infoController.setInfo();
-
-        stage.setScene(infoScene);
-        stage.setTitle("I miei viaggi");
+        SceneNavigator.switchTo(stage, "/com/ispw/progetto/view1/utente/info_user.fxml", this);
+//        FXMLLoader infoLoader = new FXMLLoader(com.ispw.progetto.Applicazione.class.getResource("view1/utente/info_user.fxml"));
+//        Parent infoRoot = infoLoader.load();
+//        Scene infoScene = new Scene(infoRoot);
+//
+//        InfoUserController infoController = infoLoader.getController();
+//        infoController.setStage(stage);
+//        infoController.setUser(currentUser);
+//        infoController.setInfo();
+//
+//        stage.setScene(infoScene);
+//        stage.setTitle("I miei viaggi");
     }
 }
