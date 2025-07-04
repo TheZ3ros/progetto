@@ -84,14 +84,15 @@ public class MyTripController implements StageAware {
 
     @FXML
     public void info() throws IOException, SQLException {
-        FXMLLoader loader = new FXMLLoader(com.ispw.progetto.Applicazione.class.getResource("view1/utente/info_user.fxml"));
-        Parent root = loader.load();
-        Scene scene = new Scene(root);
-        InfoUserController controller = loader.getController();
-        controller.setStage(stage);
-        controller.setUser(currentUser);
-        controller.setInfo();
-        stage.setTitle("I miei viaggi");
-        stage.setScene(scene);
+        SceneNavigator.switchTo(stage, "/com/ispw/progetto/view1/utente/info_user.fxml", this);
+//        FXMLLoader loader = new FXMLLoader(com.ispw.progetto.Applicazione.class.getResource("view1/utente/info_user.fxml"));
+//        Parent root = loader.load();
+//        Scene scene = new Scene(root);
+//        InfoUserController controller = loader.getController();
+//        controller.setStage(stage);
+//        controller.setUser(currentUser);
+//        controller.setInfo();
+//        stage.setTitle("I miei viaggi");
+//        stage.setScene(scene);
     }
 }
