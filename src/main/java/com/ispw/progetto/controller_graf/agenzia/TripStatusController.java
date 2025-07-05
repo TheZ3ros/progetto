@@ -81,7 +81,7 @@ public class TripStatusController implements StageAware {
         try {
             SceneNavigator.switchTo(stage, "/com/ispw/progetto/view1/home.fxml", this);
         } catch (IOException e) {
-            Logger.getLogger(AgencyTripsController.class.getName()).log(Level.SEVERE, "Errore durante il caricamento della home agency", e);
+            Logger.getLogger(TripStatusController.class.getName()).log(Level.SEVERE, "Errore durante il caricamento della home agency", e);
             // Eventualmente mostra un messaggio all'utente
         }
     }
