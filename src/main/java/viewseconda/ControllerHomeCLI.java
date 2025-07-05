@@ -1,12 +1,13 @@
 package viewseconda;
 
+import com.ispw.progetto.exception.CredentialErrorException;
 import viewseconda.agency.LoginAgencyCLI;
 import viewseconda.user.LoginUserCLI;
 
 import java.util.Scanner;
 
 public class ControllerHomeCLI {
-    public void start() throws Exception {
+    public void start() throws CredentialErrorException {
         Scanner reader = new Scanner(System.in);
         boolean continua = true;
 
