@@ -1,5 +1,6 @@
 package com.ispw.progetto.pattern.factory;
 
+import com.ispw.progetto.exception.InvalidEntityTypeException;
 import com.ispw.progetto.model.Agency;
 import com.ispw.progetto.model.Buono;
 import com.ispw.progetto.model.User;
@@ -17,7 +18,7 @@ public class Factory implements  FactoryInterface{
                 try {
                     throw new Exception("Invalid type : " + type);
                 } catch (Exception e) {
-                    throw new RuntimeException(e);
+                    throw new InvalidEntityTypeException("Invalid type: " + type);
                 }
             }
         };

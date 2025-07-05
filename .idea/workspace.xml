@@ -252,31 +252,7 @@
       <workItem from="1751557449939" duration="7014000" />
       <workItem from="1751564944130" duration="11535000" />
       <workItem from="1751620533021" duration="18150000" />
-      <workItem from="1751670886443" duration="2161000" />
-    </task>
-    <task id="LOCAL-00033" summary="c'è speranza">
-      <option name="closed" value="true" />
-      <created>1708016019616</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1708016019616</updated>
-    </task>
-    <task id="LOCAL-00034" summary="i miei viaggi">
-      <option name="closed" value="true" />
-      <created>1708020275285</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1708020275285</updated>
-    </task>
-    <task id="LOCAL-00035" summary="qualche eccezione">
-      <option name="closed" value="true" />
-      <created>1708032617198</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1708032617198</updated>
+      <workItem from="1751670886443" duration="2473000" />
     </task>
     <task id="LOCAL-00036" summary="qualche eccezione">
       <option name="closed" value="true" />
@@ -646,7 +622,31 @@
       <option name="project" value="LOCAL" />
       <updated>1751672988842</updated>
     </task>
-    <option name="localTasksCounter" value="82" />
+    <task id="LOCAL-00082" summary="rimozione warning">
+      <option name="closed" value="true" />
+      <created>1751673118614</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1751673118614</updated>
+    </task>
+    <task id="LOCAL-00083" summary="rimozione warning">
+      <option name="closed" value="true" />
+      <created>1751673250455</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1751673250455</updated>
+    </task>
+    <task id="LOCAL-00084" summary="rimozione warning">
+      <option name="closed" value="true" />
+      <created>1751673373366</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1751673373366</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
