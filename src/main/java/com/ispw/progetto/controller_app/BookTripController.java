@@ -2,6 +2,7 @@ package com.ispw.progetto.controller_app;
 
 import com.ispw.progetto.bean.SearchBean;
 import com.ispw.progetto.bean.UserBean;
+import com.ispw.progetto.dao.csv_dbms.BookingDAO;
 import com.ispw.progetto.exception.AlreadyPrenotedException;
 import com.ispw.progetto.exception.FailedSearchException;
 import com.ispw.progetto.exception.PlacesTerminatedException;
@@ -21,6 +22,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BookTripController {
+
+    private final BookingDAO bookingDAO;
+
+    public BookTripController() throws SQLException, IOException {
+        this.bookingDAO=new BookingDAOdbms();
+    }
+
+    public BookTripController(BookingDAO bookingDAO) {
+        this.bookingDAO = bookingDAO;
+    }
+
     public List<TripBean> showTrip() throws SQLException, IOException {
         TripDAO tripdao = new TripDAO();
         Trip trip;
@@ -48,21 +60,13 @@ public class BookTripController {
         UserTripStatus userTripStatus = new UserTripStatus(utente.getUsername());
         UserTrip usertrip = new UserTrip(userTripStatus,trip.getId());
 
-        BookingDAOdbms usertripdao = new BookingDAOdbms();
-
         try{
-            usertripdao.setTripBook(usertrip);
+            bookingDAO.setTripBook(usertrip);
         }
         catch(AlreadyPrenotedException e){
             throw new AlreadyPrenotedException(e.getMessage());
         }
-
-
         tripdao.refreshAvailable(trip.getId());
-
-
-
-
     }
 
 

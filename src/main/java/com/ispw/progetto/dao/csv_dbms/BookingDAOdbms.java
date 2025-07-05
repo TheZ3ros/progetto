@@ -15,8 +15,8 @@ public class BookingDAOdbms implements BookingDAO {
     public BookingDAOdbms() throws SQLException, IOException {
         connection = Connectivity.getSingletonInstance();
     }
-@Override
-    public void setTripBook(UserTrip book) throws SQLException, AlreadyPrenotedException {
+    @Override
+    public void setTripBook(UserTrip book) throws SQLException {
         int idTrip = book.getIdTrip();
         String username = book.getUsername();
 
@@ -29,7 +29,7 @@ public class BookingDAOdbms implements BookingDAO {
                 throw new SQLException("errore durante esecuzione query" + e.getMessage());
             }
         }
-@Override
+    @Override
     public void alreadyExist(UserTrip booking) throws SQLException,AlreadyPrenotedException {
         try (CallableStatement cs = connection.getConn().prepareCall("{call CheckUserTrip(?,?,?)}")) {
             cs.setInt(1, booking.getIdTrip());

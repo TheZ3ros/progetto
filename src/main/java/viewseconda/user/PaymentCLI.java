@@ -6,6 +6,7 @@ import com.ispw.progetto.bean.TripBean;
 import com.ispw.progetto.bean.UserBean;
 import com.ispw.progetto.controller_app.BookTripController;
 import com.ispw.progetto.controller_app.PagamentoControllerApp;
+import com.ispw.progetto.dao.csv_dbms.BookingDAOcsv;
 import com.ispw.progetto.exception.*;
 import viewseconda.Printer;
 
@@ -60,7 +61,7 @@ public class PaymentCLI {
         try {
             new PagamentoControllerApp().checkCard(numeroCarta, cvvCode, date);
             BookBean bookBean = new BookBean(user.getUsername(), trip.getId());
-            new BookTripController().bookTrip(bookBean);
+            new BookTripController(new BookingDAOcsv()).bookTrip(bookBean);
             Printer.printMessage("Prenotazione avvenuta con successo");
             navigator.goToHome();
         } catch (Exception e) {

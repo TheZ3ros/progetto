@@ -16,11 +16,15 @@ import com.opencsv.CSVWriter;
 import com.opencsv.exceptions.CsvValidationException;
 
 public class BookingDAOcsv implements BookingDAO {
+
     private static final String CSV_FILE_NAME = "file/booking.csv";
     private final File fd;
+
     public BookingDAOcsv(){
         this.fd=new File(CSV_FILE_NAME);
     }
+
+    @Override
     public void setTripBook(UserTrip book) throws AlreadyPrenotedException, IOException {
         int idTrip = book.getIdTrip();
         String username = book.getUsername();
@@ -38,8 +42,8 @@ public class BookingDAOcsv implements BookingDAO {
         } catch (IOException e) {
             throw new IOException("Errore durante la scrittura del file: " + e.getMessage());
         }
-
     }
+
     @Override
     public void alreadyExist(UserTrip booking) throws AlreadyPrenotedException, IOException, CSVInteractionException {
         String usernameToFind=booking.getUsername();
