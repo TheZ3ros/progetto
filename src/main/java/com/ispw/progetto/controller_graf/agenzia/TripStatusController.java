@@ -18,6 +18,8 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class TripStatusController implements StageAware {
     private Stage stage;
@@ -76,12 +78,12 @@ public class TripStatusController implements StageAware {
 
     @FXML
     public void vaiAHome() {
-        // Qui puoi caricare la home agency passando stage e user
         try {
             SceneNavigator.switchTo(stage, "/com/ispw/progetto/view1/home.fxml", this);
         } catch (IOException e) {
-            e.printStackTrace();
-            // gestisci errore
+            Logger.getLogger(AgencyTripsController.class.getName()).log(Level.SEVERE, "Errore durante il caricamento della home agency", e);
+            // Eventualmente mostra un messaggio all'utente
         }
     }
+
 }
