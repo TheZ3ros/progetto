@@ -16,7 +16,7 @@ public class Factory implements  FactoryInterface{
             case 2 -> new Agency();
             default -> {
                 try {
-                    throw new Exception("Invalid type : " + type);
+                    throw new InvalidEntityTypeException("Invalid type: " + type);
                 } catch (Exception e) {
                     throw new InvalidEntityTypeException("Invalid type: " + type);
                 }
