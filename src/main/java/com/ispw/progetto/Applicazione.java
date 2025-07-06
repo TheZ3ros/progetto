@@ -67,7 +67,10 @@ public class Applicazione extends Application {
             }
         }
 
-        AppContext context = new AppContext(isGUI, mode);
+        // Inizializza il singleton AppContext
+        AppContext context = AppContext.getInstance();
+        context.setGui(isGUI);
+        context.setPersistenceMode(mode);
 
         if (isGUI) {
             this.stage = stage;
@@ -82,7 +85,6 @@ public class Applicazione extends Application {
 
             HomeController homeController = homeLoader.getController();
             homeController.setStage(stage);
-            homeController.setAppContext(context);  // <-- Nuova riga: passaggio del contesto
 
             stage.getIcons().add(new Image(Objects.requireNonNull(getClass().getResourceAsStream("css/immagini/infinito.png"))));
 

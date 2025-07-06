@@ -49,4 +49,9 @@ public class BookingDAOinMemory implements BookingDAO {
             throw new AlreadyPrenotedException("Hai già prenotato questo viaggio (modalità demo)");
         }
     }
+
+    public Set<Integer> getTripIdsByUser(String username) {
+        return userBookings.getOrDefault(username, Collections.emptySet());
+    }
+
 }

@@ -11,29 +11,29 @@ public class Trip {
     private final byte[] image;
     private boolean stato;
     private int id;
-    public Trip(int n, String city, Date dataAnd, Date dataRit,Float price,byte[] image, boolean stato){
+    public Trip(int available, String city, Date dataAnd, Date dataRit, Float price, byte[] image, boolean stato){
         this.city=city;
         this.image=image;
-        this.available=n;
+        this.available= available;
         this.price=price;
         this.dataAnd=dataAnd;
         this.dataRit=dataRit;
         this.stato=stato;
     }
-    public Trip(int n, String city, Date dataAnd, Date dataRit,Float price,byte[] image, int id){
+    public Trip(int available, String city, Date dataAnd, Date dataRit, Float price, byte[] image, int id){
         this.city=city;
         this.image=image;
-        this.available=n;
+        this.available= available;
         this.price=price;
         this.dataAnd=dataAnd;
         this.dataRit=dataRit;
         this.id=id;
     }
 
-    public Trip(int n, String city, Date dataAnd, Date dataRit,Float price,byte[] image){
+    public Trip(int available, String city, Date dataAnd, Date dataRit, Float price, byte[] image){
         this.city=city;
         this.image=image;
-        this.available=n;
+        this.available= available;
         this.price=price;
         this.dataAnd=dataAnd;
         this.dataRit=dataRit;

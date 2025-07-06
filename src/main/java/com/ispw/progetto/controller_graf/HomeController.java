@@ -1,6 +1,5 @@
 package com.ispw.progetto.controller_graf;
 
-import com.ispw.progetto.utils.AppContext;
 import com.ispw.progetto.utils.SceneNavigator;
 import com.ispw.progetto.utils.StageAware;
 import javafx.fxml.FXML;
@@ -14,14 +13,9 @@ import java.io.IOException;
 public class HomeController implements StageAware {
 
    private Stage stage;
-   private AppContext appContext; // 🔹 nuovo campo
 
    public void setStage(Stage stage) {
       this.stage = stage;
-   }
-
-   public void setAppContext(AppContext appContext) {  // 🔹 nuovo metodo setter
-      this.appContext = appContext;
    }
 
    @FXML
@@ -30,7 +24,6 @@ public class HomeController implements StageAware {
       Parent root = loader.load();
       LoginController controller = loader.getController();
       controller.setStage(stage);
-      controller.setAppContext(appContext); // 🔹 propaga il contesto
       stage.setScene(new Scene(root));
       stage.setTitle("Login");
    }

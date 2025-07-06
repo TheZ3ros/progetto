@@ -4,13 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="abd72b32-f6c1-4b42-a1d9-4297dd975b52" name="Changes" comment="modifiche minori">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/dao/csv_dbms/BookingDAOinMemory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/utils/AppContext.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/utils/PersistenceMode.java" afterDir="false" />
+    <list default="true" id="abd72b32-f6c1-4b42-a1d9-4297dd975b52" name="Changes" comment="demo">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/dao/TripDAOinMemory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/Applicazione.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/Applicazione.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_app/BookTripController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_app/BookTripController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_app/RegLoginControllerApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_app/RegLoginControllerApp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/HomeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/LoginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/PagamentoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/PagamentoController.java" afterDir="false" />
@@ -18,9 +17,9 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/UserHomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/UserHomeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/ViaggioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/ViaggioController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/ViewTripController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/ViewTripController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/viewseconda/ControllerHomeCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/viewseconda/ControllerHomeCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/viewseconda/user/HomeLoginCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/viewseconda/user/HomeLoginCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/viewseconda/user/LoginUserCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/viewseconda/user/LoginUserCLI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/dao/csv_dbms/BookingDAOinMemory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/dao/csv_dbms/BookingDAOinMemory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/model/Trip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/model/Trip.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/utils/AppContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/utils/AppContext.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/viewseconda/user/PaymentCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/viewseconda/user/PaymentCLI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/viewseconda/user/TripViewCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/viewseconda/user/TripViewCLI.java" afterDir="false" />
     </list>
@@ -81,7 +80,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Application.Applicazione.executor": "Debug",
+    "Application.Applicazione.executor": "Run",
     "Downloaded.Files.Path.Enabled": "false",
     "JUnit.TripCreationTest.tripcreationtest.executor": "Run",
     "Repository.Attach.Annotations": "false",
@@ -275,15 +274,7 @@
       <workItem from="1751708620173" duration="8554000" />
       <workItem from="1751747237415" duration="2424000" />
       <workItem from="1751752324525" duration="1967000" />
-      <workItem from="1751807750602" duration="11543000" />
-    </task>
-    <task id="LOCAL-00043" summary="code smell">
-      <option name="closed" value="true" />
-      <created>1708358477446</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1708358477446</updated>
+      <workItem from="1751807750602" duration="18071000" />
     </task>
     <task id="LOCAL-00044" summary="code smell">
       <option name="closed" value="true" />
@@ -669,7 +660,15 @@
       <option name="project" value="LOCAL" />
       <updated>1751809668398</updated>
     </task>
-    <option name="localTasksCounter" value="92" />
+    <task id="LOCAL-00092" summary="demo">
+      <option name="closed" value="true" />
+      <created>1751827544468</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1751827544468</updated>
+    </task>
+    <option name="localTasksCounter" value="93" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -688,7 +687,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="qualche eccezione" />
     <MESSAGE value="pagina pagamento e fix cartelle" />
     <MESSAGE value="aggiornamento prenotazioni lato agenzia con query funzionante" />
     <MESSAGE value="Ultime modifiche (implementata classe Printer e controlli vari)" />
@@ -713,7 +711,8 @@
     <MESSAGE value="rimozione warning" />
     <MESSAGE value="CLI funzionante" />
     <MESSAGE value="modifiche minori" />
-    <option name="LAST_COMMIT_MESSAGE" value="modifiche minori" />
+    <MESSAGE value="demo" />
+    <option name="LAST_COMMIT_MESSAGE" value="demo" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -731,21 +730,6 @@
           <line>24</line>
           <option name="timeStamp" value="53" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/PageTripController.java</url>
-          <line>104</line>
-          <option name="timeStamp" value="87" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/ViewTripController.java</url>
-          <line>71</line>
-          <option name="timeStamp" value="91" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/ispw/progetto/dao/csv_dbms/BookingDAOinMemory.java</url>
-          <line>19</line>
-          <option name="timeStamp" value="95" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/agenzia/SingleAgencyTripsController.java</url>
           <line>51</line>
@@ -754,15 +738,6 @@
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="79" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/MyTripController.java</url>
-          <line>83</line>
-          <properties class="com.ispw.progetto.controller_graf.utente.MyTripController" method="info">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="81" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

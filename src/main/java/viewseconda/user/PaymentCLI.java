@@ -65,7 +65,7 @@ public class PaymentCLI {
             new PagamentoControllerApp().checkCard(numeroCarta, cvvCode, date);
 
             BookBean bookBean = new BookBean(user.getUsername(), trip.getId());
-            BookTripController bookTripController = new BookTripController(appContext.getPersistenceMode()); // 🔹
+            BookTripController bookTripController = new BookTripController(); // 🔹
 
             bookTripController.bookTrip(bookBean);
             Printer.printMessage("Prenotazione avvenuta con successo");

@@ -11,6 +11,8 @@ import com.ispw.progetto.exception.PasswordIllegalException;
 import com.ispw.progetto.exception.SQLStatementException;
 import com.ispw.progetto.model.User;
 import com.ispw.progetto.pattern.factory.EntityFactory;
+import com.ispw.progetto.utils.AppContext;
+import com.ispw.progetto.utils.PersistenceMode;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -30,16 +32,26 @@ public class RegLoginControllerApp {
     public RegLoginControllerApp(AgencyBean agency){
         this.agency=agency;
     }
+
     public void loginUtente() throws SQLException, IOException, CredentialErrorException {
-        UserDAO dao;
-        dao=new UserDAO();
-        EntityFactory utente;
-            utente= dao.execute(currentUser.getUsername());
-        if (!currentUser.getPassword().equals(utente.getPassword())){
-            throw new CredentialErrorException("credenziali errate");
+        // Controllo per modalità MEMORY (demo)
+        AppContext appContext = AppContext.getInstance();
+        if (appContext.getPersistenceMode() == PersistenceMode.MEMORY) {
+            if (!"admin".equals(currentUser.getUsername()) || !"admin".equals(currentUser.getPassword())) {
+                throw new CredentialErrorException("Credenziali errate (modalità demo: admin/admin)");
+            }
+            return; // login valido, esci dal metodo
         }
 
+        // Persistenza normale: DB o CSV
+        UserDAO dao = new UserDAO();
+        EntityFactory utente = dao.execute(currentUser.getUsername());
+
+        if (!currentUser.getPassword().equals(utente.getPassword())) {
+            throw new CredentialErrorException("Credenziali errate");
+        }
     }
+
 
     public void loginAgenzia() throws SQLException, IOException, CredentialErrorException {
         AgencyDAO dao;

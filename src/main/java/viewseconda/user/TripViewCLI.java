@@ -35,7 +35,7 @@ public class TripViewCLI {
     }
 
     public void viewtrip(UserHomeNavigator navigator) throws SQLException, IOException {
-        BookTripController bookTripController = new BookTripController(appContext.getPersistenceMode()); // 🔹
+        BookTripController bookTripController = new BookTripController(); // 🔹
 
         List<TripBean> viaggi = bookTripController.showTrip();
         displayTrips(viaggi);

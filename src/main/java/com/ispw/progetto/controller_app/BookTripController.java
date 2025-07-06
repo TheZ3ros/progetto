@@ -2,6 +2,7 @@ package com.ispw.progetto.controller_app;
 
 import com.ispw.progetto.bean.SearchBean;
 import com.ispw.progetto.bean.UserBean;
+import com.ispw.progetto.dao.TripDAOinMemory;
 import com.ispw.progetto.dao.csv_dbms.BookingDAO;
 import com.ispw.progetto.dao.csv_dbms.BookingDAOcsv;
 import com.ispw.progetto.dao.csv_dbms.BookingDAOinMemory;
@@ -17,12 +18,14 @@ import com.ispw.progetto.model.Trip;
 import com.ispw.progetto.model.UserTrip;
 import com.ispw.progetto.pattern.decorator.UserTripStatus;
 import com.ispw.progetto.pattern.factory.EntityFactory;
+import com.ispw.progetto.utils.AppContext;
 import com.ispw.progetto.utils.PersistenceMode;
 
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 public class BookTripController {
 
@@ -30,12 +33,8 @@ public class BookTripController {
 
     // Costruttore di default (usato da GUI se non viene specificato altro)
     public BookTripController() throws SQLException, IOException {
-        this.bookingDAO = new BookingDAOdbms(); // default GUI completa
-    }
-
-    // Costruttore basato sulla modalità di persistenza (CSV, DB, MEMORY)
-    public BookTripController(PersistenceMode mode) {
-        switch (mode) {
+        AppContext appContext = AppContext.getInstance();
+        switch (appContext.getPersistenceMode()) {
             case DB -> {
                 try {
                     this.bookingDAO = new BookingDAOdbms();
@@ -48,6 +47,7 @@ public class BookTripController {
             default -> throw new IllegalArgumentException("Modalità di persistenza non supportata");
         }
     }
+
 
     // Costruttore alternativo per test/manuale
     public BookTripController(BookingDAO bookingDAO) {
@@ -84,17 +84,47 @@ public class BookTripController {
     }
 
     public List<TripBean> getTripUser(UserBean utente) throws SQLException, IOException {
-        TripDAO tripDAO = new TripDAO();
-        List<Trip> tripList = tripDAO.tripUser(utente.getUsername());
+        AppContext appContext = AppContext.getInstance();
+        PersistenceMode mode = appContext.getPersistenceMode();
+
         List<TripBean> tripBeanList = new ArrayList<>();
 
-        for (Trip trip : tripList) {
-            TripBean tripBean = new TripBean(trip.getCity(), trip.getAvailable(),
-                    trip.getDataAnd(), trip.getDataRit(), trip.getPrice(), trip.getImage(), trip.isStato());
-            tripBeanList.add(tripBean);
+        if (mode == PersistenceMode.DB || mode == PersistenceMode.CSV) {
+            // ✅ modalità DB o CSV: usa TripDAO
+            TripDAO tripDAO = new TripDAO();
+            List<Trip> tripList = tripDAO.tripUser(utente.getUsername());
+
+            for (Trip trip : tripList) {
+                TripBean tripBean = new TripBean(
+                        trip.getCity(), trip.getAvailable(),
+                        trip.getDataAnd(), trip.getDataRit(),
+                        trip.getPrice(), trip.getImage(), trip.isStato()
+                );
+                tripBeanList.add(tripBean);
+            }
+        } else if (mode == PersistenceMode.MEMORY) {
+            // ✅ modalità demo: usa BookingDAOinMemory
+            BookingDAOinMemory bookingDAO = BookingDAOinMemory.getInstance();
+            Set<Integer> bookedTripIds = bookingDAO.getTripIdsByUser(utente.getUsername());
+
+            TripDAOinMemory tripDAO = TripDAOinMemory.getInstance();
+
+            for (int id : bookedTripIds) {
+                Trip trip = tripDAO.getTripById(id);
+                if (trip != null) {
+                    TripBean tripBean = new TripBean(
+                            trip.getCity(), trip.getAvailable(),
+                            trip.getDataAnd(), trip.getDataRit(),
+                            trip.getPrice(), trip.getImage(), trip.isStato()
+                    );
+                    tripBeanList.add(tripBean);
+                }
+            }
         }
+
         return tripBeanList;
     }
+
 
     public List<TripBean> searchByCity(SearchBean searchBean) throws SQLException, IOException, FailedSearchException {
         TripDAO tripdao = new TripDAO();

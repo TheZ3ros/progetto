@@ -1,7 +1,6 @@
 package com.ispw.progetto.controller_graf.utente;
 
 import com.ispw.progetto.bean.UserBean;
-import com.ispw.progetto.utils.AppContext;
 import com.ispw.progetto.utils.SceneNavigator;
 import com.ispw.progetto.utils.StageAware;
 import javafx.fxml.FXML;
@@ -26,11 +25,6 @@ public class UserHomeController implements StageAware {
         this.stage = stage;
     }
 
-    private AppContext appContext;
-    public void setAppContext(AppContext appContext) {  // 🔹 nuovo metodo setter
-        this.appContext = appContext;
-    }
-
     public void setButtonText() {
         user.setText(currentUser.getUsername());
     }
@@ -43,7 +37,7 @@ public class UserHomeController implements StageAware {
     @FXML
     private void viewTrip() throws IOException, SQLException {
         ViewTripController page = new ViewTripController();
-        page.viewTrip(stage, currentUser,appContext);
+        page.viewTrip(stage, currentUser);
     }
 
     @FXML
