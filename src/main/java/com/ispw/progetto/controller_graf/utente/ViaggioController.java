@@ -2,6 +2,7 @@ package com.ispw.progetto.controller_graf.utente;
 
 import com.ispw.progetto.bean.TripBean;
 import com.ispw.progetto.bean.UserBean;
+import com.ispw.progetto.utils.AppContext;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -38,6 +39,11 @@ public class ViaggioController {
         this.stage = stage;
     }
 
+    private AppContext appContext;
+    public void setAppContext(AppContext appContext) {  // 🔹 nuovo metodo setter
+        this.appContext = appContext;
+    }
+
     public void setUserFactory(UserBean user) {
         this.userFactory = user;
     }
@@ -59,6 +65,7 @@ public class ViaggioController {
 
         PageTripController pagetrip = loader.getController();
         pagetrip.setStage(stage);
+        pagetrip.setAppContext(appContext);
         pagetrip.setTrip(tripBean);
         pagetrip.setCurrentUser(userFactory);
         pagetrip.charge();

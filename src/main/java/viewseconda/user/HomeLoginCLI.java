@@ -1,6 +1,7 @@
 package viewseconda.user;
 
 import com.ispw.progetto.bean.UserBean;
+import com.ispw.progetto.utils.AppContext;
 import viewseconda.Printer;
 
 import java.io.IOException;
@@ -9,9 +10,11 @@ import java.util.Scanner;
 
 public class HomeLoginCLI implements UserHomeNavigator {
     private final UserBean currentUser;
+    private final AppContext appContext; // 🔹 nuovo campo
 
-    public HomeLoginCLI(UserBean currentUser) {
+    public HomeLoginCLI(UserBean currentUser, AppContext appContext) {
         this.currentUser = currentUser;
+        this.appContext = appContext;
     }
 
     public void start() throws SQLException, IOException {
@@ -19,13 +22,13 @@ public class HomeLoginCLI implements UserHomeNavigator {
         boolean continua = true;
         while (continua) {
             Printer.printMessage("Scegliere l'operazione da eseguire");
-            Printer.printMessage("1-Prenota un nuovo viaggio");
-            Printer.printMessage("2-Visualizza stato dei viaggi prenotati");
-            Printer.printMessage("3-Visualizza informazioni account");
+            Printer.printMessage("1 - Prenota un nuovo viaggio");
+            Printer.printMessage("2 - Visualizza stato dei viaggi prenotati");
+            Printer.printMessage("3 - Visualizza informazioni account");
 
             int n = reader.nextInt();
             switch (n) {
-                case 1 -> new TripViewCLI(currentUser).viewtrip(this);
+                case 1 -> new TripViewCLI(currentUser, appContext).viewtrip(this); // 🔹
                 case 2 -> new BookedTripCLI(currentUser).start(this);
                 case 3 -> new InfoUserCLI(currentUser).start(this);
                 default -> Printer.printMessage("inserire un'opzione valida");

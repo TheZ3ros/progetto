@@ -5,6 +5,7 @@ import com.ispw.progetto.bean.UserBean;
 import com.ispw.progetto.controller_app.BookTripController;
 import com.ispw.progetto.exception.AlreadyPrenotedException;
 import com.ispw.progetto.exception.PlacesTerminatedException;
+import com.ispw.progetto.utils.AppContext;
 import com.ispw.progetto.utils.SceneNavigator;
 import com.ispw.progetto.utils.StageAware;
 import javafx.fxml.FXML;
@@ -49,6 +50,11 @@ public class PageTripController implements StageAware {
     // Setters
     public void setStage(Stage stage) {
         this.stage = stage;
+    }
+
+    private AppContext appContext;
+    public void setAppContext(AppContext appContext) {  // 🔹 nuovo metodo setter
+        this.appContext = appContext;
     }
 
     public void setCurrentUser(UserBean currentUser) {
@@ -96,6 +102,7 @@ public class PageTripController implements StageAware {
 
             PagamentoController pagamento = loader.getController();
             pagamento.setStage(stage);
+            pagamento.setAppContext(appContext);
             pagamento.setTrip(currentTrip);
             pagamento.setUser(currentUser);
             pagamento.setButtonText();

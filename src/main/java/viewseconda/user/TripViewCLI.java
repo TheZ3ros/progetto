@@ -5,6 +5,7 @@ import com.ispw.progetto.bean.TripBean;
 import com.ispw.progetto.bean.UserBean;
 import com.ispw.progetto.controller_app.BookTripController;
 import com.ispw.progetto.exception.*;
+import com.ispw.progetto.utils.AppContext;
 import viewseconda.Printer;
 
 import java.io.IOException;
@@ -14,10 +15,11 @@ import java.util.Scanner;
 
 public class TripViewCLI {
     private final UserBean currentUser;
+    private final AppContext appContext; // 🔹 nuovo campo
 
-    public TripViewCLI(UserBean user) {
-        this.currentUser=user;
-
+    public TripViewCLI(UserBean user, AppContext appContext) {
+        this.currentUser = user;
+        this.appContext = appContext;
     }
 
     private void displayTrips(List<TripBean> trips) {
@@ -32,11 +34,10 @@ public class TripViewCLI {
         }
     }
 
-
     public void viewtrip(UserHomeNavigator navigator) throws SQLException, IOException {
-        BookTripController bookTripController = new BookTripController();
-        List<TripBean> viaggi = bookTripController.showTrip();
+        BookTripController bookTripController = new BookTripController(appContext.getPersistenceMode()); // 🔹
 
+        List<TripBean> viaggi = bookTripController.showTrip();
         displayTrips(viaggi);
 
         Scanner reader = new Scanner(System.in);
@@ -63,7 +64,7 @@ public class TripViewCLI {
                 Printer.printMessage("ID non valido");
             } else {
                 try {
-                    new PaymentCLI(viaggi.get(n - 1), currentUser).start(navigator);
+                    new PaymentCLI(viaggi.get(n - 1), currentUser, appContext).start(navigator); // 🔹
                     break;
                 } catch (CardNotTrueException e) {
                     Printer.printMessage(e.getMessage());
@@ -73,4 +74,5 @@ public class TripViewCLI {
         }
     }
 }
+
 

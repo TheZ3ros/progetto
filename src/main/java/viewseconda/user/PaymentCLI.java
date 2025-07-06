@@ -6,8 +6,8 @@ import com.ispw.progetto.bean.TripBean;
 import com.ispw.progetto.bean.UserBean;
 import com.ispw.progetto.controller_app.BookTripController;
 import com.ispw.progetto.controller_app.PagamentoControllerApp;
-import com.ispw.progetto.dao.csv_dbms.BookingDAOcsv;
 import com.ispw.progetto.exception.*;
+import com.ispw.progetto.utils.AppContext;
 import viewseconda.Printer;
 
 import java.io.IOException;
@@ -19,15 +19,18 @@ import java.util.TimerTask;
 public class PaymentCLI {
     private final TripBean trip;
     private final UserBean user;
+    private final AppContext appContext;
 
-    PaymentCLI(TripBean trip, UserBean user){
-        this.trip =trip;
-        this.user=user;
+    public PaymentCLI(TripBean trip, UserBean user, AppContext appContext) {
+        this.trip = trip;
+        this.user = user;
+        this.appContext = appContext;
     }
+
     public void start(UserHomeNavigator navigator) throws CardNotTrueException, IOException {
         Scanner scanner = new Scanner(System.in);
         Printer.printMessage("Si vuole inserire un coupon?");
-        Printer.printMessage("1- sì\n2- no");
+        Printer.printMessage("1 - sì\n2 - no");
         startTimer(navigator);
 
         int n = scanner.nextInt();
@@ -60,8 +63,11 @@ public class PaymentCLI {
 
         try {
             new PagamentoControllerApp().checkCard(numeroCarta, cvvCode, date);
+
             BookBean bookBean = new BookBean(user.getUsername(), trip.getId());
-            new BookTripController(new BookingDAOcsv()).bookTrip(bookBean);
+            BookTripController bookTripController = new BookTripController(appContext.getPersistenceMode()); // 🔹
+
+            bookTripController.bookTrip(bookBean);
             Printer.printMessage("Prenotazione avvenuta con successo");
             navigator.goToHome();
         } catch (Exception e) {

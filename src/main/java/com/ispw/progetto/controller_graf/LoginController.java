@@ -6,6 +6,7 @@ import com.ispw.progetto.controller_app.RegLoginControllerApp;
 import com.ispw.progetto.controller_graf.agenzia.AgencyHomeController;
 import com.ispw.progetto.controller_graf.utente.UserHomeController;
 import com.ispw.progetto.exception.CredentialErrorException;
+import com.ispw.progetto.utils.AppContext;
 import com.ispw.progetto.utils.SceneNavigator;
 import com.ispw.progetto.utils.StageAware;
 import javafx.fxml.FXML;
@@ -36,9 +37,15 @@ public class LoginController implements StageAware {
 
     private Stage stage;
 
+
     @Override
     public void setStage(Stage stage) {
         this.stage = stage;
+    }
+
+    private AppContext appContext;
+    public void setAppContext(AppContext appContext) {  // 🔹 nuovo metodo setter
+        this.appContext = appContext;
     }
 
     @FXML
@@ -73,6 +80,8 @@ public class LoginController implements StageAware {
             controller.setButtonText();
             stage.setScene(scene);
             stage.setTitle("Home Utente");
+            controller.setAppContext(appContext);
+
         } catch (CredentialErrorException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Login fallito");

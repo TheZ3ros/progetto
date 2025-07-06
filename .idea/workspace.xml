@@ -4,8 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="abd72b32-f6c1-4b42-a1d9-4297dd975b52" name="Changes" comment="CLI funzionante">
+    <list default="true" id="abd72b32-f6c1-4b42-a1d9-4297dd975b52" name="Changes" comment="modifiche minori">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/dao/csv_dbms/BookingDAOinMemory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/utils/AppContext.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/utils/PersistenceMode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/Applicazione.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/Applicazione.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_app/BookTripController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_app/BookTripController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/PagamentoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/PagamentoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/PageTripController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/PageTripController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/UserHomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/UserHomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/ViaggioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/ViaggioController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/ViewTripController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/ViewTripController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/viewseconda/ControllerHomeCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/viewseconda/ControllerHomeCLI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/viewseconda/user/HomeLoginCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/viewseconda/user/HomeLoginCLI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/viewseconda/user/LoginUserCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/viewseconda/user/LoginUserCLI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/viewseconda/user/PaymentCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/viewseconda/user/PaymentCLI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/viewseconda/user/TripViewCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/viewseconda/user/TripViewCLI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,40 +78,40 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Application.Applicazione.executor&quot;: &quot;Run&quot;,
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;JUnit.TripCreationTest.tripcreationtest.executor&quot;: &quot;Run&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/aless/OneDrive/Documents/Università/ISPW/mysql-connector-java-8.0.25/mysql-connector-java-8.0.25.jar&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.51135135&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;terminal&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Application.Applicazione.executor": "Debug",
+    "Downloaded.Files.Path.Enabled": "false",
+    "JUnit.TripCreationTest.tripcreationtest.executor": "Run",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/aless/Downloads/ISPW-Cat-Cafe-main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.51135135",
+    "settings.editor.selected.configurable": "terminal",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;ChangesTree.GroupingKeys&quot;: [],
-    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
-      &quot;CSS&quot;
+  "keyToStringList": {
+    "ChangesTree.GroupingKeys": [],
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "CSS"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Proprietario\Desktop\java\progetto1\src\main\resources\com\example\progetto" />
@@ -258,15 +275,7 @@
       <workItem from="1751708620173" duration="8554000" />
       <workItem from="1751747237415" duration="2424000" />
       <workItem from="1751752324525" duration="1967000" />
-      <workItem from="1751807750602" duration="1303000" />
-    </task>
-    <task id="LOCAL-00042" summary="code smell">
-      <option name="closed" value="true" />
-      <created>1708357352842</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1708357352842</updated>
+      <workItem from="1751807750602" duration="11543000" />
     </task>
     <task id="LOCAL-00043" summary="code smell">
       <option name="closed" value="true" />
@@ -652,7 +661,15 @@
       <option name="project" value="LOCAL" />
       <updated>1751717056767</updated>
     </task>
-    <option name="localTasksCounter" value="91" />
+    <task id="LOCAL-00091" summary="modifiche minori">
+      <option name="closed" value="true" />
+      <created>1751809668398</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1751809668398</updated>
+    </task>
+    <option name="localTasksCounter" value="92" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -671,7 +688,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="i miei viaggi" />
     <MESSAGE value="qualche eccezione" />
     <MESSAGE value="pagina pagamento e fix cartelle" />
     <MESSAGE value="aggiornamento prenotazioni lato agenzia con query funzionante" />
@@ -696,7 +712,8 @@
     <MESSAGE value="aggiustato PaymentCLI" />
     <MESSAGE value="rimozione warning" />
     <MESSAGE value="CLI funzionante" />
-    <option name="LAST_COMMIT_MESSAGE" value="CLI funzionante" />
+    <MESSAGE value="modifiche minori" />
+    <option name="LAST_COMMIT_MESSAGE" value="modifiche minori" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -715,9 +732,19 @@
           <option name="timeStamp" value="53" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/ispw/progetto/dao/UserDAO.java</url>
-          <line>42</line>
-          <option name="timeStamp" value="73" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/PageTripController.java</url>
+          <line>104</line>
+          <option name="timeStamp" value="87" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/ViewTripController.java</url>
+          <line>71</line>
+          <option name="timeStamp" value="91" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/ispw/progetto/dao/csv_dbms/BookingDAOinMemory.java</url>
+          <line>19</line>
+          <option name="timeStamp" value="95" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/agenzia/SingleAgencyTripsController.java</url>
@@ -736,15 +763,6 @@
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="81" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/LoginController.java</url>
-          <line>54</line>
-          <properties class="com.ispw.progetto.controller_graf.LoginController" method="handlerloginutente">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="83" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

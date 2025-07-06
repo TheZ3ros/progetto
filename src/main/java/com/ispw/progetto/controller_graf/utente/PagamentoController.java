@@ -7,6 +7,7 @@ import com.ispw.progetto.bean.BuonoBean;
 import com.ispw.progetto.bean.TripBean;
 import com.ispw.progetto.controller_app.BookTripController;
 import com.ispw.progetto.controller_app.PagamentoControllerApp;
+import com.ispw.progetto.utils.AppContext;
 import com.ispw.progetto.utils.SceneNavigator;
 import com.ispw.progetto.utils.StageAware;
 import javafx.animation.Animation;
@@ -64,6 +65,11 @@ public class PagamentoController implements StageAware {
 
     public void setStage(Stage stage) {
         this.stage = stage;
+    }
+
+    private AppContext appContext;
+    public void setAppContext(AppContext appContext) {  // 🔹 nuovo metodo setter
+        this.appContext = appContext;
     }
 
     public void setUser(UserBean utente) {
@@ -134,7 +140,7 @@ public class PagamentoController implements StageAware {
             pagamentoControllerApp.checkCard(numeroCarta, cvvCode, data);
 
             BookBean book = new BookBean(currentUser.getUsername(), currentTrip.getId());
-            BookTripController bookTripController = new BookTripController();
+            BookTripController bookTripController = new BookTripController(appContext.getPersistenceMode());
             bookTripController.bookTrip(book);
 
             showInfo();
