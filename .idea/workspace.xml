@@ -4,8 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="abd72b32-f6c1-4b42-a1d9-4297dd975b52" name="Changes" comment="refactor in BookTripController">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/agenzia/AgencyTripsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/agenzia/AgencyTripsController.java" afterDir="false" />
+    <list default="true" id="abd72b32-f6c1-4b42-a1d9-4297dd975b52" name="Changes" comment="tolta dipendenza ciclica in SingleAgencyTripsController">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/Applicazione.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/Applicazione.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/agenzia/TripStatusController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/agenzia/TripStatusController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/MyTripController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/MyTripController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/PagamentoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/PagamentoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/PageTripController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/PageTripController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/ViaggioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/ViaggioController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/ViewTripController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/utente/ViewTripController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -259,23 +265,7 @@
       <workItem from="1751747237415" duration="2424000" />
       <workItem from="1751752324525" duration="1967000" />
       <workItem from="1751807750602" duration="21623000" />
-      <workItem from="1751880442397" duration="991000" />
-    </task>
-    <task id="LOCAL-00046" summary="registrtazione">
-      <option name="closed" value="true" />
-      <created>1708374600531</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1708374600531</updated>
-    </task>
-    <task id="LOCAL-00047" summary="registrtazione">
-      <option name="closed" value="true" />
-      <created>1708374695124</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1708374695124</updated>
+      <workItem from="1751880442397" duration="2020000" />
     </task>
     <task id="LOCAL-00048" summary="registrtazione">
       <option name="closed" value="true" />
@@ -653,7 +643,23 @@
       <option name="project" value="LOCAL" />
       <updated>1751881158696</updated>
     </task>
-    <option name="localTasksCounter" value="95" />
+    <task id="LOCAL-00095" summary="tolta dipendenza ciclica in AgencyTripsController">
+      <option name="closed" value="true" />
+      <created>1751881722109</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1751881722109</updated>
+    </task>
+    <task id="LOCAL-00096" summary="tolta dipendenza ciclica in SingleAgencyTripsController">
+      <option name="closed" value="true" />
+      <created>1751882224560</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1751882224560</updated>
+    </task>
+    <option name="localTasksCounter" value="97" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -672,8 +678,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Ultime modifiche (implementata classe Printer e controlli vari)" />
-    <MESSAGE value="registrtazione" />
     <MESSAGE value="prova" />
     <MESSAGE value="timer CLI" />
     <MESSAGE value="sistemazione controlli" />
@@ -697,7 +701,9 @@
     <MESSAGE value="demo" />
     <MESSAGE value="demo migliorata. Manca la visualizzazione del viaggio prenotato dall'utente demo" />
     <MESSAGE value="refactor in BookTripController" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor in BookTripController" />
+    <MESSAGE value="tolta dipendenza ciclica in AgencyTripsController" />
+    <MESSAGE value="tolta dipendenza ciclica in SingleAgencyTripsController" />
+    <option name="LAST_COMMIT_MESSAGE" value="tolta dipendenza ciclica in SingleAgencyTripsController" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -716,13 +722,22 @@
           <option name="timeStamp" value="53" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/agenzia/SingleAgencyTripsController.java</url>
-          <line>51</line>
-          <properties class="com.ispw.progetto.controller_graf.agenzia.SingleAgencyTripsController" method="tripstatus">
+          <url>file://$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/agenzia/AgencyTripsController.java</url>
+          <line>71</line>
+          <properties class="com.ispw.progetto.controller_graf.agenzia.AgencyTripsController" method="agencyTrips">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
-          <option name="timeStamp" value="79" />
+          <option name="timeStamp" value="80" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/agenzia/AgencyTripsController.java</url>
+          <line>54</line>
+          <properties class="com.ispw.progetto.controller_graf.agenzia.AgencyTripsController" method="charge">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="81" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

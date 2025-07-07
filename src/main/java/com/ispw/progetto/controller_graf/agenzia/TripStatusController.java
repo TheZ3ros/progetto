@@ -65,7 +65,7 @@ public class TripStatusController implements StageAware {
         List<TripStatusBean> stati = com.ispw.progetto.controller_app.TripStatusController.showtripstatus(currentTrip.getId());
 
         for (TripStatusBean stato : stati){
-            FXMLLoader statusvisualizerLoader = new FXMLLoader(com.ispw.progetto.Applicazione.class.getResource("view1/agenzia/statusvisualizer.fxml"));
+            FXMLLoader statusvisualizerLoader = new FXMLLoader(getClass().getResource("/com/ispw/progetto/view1/agenzia/statusvisualizer.fxml"));
             VBox box = statusvisualizerLoader.load();
             StatusVisualizerController controller = statusvisualizerLoader.getController();
             controller.setStage();

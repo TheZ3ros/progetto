@@ -165,7 +165,7 @@ public class PagamentoController implements StageAware {
 
     @FXML
     public void info() throws IOException, SQLException {
-        FXMLLoader loader = new FXMLLoader(com.ispw.progetto.Applicazione.class.getResource("view1/utente/info_user.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/ispw/progetto/view1/utente/info_user.fxml"));
         Parent root = loader.load();
         Scene scene = new Scene(root);
         InfoUserController controller = loader.getController();

@@ -55,7 +55,7 @@ public class MyTripController implements StageAware {
         List<TripBean> viaggi = bookTripController.getTripUser(currentUser);
 
         for (TripBean viaggio : viaggi) {
-            FXMLLoader loader = new FXMLLoader(com.ispw.progetto.Applicazione.class.getResource("view1/utente/prenotazione.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/ispw/progetto/view1/utente/prenotazione.fxml"));
             VBox box = loader.load();
             PrenotazioneController controller = loader.getController();
             controller.createbox(viaggio);
@@ -69,7 +69,7 @@ public class MyTripController implements StageAware {
     }
 
     public void myTrip(UserBean user, Stage stage) throws SQLException, IOException {
-        FXMLLoader loader = new FXMLLoader(com.ispw.progetto.Applicazione.class.getResource("view1/utente/myTrip.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/ispw/progetto/view1/utente/myTrip.fxml"));
         Parent root = loader.load();
         Scene scene = new Scene(root);
         MyTripController controller = loader.getController();

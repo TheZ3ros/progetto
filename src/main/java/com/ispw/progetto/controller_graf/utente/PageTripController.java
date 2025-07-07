@@ -90,7 +90,7 @@ public class PageTripController implements StageAware {
         try {
             bookTripController.checkAlready(currentTrip, currentUser);
 
-            FXMLLoader loader = new FXMLLoader(com.ispw.progetto.Applicazione.class.getResource("view1/utente/pagamento.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/ispw/progetto/view1/utente/pagamento.fxml"));
             Parent root = loader.load();
             Scene scene = new Scene(root);
 

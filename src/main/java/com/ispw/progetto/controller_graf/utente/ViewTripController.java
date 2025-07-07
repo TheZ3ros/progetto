@@ -59,7 +59,7 @@ public class ViewTripController implements StageAware {
         List<TripBean> viaggi = bookTripController.showTrip();
 
         for (TripBean viaggio : viaggi) {
-            FXMLLoader loader = new FXMLLoader(com.ispw.progetto.Applicazione.class.getResource("view1/utente/viaggio.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/ispw/progetto/view1/utente/viaggio.fxml"));
             VBox box = loader.load();
             ViaggioController controller = loader.getController();
             controller.setStage(stage);
@@ -75,7 +75,7 @@ public class ViewTripController implements StageAware {
     }
 
     public void viewTrip(Stage stage, UserBean user) throws IOException, SQLException {
-        FXMLLoader loader = new FXMLLoader(com.ispw.progetto.Applicazione.class.getResource("view1/utente/view_trip.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/ispw/progetto/view1/utente/view_trip.fxml"));
         Parent root = loader.load();
         Scene scene = new Scene(root);
 
@@ -108,7 +108,7 @@ public class ViewTripController implements StageAware {
             listaview.getItems().clear();
 
             for (TripBean viaggio : viaggi) {
-                FXMLLoader loader = new FXMLLoader(com.ispw.progetto.Applicazione.class.getResource("view1/utente/viaggio.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/ispw/progetto/view1/utente/viaggio.fxml"));
                 VBox box = loader.load();
                 ViaggioController controller = loader.getController();
                 controller.setStage(stage);
@@ -129,7 +129,7 @@ public class ViewTripController implements StageAware {
 
     @FXML
     public void info() throws IOException, SQLException {
-        FXMLLoader loader = new FXMLLoader(com.ispw.progetto.Applicazione.class.getResource("view1/utente/info_user.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/ispw/progetto/view1/utente/info_user.fxml"));
         Parent root = loader.load();
         Scene scene = new Scene(root);
         InfoUserController controller = loader.getController();

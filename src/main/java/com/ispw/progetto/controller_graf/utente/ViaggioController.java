@@ -53,7 +53,7 @@ public class ViaggioController {
     }
 
     public void pagetrip() throws IOException {
-        FXMLLoader loader = new FXMLLoader(com.ispw.progetto.Applicazione.class.getResource("view1/utente/pagetrip.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/ispw/progetto/view1/utente/pagetrip.fxml"));
         Parent root = loader.load();
         Scene scene = new Scene(root);
 

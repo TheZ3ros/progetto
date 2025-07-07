@@ -75,7 +75,7 @@ public class Applicazione extends Application {
         if (isGUI) {
             this.stage = stage;
 
-            FXMLLoader homeLoader = new FXMLLoader(Applicazione.class.getResource("view1/home.fxml"));
+            FXMLLoader homeLoader = new FXMLLoader(getClass().getResource("/com/ispw/progetto/view1/home.fxml"));
             Parent homeRoot = homeLoader.load();
             homeScene = new Scene(homeRoot);
 
