@@ -6,6 +6,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.*;
 import java.sql.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * DAO in memoria per la modalità demo (MEMORY)
@@ -36,12 +38,20 @@ public class TripDAOinMemory {
         tripsById.put(id, trip);
     }
 
+    private static final Logger LOGGER = Logger.getLogger(TripDAOinMemory.class.getName());
+
     private byte[] loadImageAsByteArray() {
         try (InputStream is = getClass().getResourceAsStream("/com/ispw/progetto/ImmagineDEMO/NewYork.jpg")) {
-            return is != null ? is.readAllBytes() : null;
+            if (is != null) {
+                return is.readAllBytes();
+            } else {
+                LOGGER.warning("Immagine demo non trovata nel percorso specificato.");
+                return new byte[0];
+            }
         } catch (IOException e) {
-            e.printStackTrace();
-            return null;
+            LOGGER.log(Level.SEVERE, "Errore durante il caricamento dell'immagine demo", e);
+            return new byte[0];
         }
     }
+
 }
