@@ -7,6 +7,7 @@ import com.ispw.progetto.dao.csv_dbms.BookingDAO;
 import com.ispw.progetto.dao.csv_dbms.BookingDAOcsv;
 import com.ispw.progetto.dao.csv_dbms.BookingDAOinMemory;
 import com.ispw.progetto.exception.AlreadyPrenotedException;
+import com.ispw.progetto.exception.BookingInitializationException;
 import com.ispw.progetto.exception.FailedSearchException;
 import com.ispw.progetto.exception.PlacesTerminatedException;
 import com.ispw.progetto.bean.BookBean;
@@ -39,7 +40,7 @@ public class BookTripController {
                 try {
                     this.bookingDAO = new BookingDAOdbms();
                 } catch (Exception e) {
-                    throw new RuntimeException("Errore nell'inizializzazione DB", e);
+                    throw new BookingInitializationException("Errore nell'inizializzazione DB", e);
                 }
             }
             case CSV -> this.bookingDAO = new BookingDAOcsv();

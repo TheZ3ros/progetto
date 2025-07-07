@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="abd72b32-f6c1-4b42-a1d9-4297dd975b52" name="Changes" comment="tolte tutte le dipendenze cicliche relative ad Applicazione">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/Applicazione.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/Applicazione.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/viewseconda/ControllerHomeCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/viewseconda/ControllerHomeCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/viewseconda/user/HomeLoginCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/viewseconda/user/HomeLoginCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/viewseconda/user/LoginUserCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/viewseconda/user/LoginUserCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/viewseconda/user/PaymentCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/viewseconda/user/PaymentCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/viewseconda/user/TripViewCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/viewseconda/user/TripViewCLI.java" afterDir="false" />
+    <list default="true" id="abd72b32-f6c1-4b42-a1d9-4297dd975b52" name="Changes" comment="rimossi costruttori inutili">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/exception/BookingInitializationException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_app/BookTripController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_app/BookTripController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -264,23 +260,7 @@
       <workItem from="1751747237415" duration="2424000" />
       <workItem from="1751752324525" duration="1967000" />
       <workItem from="1751807750602" duration="21623000" />
-      <workItem from="1751880442397" duration="3168000" />
-    </task>
-    <task id="LOCAL-00049" summary="registrtazione">
-      <option name="closed" value="true" />
-      <created>1708514034340</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1708514034340</updated>
-    </task>
-    <task id="LOCAL-00050" summary="registrtazione">
-      <option name="closed" value="true" />
-      <created>1708514343158</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1708514343158</updated>
+      <workItem from="1751880442397" duration="4103000" />
     </task>
     <task id="LOCAL-00051" summary="registrtazione">
       <option name="closed" value="true" />
@@ -658,7 +638,23 @@
       <option name="project" value="LOCAL" />
       <updated>1751882768791</updated>
     </task>
-    <option name="localTasksCounter" value="98" />
+    <task id="LOCAL-00098" summary="rimosso appContext dalla CLI">
+      <option name="closed" value="true" />
+      <created>1751883690393</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1751883690393</updated>
+    </task>
+    <task id="LOCAL-00099" summary="rimossi costruttori inutili">
+      <option name="closed" value="true" />
+      <created>1751883819788</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1751883819788</updated>
+    </task>
+    <option name="localTasksCounter" value="100" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -677,8 +673,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="timer CLI" />
-    <MESSAGE value="sistemazione controlli" />
     <MESSAGE value="code smell" />
     <MESSAGE value="funzionante" />
     <MESSAGE value="cambiamenti vari" />
@@ -702,7 +696,9 @@
     <MESSAGE value="tolta dipendenza ciclica in AgencyTripsController" />
     <MESSAGE value="tolta dipendenza ciclica in SingleAgencyTripsController" />
     <MESSAGE value="tolte tutte le dipendenze cicliche relative ad Applicazione" />
-    <option name="LAST_COMMIT_MESSAGE" value="tolte tutte le dipendenze cicliche relative ad Applicazione" />
+    <MESSAGE value="rimosso appContext dalla CLI" />
+    <MESSAGE value="rimossi costruttori inutili" />
+    <option name="LAST_COMMIT_MESSAGE" value="rimossi costruttori inutili" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
