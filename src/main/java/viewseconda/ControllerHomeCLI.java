@@ -7,11 +7,6 @@ import java.util.Scanner;
 
 public class ControllerHomeCLI {
 
-
-    public ControllerHomeCLI() {
-
-    }
-
     public void start() throws CredentialErrorException {
         Scanner reader = new Scanner(System.in);
         boolean continua = true;

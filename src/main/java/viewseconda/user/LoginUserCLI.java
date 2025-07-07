@@ -11,10 +11,6 @@ import java.util.Scanner;
 
 public class LoginUserCLI {
 
-
-    public LoginUserCLI() {
-    }
-
     public void login() throws CredentialErrorException {
         Scanner scanner = new Scanner(System.in);
         Printer.printMessage("inserire username");
