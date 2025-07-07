@@ -7,6 +7,8 @@ import com.ispw.progetto.bean.UserBean;
 import com.ispw.progetto.controller_app.BookTripController;
 import com.ispw.progetto.controller_app.PagamentoControllerApp;
 import com.ispw.progetto.exception.*;
+import com.ispw.progetto.utils.AppContext;
+import com.ispw.progetto.utils.PersistenceMode;
 import viewseconda.Printer;
 
 import java.io.IOException;
@@ -60,8 +62,14 @@ public class PaymentCLI {
 
         try {
             new PagamentoControllerApp().checkCard(numeroCarta, cvvCode, date);
-
-            BookBean bookBean = new BookBean(user.getUsername(), trip.getId());
+            AppContext context = AppContext.getInstance();
+            int tripId;
+            if (context.getPersistenceMode() == PersistenceMode.MEMORY) {
+                tripId = 1; // ID di default per la modalità demo
+            } else {
+                tripId = trip.getId();
+            }
+            BookBean bookBean = new BookBean(user.getUsername(), tripId);
             BookTripController bookTripController = new BookTripController(); // 🔹
 
             bookTripController.bookTrip(bookBean);

@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="abd72b32-f6c1-4b42-a1d9-4297dd975b52" name="Changes" comment="demo sistemata. Ora l'utente può prenotare il viaggio di prova" />
+    <list default="true" id="abd72b32-f6c1-4b42-a1d9-4297dd975b52" name="Changes" comment="sistemato secury hotspot">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/viewseconda/user/PaymentCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/viewseconda/user/PaymentCLI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/viewseconda/user/TripViewCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/viewseconda/user/TripViewCLI.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -258,15 +262,7 @@
       <workItem from="1751752324525" duration="1967000" />
       <workItem from="1751807750602" duration="21623000" />
       <workItem from="1751880442397" duration="5676000" />
-      <workItem from="1751894404244" duration="4826000" />
-    </task>
-    <task id="LOCAL-00053" summary="prova">
-      <option name="closed" value="true" />
-      <created>1708515859216</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1708515859216</updated>
+      <workItem from="1751894404244" duration="6185000" />
     </task>
     <task id="LOCAL-00054" summary="prova">
       <option name="closed" value="true" />
@@ -652,7 +648,15 @@
       <option name="project" value="LOCAL" />
       <updated>1751899658903</updated>
     </task>
-    <option name="localTasksCounter" value="102" />
+    <task id="LOCAL-00102" summary="sistemato secury hotspot">
+      <option name="closed" value="true" />
+      <created>1751899897219</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1751899897220</updated>
+    </task>
+    <option name="localTasksCounter" value="103" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -671,7 +675,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="cambiamenti vari" />
     <MESSAGE value="Eliminata dipendenza da Applicazione in tutti i controller grafici. Bisogna reimplementare la logica di cambio delle schermate, al momento funziona solo in &quot;avanti&quot;, tranne per LoginController che può tornare alla home" />
     <MESSAGE value="Prova dipendenze cicliche su login e registrazione controller" />
     <MESSAGE value="Prova dipendenze cicliche sui controller dell'utente" />
@@ -696,7 +699,8 @@
     <MESSAGE value="rimossi costruttori inutili" />
     <MESSAGE value="eccezioni dedicate" />
     <MESSAGE value="demo sistemata. Ora l'utente può prenotare il viaggio di prova" />
-    <option name="LAST_COMMIT_MESSAGE" value="demo sistemata. Ora l'utente può prenotare il viaggio di prova" />
+    <MESSAGE value="sistemato secury hotspot" />
+    <option name="LAST_COMMIT_MESSAGE" value="sistemato secury hotspot" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -713,11 +717,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/view2/agency/LoginAgencyCLI.java</url>
           <line>24</line>
           <option name="timeStamp" value="53" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/ispw/progetto/dao/TripDAOinMemory.java</url>
-          <line>17</line>
-          <option name="timeStamp" value="88" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/agenzia/AgencyTripsController.java</url>

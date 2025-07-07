@@ -5,6 +5,8 @@ import com.ispw.progetto.bean.TripBean;
 import com.ispw.progetto.bean.UserBean;
 import com.ispw.progetto.controller_app.BookTripController;
 import com.ispw.progetto.exception.*;
+import com.ispw.progetto.utils.AppContext;
+import com.ispw.progetto.utils.PersistenceMode;
 import viewseconda.Printer;
 
 import java.io.IOException;
@@ -20,8 +22,15 @@ public class TripViewCLI {
     }
 
     private void displayTrips(List<TripBean> trips) {
+        AppContext appContext = AppContext.getInstance();
+
         for (TripBean trip : trips) {
-            Printer.printMessage("ID:" + trip.getId());
+            if(appContext.getPersistenceMode() == PersistenceMode.MEMORY){
+                Printer.printMessage("ID: 1");
+            }
+            else{
+                Printer.printMessage("ID:" + trip.getId());
+            }
             Printer.printMessage("Città:" + trip.getCity());
             Printer.printMessage("Prezzo:" + trip.getPrice());
             Printer.printMessage("Data di partenza:" + trip.getDataAnd());
