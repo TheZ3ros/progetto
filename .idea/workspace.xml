@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="abd72b32-f6c1-4b42-a1d9-4297dd975b52" name="Changes" comment="demo migliorata. Manca la visualizzazione del viaggio prenotato dall'utente demo">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_app/BookTripController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_app/BookTripController.java" afterDir="false" />
+    <list default="true" id="abd72b32-f6c1-4b42-a1d9-4297dd975b52" name="Changes" comment="refactor in BookTripController">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/agenzia/AgencyTripsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_graf/agenzia/AgencyTripsController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -260,15 +259,7 @@
       <workItem from="1751747237415" duration="2424000" />
       <workItem from="1751752324525" duration="1967000" />
       <workItem from="1751807750602" duration="21623000" />
-      <workItem from="1751880442397" duration="580000" />
-    </task>
-    <task id="LOCAL-00045" summary="registrtazione">
-      <option name="closed" value="true" />
-      <created>1708369697558</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1708369697558</updated>
+      <workItem from="1751880442397" duration="991000" />
     </task>
     <task id="LOCAL-00046" summary="registrtazione">
       <option name="closed" value="true" />
@@ -654,7 +645,15 @@
       <option name="project" value="LOCAL" />
       <updated>1751833853895</updated>
     </task>
-    <option name="localTasksCounter" value="94" />
+    <task id="LOCAL-00094" summary="refactor in BookTripController">
+      <option name="closed" value="true" />
+      <created>1751881158696</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1751881158696</updated>
+    </task>
+    <option name="localTasksCounter" value="95" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -673,7 +672,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="aggiornamento prenotazioni lato agenzia con query funzionante" />
     <MESSAGE value="Ultime modifiche (implementata classe Printer e controlli vari)" />
     <MESSAGE value="registrtazione" />
     <MESSAGE value="prova" />
@@ -698,7 +696,8 @@
     <MESSAGE value="modifiche minori" />
     <MESSAGE value="demo" />
     <MESSAGE value="demo migliorata. Manca la visualizzazione del viaggio prenotato dall'utente demo" />
-    <option name="LAST_COMMIT_MESSAGE" value="demo migliorata. Manca la visualizzazione del viaggio prenotato dall'utente demo" />
+    <MESSAGE value="refactor in BookTripController" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor in BookTripController" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

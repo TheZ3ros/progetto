@@ -59,7 +59,7 @@ public class AgencyTripsController implements StageAware {
         listaview.getItems().clear();
 
         for (TripBean viaggio : viaggi) {
-            FXMLLoader getagencytripsLoader = new FXMLLoader(com.ispw.progetto.Applicazione.class.getResource("view1/agenzia/singleagencytrip.fxml"));
+            FXMLLoader getagencytripsLoader = new FXMLLoader(getClass().getResource("/com/ispw/progetto/view1/agenzia/singleagencytrip.fxml"));
             VBox box = getagencytripsLoader.load();
             SingleAgencyTripsController controller = getagencytripsLoader.getController();
             controller.setStage(stage);
@@ -70,7 +70,7 @@ public class AgencyTripsController implements StageAware {
     }
 
     public void agencyTrips(Stage stage, AgencyBean currentUser) throws IOException, SQLException {
-        FXMLLoader agencytripsLoader = new FXMLLoader(com.ispw.progetto.Applicazione.class.getResource("view1/agenzia/agencytrips.fxml"));
+        FXMLLoader agencytripsLoader = new FXMLLoader(getClass().getResource("/com/ispw/progetto/view1/agenzia/agencytrips.fxml"));
         Parent agencytripsroot = agencytripsLoader.load();
         Scene agencytripscene = new Scene(agencytripsroot);
         AgencyTripsController agencytrips = agencytripsLoader.getController();
