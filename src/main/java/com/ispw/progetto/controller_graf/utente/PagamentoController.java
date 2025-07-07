@@ -7,6 +7,8 @@ import com.ispw.progetto.bean.BuonoBean;
 import com.ispw.progetto.bean.TripBean;
 import com.ispw.progetto.controller_app.BookTripController;
 import com.ispw.progetto.controller_app.PagamentoControllerApp;
+import com.ispw.progetto.utils.AppContext;
+import com.ispw.progetto.utils.PersistenceMode;
 import com.ispw.progetto.utils.SceneNavigator;
 import com.ispw.progetto.utils.StageAware;
 import javafx.animation.Animation;
@@ -133,7 +135,16 @@ public class PagamentoController implements StageAware {
             PagamentoControllerApp pagamentoControllerApp = new PagamentoControllerApp();
             pagamentoControllerApp.checkCard(numeroCarta, cvvCode, data);
 
-            BookBean book = new BookBean(currentUser.getUsername(), currentTrip.getId());
+            AppContext context = AppContext.getInstance();
+            int tripId;
+
+            if (context.getPersistenceMode() == PersistenceMode.MEMORY) {
+                tripId = 1; // ID di default per la modalità demo
+            } else {
+                tripId = currentTrip.getId();
+            }
+
+            BookBean book = new BookBean(currentUser.getUsername(), tripId);
             BookTripController bookTripController = new BookTripController();
             bookTripController.bookTrip(book);
 
@@ -145,6 +156,7 @@ public class PagamentoController implements StageAware {
             showWarning(e.getMessage());
         }
     }
+
 
     @FXML
     private void checkBuono() throws SQLException, IOException {

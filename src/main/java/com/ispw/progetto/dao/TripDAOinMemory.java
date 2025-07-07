@@ -2,25 +2,23 @@ package com.ispw.progetto.dao;
 
 import com.ispw.progetto.model.Trip;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.*;
+import java.sql.Date;
 
 /**
  * DAO in memoria per la modalità demo (MEMORY)
  */
 public class TripDAOinMemory {
-
-    // Singleton
     private static TripDAOinMemory instance;
-
-    // Mappa ID → Trip
     private final Map<Integer, Trip> tripsById = new HashMap<>();
 
     private TripDAOinMemory() {
-        // Popolamento iniziale (demo)
-        //addTrip(new Trip("Roma", 10, "2025-08-01", "2025-08-10", 500.0, "roma.jpg", true), 1);
-        //addTrip(new Trip("Milano", 15, "2025-09-05", "2025-09-12", 450.0, "milano.jpg", true), 2);
-        //addTrip(new Trip("Venezia", 8, "2025-07-20", "2025-07-25", 600.0, "venezia.jpg", true), 3);
-        // Aggiungi altri viaggi demo se vuoi
+        byte[] imageBytes = loadImageAsByteArray();
+
+        Trip trip = new Trip(200, "New York", Date.valueOf("2026-09-09"), Date.valueOf("2026-09-15"), 800f, imageBytes, true);
+        addTrip(trip, 200);
     }
 
     public static TripDAOinMemory getInstance() {
@@ -28,10 +26,6 @@ public class TripDAOinMemory {
             instance = new TripDAOinMemory();
         }
         return instance;
-    }
-
-    public Trip getTripById(int id) {
-        return tripsById.get(id);
     }
 
     public Collection<Trip> getAllTrips() {
@@ -42,7 +36,12 @@ public class TripDAOinMemory {
         tripsById.put(id, trip);
     }
 
-    public void reset() {
-        tripsById.clear();
+    private byte[] loadImageAsByteArray() {
+        try (InputStream is = getClass().getResourceAsStream("/com/ispw/progetto/ImmagineDEMO/NewYork.jpg")) {
+            return is != null ? is.readAllBytes() : null;
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 }

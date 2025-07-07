@@ -25,8 +25,8 @@ import com.ispw.progetto.utils.PersistenceMode;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
-import java.util.Set;
 
 public class BookTripController {
 
@@ -56,18 +56,48 @@ public class BookTripController {
     }
 
     public List<TripBean> showTrip() throws SQLException, IOException {
-        TripDAO tripdao = new TripDAO();
-        Trip trip;
+        AppContext appContext = AppContext.getInstance();
         List<TripBean> viaggi = new ArrayList<>();
-        int i = 1;
-        while ((trip = tripdao.execute(i)) != null) {
-            i++;
-            TripBean tripBean = new TripBean(trip.getAvailable(), trip.getCity(), trip.getDataAnd(),
-                    trip.getDataRit(), trip.getPrice(), trip.getImage(), trip.getId());
-            viaggi.add(tripBean);
+
+        if (appContext.getPersistenceMode() == PersistenceMode.MEMORY) {
+            // Recupera i viaggi da TripDAOinMemory
+            TripDAOinMemory daoInMemory = TripDAOinMemory.getInstance();
+            List<Trip> trips = new ArrayList<>(daoInMemory.getAllTrips()); // Assicurati che questo metodo esista
+            for (Trip trip : trips) {
+                TripBean tripBean = new TripBean(
+                        trip.getAvailable(),
+                        trip.getCity(),
+                        trip.getDataAnd(),
+                        trip.getDataRit(),
+                        trip.getPrice(),
+                        trip.getImage(),
+                        trip.getId()
+                );
+                viaggi.add(tripBean);
+            }
+        } else {
+            // Modalità DB o CSV
+            TripDAO tripdao = new TripDAO();
+            Trip trip;
+            int i = 1;
+            while ((trip = tripdao.execute(i)) != null) {
+                TripBean tripBean = new TripBean(
+                        trip.getAvailable(),
+                        trip.getCity(),
+                        trip.getDataAnd(),
+                        trip.getDataRit(),
+                        trip.getPrice(),
+                        trip.getImage(),
+                        trip.getId()
+                );
+                viaggi.add(tripBean);
+                i++;
+            }
         }
+
         return viaggi;
     }
+
 
     public void bookTrip(BookBean booking) throws SQLException, IOException, AlreadyPrenotedException {
         TripDAO tripdao = new TripDAO();
@@ -104,27 +134,24 @@ public class BookTripController {
                 tripBeanList.add(tripBean);
             }
         } else if (mode == PersistenceMode.MEMORY) {
-            // ✅ modalità demo: usa BookingDAOinMemory
-            BookingDAOinMemory bookingDAOinMemory = BookingDAOinMemory.getInstance();
-            Set<Integer> bookedTripIds = bookingDAOinMemory.getTripIdsByUser(utente.getUsername());
-
+            // ✅ modalità demo: carica tutti i viaggi dalla memoria
             TripDAOinMemory tripDAO = TripDAOinMemory.getInstance();
+            Collection<Trip> allTrips = tripDAO.getAllTrips();
 
-            for (int id : bookedTripIds) {
-                Trip trip = tripDAO.getTripById(id);
-                if (trip != null) {
-                    TripBean tripBean = new TripBean(
-                            trip.getCity(), trip.getAvailable(),
-                            trip.getDataAnd(), trip.getDataRit(),
-                            trip.getPrice(), trip.getImage(), trip.isStato()
-                    );
-                    tripBeanList.add(tripBean);
-                }
+            for (Trip trip : allTrips) {
+                TripBean tripBean = new TripBean(
+                        trip.getCity(), trip.getAvailable(),
+                        trip.getDataAnd(), trip.getDataRit(),
+                        trip.getPrice(), trip.getImage(), trip.isStato()
+                );
+                tripBeanList.add(tripBean);
             }
         }
 
         return tripBeanList;
     }
+
+
 
 
     public List<TripBean> searchByCity(SearchBean searchBean) throws SQLException, IOException, FailedSearchException {
