@@ -104,8 +104,8 @@ public class BookTripController {
             }
         } else if (mode == PersistenceMode.MEMORY) {
             // ✅ modalità demo: usa BookingDAOinMemory
-            BookingDAOinMemory bookingDAO = BookingDAOinMemory.getInstance();
-            Set<Integer> bookedTripIds = bookingDAO.getTripIdsByUser(utente.getUsername());
+            BookingDAOinMemory bookingDAOinMemory = BookingDAOinMemory.getInstance();
+            Set<Integer> bookedTripIds = bookingDAOinMemory.getTripIdsByUser(utente.getUsername());
 
             TripDAOinMemory tripDAO = TripDAOinMemory.getInstance();
 
