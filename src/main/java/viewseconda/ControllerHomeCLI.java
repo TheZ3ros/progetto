@@ -1,17 +1,15 @@
 package viewseconda;
 
 import com.ispw.progetto.exception.CredentialErrorException;
-import com.ispw.progetto.utils.AppContext;
 import viewseconda.user.LoginUserCLI;
 
 import java.util.Scanner;
 
 public class ControllerHomeCLI {
 
-    private final AppContext appContext;
 
-    public ControllerHomeCLI(AppContext appContext) {
-        this.appContext = appContext;
+    public ControllerHomeCLI() {
+
     }
 
     public void start() throws CredentialErrorException {
@@ -32,7 +30,7 @@ public class ControllerHomeCLI {
                     new RegistrazioneUserCLI().start(); // Se serve, puoi anche passare appContext
                     break;
                 case 2:
-                    new LoginUserCLI(appContext).login(); // 🔹 passaggio del contesto
+                    new LoginUserCLI().login(); // 🔹 passaggio del contesto
                     break;
                 case 3:
                     //new LoginAgencyCLI(appContext).login(); // 🔹 se supportato

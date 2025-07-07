@@ -3,7 +3,6 @@ package viewseconda.user;
 import com.ispw.progetto.bean.UserBean;
 import com.ispw.progetto.controller_app.RegLoginControllerApp;
 import com.ispw.progetto.exception.CredentialErrorException;
-import com.ispw.progetto.utils.AppContext;
 import viewseconda.Printer;
 
 import java.io.IOException;
@@ -12,10 +11,8 @@ import java.util.Scanner;
 
 public class LoginUserCLI {
 
-    private final AppContext appContext;
 
-    public LoginUserCLI(AppContext appContext) {
-        this.appContext = appContext;
+    public LoginUserCLI() {
     }
 
     public void login() throws CredentialErrorException {
@@ -34,7 +31,7 @@ public class LoginUserCLI {
             regLoginControllerApp.loginUtente();
             Printer.printMessage("login avvenuto con successo");
 
-            HomeLoginCLI homeLoginCLI = new HomeLoginCLI(userBean, appContext); // 🔹 passa il contesto
+            HomeLoginCLI homeLoginCLI = new HomeLoginCLI(userBean); // 🔹 passa il contesto
             homeLoginCLI.start();
 
         } catch (CredentialErrorException e) {

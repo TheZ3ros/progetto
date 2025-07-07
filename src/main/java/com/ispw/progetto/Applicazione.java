@@ -90,7 +90,7 @@ public class Applicazione extends Application {
 
             stage.show();
         } else {
-            ControllerHomeCLI controllerHomeCLI = new ControllerHomeCLI(context);
+            ControllerHomeCLI controllerHomeCLI = new ControllerHomeCLI();
             controllerHomeCLI.start();
         }
     }

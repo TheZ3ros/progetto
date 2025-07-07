@@ -7,7 +7,6 @@ import com.ispw.progetto.bean.UserBean;
 import com.ispw.progetto.controller_app.BookTripController;
 import com.ispw.progetto.controller_app.PagamentoControllerApp;
 import com.ispw.progetto.exception.*;
-import com.ispw.progetto.utils.AppContext;
 import viewseconda.Printer;
 
 import java.io.IOException;
@@ -19,12 +18,10 @@ import java.util.TimerTask;
 public class PaymentCLI {
     private final TripBean trip;
     private final UserBean user;
-    private final AppContext appContext;
 
-    public PaymentCLI(TripBean trip, UserBean user, AppContext appContext) {
+    public PaymentCLI(TripBean trip, UserBean user) {
         this.trip = trip;
         this.user = user;
-        this.appContext = appContext;
     }
 
     public void start(UserHomeNavigator navigator) throws CardNotTrueException, IOException {
