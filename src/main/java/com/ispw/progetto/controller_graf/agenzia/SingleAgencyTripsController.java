@@ -50,7 +50,8 @@ public class SingleAgencyTripsController {
     }
 
     public void tripstatus() throws IOException, SQLException {
-        FXMLLoader paginaLoader = new FXMLLoader(com.ispw.progetto.Applicazione.class.getResource("view1/agenzia/tripstatus.fxml"));
+
+        FXMLLoader paginaLoader = new FXMLLoader(getClass().getResource("/com/ispw/progetto/view1/agenzia/tripstatus.fxml"));
         Parent pageroot = paginaLoader.load();
         Scene paginaScene = new Scene(pageroot);
         TripStatusController tripstatus = paginaLoader.getController();
