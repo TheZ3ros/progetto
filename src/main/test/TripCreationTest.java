@@ -16,10 +16,9 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TripCreationTest {
-    /*
-    Author of the test: Podda Alessandro
-    MATRICOLA: 0316851
-
+    /** Author of the test: Alessandro Podda
+     *                 Matricola 0316851
+     Il seguente test verifica la creazione di un viaggio da parte dell'agenzia vada a buon fine
      */
         @BeforeAll
         public static void initJFX() {

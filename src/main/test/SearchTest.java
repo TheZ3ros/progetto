@@ -11,11 +11,10 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class SearchTest {
-    /*
-    * Test author: Podda Alessandro
-    * MATRICOLA: 0316851
-    * */
-
+    /** Author of the test: Alessandro Podda
+     *                 Matricola 0316851
+     Il seguente test verifica che la ricerca di un viaggio tramite nome della città funzioni correttamente
+     */
     @Test
     public void searchtest() throws SQLException, FailedSearchException, IOException {
         String citta = "Roma";

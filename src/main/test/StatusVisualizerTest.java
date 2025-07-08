@@ -9,12 +9,10 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class StatusVisualizerTest {
-    /*
-    * Author of the test: Podda Alessandro
-    * MATRICOLA: 0316851
-    * */
-
-
+    /** Author of the test: Alessandro Podda
+     *                 Matricola 0316851
+     Il seguente test verifica che venga recuperato correttamente lo stato di un viaggio prenotato da un utente
+     */
     @Test
     public void statusvisualizertest() throws SQLException, IOException {
         int id =2;
