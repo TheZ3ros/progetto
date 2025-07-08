@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="abd72b32-f6c1-4b42-a1d9-4297dd975b52" name="Changes" comment="sistemato warning">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/test/BookingTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/BookingTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/test/TestLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/TestLogin.java" afterDir="false" />
-    </list>
+    <list default="true" id="abd72b32-f6c1-4b42-a1d9-4297dd975b52" name="Changes" comment="test funzionanti" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -269,23 +265,7 @@
       <workItem from="1751807750602" duration="21623000" />
       <workItem from="1751880442397" duration="5676000" />
       <workItem from="1751894404244" duration="15313000" />
-      <workItem from="1751966649506" duration="5905000" />
-    </task>
-    <task id="LOCAL-00056" summary="sistemazione controlli">
-      <option name="closed" value="true" />
-      <created>1708557158287</created>
-      <option name="number" value="00056" />
-      <option name="presentableId" value="LOCAL-00056" />
-      <option name="project" value="LOCAL" />
-      <updated>1708557158288</updated>
-    </task>
-    <task id="LOCAL-00057" summary="code smell">
-      <option name="closed" value="true" />
-      <created>1708889974641</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1708889974641</updated>
+      <workItem from="1751966649506" duration="6364000" />
     </task>
     <task id="LOCAL-00058" summary="code smell">
       <option name="closed" value="true" />
@@ -663,7 +643,23 @@
       <option name="project" value="LOCAL" />
       <updated>1751967391500</updated>
     </task>
-    <option name="localTasksCounter" value="105" />
+    <task id="LOCAL-00105" summary="test funzionanti">
+      <option name="closed" value="true" />
+      <created>1751985050346</created>
+      <option name="number" value="00105" />
+      <option name="presentableId" value="LOCAL-00105" />
+      <option name="project" value="LOCAL" />
+      <updated>1751985050348</updated>
+    </task>
+    <task id="LOCAL-00106" summary="test funzionanti">
+      <option name="closed" value="true" />
+      <created>1751985275988</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1751985275988</updated>
+    </task>
+    <option name="localTasksCounter" value="107" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -682,7 +678,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Prova dipendenze cicliche su login e registrazione controller" />
     <MESSAGE value="Prova dipendenze cicliche sui controller dell'utente" />
     <MESSAGE value="implementazione di SceneNavigator e StageAware per il nuovo sistema di navigazione. Al momento implementato su LoginController e RegistrazioneController" />
     <MESSAGE value="Implementato SceneNavigate nelle varie vaiAHome dei controller grafici lato utente" />
@@ -707,7 +702,8 @@
     <MESSAGE value="demo sistemata. Ora l'utente può prenotare il viaggio di prova" />
     <MESSAGE value="sistemato secury hotspot" />
     <MESSAGE value="sistemato warning" />
-    <option name="LAST_COMMIT_MESSAGE" value="sistemato warning" />
+    <MESSAGE value="test funzionanti" />
+    <option name="LAST_COMMIT_MESSAGE" value="test funzionanti" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
