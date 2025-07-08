@@ -10,8 +10,10 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * DAO in memoria per la modalità demo (MEMORY)
+ * Singleton utilizzato per la modalità demo (MEMORY).
+ * Mantiene i dati solo in memoria e garantisce accesso condiviso.
  */
+
 public class TripDAOinMemory {
     private static TripDAOinMemory instance;
     private final Map<Integer, Trip> tripsById = new HashMap<>();

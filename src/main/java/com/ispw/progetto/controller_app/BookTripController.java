@@ -99,12 +99,12 @@ public class BookTripController {
     }
 
 
-    public void bookTrip(BookBean booking) throws SQLException, IOException, AlreadyPrenotedException {
+    public void bookTrip(BookBean book) throws SQLException, IOException, AlreadyPrenotedException {
         TripDAO tripdao = new TripDAO();
         UserDAO userdao = new UserDAO();
 
-        EntityFactory utente = userdao.execute(booking.getUsername());
-        Trip trip = tripdao.execute(booking.getTripId());
+        EntityFactory utente = userdao.execute(book.getUsername());
+        Trip trip = tripdao.execute(book.getTripId());
 
         UserTripStatus userTripStatus = new UserTripStatus(utente.getUsername());
         UserTrip usertrip = new UserTrip(userTripStatus, trip.getId());

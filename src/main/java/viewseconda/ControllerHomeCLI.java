@@ -1,6 +1,7 @@
 package viewseconda;
 
 import com.ispw.progetto.exception.CredentialErrorException;
+import viewseconda.agency.LoginAgencyCLI;
 import viewseconda.user.LoginUserCLI;
 
 import java.util.Scanner;
@@ -28,7 +29,7 @@ public class ControllerHomeCLI {
                     new LoginUserCLI().login(); // 🔹 passaggio del contesto
                     break;
                 case 3:
-                    //new LoginAgencyCLI(appContext).login(); // 🔹 se supportato
+                    new LoginAgencyCLI().login(); // 🔹 se supportato
                     break;
                 default:
                     Printer.printMessage("Inserire un'opzione valida");

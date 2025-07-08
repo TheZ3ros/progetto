@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="abd72b32-f6c1-4b42-a1d9-4297dd975b52" name="Changes" comment="sistemato secury hotspot">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/viewseconda/user/PaymentCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/viewseconda/user/PaymentCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/viewseconda/user/TripViewCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/viewseconda/user/TripViewCLI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_app/BookTripController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ispw/progetto/controller_app/BookTripController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/viewseconda/ControllerHomeCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/viewseconda/ControllerHomeCLI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,40 +63,45 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Application.Applicazione.executor": "Run",
-    "Downloaded.Files.Path.Enabled": "false",
-    "JUnit.TripCreationTest.tripcreationtest.executor": "Run",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/aless/Downloads/ISPW-Cat-Cafe-main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.51135135",
-    "settings.editor.selected.configurable": "terminal",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Application.Applicazione.executor&quot;: &quot;Run&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;JUnit.BookingTest.bookinTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CouponTest.ViewTripTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SearchTest.searchtest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StatusVisualizerTest.statusvisualizertest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestLogin.testLogin.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TripCreationTest.tripcreationtest.executor&quot;: &quot;Run&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/aless/Downloads/ISPW-Cat-Cafe-main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.51135135&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;terminal&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "ChangesTree.GroupingKeys": [],
-    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
-      "CSS"
+  &quot;keyToStringList&quot;: {
+    &quot;ChangesTree.GroupingKeys&quot;: [],
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;CSS&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Proprietario\Desktop\java\progetto1\src\main\resources\com\example\progetto" />
@@ -113,16 +118,13 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Applicazione">
-    <configuration name="Applicazione" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.ispw.progetto.Applicazione" />
+  <component name="RunManager" selected="JUnit.CouponTest.ViewTripTest">
+    <configuration name="CouponTest.ViewTripTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="progetto" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.ispw.progetto.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="CouponTest" />
+      <option name="METHOD_NAME" value="ViewTripTest" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -169,10 +171,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Applicazione" />
         <item itemvalue="JUnit.TripCreationTest.tripcreationtest" />
         <item itemvalue="JUnit.TestLogin.testLogin" />
         <item itemvalue="JUnit.StatusVisualizerTest.statusvisualizertest" />
+        <item itemvalue="JUnit.CouponTest.ViewTripTest" />
         <item itemvalue="JUnit.SearchTest.searchtest" />
       </list>
     </recent_temporary>
@@ -262,15 +264,8 @@
       <workItem from="1751752324525" duration="1967000" />
       <workItem from="1751807750602" duration="21623000" />
       <workItem from="1751880442397" duration="5676000" />
-      <workItem from="1751894404244" duration="6185000" />
-    </task>
-    <task id="LOCAL-00054" summary="prova">
-      <option name="closed" value="true" />
-      <created>1708532626961</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1708532626961</updated>
+      <workItem from="1751894404244" duration="15313000" />
+      <workItem from="1751966649506" duration="632000" />
     </task>
     <task id="LOCAL-00055" summary="timer CLI">
       <option name="closed" value="true" />
@@ -656,7 +651,15 @@
       <option name="project" value="LOCAL" />
       <updated>1751899897220</updated>
     </task>
-    <option name="localTasksCounter" value="103" />
+    <task id="LOCAL-00103" summary="sistemato secury hotspot">
+      <option name="closed" value="true" />
+      <created>1751901080343</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1751901080343</updated>
+    </task>
+    <option name="localTasksCounter" value="104" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
