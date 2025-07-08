@@ -25,4 +25,6 @@ module com.example.progetto {
     exports com.ispw.progetto.pattern.factory;
     exports com.ispw.progetto.controller_app;
     exports com.ispw.progetto.exception;
+    exports com.ispw.progetto.utils;
+
 }

@@ -8,12 +8,10 @@ import java.sql.SQLException;
 
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-/** Author of the test:  Luca Lo Mastro
- *                 Matricola 0308587
- */
 
-/**
-Il seguente test verifica se l'applicazione del coupon funziona e se preleva esattamente il valore del coupon
+/** Author of the test: Alessandro Podda
+ *                 Matricola 0316851
+Il seguente test verifica se l'applicazione del coupon funziona e se preleva esattamente il suo valore
  */
 public class CouponTest{
 

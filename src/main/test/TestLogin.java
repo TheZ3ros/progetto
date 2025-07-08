@@ -5,11 +5,9 @@ import org.junit.jupiter.api.Test;
 
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-/**Author of the test:  Luca Lo Mastro
- *                  Matricola 0308587
- */
 
-/**
+/** Author of the test: Alessandro Podda
+ *                      Matricola: 0316851
  Il seguente test verifica se il login è effettuato correttamente.
  */
 public class TestLogin{
@@ -17,8 +15,8 @@ public class TestLogin{
     @Test
 public void testLogin() throws Exception {
         UserBean userBean=new UserBean();
-        userBean.setPassword("12345678");
-        userBean.setUsername("lucaaaa02");
+        userBean.setPassword("alessandro");
+        userBean.setUsername("alessandro");
 
         int flag = 1;
         RegLoginControllerApp regLoginControllerApp=new RegLoginControllerApp(userBean);
